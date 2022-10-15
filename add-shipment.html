@@ -1,0 +1,1770 @@
+<!DOCTYPE html>
+<html class="loading" lang="tr" data-textdirection="ltr">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+    <title>Yeni Sipariş Ekle - We Lokal</title>
+
+    <!-- BEGIN: Vendor CSS-->
+    <link rel="stylesheet" type="text/css" href="app-assets/vendors/css/vendors.min.css">
+    <link rel="stylesheet" type="text/css" href="app-assets/vendors/css/charts/apexcharts.css">
+    <link rel="stylesheet" type="text/css" href="app-assets/vendors/css/extensions/swiper.min.css">
+    <!-- END: Vendor CSS-->
+    <link rel="stylesheet" type="text/css" href="app-assets/vendors/css/pickers/pickadate/pickadate.css">
+    <link rel="stylesheet" type="text/css" href="app-assets/vendors/css/pickers/daterange/daterangepicker.css">
+    <!-- BEGIN: Theme CSS-->
+    <link rel="stylesheet" type="text/css" href="app-assets/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="app-assets/css/bootstrap-extended.css">
+    <link rel="stylesheet" type="text/css" href="app-assets/css/colors.css">
+    <link rel="stylesheet" type="text/css" href="app-assets/css/components.css">
+    <link rel="stylesheet" type="text/css" href="app-assets/css/themes/dark-layout.css">
+    <link rel="stylesheet" type="text/css" href="app-assets/css/themes/semi-dark-layout.css">
+    <!-- END: Theme CSS-->
+
+    <!-- BEGIN: Page CSS-->
+    <link rel="stylesheet" type="text/css" href="app-assets/css/core/menu/menu-types/vertical-menu.css">
+    <link rel="stylesheet" type="text/css" href="app-assets/css/pages/dashboard-ecommerce.css">
+    <!-- END: Page CSS-->
+
+    <!-- BEGIN: Custom CSS-->
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <!-- END: Custom CSS-->
+    <link rel="stylesheet" type="text/css" href="app-assets/vendors/css/forms/select/select2.min.css">
+    <link rel="stylesheet" type="text/css" href="app-assets/vendors/css/tables/datatable/dataTables.bootstrap4.min.css">
+    <link rel="stylesheet" type="text/css" href="app-assets/vendors/css/tables/datatable/responsive.bootstrap4.min.css">
+    <link rel="stylesheet" type="text/css" href="app-assets/vendors/css/tables/datatable/buttons.bootstrap4.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.4.1/css/buttons.dataTables.min.css">
+    <link rel="stylesheet" type="text/css" href="app-assets/css/plugins/forms/wizard.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="assets/css/costum.css">
+
+    <style>
+
+
+        @media screen and (max-width: 600px) {
+            #pricetable {
+                border: 0;
+            }
+
+            #pricetable caption {
+                font-size: 1.3em;
+            }
+
+            #pricetable thead {
+                border: none;
+                clip: rect(0 0 0 0);
+                height: 1px;
+                margin: -1px;
+                overflow: hidden;
+                padding: 0;
+                position: absolute;
+                width: 1px;
+            }
+
+            #pricetable tr {
+                border-bottom: 3px solid #ddd;
+                display: block;
+                margin-bottom: .625em;
+            }
+
+            #pricetable td {
+                border-bottom: 1px solid #ddd;
+                display: block;
+                font-size: .8em;
+                text-align: right;
+            }
+
+            #pricetable td::before {
+                /*
+                * aria-label has no advantage, it won't be read inside a table
+                content: attr(aria-label);
+                */
+                content: attr(data-label);
+                float: left;
+                font-weight: bold;
+                text-transform: uppercase;
+            }
+
+            #pricetable td:last-child {
+                border-bottom: 0;
+            }
+        }
+
+
+
+
+
+
+    </style>
+
+</head>
+<!-- END: Head-->
+
+<!-- BEGIN: Body-->
+
+<body class="vertical-layout vertical-menu-modern dark-layout 2-columns  navbar-sticky footer-static  "
+    data-open="click" data-menu="vertical-menu-modern" data-col="2-columns" data-layout="dark-layout">
+
+    <div id="loader">
+        <div class="boxes">
+            <div class="box">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <div class="box">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <div class="box">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <div class="box">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+    </div>
+    <div data-include="header"></div>
+   
+
+      <!-- BEGIN: Main Menu-->
+      <div class="main-menu menu-fixed menu-dark menu-accordion menu-shadow" data-scroll-to-active="true">
+        <div class="navbar-header">
+            <ul class="nav navbar-nav flex-row">
+                <li class="nav-item mr-auto">
+                    <a class="navbar-brand" href="dashboard.html">
+                        
+                        <h2 class="brand-text mb-0"><img style="margin-top: 9px" height="45"
+                                src="app-assets/images/logo-dark.png" alt=""></h2>
+                    </a>
+                </li>
+                <li class="nav-item nav-toggle"><a class="nav-link modern-nav-toggle pr-0" data-toggle="collapse"><i
+                            class="bx bx-x d-block d-xl-none font-medium-4 primary"></i><i
+                            class="toggle-icon bx bx-disc font-medium-4 d-none d-xl-block primary"
+                            data-ticon="bx-disc"></i></a></li>
+            </ul>
+        </div>
+        <div class="shadow-bottom"></div>
+
+        <style>
+            .main-menu-content ul>li {
+                margin-top: 5px !important;
+            }
+        </style>
+        <div class="main-menu-content">
+            <ul class="navigation navigation-main" id="main-menu-navigation" data-menu="menu-navigation"
+                data-icon-style="lines">
+                <li class=" nav-item"><a href="dashboard.html"><i class="menu-livicon" data-icon="home"></i><span
+                            class="menu-title text-truncate" data-i18n="Anasayfa">Anasayfa</span></a>
+                </li>
+
+                <li class=" nav-item"><a href="kurye-yonetimi.html"><i class="menu-livicon" data-icon="users"></i><span
+                            class="menu-title text-truncate" data-i18n="Kurye Yönetimi">Kurye Yönetimi</span></a>
+                </li>
+                <li class="nav-item"><a href="#"><i class="menu-livicon" data-icon="briefcase"></i><span
+                        class="menu-title text-truncate" data-i18n="Müşteri Yönetimi">Müşteri Yönetimi</span></a>
+                    <ul class="menu-content">
+                        <li><a class="d-flex align-items-center" href="carikart.html"><i
+                                class="bx bx-right-arrow-alt"></i><span class="menu-item text-truncate"
+                                                                        data-i18n="Cari Kart">Cari Kart </span></a>
+                        </li>
+
+                        <li><a class="d-flex align-items-center" href="siparis-bilgileri.html"><i
+                                class="bx bx-right-arrow-alt"></i><span class="menu-item text-truncate"
+                                                                        data-i18n="Kurye Takip">Sipariş Bilgileri</span></a>
+                        </li>
+                        <li><a class="d-flex align-items-center" href="fiyat-listesi.html"><i
+                                class="bx bx-right-arrow-alt"></i><span class="menu-item text-truncate"
+                                                                        data-i18n="Kurye Takip">Fiyat Listesi</span></a>
+                        </li>
+                        <li><a class="d-flex align-items-center" href="belge-basim.html"><i
+                                class="bx bx-right-arrow-alt"></i><span class="menu-item text-truncate"
+                                                                        data-i18n="Belge Basım">Belge Basım</span></a>
+                        </li>
+
+
+                    </ul>
+                </li>
+
+                <li class=" nav-item"><a href="depo.html"><i class="menu-livicon" data-icon="home"></i><span
+                        class="menu-title text-truncate" data-i18n="Depo Yönetimi">Depo Yönetimi</span></a>
+
+                </li>
+
+                <li class=" open nav-item"><a href="#"><i class="menu-livicon" data-icon="truck"></i><span
+                            class="menu-title text-truncate" data-i18n="Gönderi Yönetimi">Gönderi Yönetimi</span></a>
+                    <ul class="menu-content">
+                        <li ><a class="d-flex align-items-center" href="shipment-all.html"><i
+                                class="bx bx-right-arrow-alt"></i><span class="menu-item text-truncate"
+                                                                        data-i18n="Tüm Gönderiler">Tüm Gönderiler</span></a>
+                        </li>
+                        <li class="active"><a class="d-flex align-items-center" href="add-shipment.html"><i
+                                    class="bx bx-right-arrow-alt"></i><span class="menu-item text-truncate"
+                                    data-i18n="Yeni Sipariş Ekle">Yeni Sipariş Ekle</span></a>
+                        </li>
+                        <li><a class="d-flex align-items-center" href="file-shipment.html"><i
+                                    class="bx bx-right-arrow-alt"></i><span class="menu-item text-truncate"
+                                    data-i18n="Dosyadan Yükle">Dosyadan Yükle</span></a>
+                        </li>
+                    </ul>
+                </li>
+                <li class=" nav-item"><a href="follow-up.html"><i class="menu-livicon" data-icon="compass"></i><span
+                            class="menu-title text-truncate" data-i18n="Sipariş Yönetimi">Sipariş Yönetimi</span></a>
+                </li>
+
+                <li class=" nav-item"><a href="#"><i class="menu-livicon" data-icon="users"></i><span
+                        class="menu-title text-truncate" data-i18n="Kullanıcılar">Kullanıcılar</span></a>
+                    <ul class="menu-content">
+
+
+                        <li><a class="d-flex align-items-center" href="app-users-list.html"><i
+                                class="bx bx-right-arrow-alt"></i><span class="menu-item text-truncate"
+                                                                        data-i18n="Kullanıcı Listesi">Kullanıcı Listesi</span></a></li>
+
+
+                        <li><a class="d-flex align-items-center" href="app-users-view.html"><i
+                                class="bx bx-right-arrow-alt"></i><span class="menu-item text-truncate"
+                                                                        data-i18n="Kullanıcı Görüntüle">Kullanıcı Görüntüle</span></a></li>
+
+
+
+                        <li><a class="d-flex align-items-center" href="app-users-edit.html"><i
+                                class="bx bx-right-arrow-alt"></i><span class="menu-item text-truncate"
+                                                                        data-i18n="Kullanıcı Düzenle">Kullanıcı Düzenle</span></a></li>
+
+
+
+
+
+                    </ul>
+                </li>
+
+                <li class=" nav-item"><a href="#"><i class="menu-livicon" data-icon="bar-chart"></i><span
+                        class="menu-title text-truncate" data-i18n="Proforma">Proforma</span></a>
+                    <ul class="menu-content">
+
+
+                        <li><a class="d-flex align-items-center" href="app-invoice-list.html"><i
+                                class="bx bx-right-arrow-alt"></i><span class="menu-item text-truncate"
+                                                                        data-i18n="Proforma Listesi">Proforma Listesi</span></a></li>
+
+
+                        <li><a class="d-flex align-items-center" href="app-invoice.html"><i
+                                class="bx bx-right-arrow-alt"></i><span class="menu-item text-truncate"
+                                                                        data-i18n="Proforma">Proforma</span></a></li>
+
+
+
+                        <li><a class="d-flex align-items-center" href="app-invoice-edit.html"><i
+                                class="bx bx-right-arrow-alt"></i><span class="menu-item text-truncate"
+                                                                        data-i18n="Proforma Düzenle">Proforma Düzenle</span></a></li>
+
+                        <li><a class="d-flex align-items-center" href="app-invoice-add.html"><i
+                                class="bx bx-right-arrow-alt"></i><span class="menu-item text-truncate"
+                                                                        data-i18n="Proforma Ekle">Proforma Ekle</span></a></li>
+
+
+                    </ul>
+                </li>
+                <li class=" nav-item"><a href="#"><i class="menu-livicon" data-icon="bar-chart"></i><span
+                            class="menu-title text-truncate" data-i18n="Raporlar">Raporlar</span></a>
+                    <ul class="menu-content">
+                        <li><a class="d-flex align-items-center" href="complaint-report.html"><i
+                            class="bx bx-right-arrow-alt"></i><span class="menu-item text-truncate"
+                            data-i18n="Yük Raporları">Yük Raporları</span></a></li>
+                        <li><a class="d-flex align-items-center" href="complaint-report.html"><i
+                            class="bx bx-right-arrow-alt"></i><span class="menu-item text-truncate"
+                            data-i18n="Şikayet Yönetimi Raporu">Geciken Teslimat Raporu</span></a></li>
+                        <li><a class="d-flex align-items-center" href="complaint-report.html"><i
+                                    class="bx bx-right-arrow-alt"></i><span class="menu-item text-truncate"
+                                    data-i18n="Şikayet Yönetimi Raporu">Şikayet Yönetimi Raporu</span></a></li>
+                        <li><a class="d-flex align-items-center" href="drive-report.html"><i
+                                    class="bx bx-right-arrow-alt"></i><span class="menu-item text-truncate"
+                                    data-i18n="Env. Sürücü Raporları">Env. Sürücü Raporları</span></a></li>
+                        <li><a class="d-flex align-items-center" href="driver-score-report.html"><i
+                                    class="bx bx-right-arrow-alt"></i><span class="menu-item text-truncate"
+                                    data-i18n="Sürücü Puan Raporu">Sürücü Puan Raporu</span></a></li>
+                        <li><a class="d-flex align-items-center" href="post-service-score-report.html"><i
+                                    class="bx bx-right-arrow-alt"></i><span class="menu-item text-truncate"
+                                    data-i18n="Hizmet Sonrası Anket Raporu">Hizmet Sonrası Anket Raporu</span></a></li>
+                        <li><a class="d-flex align-items-center" href="overall-score-report.html"><i
+                                    class="bx bx-right-arrow-alt"></i><span class="menu-item text-truncate"
+                                    data-i18n="Genel Değerlendirme Anket Raporu">Genel Değerlendirme Anket
+                                    Raporu</span></a></li>
+                        <li><a class="d-flex align-items-center" href="customer-evaluation-score-report.html"><i
+                                    class="bx bx-right-arrow-alt"></i><span class="menu-item text-truncate"
+                                    data-i18n="Müşteri Değerlendirme Puan Raporu">Müşteri Değerlendirme Puan
+                                    Raporu</span></a></li>
+                    </ul>
+                </li>
+                <li class="nav-item"><a href="fatura.html"><i class="menu-livicon"
+                            data-icon="calculator"></i><span class="menu-title text-truncate"
+                            data-i18n="Dağıtım Bilgileri">Fatura Bilgileri</span></a>
+                </li>
+                <li class="nav-item"><a href="rating-system.html"><i class="menu-livicon" data-icon="touch"></i><span
+                            class="menu-title text-truncate" data-i18n="Rating Sistemleri">Rating Sistemleri</span></a>
+                </li>
+                <li class=" nav-item"><a href="definitions.html"><i class="menu-livicon" data-icon="briefcase"></i><span
+                            class="menu-title text-truncate" data-i18n="Tanımlamalar">Tanımlamalar</span></a>
+                </li>
+                <li class=" nav-item"><a href="profile.html"><i class="menu-livicon" data-icon="user"></i><span
+                            class="menu-title text-truncate" data-i18n="Profil">Profil</span></a>
+                </li>
+                <li class=" nav-item"><a href="help-page.html"><i class="menu-livicon" data-icon="help"></i><span
+                            class="menu-title text-truncate" data-i18n="Yardım">Yardım</span></a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!-- END: Main Menu-->
+
+    <!-- BEGIN: Content-->
+    <div class="app-content content">
+        <div class="content-overlay"></div>
+        <div class="content-wrapper">
+            <div class="content-header row">
+                <div class="content-header-left col-12 mb-2 mt-1">
+                    <div class="breadcrumbs-top">
+                        <div class="breadcrumb-wrapper d-none d-sm-block">
+                            <ol class="breadcrumb p-0 mb-0">
+                                <li class="breadcrumb-item"><a href="dashboard.html"><i class="bx bx-home-alt"></i></a>
+                                </li>
+                                <li class="breadcrumb-item">Yeni Sipariş Ekle
+                                </li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-body">
+                <!-- vertical Wizard start-->
+                <section id="vertical-wizard">
+                    <div class="card">
+                        <div class="card-header">
+                            <h4 class="card-title">Yeni Sipariş Ekle</h4>
+                            <a class="float-right btn btn-sm btn-outline-success"
+                                href="http://www.africau.edu/images/default/sample.pdf" target="_blank">
+                                Sipariş Önizleme
+                            </a>
+                        </div>
+                        <div class="card-body">
+                            <form action="#" class="wizard-vertical">
+                                <!-- step 1 -->
+                                <h3>
+                                    <span class="fonticon-wrap mr-1">
+                                        <i class="livicon-evo"
+                                            data-options="name:box-add.svg; size: 50px; style:lines; strokeColor:#adb5bd;"></i>
+                                    </span>
+                                    <span class="icon-title">
+                                        <span class="d-block">Sipariş Yönetimi</span>
+                                        <small class="text-muted" style="text-transform: capitalize;">Sipariş yönetimi
+                                            işlemleri</small>
+                                    </span>
+                                </h3>
+                                <!-- step 1 end-->
+                                <!-- step 1 content -->
+                                <fieldset class="pt-0">
+                                    <h6 class="pb-50">Lütfen bir taşıma tipi seçiniz</h6>
+                                    <div class="row">
+                                        <div class="col-sm-12">
+                                            <div id="mainCheckbox" class="list-group list-group-flush">
+                                                <div class="row d-flex">
+                                                    <div class="col-lg-6">
+                                                        <a href="javascript:void(0);"
+                                                            class="list-group-item list-group-item-action border-0 d-flex">
+                                                            <div class="list-icon">
+                                                                <i
+                                                                    class="badge-circle badge-circle-light-secondary bx bx-cart mr-1 text-success"></i>
+                                                            </div>
+                                                            <div class="list-content">
+                                                                <h5>Moto Kurye</h5>
+                                                                <p class="mb-0">Seçim yapmak için tıklayınız.</p>
+                                                            </div>
+                                                            <div>
+                                                                <i class="fas fa-exclamation-circle ms-2 fs-7 info-box"
+                                                                    data-toggle="popover" data-placement="top"
+                                                                    data-trigger="hover" data-container="body"
+                                                                    data-content="Parsiyel Taşıma, birden fazla göndericiye ait yüklerin beraber götürülmesi için organize edilmesidir. Bir aracı dolduramayan yüklerin birleştirilerek taşınması olarak da anılır."></i>
+                                                            </div>
+                                                        </a>
+                                                    </div>
+                                                    <div class="col-lg-6">
+                                                        <a href="javascript:void(0);"
+                                                            class="list-group-item list-group-item-action border-0 d-flex">
+                                                            <div class="list-icon">
+                                                                <i
+                                                                    class="badge-circle badge-circle-light-secondary bx bxs-truck mr-1 text-success"></i>
+                                                            </div>
+                                                            <div class="list-content">
+                                                                <h5>Araç Kurye</h5>
+                                                                <p class="mb-0">Seçim yapmak için tıklayınız.</p>
+                                                            </div>
+                                                            <div>
+                                                                <i class="fas fa-exclamation-circle ms-2 fs-7 info-box"
+                                                                    data-toggle="popover" data-placement="top"
+                                                                    data-trigger="hover" data-container="body"
+                                                                    data-content="Komple Taşıma, tek bir adresten tek bir adrese gidecek ve bir aracı hacim yada ağırlık olarak tamamen dolduracak taşımaların komple araç ile gönderilmesidir."></i>
+                                                            </div>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <h6 class="py-50 mt-2">Kurye Seçimi ve Detayları</h6>
+                                    <div class="row">
+                                        <div class="col-sm-4">
+                                            <div class="form-group">
+                                                <label for="filters-list-status4">Kurye Seç</label>
+                                                <select data-placeholder="Araç Sayısı" id="aracTipi"
+                                                    class="select2-icons form-control" id="select2-icons">
+                                                    <option value="hasansoner" selected>Hasan Soner</option>
+                                                    <option value="mehmetkılıç">Mehmet Kılıç</option>
+                                                    <option value="sonayhacer">Sunay Hacer</option>
+                                                    <option value="fazılsayar">Fazıl Sayar</option>
+                                                    
+                                                </select>
+                                            </div>
+                                            <div class="custom-control custom-switch custom-switch-success custom-switch-glow custom-control-inline mb-1">
+                                                <input type="checkbox" class="custom-control-input" id="customSwitchGlow2">
+                                                <label class="custom-control-label" for="customSwitchGlow2">
+                                                </label>
+                                                <span>En Yakın Kuryeyi Ata</span>
+                                            </div>
+
+
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <div class="form-group">
+                                                <label for="filters-list-status3">Tarih </label>
+                                                <fieldset class="form-group position-relative has-icon-left">
+                                                    <input type="datetime-local" class="form-control " placeholder="Tarih Seç">
+                                                    <div class="form-control-position">
+                                                        <i class='bx bx-calendar'></i>
+                                                    </div>
+                                                </fieldset>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </fieldset>
+                                <!-- step 1 content end-->
+                                <!-- section 3 -->
+                                <h3>
+                                    <span class="fonticon-wrap mr-1">
+                                        <i class="livicon-evo"
+                                            data-options="name:location.svg; size: 50px; style:lines; strokeColor:#adb5bd;"></i>
+                                    </span>
+                                    <span class="icon-title">
+                                        <span class="d-block">Adres Ekle/Seç</span>
+                                        <small class="text-muted" style="text-transform: capitalize;">Adres Ekleme ve
+                                            Seçim Detayları</small>
+                                    </span>
+                                </h3>
+                                <!-- section 3 end-->
+                                <!-- step 3 content -->
+                                <fieldset class="pt-0">
+                                    <div class="row mb-50">
+                                        <div class="col-lg-12 mb-50">
+                                            <h6 class="py-50">Adres Ekleme ve Seçim Detayları
+                                                <span class="float-right mt-2">
+                                                    <button type="button" class="btn btn-sm btn-outline-success"
+                                                        data-toggle="modal" data-target="#inlineForm">Yeni Adres
+                                                        Ekle</button>
+                                                    <button type="button" class="btn btn-sm btn-outline-danger"
+                                                        onclick="addStation()">Ara Durak Ekle</button>
+                                                </span>
+                                            </h6>
+                                        </div>
+                                    </div>
+                                    <div class="row mt-50">
+                                        <div class="col-sm-3">
+                                            <div class="form-group">
+                                                <label for="filters-list-status2">TESLİM ALINACAĞI YER <span
+                                                        class="text-danger">*</span></label>
+                                                <select data-placeholder="Başlangıç Noktası" id="filters-list-status5"
+                                                    class="select2-icons form-control" id="select2-icons">
+                                                    <option value="1" selected>Türkiye</option>
+                                                    <option value="2">Almanya</option>
+                                                    <option value="3">Afganistan</option>
+                                                    <option value="4">Amerika</option>
+                                                    <option value="5">Fransa</option>
+                                                    <option value="6">İspanya</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <div class="form-group">
+                                                <label for="eventLocation12">ADRES YETKİLİ ADI <span
+                                                        class="text-danger">*</span></label>
+                                                <input type="text" class="form-control" id="eventName13"
+                                                    placeholder="Yetkili adı giriniz">
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <div class="form-group">
+                                                <label for="eventLocation123">ADRES YETKİLİ TEL NO <span
+                                                        class="text-danger">*</span></label>
+                                                <input type="text" class="form-control" id="eventName13"
+                                                    placeholder="Yetkili adı giriniz">
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <div class="form-group">
+                                                <label for="eventLocation1234">YÜKLEME TARİHİ VE SAATİ <span
+                                                        class="text-danger">*</span></label>
+                                                <fieldset class="form-group position-relative has-icon-left">
+                                                    <input type="datetime-local" class="form-control "
+                                                        placeholder="Tarih Seç">
+                                                    <div class="form-control-position">
+                                                        <i class='bx bx-calendar'></i>
+                                                    </div>
+                                                </fieldset>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row" id="addArea"></div>
+                                    <div class="row" style="margin-bottom: 150px">
+                                        <div class="col-sm-3">
+                                            <div class="form-group">
+                                                <label for="filters-list-status2">TESLİM NOKTASI <span
+                                                        class="text-danger">*</span></label>
+                                                <select data-placeholder="Bitiş Noktası" id="filters-list-status5"
+                                                    class="select2-icons form-control" id="select2-icons">
+                                                    <option value="1" selected>Türkiye</option>
+                                                    <option value="2">Almanya</option>
+                                                    <option value="3">Afganistan</option>
+                                                    <option value="4">Amerika</option>
+                                                    <option value="5">Fransa</option>
+                                                    <option value="6">İspanya</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <div class="form-group">
+                                                <label for="eventLocation12">ADRES YETKİLİ ADI <span
+                                                        class="text-danger">*</span></label>
+                                                <input type="text" class="form-control" id="eventName13"
+                                                    placeholder="Yetkili adı giriniz">
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <div class="form-group">
+                                                <label for="eventLocation123">ADRES YETKİLİ TEL NO <span
+                                                        class="text-danger">*</span></label>
+                                                <input type="text" class="form-control" id="eventName13"
+                                                    placeholder="Yetkili adı giriniz">
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <div class="form-group">
+                                                <label for="eventLocation1234">BOŞALTMA TARİHİ VE SAATİ <span
+                                                        class="text-danger">*</span></label>
+                                                <fieldset class="form-group position-relative has-icon-left">
+                                                    <input type="datetime-local" class="form-control "
+                                                        placeholder="Tarih Seç">
+                                                    <div class="form-control-position">
+                                                        <i class='bx bx-calendar'></i>
+                                                    </div>
+                                                </fieldset>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </fieldset>
+                                <!-- step 3 content end-->
+                                <!-- step 4 -->
+
+                                <h3>
+                                    <span class="fonticon-wrap mr-1">
+                                        <i class="livicon-evo"
+                                            data-options="name:balance.svg; size: 50px; style:lines; strokeColor:#adb5bd;"></i>
+                                    </span>
+                                    <span class="icon-title">
+                                        <span class="d-block">YÜK VE AMBALAJ BİLGİLERİ</span>
+                                        <small class="text-muted" style="text-transform: capitalize;">Yük ve ambalaj
+                                            detayları</small>
+                                    </span>
+                                </h3>
+                                <fieldset class="pt-0">
+                                    <h6 class="py-50">Yük ve Ambalaj Bilgileri</h6>
+                                    <div class="list-group list-group-flush" id="threeCheckbox">
+                                        <div class="row">
+                                            <div class="col-lg-12">
+                                                <div class="add-packagesTwo">
+                                                    <div class="mt-1" data-repeater-list="contact">
+                                                        <div class="row mt-1 d-flex border-bottom-dark"
+                                                            data-repeater-item>
+                                                            <div class="row item">
+                                                                <div class="col-lg-2">
+                                                                    <div class="row d-flex kutu5li padding2">
+
+                                                                        <select class="form-control" id="users-list-status">
+                                                                            <option value="">Koli</option>
+                                                                            <option value="Active">Paket 1</option>
+                                                                            <option value="Close">Paket 2</option>
+                                                                            <option value="Banned">Paket 3</option>
+                                                                        </select>
+
+                                                                        <select class="form-control mt-1" id="diger">
+                                                                            <option value="">Diğer </option>
+                                                                            <option value="Active">Paket 1</option>
+                                                                            <option value="Close">Paket 2</option>
+                                                                            <option value="Banned">Paket 3</option>
+                                                                        </select>
+
+
+                                                                        
+                                                                       
+
+
+
+                                                                        <div class="secimKutusu col-lg-12 col-12 mt-1 ">
+                                                                            <div class="custom-control custom-switch custom-control-inline mb-1">
+                                                                                <input type="checkbox" class="custom-control-input" id="customSwitch2">
+                                                                                <label class="custom-control-label mr-1" for="customSwitch2">
+                                                                                </label>
+                                                                                <span>Kırılacak Ürün</span>
+                                                                            </div>
+                                                                        </div>
+
+
+
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-lg-10">
+                                                                    <div class="row">
+                                                                        <div class="col-lg-3">
+                                                                            <div class="form-group">
+                                                                                <label>En</label>
+                                                                                <input type="text" class="form-control"
+                                                                                    placeholder="En giriniz">
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-lg-3">
+                                                                            <div class="form-group">
+                                                                                <label>Boy</label>
+                                                                                <input type="text" class="form-control"
+                                                                                    placeholder="Boy giriniz">
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-lg-3">
+                                                                            <div class="form-group">
+                                                                                <label>Yükseklik</label>
+                                                                                <input type="text" class="form-control"
+                                                                                    placeholder="Yükseklik giriniz">
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-lg-3">
+                                                                            <div class="form-group">
+                                                                                <label>Birim Ağırlık</label>
+                                                                                <input type="text" class="form-control"
+                                                                                    placeholder="Ağırlık giriniz">
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-lg-3">
+                                                                            <div class="form-group">
+                                                                                <label>Adet</label>
+                                                                                <input type="text" class="form-control"
+                                                                                    placeholder="Adet">
+                                                                            </div>
+                                                                        </div>
+                                                                        
+                                                                        
+                                                                        <div class="col-lg-3">
+                                                                            <div class="form-group">
+                                                                                <label>Toplam Ağırlık</label>
+                                                                                <input type="text" class="form-control"
+                                                                                    placeholder="(Ton)">
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-lg-3">
+                                                                            <div class="form-group">
+                                                                                <label>Hacim</label>
+                                                                                <input type="text" class="form-control"
+                                                                                    placeholder="Hacim">
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-lg-3">
+                                                                            <div class="form-group">
+                                                                                <label>Açıklama</label>
+                                                                                <input type="text" class="form-control"
+                                                                                    placeholder="Açıklama">
+                                                                            </div>
+                                                                        </div>
+                                                                        
+                                                                        
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div>
+                                                        <div class="col-lg-12 mb-5 mt-5">
+                                                            <button data-repeater-create
+                                                                class="btn btn-icon rounded-circle btn-primary"
+                                                                type="button">
+                                                                <i class="bx bx-plus"></i>
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6 mt-5">
+                                        <div class="row">
+                                            
+                                            <div class="col-lg-6">
+                                                <div class="packageBox">
+                                                    <h6>Koli
+                                                        <span class="cancelBox"><i class="bx bxs-x-circle"></i></span>
+                                                    </h6>
+                                                    <p>80 x 120 x 11 cm</p>
+                                                    <p>40 kg, 200 Adet</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </fieldset>
+
+                                <h3>
+                                    <span class="fonticon-wrap mr-1">
+                                        <i class="livicon-evo"
+                                           data-options="name:truck.svg; size: 50px; style:lines; strokeColor:#adb5bd;"></i>
+                                    </span>
+                                    <span class="icon-title">
+                                        <span class="d-block">SİPARİŞ DETAYLARI</span>
+                                        <small class="text-muted" style="text-transform: capitalize;">Sipariş ile ilgili
+                                            detaylar</small>
+                                    </span>
+                                </h3>
+                                <!-- step 4 end-->
+                                <!-- step 4 content -->
+                                <fieldset class="pt-0">
+                                    <h6 class="py-50">Sipariş Detayları İşlemi</h6>
+                                    <div class="row">
+
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label for="filters-list-status2">YÜK TÜRÜ <span
+                                                        class="text-danger">*</span></label>
+                                                <select data-placeholder="Yük Türü" id="filters-list-status5"
+                                                        class="select2-icons form-control" id="select2-icons">
+                                                    <option>Yük Türü Seçiniz</option>
+                                                    <option value="1">Koli</option>
+                                                    <option value="1">Diğer</option>
+
+
+                                                </select>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-6">
+                                            <a href="#" class="btn btn-sm btn-outline-success"
+                                               style="margin-top: 25px;">
+                                                <i class="bx bxs-show"></i>
+                                                Kayıt Öncesi Önizleme
+                                            </a>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <fieldset class="form-group">
+                                                        <label>Açıklama</label>
+                                                        <textarea class="form-control" id="basicTextarea" rows="9"
+                                                                  placeholder="Açıklama giriniz"></textarea>
+                                                    </fieldset>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </fieldset>
+                                <!-- step 4 content end-->
+
+
+                                <h3>
+                                    <span class="fonticon-wrap mr-1">
+                                        <i class="livicon-evo"
+                                            data-options="name:external-link.svg; size: 50px; style:lines; strokeColor:#adb5bd;"></i>
+                                    </span>
+                                    <span class="icon-title">
+                                        <span class="d-block">SEVK EDİLEN ÜRÜN BİLGİLERİ</span>
+                                        <small class="text-muted" style="text-transform: capitalize;">Sevk edilen ürün
+                                            detayları</small>
+                                    </span>
+                                </h3>
+                                <fieldset class="pt-0">
+                                    <h6 class="py-50">Sevk Edilen Ürün Bilgileri</h6>
+                                    <div class="add-packagesTwo2">
+                                        <div class="mt-1" data-repeater-list="contact">
+                                            <div class="row mt-1 d-flex border-bottom-dark" data-repeater-item>
+                                                <div class="col-lg-2">
+                                                    <div class="form-group">
+                                                        <label class="maxText">Sevk Edilen Ürün Kodu</label>
+                                                        <input type="text" class="form-control"
+                                                            placeholder="Ürün kodu giriniz">
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-2">
+                                                    <div class="form-group">
+                                                        <label>Sevk Edilen Ürün Adı</label>
+                                                        <input type="text" class="form-control"
+                                                            placeholder="Ürün adı giriniz">
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-2">
+                                                    <div class="form-group">
+                                                        <label class="maxText">Sevk Edilen Ürün Sevk Miktarı/Parça
+                                                            Adedi</label>
+                                                        <input type="text" class="form-control"
+                                                            placeholder="Adet giriniz">
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-1">
+                                                    <div class="form-group sevk_area">
+                                                        <label style="margin-bottom: 10px" class="maxText">Yük ADR'li mi
+                                                            ?</label>
+                                                        <div class="custom-control custom-switch mb-1">
+                                                            <input type="checkbox"
+                                                                class="custom-control-input is_adr_sevk"
+                                                                id="is_adr_sevk">
+                                                            <label class="custom-control-label mr-1" for="is_adr_sevk">
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-2 is_adr_sevk">
+                                                    <div class="form-group">
+                                                        <label class="maxText">Ürünün/lerin ADR Tanımı</label>
+                                                        <input type="number" class="form-control" name="ccyear"
+                                                            placeholder="">
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-2 is_adr_sevk">
+                                                    <div class="form-group">
+                                                        <label>UN KODLARI</label>
+                                                        <input type="number" class="form-control" name="ccyear"
+                                                            placeholder="">
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-1">
+                                                    <button
+                                                        class="d-inline text-right float-right btn btn-icon btn-light-danger rounded-circle"
+                                                        type="button" data-repeater-delete>
+                                                        <i class="bx bx-x"></i>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <div class="col-lg-12 mb-5 mt-1">
+                                                <button data-repeater-create
+                                                    class="btn btn-icon rounded-circle btn-primary" type="button">
+                                                    <i class="bx bx-plus"></i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </fieldset>
+                                <h3>
+                                    <span class="fonticon-wrap mr-1">
+                                        <i class="livicon-evo"
+                                            data-options="name:plus.svg; size: 50px; style:lines; strokeColor:#adb5bd;"></i>
+                                    </span>
+                                    <span class="icon-title">
+                                        <span class="d-block">EK BİLGİLER</span>
+                                        <small class="text-muted" style="text-transform: capitalize;">Ek
+                                            Bilgiler</small>
+                                    </span>
+                                </h3>
+                                <fieldset class="pt-0">
+                                    <h6 class="py-50">Ek Bilgiler</h6>
+                                    <p>Yükünün dağıtılacağı firma ve adres bilgilerini eksiksiz ve doğru şekilde
+                                        girmelisin</p>
+                                    <div class="row">
+                                        <div class="col-lg-6">
+                                            <div class="form-group">
+                                                <label>Taşınacak Ürünün £ Cinsinden Toplam Değeri</label>
+                                                <input type="text" class="form-control">
+                                                <small class="opacity-1">Değeri 700.000 £'ye kadar olan taşımalarınız
+                                                    Dinçer Lojistik tarafından sigortalanmıştır.</small>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <div class="form-group">
+                                                <label>Müşteri İrsaliye Numarası <span>*</span></label>
+                                                <input type="text" class="form-control">
+                                                <small class="opacity-1">Taşımaya ait irsaliye numarasını girerek taşıma
+                                                    takibini daha kolay yapabilirsin.</small>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <div class="form-group">
+                                                <label>Sipariş Numarası (opsiyonel)</label>
+                                                <input type="text" class="form-control">
+                                                <small class="opacity-1">Taşımaya ait sipariş numarasını girerek taşıma
+                                                    takibini daha kolay yapabilirsin.</small>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-12">
+                                            <div class="form-group">
+                                                <label>Sipaiş Notu (opsiyonel)</label>
+                                                <textarea name="note" class="form-control" id="" cols="30"
+                                                    rows="10"></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </fieldset>
+                                <h3>
+                                    <span class="fonticon-wrap mr-1">
+                                        <i class="livicon-evo"
+                                            data-options="name:diagram.svg; size: 50px; style:lines; strokeColor:#adb5bd;"></i>
+                                    </span>
+                                    <span class="icon-title">
+                                        <span class="d-block">DAĞITIM BİLGİLERİ</span>
+                                        <small class="text-muted" style="text-transform: capitalize;">Dağıtım
+                                            detayları</small>
+                                    </span>
+                                </h3>
+                                <fieldset class="pt-0">
+                                    <h6 class="py-50">Dağıtım Bilgileri</h6>
+                                    <div class="row">
+                                        <div class="col-lg-8">
+                                            <div class="bgBox">
+                                                <h6>Fiyat Seçimi</h6>
+                                                <p>Ücretlendirme; dağıtım bölgesi ve tercih edilen teslim seçeneğine
+                                                    göre değişiklik göstermektedir.</p>
+                                                <div>
+                                                    <div class="table-responsive">
+                                                        <table id="pricetable" class="table mb-0">
+                                                            <thead class="theadColor ">
+                                                                <tr class="">
+                                                                    <th></th>
+                                                                    <th>
+                                                                        <div class="d-flex">
+                                                                            <i style="font-size: 25px;margin-right:6px;"
+                                                                                class="bx bxs-package text-dark"></i>
+                                                                            <span>Ekonomik Teslimat</span>
+                                                                        </div>
+                                                                    </th>
+                                                                    <th>
+                                                                        <div class="d-flex">
+                                                                            <i style="font-size: 25px;margin-right:6px;"
+                                                                                class="bx bxs-truck text-dark"></i>
+                                                                            <span>Standart Teslimat</span>
+                                                                        </div>
+                                                                    </th>
+                                                                    <th>
+                                                                        <div class="d-flex">
+                                                                            <i style="font-size: 25px;margin-right:6px;"
+                                                                                class="bx bx-rocket text-dark"></i>
+                                                                            <span>We Lokal Express</span>
+                                                                        </div>
+                                                                    </th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td>
+                                                                        <strong>Anıt Mimarlık</strong>
+                                                                        <p>Kocaeli <br>
+                                                                            Derince, TR <br>
+                                                                            (133 Desi)
+                                                                        </p>
+                                                                    </td>
+                                                                    <td class="text-center">-</td>
+                                                                    <td class="text-center">-</td>
+                                                                    <td>
+                                                                        <div class="priceBox text-center">
+                                                                            <br>
+                                                                            <h4 class="price">
+                                                                                736
+                                                                                <i class="fa-solid fa-sterling-sign"></i>
+                                                                                
+                                                                            </h4>
+                                                                            <div>Teslim Tarihi</div>
+                                                                            <h6>20 Nisan</h6>
+                                                                        </div>
+                                                                    </td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row mt-2">
+                                                <div class="col-lg-6" id="paymentMethod">
+                                                    <div class="bgBox active">
+                                                        <h6>Teslimattan sonra öde</h6>
+                                                        <p>
+                                                            Teslimat bitiminden itibaren 3 gün içinde
+                                                            ödeme tamamlanmalıdır.
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-6" id="paymentMethod">
+                                                    <div class="bgBox" data-toggle="modal" data-target="#payment">
+                                                        <h6>Şimdi Öde
+                                                            <div class="badge badge-light-success mr-1">%5 İndirim</div>
+                                                        </h6>
+                                                        <p>
+                                                            Şimdi ödeme yaparsanız %5 indirim fırsatından
+                                                            faydalanabilirsiniz.
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4">
+                                            <div class="bgBox">
+                                                <h6>Yükleme Özeti</h6>
+                                                <div class="row mt-2">
+                                                    <div class="col-lg-1"></div>
+                                                    <div class="col-lg-2">
+                                                        <i class="bx bx-map-pin" style="font-size: 24px"></i>
+                                                    </div>
+                                                    <div class="col-lg-9">
+                                                        <span>WE LOCAL A.Ş.</span>
+                                                        <div><small>DERİNCE</small></div>
+                                                    </div>
+                                                    <div class="col-lg-12">
+                                                        <hr>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-lg-1"></div>
+                                                    <div class="col-lg-2">
+                                                        <i class="bx bx-calendar" style="font-size: 24px"></i>
+                                                    </div>
+                                                    <div class="col-lg-9">
+                                                        <span>22 Nisan 2021</span>
+                                                    </div>
+                                                    <div class="col-lg-12">
+                                                        <hr>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-lg-1"></div>
+                                                    <div class="col-lg-2">
+                                                        <i class="bx bxs-time" style="font-size: 24px"></i>
+                                                    </div>
+                                                    <div class="col-lg-9">
+                                                        <span>09:00 - 14:00</span>
+                                                    </div>
+                                                    <div class="col-lg-12">
+                                                        <hr>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-lg-1"></div>
+                                                    <div class="col-lg-2">
+                                                        <i class="bx bxs-cube-alt" style="font-size: 24px"></i>
+                                                    </div>
+                                                    <div class="col-lg-9">
+                                                        <span>Kimyasal Ürünler</span>
+                                                    </div>
+                                                    <div class="col-lg-12">
+                                                        <hr>
+                                                    </div>
+                                                </div>
+                                                <h6>Ödeme Özeti</h6>
+                                                <div class="row mt-1">
+                                                    <div class="col-lg-6">
+                                                        <span>Fatura Adresi</span>
+                                                        <p style="font-size: 10px" class="text-muted">
+                                                            WE LOCAL 
+                                                            MASLAK MAH. DEREBOYU CAD. MEYDAN SOK. BEYBİ GİZ PLAZA KAT:15 İSTANBUL
+                                                           
+                                                        </p>
+                                                    </div>
+                                                    <div class="col-lg-6">
+                                                        <span>Vergi Dairesi</span>
+                                                        <p style="font-size: 10px" class="text-muted">
+                                                            Kartal <br> 2980472729
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </fieldset>
+                            </form>
+                        </div>
+                    </div>
+                </section>
+                <!-- vertical Wizard end-->
+            </div>
+        </div>
+    </div>
+    <!-- END: Content-->
+
+    <!-- demo chat-->
+    <div class="widget-chat-demo">
+        <!-- widget chat demo footer button start -->
+        <button class="btn btn-primary chat-demo-button glow"><i class="livicon-evo"
+                data-options="name: comments.svg; style: lines; size: 24px; strokeColor: #fff; autoPlay: true; repeat: loop;"></i></button>
+        <!-- widget chat demo footer button ends -->
+        <<div class="widget-chat widget-chat-demo d-none">
+            <div class="card mb-0">
+                <div class="card-header border-bottom p-0">
+                    <div class="media m-75">
+                        <a href="JavaScript:void(0);">
+                            <div class="avatar mr-75">
+                                <img src="app-assets/images/portrait/small/avatar-s-2.jpg" alt="avtar images" width="32"
+                                    height="32">
+                                <span class="avatar-status-online"></span>
+                            </div>
+                        </a>
+                        <div class="media-body">
+                            <h6 class="media-heading mb-0 pt-25"><a href="javaScript:void(0);">Temsilci</a></h6>
+                            <span class="text-muted font-small-3">Aktif</span>
+                        </div>
+                    </div>
+                    <div class="heading-elements">
+                        <i class="bx bx-x widget-chat-close float-right my-auto cursor-pointer"></i>
+                    </div>
+                </div>
+                <div class="card-body widget-chat-container widget-chat-scroll">
+                    <div class="chat-content">
+                        <div class="badge badge-pill badge-light-secondary my-1">Bugün</div>
+                        <div class="chat chat-left">
+                            <div class="chat-body">
+                                <div class="chat-message">
+                                    <p>Merhaba, destek hattımıza hoşgeldiniz. Size nasıl yardımcı olabilirim ?</p>
+                                    <span class="chat-time">7:50</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="chat">
+                            <div class="chat-body">
+                                <div class="chat-message">
+                                    <p>Merhaba, siparişimin durumunu öğrenmek istiyorum.</p>
+                                    <span class="chat-time">7:45</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="chat chat-left">
+                            <div class="chat-body">
+                                <div class="chat-message">
+                                    <p>Kargonuz bugün yola çıkacak.</p>
+                                    <span class="chat-time">7:44</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="chat">
+                            <div class="chat-body">
+                                <div class="chat-message">
+                                    <p>Ne zaman teslim olur ?</p>
+                                    <span class="chat-time">7:42</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="chat chat-left">
+                            <div class="chat-body">
+                                <div class="chat-message">
+                                    <p>Üç iş günü içerisinde teslim olacaktır.</p>
+                                    <span class="chat-time">7:40</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="chat">
+                            <div class="chat-body">
+                                <div class="chat-message">
+                                    <p>Teşekkürler.</p>
+                                    <span class="chat-time">7:37</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="chat chat-left">
+                            <div class="chat-body">
+                                <div class="chat-message">
+                                    <p>İyi günler.</p>
+                                    <span class="chat-time">7:33</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer border-top p-1">
+                    <form class="d-flex" onsubmit="widgetChatMessageDemo();" action="javascript:void(0);">
+                        <input type="text" class="form-control chat-message-demo mr-75" placeholder="Type here...">
+                        <button type="submit" class="btn btn-primary glow px-1"><i
+                                class="bx bx-paper-plane"></i></button>
+                    </form>
+                </div>
+            </div>
+    </div>
+
+
+    </div>
+
+    <div class="sidenav-overlay"></div>
+    <div class="drag-target"></div>
+
+    <div class="modal fade " id="inlineForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel33"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="myModalLabel33">Yeni Adres Ekle</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <i class="bx bx-x"></i>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="form-group">
+                                <label>Adres Adı <span>*</span></label>
+                                <input type="text" placeholder="Adres adı giriniz" class="form-control">
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="form-group">
+                                <label for="filters-list-status2">Ülke <span class="text-danger">*</span></label>
+                                <select data-placeholder="Ülke" id="filters-list-status2"
+                                    class="select2-icons form-control" id="select2-icons">
+                                    <option value="1" selected>Türkiye</option>
+                                    <option value="2">Almanya</option>
+                                    <option value="3">Afganistan</option>
+                                    <option value="4">Amerika</option>
+                                    <option value="5">Fransa</option>
+                                    <option value="6">İspanya</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="form-group">
+                                <label>Adres Arama <span>*</span></label>
+                                <input type="text" placeholder="Adres bilgisi giriniz" class="form-control">
+                            </div>
+                        </div>
+                        <div class="col-lg-12">
+                            <div class="form-group">
+                                <label>Detay Adres</label>
+                                <input type="text" placeholder="Detaylı adres giriniz." class="form-control">
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="form-group">
+                                <label>Ünvan</label>
+                                <input type="text" placeholder="Ünvan giriniz." class="form-control">
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="form-group">
+                                <label>İl</label>
+                                <input type="text" placeholder="İl giriniz." class="form-control">
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="form-group">
+                                <label>İlçe</label>
+                                <input type="text" placeholder="İlçe giriniz." class="form-control">
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="form-group">
+                                <label>Vergi Numarası (Gerçek Kişiler için T.C. Numarası )</label>
+                                <input type="text" placeholder="" class="form-control">
+                            </div>
+                        </div>
+                        <div class="col-lg-12">
+                            <div class="mapouter">
+                                <div class="gmap_canvas"><iframe style="width: 100%;" height="350" id="gmap_canvas"
+                                        src="https://maps.google.com/maps?q=istanbul&t=&z=13&ie=UTF8&iwloc=&output=embed"
+                                        frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><br>
+                                    <style>
+                                        .mapouter {
+                                            position: relative;
+                                            text-align: right;
+                                            height: 350px
+                                        }
+                                    </style>
+                                    <style>
+                                        .gmap_canvas {
+                                            overflow: hidden;
+                                            background: none !important;
+                                            height: 350px;
+                                        }
+                                    </style>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-12 mt-2">
+                            <h5>Müşteri Kısıtları</h5>
+                            <div class="table-responsive">
+                                <table class="table">
+                                    <tbody>
+                                        <tr>
+                                            <td class="text-bold-500">Cumartesi ve Pazar günü boşaltma var mıdır ?</td>
+                                            <td>
+                                                <fieldset>
+                                                    <div class="checkbox checkbox-success checkbox-glow">
+                                                        <input type="checkbox" id="checkboxGlow3" checked>
+                                                        <label for="checkboxGlow3">Evet</label>
+                                                    </div>
+                                                </fieldset>
+
+                                            </td>
+                                            <td>
+                                                <fieldset>
+                                                    <div class="checkbox checkbox-danger checkbox-glow">
+                                                        <input type="checkbox" id="checkboxGlow4">
+                                                        <label for="checkboxGlow4">Hayır</label>
+                                                    </div>
+                                                </fieldset>
+                                            </td>
+                                        </tr>
+                                        <tr id="kirkayak">
+                                            <td class="text-bold-500">Kırkayak girebilir mi ?</td>
+                                            <td>
+                                                <fieldset>
+                                                    <div class="checkbox checkbox-success checkbox-glow">
+                                                        <input type="checkbox" id="checkboxGlow3" checked>
+                                                        <label for="checkboxGlow3">Evet</label>
+                                                    </div>
+                                                </fieldset>
+
+                                            </td>
+                                            <td>
+                                                <fieldset>
+                                                    <div class="checkbox checkbox-danger checkbox-glow">
+                                                        <input type="checkbox" id="checkboxGlow4">
+                                                        <label for="checkboxGlow4">Hayır</label>
+                                                    </div>
+                                                </fieldset>
+                                            </td>
+                                        </tr>
+                                        <tr id="tir">
+                                            <td class="text-bold-500">Tır girebilir mi ?</td>
+                                            <td>
+                                                <fieldset>
+                                                    <div class="checkbox checkbox-success checkbox-glow">
+                                                        <input type="checkbox" id="checkboxGlow3" checked>
+                                                        <label for="checkboxGlow3">Evet</label>
+                                                    </div>
+                                                </fieldset>
+
+                                            </td>
+                                            <td>
+                                                <fieldset>
+                                                    <div class="checkbox checkbox-danger checkbox-glow">
+                                                        <input type="checkbox" id="checkboxGlow4">
+                                                        <label for="checkboxGlow4">Hayır</label>
+                                                    </div>
+                                                </fieldset>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-light-secondary mr-1 mb-1" data-dismiss="modal">
+                        Kapat
+                    </button>
+                    <button type="button" class="btn btn-success glow mr-1 mb-1" data-dismiss="modal">Kaydet</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade " id="payment" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Ödeme Yap</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <i class="bx bx-x"></i>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="form-group">
+                                <label for="eventName13">Kart Sahibi Ad Soyad</label>
+                                <input type="text" class="form-control" id="eventName13" placeholder="Ad Soyad Giriniz">
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="form-group">
+                                <label>Kart Numarası</label>
+                                <input type="text" class="form-control" placeholder="Kart No Giriniz">
+                                <small class="form-text text-muted">Banka/Kredi Kartı Numarası</small>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="form-group">
+                                <label>Kart Son Kullanma Tarihi (Ay)</label>
+                                <input type="number" class="form-control" name="ccmonth" placeholder="" value="01">
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="form-group">
+                                <label>Kart Son Kullanma Tarihi (Yıl)</label>
+                                <input type="number" class="form-control" name="ccyear" placeholder="" value="21">
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="form-group">
+                                <label>Kartınızın CVV Kodu</label>
+                                <input type="password" class="form-control" name="ccyear" placeholder="" value="212">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-success glow mr-1 mb-1" data-dismiss="modal">Ödeme Yap</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row" id="areaBlock" style="display: none">
+        <div class="col-sm-3">
+            <div class="form-group">
+                <label for="filters-list-status2">DURAK YERİ <span class="text-danger">*</span></label>
+                <select data-placeholder="Bitiş Noktası" id="filters-list-status5" class="select2-icons form-control"
+                    id="select2-icons">
+                    <option value="1" selected>Türkiye</option>
+                    <option value="2">Almanya</option>
+                    <option value="3">Afganistan</option>
+                    <option value="4">Amerika</option>
+                    <option value="5">Fransa</option>
+                    <option value="6">İspanya</option>
+                </select>
+            </div>
+        </div>
+        <div class="col-sm-3">
+            <div class="form-group">
+                <label for="eventLocation12">ADRES YETKİLİ ADI <span class="text-danger">*</span></label>
+                <input type="text" class="form-control" id="eventName13" placeholder="Yetkili adı giriniz">
+            </div>
+        </div>
+        <div class="col-sm-3">
+            <div class="form-group">
+                <label for="eventLocation123">ADRES YETKİLİ TEL NO <span class="text-danger">*</span></label>
+                <input type="text" class="form-control" id="eventName13" placeholder="Yetkili adı giriniz">
+            </div>
+        </div>
+        <div class="col-sm-3">
+            <div class="form-group">
+                <label for="eventLocation1234">BOŞALTMA TARİHİ VE SAATİ <span class="text-danger">*</span></label>
+                <fieldset class="form-group position-relative has-icon-left">
+                    <input type="datetime-local" class="form-control " placeholder="Tarih Seç">
+                    <div class="form-control-position">
+                        <i class='bx bx-calendar'></i>
+                    </div>
+                </fieldset>
+            </div>
+        </div>
+    </div>
+
+    <div data-include="footer"></div>
+
+    <!-- BEGIN: Vendor JS-->
+    <script src="app-assets/vendors/js/vendors.min.js"></script>
+    <script src="app-assets/fonts/LivIconsEvo/js/LivIconsEvo.tools.js"></script>
+    <script src="app-assets/fonts/LivIconsEvo/js/LivIconsEvo.defaults.js"></script>
+    <script src="app-assets/fonts/LivIconsEvo/js/LivIconsEvo.min.js"></script>
+    <!-- BEGIN Vendor JS-->
+    <script src="app-assets/vendors/js/forms/repeater/jquery.repeater.min.js"></script>
+    <!-- BEGIN: Page Vendor JS-->
+    <script src="app-assets/vendors/js/tables/datatable/jquery.dataTables.min.js"></script>
+    <script src="app-assets/vendors/js/tables/datatable/dataTables.bootstrap4.min.js"></script>
+    <script src="app-assets/vendors/js/tables/datatable/dataTables.buttons.min.js"></script>
+    <script src="app-assets/vendors/js/tables/datatable/buttons.html5.min.js"></script>
+    <script src="app-assets/vendors/js/tables/datatable/buttons.print.min.js"></script>
+    <script src="app-assets/vendors/js/tables/datatable/buttons.bootstrap4.min.js"></script>
+    <script src="app-assets/vendors/js/tables/datatable/pdfmake.min.js"></script>
+    <script src="app-assets/vendors/js/tables/datatable/vfs_fonts.js"></script>
+
+
+
+    <!-- BEGIN: Theme JS-->
+    <script src="app-assets/js/scripts/configs/vertical-menu-dark.js"></script>
+    <script src="app-assets/js/core/app-menu.js"></script>
+    <script src="app-assets/js/core/app.js"></script>
+    <script src="app-assets/js/scripts/components.js"></script>
+    <script src="app-assets/js/scripts/footer.js"></script>
+    <!-- END: Theme JS-->
+
+    <!-- BEGIN: Page JS-->
+    <script src="app-assets/vendors/js/forms/select/select2.full.min.js"></script>
+    <script src="app-assets/js/scripts/datatables/datatable.js"></script>
+    <script src="assets/js/scripts.js"></script>
+    <script src="app-assets/vendors/js/extensions/jquery.steps.min.js"></script>
+    <script src="app-assets/vendors/js/forms/validation/jquery.validate.min.js"></script>
+
+    <script src="app-assets/js/scripts/forms/wizard-steps.js"></script>
+    <script src="app-assets/js/scripts/forms/form-repeater.js"></script>
+    <script src="app-assets/js/scripts/forms/select/form-select2.js"></script>
+    <script src="https://kit.fontawesome.com/c34546ed83.js" crossorigin="anonymous"></script>
+    <script src="app-assets/js/scripts/popover/popover.js"></script>
+    <script src="app-assets/js/scripts/tooltip/tooltip.js"></script>
+
+    <!-- BEGIN: Page Vendor JS-->
+    <script src="app-assets/vendors/js/pickers/pickadate/picker.js"></script>
+    <script src="app-assets/vendors/js/pickers/pickadate/picker.date.js"></script>
+    <script src="app-assets/vendors/js/pickers/pickadate/picker.time.js"></script>
+    <script src="app-assets/vendors/js/pickers/pickadate/legacy.js"></script>
+    <script src="app-assets/vendors/js/extensions/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.17.1/locale/tr.js"></script>
+
+    <script src="app-assets/vendors/js/pickers/daterange/daterangepicker.js"></script>
+    <script src="app-assets/js/scripts/pickers/dateTime/pick-a-datetime.min.js"></script>
+    <script src="app-assets/js/scripts/pages/bootstrap-toast.min.js"></script>
+    <style>
+        .list-group-flush a,
+        .list-group-flush a:hover {
+            border: 2px dashed #304256 !important;
+            border-radius: 6px !important;
+        }
+
+        .list-group-flush a.active {
+            background-color: #304256 !important;
+        }
+
+        body.dark-layout .list-group .list-group-item.active h5 {
+            color: #bdd1f8 !important;
+        }
+
+        body.dark-layout p,
+        body.dark-layout small,
+        body.dark-layout span:not(.badge):not(.token),
+        body.dark-layout label {
+            color: #8a99b5 !important;
+        }
+
+        #subCheckbox .list-group-item,
+        #threeCheckbox .list-group-item {
+            justify-content: center;
+        }
+
+        #subCheckbox .list-group-item h5,
+        #threeCheckbox .list-group-item h5 {
+            margin-top: 7px;
+        }
+
+        .info-box {
+            font-size: 14px !important;
+            float: right;
+            display: flex;
+            position: absolute;
+            right: 16px;
+        }
+
+        .is_adr {
+            display: none;
+        }
+
+        .is_adr_sevk {
+            display: none;
+        }
+
+        body.dark-layout .theadColor {
+            background-color: #262e48;
+        }
+
+        .theadColor {
+            background: #d4d4d4;
+        }
+
+        body.dark-layout .packageBox {
+            background-color: #353d51;
+        }
+
+        .packageBox {
+            background-color: #eaeaea;
+            padding: 15px;
+            border-radius: 15px;
+        }
+
+        .packageBox h6 {
+            margin-bottom: 13px;
+        }
+
+        .packageBox p {
+            margin: 0;
+        }
+
+        .packageBox .cancelBox {
+            float: right;
+            padding: 0 0 0 6px;
+            border-radius: 50%;
+            width: 22px;
+            height: 22px;
+            color: red !important;
+        }
+
+        .bgBox {
+            padding: 15px;
+            background: #eaeaea;
+            border-radius: 8px;
+        }
+
+        body.dark-layout .bgBox {
+            background: #323c5f;
+        }
+
+        #paymentMethod .active {
+            background: #eaeaea;
+            border: 1px solid #37663b;
+        }
+
+        body.dark-layout #paymentMethod .active {
+            background: #323c5f;
+            border: 1px solid #37663b;
+        }
+
+        #paymentMethod .bgBox {
+            cursor: pointer
+        }
+
+        .priceBox {
+            background: #d4d4d4;
+            border-radius: 9px;
+            border: solid #d4d4d4;
+            width: 180px;
+            height: 128px;
+            padding: 5px;
+        }
+
+        .payMent-tl {
+            color: #697da2;
+            font-size: 19px;
+        }
+
+        body.dark-layout .payMent-tl {
+            color: #bdd1f8;
+            font-size: 19px;
+        }
+
+        body.dark-layout .priceBox {
+            background: #262e48;
+            border-radius: 9px;
+            border: 1px solid #41556f;
+            width: 180px;
+            height: 128px;
+            padding: 5px;
+        }
+
+        .card-body {
+            padding: 0.5rem;
+        }
+
+        html .navbar-sticky .app-content .content-wrapper {
+            padding: 1.8rem 1.1rem 0;
+        }
+
+        .maxText {
+            width: 100%;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
+
+        .opacity-1 {
+            opacity: 0.7;
+        }
+
+
+        .list-group-flush .subsecimkutusu .active
+        {
+            background-color:none !important;
+        }
+
+        .list-group-flush .subsecimkutusu, .list-group-flush .subsecimkutusu:hover
+        {
+            border:transparent !important;
+        }
+        .secimKutusu a
+        {
+            padding: 0px !important;
+        }
+
+
+    </style>
+
+
+    <script type="text/javascript">
+        var type = 1;
+        function setItem(id) {
+            type = id;
+        }
+        function addRow() {
+            if (type == "") {
+                alert('Lütfen yük türü seçiniz.');
+                return false;
+            }
+            setTimeout(function () {
+                $('.repeater-item:last select').val(type)
+            }, 100);
+        }
+
+        function addStation() {
+            $('#addArea').append($('#areaBlock > div'));
+            $('#addArea #areaBlock').css('display', 'block');
+        }
+
+        $(document).ready(function () {
+
+
+            $('#aracTipi').on('change', function (e) {
+                var val = this.value;
+
+                if (val == "kamyon") {
+                    $('#kirkayak').css('display', 'revert');
+                    $('#tir').css('display', 'revert');
+                } else if (val == "kirkayak") {
+                    $('#kirkayak').css('display', 'none');
+                    $('#tir').css('display', 'revert');
+                }
+            });
+
+            $('#mainCheckbox a').on('click touchstart', function (e) {
+                e.preventDefault();
+                $('#mainCheckbox a').removeClass('active');
+                $(this).addClass('active');
+            })
+
+            $('#threeCheckbox a').on('click touchstart', function (e) {
+
+
+                e.preventDefault();
+                $('#threeCheckbox a').removeClass('active');
+                $(this).addClass('active');
+
+
+
+            })
+
+            $('#subCheckbox a').on('click touchstart', function (e) {
+                e.preventDefault();
+                $('#subCheckbox a').removeClass('active');
+                $(this).addClass('active');
+            })
+
+
+        })
+    </script>
+    <!-- END: Page JS-->
+</body>
+<!-- END: Body-->
+
+</html>

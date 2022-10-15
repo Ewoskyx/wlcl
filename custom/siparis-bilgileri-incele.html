@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html class="loading" lang="en" data-textdirection="ltr">
+<!-- BEGIN: Head-->
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+  <title>We Lokal - Yönetim Paneli</title>
+  <link rel="apple-touch-icon" href="app-assets/images/ico/apple-icon-120.png">
+  <link rel="shortcut icon" type="image/x-icon" href="app-assets/images/favicon.jpeg">
+  <link href="https://fonts.googleapis.com/css?family=Rubik:300,400,500,600%7CIBM+Plex+Sans:300,400,500,600,700"
+    rel="stylesheet">
+
+  <!-- BEGIN: Vendor CSS-->
+  <link rel="stylesheet" type="text/css" href="app-assets/vendors/css/vendors.min.css">
+  <link rel="stylesheet" type="text/css" href="app-assets/vendors/css/charts/apexcharts.css">
+  <link rel="stylesheet" type="text/css" href="app-assets/vendors/css/extensions/swiper.min.css">
+  <!-- END: Vendor CSS-->
+
+  <!-- BEGIN: Theme CSS-->
+  <link rel="stylesheet" type="text/css" href="app-assets/css/bootstrap.css">
+  <link rel="stylesheet" type="text/css" href="app-assets/css/bootstrap-extended.css">
+  <link rel="stylesheet" type="text/css" href="app-assets/css/colors.css">
+  <link rel="stylesheet" type="text/css" href="app-assets/css/components.css">
+  <link rel="stylesheet" type="text/css" href="app-assets/css/themes/dark-layout.css">
+  <link rel="stylesheet" type="text/css" href="app-assets/css/themes/semi-dark-layout.css">
+  <link rel="stylesheet" type="text/css" href="app-assets/map/css/style.css">
+  <!-- END: Theme CSS-->
+
+  <!-- BEGIN: Page CSS-->
+  <link rel="stylesheet" type="text/css" href="app-assets/css/core/menu/menu-types/vertical-menu.css">
+  <link rel="stylesheet" type="text/css" href="app-assets/css/pages/dashboard-ecommerce.css">
+  <!-- END: Page CSS-->
+
+  <!-- BEGIN: Custom CSS-->
+  <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+  <!-- END: Custom CSS-->
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+    integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+
+
+
+
+
+  <link rel="stylesheet" href="assets/css/costum.css">
+
+
+  <script src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js"
+    integrity="sha512-BB3hKbKWOc9Ez/TAwyWxNXeoV9c1v6FIeYiBieIWkpLjauysF18NzgR1MBNBXf8/KABdlkX68nAhlwcDFLGPCQ=="
+    crossorigin=""></script>
+
+
+
+
+
+  <style>
+    html,
+    body {
+      height: 100%;
+      margin: 0;
+    }
+
+    .leaflet-container {
+      height: 600px;
+      width: 2000px;
+      max-width: 100%;
+      max-height: 100%;
+    }
+
+    .leaflet-control-attribution.leaflet-control {
+      display: none !important;
+    }
+  </style>
+
+
+</head>
+<!-- END: Head-->
+<!-- BEGIN: Body-->
+
+<body class="vertical-layout vertical-menu-modern dark-layout 2-columns  navbar-sticky footer-static" data-open="click"
+  data-menu="vertical-menu-modern" data-col="2-columns" data-layout="dark-layout">
+
+  <div id="loader" style="height: 100vh; position: fixed; inset: 0;">
+    <div class="boxes">
+      <div class="box">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+      <div class="box">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+      <div class="box">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+      <div class="box">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </div>
+  </div>
+  <div data-include="header"></div>
+
+  <!-- BEGIN: Main Menu-->
+  <div class="main-menu menu-fixed menu-dark menu-accordion menu-shadow" data-scroll-to-active="true">
+    <div class="navbar-header">
+      <ul class="nav navbar-nav flex-row">
+        <li class="nav-item mr-auto">
+          <a class="navbar-brand" href="dashboard.html">
+
+            <h2 class="brand-text mb-0"><img style="margin-top: 9px" height="45" src="app-assets/images/logo-dark.png"
+                alt=""></h2>
+          </a>
+        </li>
+        <li class="nav-item nav-toggle"><a class="nav-link modern-nav-toggle pr-0" data-toggle="collapse"><i
+              class="bx bx-x d-block d-xl-none font-medium-4 primary"></i><i
+              class="toggle-icon bx bx-disc font-medium-4 d-none d-xl-block primary" data-ticon="bx-disc"></i></a></li>
+      </ul>
+    </div>
+    <div class="shadow-bottom"></div>
+
+    <style>
+      .main-menu-content ul>li {
+        margin-top: 5px !important;
+      }
+    </style>
+    <div class="main-menu-content">
+      <ul class="navigation navigation-main" id="main-menu-navigation" data-menu="menu-navigation"
+        data-icon-style="lines">
+        <li class=" nav-item"><a href="book.html"><i class="menu-livicon" data-icon="map"></i><span
+              class="menu-title text-truncate" data-i18n="Book">Book</span></a>
+        </li>
+        <li class=" nav-item"><a href="dashboard.html"><i class="menu-livicon" data-icon="home"></i><span
+              class="menu-title text-truncate" data-i18n="Anasayfa">Anasayfa</span></a>
+        </li>
+        <li class="active nav-item"><a class="d-flex align-items-center" href="siparis.html"><i
+              class="bx bx-right-arrow-alt"></i><span class="menu-item text-truncate"
+              data-i18n="Depo Sevkiyat">Siparisler</span></a>
+        </li>
+
+        <li><a class="d-flex align-items-center" href="sikayet.html"><i class="bx bx-right-arrow-alt"></i><span
+              class="menu-item text-truncate" data-i18n="Şikayetler">Şikayetler</span></a>
+        </li>
+
+        <li class="nav-item"><a href="fatura.html"><i class="menu-livicon" data-icon="calculator"></i><span
+              class="menu-title text-truncate" data-i18n="Dağıtım Bilgileri">Fatura Bilgileri</span></a>
+        </li>
+        <li class=" nav-item"><a href="profile.html"><i class="menu-livicon" data-icon="user"></i><span
+              class="menu-title text-truncate" data-i18n="Profil">Profil</span></a>
+        </li>
+
+
+        <li class=" nav-item"><a href="definitions.html"><i class="menu-livicon" data-icon="briefcase"></i><span
+              class="menu-title text-truncate" data-i18n="Tanımlamalar">Tanımlamalar</span></a>
+        </li>
+
+
+
+
+      </ul>
+    </div>
+  </div>
+  <!-- END: Main Menu-->
+
+  <!-- BEGIN: Content-->
+  <div class="app-content content">
+    <div class="content-overlay"></div>
+    <div class="content-wrapper">
+      <div class="content-header row">
+        <div class="content-header-left col-12 mb-2 mt-1">
+          <div class="breadcrumbs-top">
+            <div class="breadcrumb-wrapper d-none d-sm-block">
+              <ol class="breadcrumb p-0 mb-0">
+                <li class="breadcrumb-item"><a href="../dashboard.html"><i class="bx bx-home-alt"></i></a>
+                </li>
+                <li class="breadcrumb-item">Gönderi Ayrıntıları
+                </li>
+              </ol>
+
+              <button type="button" class="btn btn-primary  float-right" data-toggle="modal" data-target="#myModal">
+                Kargo Canlı Takip
+              </button>
+
+
+
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="content-body">
+
+        <section id="validation">
+          <div class="row">
+            <div class="col-12">
+              <div class="card">
+
+                <div class="card-body">
+                  <ul class="nav nav-tabs process-model more-icon-preocess" role="tablist">
+                    <li role="presentation" class="iconBox">
+                      <a href="#" aria-controls="discover" role="tab" data-toggle="tab">
+                        <span>
+                          <img class="test" src="app-assets/images/1.png" alt="">
+                          <!-- <i class="menu-livicon" data-icon="home"></i> -->
+                        </span>
+                        <p class="status">
+                          Müşteriden Teslim Alınacak
+
+                        </p>
+                      </a>
+                    </li>
+                    <li role="presentation" class="iconBox"><a href="#" aria-controls="strategy" role="tab"
+                        data-toggle="tab">
+                        <span>
+                          <img class="image" src="app-assets/images/2.png" alt="">
+                          <!-- <i class="menu-livicon" data-icon="bank"></i> -->
+                        </span>
+                        <p class="status">
+                          Aktarma Merkezinde
+
+                        </p>
+                      </a></li>
+                    <li role="presentation" class="iconBox"><a href="#" aria-controls="optimization" role="tab"
+                        data-toggle="tab">
+                        <span>
+                          <img class="image" src="app-assets/images/3.png" alt="">
+                          <!-- <i class="menu-livicon" data-icon="truck"></i> -->
+                        </span>
+                        <p class="status">
+                          Yolda
+
+                        </p>
+                      </a>
+                    </li>
+                    <li class="justify-content-end iconBox" role="presentation">
+                      <a href="#" aria-controls="content" role="tab" data-toggle="tab">
+                        <span>
+                          <img class="image" src="app-assets/images/4.png" alt="">
+                          <!-- <i class="menu-livicon" data-icon="check"></i> -->
+                        </span>
+                        <p class="status">
+                          Teslim Edildi
+
+                        </p>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+
+        <!-- Dashboard Ecommerce Starts -->
+        <div id="accordion-icon-wrapper1" class="collapse-icon accordion-icon-rotate">
+          <div class="accordion" id="accordionWrapar2" data-toggle-hover="true">
+            <div class="card collapse-header">
+              <div id="heading5" class="card-header collapsed" data-toggle="collapse" role="button"
+                data-target="#accordion5" aria-expanded="false" aria-controls="accordion5">
+                <span class="collapse-title d-flex align-items-center"><i class="bx bxs-circle font-small-1"></i>
+                  Gönderi Alıcısına Teslim Edildi.
+                </span>
+              </div>
+              <div id="accordion5" role="tabpanel" data-parent="#accordionWrapar2" aria-labelledby="heading5"
+                class="collapse" style="">
+                <div class="card-body">
+                  Gönderi Mehmet Tuna Sözüdoğru ya saat 16.00 da teslim edildi.
+                </div>
+              </div>
+            </div>
+            <div class="card collapse-header">
+              <div id="heading6" class="card-header" data-toggle="collapse" role="button" data-target="#accordion66"
+                aria-expanded="false" aria-controls="accordion66">
+                <span class=" collapse-title d-flex align-items-center"><i class="bx bxs-circle font-small-1"></i>
+                  Gönderi Dağıtımda
+                </span>
+              </div>
+              <div id="accordion66" role="tabpanel" data-parent="#accordionWrapar2" aria-labelledby="heading6"
+                class="collapse" aria-expanded="false">
+                <div class="card-body">
+                  Gönderiniz gün içinde teslim edilecektir.
+                </div>
+              </div>
+            </div>
+            <div class="card collapse-header">
+              <div id="heading17" class="card-header" data-toggle="collapse" role="button" data-target="#accordion71"
+                aria-expanded="false" aria-controls="accordion71">
+                <span class=" collapse-title d-flex align-items-center"><i class="bx bxs-circle font-small-1"></i>
+                  Gönderi Aktarmada
+                </span>
+              </div>
+              <div id="accordion71" role="tabpanel" data-parent="#accordionWrapar2" aria-labelledby="heading17"
+                class="collapse" aria-expanded="false">
+                <div class="card-body">
+                  İstanbul avrupa aktarma bölgesinde işlemleri gerçekleştiriliyor.
+                </div>
+              </div>
+            </div>
+            <div class="card collapse-header">
+              <div id="heading81" class="card-header" data-toggle="collapse" role="button" data-target="#accordion801"
+                aria-expanded="false" aria-controls="accordion801">
+                <span class=" collapse-title d-flex align-items-center"><i class="bx bxs-circle font-small-1"></i>
+                  Gönderi yollandı
+                </span>
+              </div>
+              <div id="accordion801" role="tabpanel" data-parent="#accordionWrapar2" aria-labelledby="heading81"
+                class="collapse" aria-expanded="false">
+                <div class="card-body">
+                  Gönderi kişi tarafından 15.00 da istanbuldan gönderilmiştir.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Dashboard Ecommerce ends -->
+      </div>
+    </div>
+  </div>
+  <!-- END: Content-->
+
+  <!-- demo chat-->
+  <div class="widget-chat-demo">
+    <!-- widget chat demo footer button start -->
+    <button class="btn btn-primary chat-demo-button glow"><i class="livicon-evo"
+        data-options="name: comments.svg; style: lines; size: 24px; strokeColor: #fff; autoPlay: true; repeat: loop;"></i></button>
+    <!-- widget chat demo footer button ends -->
+    <div class="widget-chat widget-chat-demo d-none">
+      <div class="card mb-0">
+        <div class="card-header border-bottom p-0">
+          <div class="media m-75">
+            <a href="JavaScript:void(0);">
+              <div class="avatar mr-75">
+                <img src="app-assets/images/portrait/small/avatar-s-2.jpg" alt="avtar images" width="32" height="32">
+                <span class="avatar-status-online"></span>
+              </div>
+            </a>
+            <div class="media-body">
+              <h6 class="media-heading mb-0 pt-25"><a href="javaScript:void(0);">Temsilci</a></h6>
+              <span class="text-muted font-small-3">Aktif</span>
+            </div>
+          </div>
+          <div class="heading-elements">
+            <i class="bx bx-x widget-chat-close float-right my-auto cursor-pointer"></i>
+          </div>
+        </div>
+        <div class="card-body widget-chat-container widget-chat-scroll">
+          <div class="chat-content">
+            <div class="badge badge-pill badge-light-secondary my-1">Bugün</div>
+            <div class="chat chat-left">
+              <div class="chat-body">
+                <div class="chat-message">
+                  <p>Merhaba, destek hattımıza hoşgeldiniz. Size nasıl yardımcı olabilirim ?</p>
+                  <span class="chat-time">7:50</span>
+                </div>
+              </div>
+            </div>
+            <div class="chat">
+              <div class="chat-body">
+                <div class="chat-message">
+                  <p>Merhaba, siparişimin durumunu öğrenmek istiyorum.</p>
+                  <span class="chat-time">7:45</span>
+                </div>
+              </div>
+            </div>
+            <div class="chat chat-left">
+              <div class="chat-body">
+                <div class="chat-message">
+                  <p>Kargonuz bugün yola çıkacak.</p>
+                  <span class="chat-time">7:44</span>
+                </div>
+              </div>
+            </div>
+            <div class="chat">
+              <div class="chat-body">
+                <div class="chat-message">
+                  <p>Ne zaman teslim olur ?</p>
+                  <span class="chat-time">7:42</span>
+                </div>
+              </div>
+            </div>
+            <div class="chat chat-left">
+              <div class="chat-body">
+                <div class="chat-message">
+                  <p>Üç iş günü içerisinde teslim olacaktır.</p>
+                  <span class="chat-time">7:40</span>
+                </div>
+              </div>
+            </div>
+            <div class="chat">
+              <div class="chat-body">
+                <div class="chat-message">
+                  <p>Teşekkürler.</p>
+                  <span class="chat-time">7:37</span>
+                </div>
+              </div>
+            </div>
+            <div class="chat chat-left">
+              <div class="chat-body">
+                <div class="chat-message">
+                  <p>İyi günler.</p>
+                  <span class="chat-time">7:33</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card-footer border-top p-1">
+          <form class="d-flex" onsubmit="widgetChatMessageDemo();" action="javascript:void(0);">
+            <input type="text" class="form-control chat-message-demo mr-75" placeholder="Type here...">
+            <button type="submit" class="btn btn-primary glow px-1"><i class="bx bx-paper-plane"></i></button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="sidenav-overlay"></div>
+  <div class="drag-target"></div>
+  <div class="modal fade" id="modal_id" tabindex="-1" role="dialog" aria-labelledby="modal_name_label"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title" id="modal_name_label">
+            Modal Başlık
+          </h4>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <i class="bx bx-x"></i>
+          </button>
+        </div>
+        <div class="modal-body">
+          <section id="basic-datatable">
+            <div class="filters-list-filter px-1">
+            </div>
+            <div class="row">
+              <div class="col-12">
+                <div class="card">
+                  <div class="card-body card-dashboard pt-0">
+                    <div class="table-responsive">
+                      <table id="example" class="table" data-searching="false">
+                        <thead class="tableThead">
+                          <tr>
+                            <th>Kodu</th>
+                            <th>#</th>
+                            <th>#</th>
+                            <th>#</th>
+                            <th>Toplam Sipariş</th>
+                            <th>Toplam Ağırlık</th>
+                          </tr>
+                        </thead>
+                        <tbody class="tableText">
+                          <tr>
+                            <td>CRM30027</td>
+                            <td>#</td>
+                            <td>#</td>
+                            <td>#</td>
+                            <td>300</td>
+                            <td>350 kg.</td>
+                          </tr>
+                          <tr>
+                            <td>CRM30027</td>
+                            <td>#</td>
+                            <td>#</td>
+                            <td>#</td>
+                            <td>300</td>
+                            <td>350 kg.</td>
+                          </tr>
+                          <tr>
+                            <td>CRM30027</td>
+                            <td>#</td>
+                            <td>#</td>
+                            <td>#</td>
+                            <td>300</td>
+                            <td>350 kg.</td>
+                          </tr>
+                          <tr>
+                            <td>CRM30027</td>
+                            <td>#</td>
+                            <td>#</td>
+                            <td>#</td>
+                            <td>300</td>
+                            <td>350 kg.</td>
+                          </tr>
+                          <tr>
+                            <td>CRM30027</td>
+                            <td>#</td>
+                            <td>#</td>
+                            <td>#</td>
+                            <td>300</td>
+                            <td>350 kg.</td>
+                          </tr>
+                          <tr>
+                            <td>CRM30027</td>
+                            <td>#</td>
+                            <td>#</td>
+                            <td>#</td>
+                            <td>300</td>
+                            <td>350 kg.</td>
+                          </tr>
+                        </tbody>
+                        <tfoot>
+                          <tr>
+                            <th>Kodu</th>
+                            <th>#</th>
+                            <th>#</th>
+                            <th>#</th>
+                            <th>Toplam Sipariş</th>
+                            <th>Toplam Ağırlık</th>
+                          </tr>
+                        </tfoot>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+        <div class="modal-footer mt-2">
+          <button type="button" class="btn btn-light-secondary mr-1 mb-1" data-dismiss="modal">
+            Kapat
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- BEGIN: Footer-->
+  <div data-include="footer"></div>
+  <!-- END: Footer-->
+
+
+
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+              aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="myModalLabel">Kargo Canlı Takip</h4>
+        </div>
+        <div class="modal-body">
+
+          <!-- map container -->
+          <div id="map"></div>
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-dismiss="modal">Kapat</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- BEGIN: Vendor JS-->
+  <script src="app-assets/vendors/js/vendors.min.js"></script>
+  <script src="app-assets/fonts/LivIconsEvo/js/LivIconsEvo.tools.js"></script>
+  <script src="app-assets/fonts/LivIconsEvo/js/LivIconsEvo.defaults.js"></script>
+  <script src="app-assets/fonts/LivIconsEvo/js/LivIconsEvo.min.js"></script>
+  <!-- BEGIN Vendor JS-->
+
+  <!-- BEGIN: Page Vendor JS-->
+  <script src="app-assets/vendors/js/charts/apexcharts.min.js"></script>
+  <script src="app-assets/vendors/js/extensions/swiper.min.js"></script>
+  <!-- END: Page Vendor JS-->
+
+  <!-- BEGIN: Theme JS-->
+  <script src="app-assets/js/scripts/configs/vertical-menu-dark.js"></script>
+  <script src="app-assets/js/core/app-menu.js"></script>
+  <script src="app-assets/js/core/app.js"></script>
+  <script src="app-assets/js/scripts/components.js"></script>
+  <script src="app-assets/js/scripts/footer.js"></script>
+  <!-- END: Theme JS-->
+
+  <!-- BEGIN: Page JS-->
+  <script src="app-assets/js/scripts/pages/dashboard-ecommerce.js"></script>
+  <script src="app-assets/map/js/map.js"></script>
+  <script src="assets/js/scripts.js"></script>
+  <script>
+    svgturkiyeharitasi();
+  </script>
+
+
+
+
+
+
+  <!-- Leaflet assets -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.1/dist/leaflet.css"
+    integrity="sha512-Rksm5RenBEKSKFjgI3a41vrjkw4EVPlJ3+OiI65vTjIdo9brlAacEuKOiQ5OFh7cOI1bkDwLqdLw3Zg0cRJAAQ=="
+    crossorigin="" />
+  <script src="https://unpkg.com/leaflet@1.3.1/dist/leaflet-src.js"
+    integrity="sha512-IkGU/uDhB9u9F8k+2OsA6XXoowIhOuQL1NTgNZHY1nkURnqEGlDZq3GsfmdJdKFe1k1zOc6YU2K7qY+hF9AodA=="
+    crossorigin=""></script>
+
+
+
+
+  <!-- END: Page JS-->
+  <!-- Map-->
+  <script>
+    var map = L.map('map').setView([51.5, -0.09], 13);
+
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+
+    }).addTo(map);
+
+    var LeafIcon = L.Icon.extend({
+      options: {
+
+        iconSize: [30, 30],
+        shadowSize: [30, 30],
+        iconAnchor: [30, 30],
+        shadowAnchor: [4, 62],
+        popupAnchor: [-3, -76]
+      }
+    });
+
+    var greenIcon = new LeafIcon({
+      iconUrl: 'img/images1.png'
+    });
+
+
+    var mGreen = L.marker([51.5, -0.09], {
+      icon: greenIcon
+    }).bindPopup('Ürününüz Yolda').addTo(map);
+
+
+
+
+    // Comment out the below code to see the difference.
+    $('#myModal').on('shown.bs.modal', function () {
+      map.invalidateSize();
+    });
+  </script>
+  <!-- Map-->
+
+
+
+</body>
+<!-- END: Body-->
+
+</html>

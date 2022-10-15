@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html class="loading" lang="en" data-textdirection="ltr">
+  <!-- BEGIN: Head-->
+
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scalable=0"
+    />
+    <title>We Lokal - Yönetim Paneli</title>
+    <link
+      rel="apple-touch-icon"
+      href="app-assets/images/ico/apple-icon-120.png"
+    />
+    <link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="app-assets/images/favicon.jpeg"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Rubik:300,400,500,600%7CIBM+Plex+Sans:300,400,500,600,700"
+      rel="stylesheet"
+    />
+
+    <!-- BEGIN: Vendor CSS-->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="app-assets/vendors/css/vendors.min.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="app-assets/vendors/css/charts/apexcharts.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="app-assets/vendors/css/extensions/swiper.min.css"
+    />
+    <!-- END: Vendor CSS-->
+
+    <!-- BEGIN: Theme CSS-->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="app-assets/css/bootstrap.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="app-assets/css/bootstrap-extended.css"
+    />
+    <link rel="stylesheet" type="text/css" href="app-assets/css/colors.css" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="app-assets/css/components.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="app-assets/css/themes/dark-layout.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="app-assets/css/themes/semi-dark-layout.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="app-assets/map/css/style.css"
+    />
+    <!-- END: Theme CSS-->
+
+    <!-- BEGIN: Page CSS-->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="app-assets/css/core/menu/menu-types/vertical-menu.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="app-assets/css/pages/dashboard-ecommerce.css"
+    />
+    <!-- END: Page CSS-->
+
+    <!-- BEGIN: Custom CSS-->
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
+    <!-- END: Custom CSS-->
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+      integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <link rel="stylesheet" href="assets/css/costum.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.datatables.net/1.12.1/css/dataTables.bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.datatables.net/responsive/2.3.0/css/responsive.bootstrap.min.css"
+    />
+  </head>
+  <!-- END: Head-->
+
+  <!-- BEGIN: Body-->
+
+  <!-- BEGIN: Body-->
+  <body
+    class="vertical-layout vertical-menu-modern dark-layout 2-columns navbar-sticky footer-static"
+    data-open="click"
+    data-menu="vertical-menu-modern"
+    data-col="2-columns"
+    data-layout="dark-layout"
+  >
+    <div id="loader" style="height: 100vh; position: fixed; inset: 0">
+      <div class="boxes">
+        <div class="box">
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+        <div class="box">
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+        <div class="box">
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+        <div class="box">
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+      </div>
+    </div>
+    <div data-include="header"></div>
+
+    <!-- BEGIN: Main Menu-->
+    <div
+      class="main-menu menu-fixed menu-dark menu-accordion menu-shadow"
+      data-scroll-to-active="true"
+    >
+      <div class="navbar-header">
+        <ul class="nav navbar-nav flex-row">
+          <li class="nav-item mr-auto">
+            <a class="navbar-brand" href="dashboard.html">
+              <h2 class="brand-text mb-0">
+                <img
+                  style="margin-top: 9px"
+                  height="45"
+                  src="app-assets/images/logo-dark.png"
+                  alt=""
+                />
+              </h2>
+            </a>
+          </li>
+          <li class="nav-item nav-toggle">
+            <a class="nav-link modern-nav-toggle pr-0" data-toggle="collapse"
+              ><i class="bx bx-x d-block d-xl-none font-medium-4 primary"></i
+              ><i
+                class="toggle-icon bx bx-disc font-medium-4 d-none d-xl-block primary"
+                data-ticon="bx-disc"
+              ></i
+            ></a>
+          </li>
+        </ul>
+      </div>
+      <div class="shadow-bottom"></div>
+
+      <style>
+        .main-menu-content ul > li {
+          margin-top: 5px !important;
+        }
+      </style>
+      <div class="main-menu-content">
+        <ul
+          class="navigation navigation-main"
+          id="main-menu-navigation"
+          data-menu="menu-navigation"
+          data-icon-style="lines"
+        >
+        <li class="nav-item">
+            <a href="dashboard.html"
+              ><i class="menu-livicon" data-icon="home"></i
+              ><span class="menu-title text-truncate" data-i18n="Anasayfa"
+                >Anasayfa</span
+              ></a
+            >
+          </li>
+          <li class="nav-item">
+            <a href="book.html"
+              ><i class="menu-livicon" data-icon="map"></i
+              ><span class="menu-title text-truncate" data-i18n="Book"
+                >Book</span
+              ></a
+            >
+          </li>
+          <li class="nav-item">
+            <a href="job-board.html"
+              ><i class="menu-livicon" data-icon="list"></i
+              ><span class="menu-title text-truncate" data-i18n="Job Board"
+                >Job Board</span
+              ></a
+            >
+          </li>
+         
+          
+          <li class="nav-item">
+            <a class="d-flex align-items-center" href="siparis.html"
+              ><i class="bx bx-right-arrow-alt"></i
+              ><span class="menu-item text-truncate" data-i18n="Depo Sevkiyat"
+                >Siparisler</span
+              ></a
+            >
+          </li>
+          <li>
+            <a class="d-flex align-items-center" href="sikayet.html"
+              ><i class="bx bx-right-arrow-alt"></i
+              ><span class="menu-item text-truncate" data-i18n="Şikayetler"
+                >Şikayetler</span
+              ></a
+            >
+          </li>
+
+          <li class="active nav-item">
+            <a href="billing.html"
+              ><i class="menu-livicon" data-icon="calculator"></i
+              ><span
+                class="menu-title text-truncate"
+                data-i18n="Dağıtım Bilgileri"
+                >Fatura Bilgileri</span
+              ></a
+            >
+          </li>
+          <li class="nav-item">
+            <a href="favorites.html"
+              ><i class="menu-livicon" data-icon="star"></i
+              ><span class="menu-title text-truncate" data-i18n="Favoriler"
+                >Favoriler</span
+              ></a
+            >
+          </li>
+          <li class="nav-item">
+            <a href="profile.html"
+              ><i class="menu-livicon" data-icon="user"></i
+              ><span class="menu-title text-truncate" data-i18n="Profil"
+                >Profil</span
+              ></a
+            >
+          </li>
+          <li class="nav-item">
+            <a href="team.html"
+              ><i class="menu-livicon" data-icon="users"></i
+              ><span class="menu-title text-truncate" data-i18n="Profil"
+                >Team</span
+              ></a
+            >
+          </li>
+          <li class="nav-item">
+            <a href="definitions.html"
+              ><i class="menu-livicon" data-icon="briefcase"></i
+              ><span class="menu-title text-truncate" data-i18n="Tanımlamalar"
+                >Tanımlamalar</span
+              ></a
+            >
+          </li>
+          <li class="nav-item">
+            <a href="co2.html"
+              ><i class="menu-livicon" data-icon="adjust"></i
+              ><span class="menu-title text-truncate" data-i18n="co2"
+                >CO2</span
+              ></a
+            >
+          </li>
+          <li class="nav-item">
+            <a href="help.html"
+              ><i class="menu-livicon" data-icon="help"></i
+              ><span class="menu-title text-truncate" data-i18n="Tanımlamalar"
+                >Help</span
+              ></a
+            >
+          </li>
+        </ul>
+      </div>
+    </div>
+    <!-- END: Main Menu-->
+
+    <!-- BEGIN: Content-->
+    <div class="app-content content">
+      <div class="content-overlay"></div>
+      <div class="content-wrapper">
+        <div class="content-header row"></div>
+        <div class="content-body">
+          <!-- app invoice View Page -->
+          <section class="invoice-view-wrapper">
+            <div class="row">
+              <!-- invoice view page -->
+              <div class="col-xl-9 col-md-8 col-12">
+                <div class="card invoice-print-area">
+                  <div class="card-body pb-0 mx-25">
+                    <!-- header section -->
+
+                    <!-- logo and title -->
+                    <div class="row my-2 my-sm-3">
+                      <div class="col-sm-12 text-center text-sm-left">
+                        <h4 class="text-dark border-bottom w-100">INVOICE</h4>
+                      </div>
+                    </div>
+                    <!-- invoice address and contact -->
+                    <div class="row invoice-info">
+                      <div class="col-sm-6 col-12 mt-1">
+                        <h6 class="invoice-from">
+                          <b>Invoice n<sup>o</sup>:</b> D432680-2238-0000000005
+                        </h6>
+                        <h6 class="invoice-from">
+                          <b>Invoice date:</b> 2022-09-20
+                        </h6>
+                        <h6 class="invoice-from">
+                          <b>Payment type:</b> Wallet
+                        </h6>
+                        <h6 class="invoice-from">
+                          <b>Service:</b> Delivery of goods
+                        </h6>
+                      </div>
+                      <div class="col-sm-6 col-12 mt-1">
+                        <h6 class="invoice-to">support@we-lokal.com</h6>
+                        <div class="mb-1">
+                          <span>WeLokal Ltd </span>
+                        </div>
+                        <div class="mb-1">
+                          <span
+                            >5th Floor, 167-169 Great Portland St - London - W1J
+                            5PF – UK
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row my-2 my-sm-3">
+                      <div class="col-sm-12 text-center text-sm-left">
+                        <h4 class="text-dark border-bottom w-100">
+                          DELIVERY DETAILS
+                        </h4>
+                      </div>
+                    </div>
+                    <div class="row invoice-info">
+                      <div class="col-sm-6 col-12 mt-1">
+                        <div class="mb-1">
+                          <h6 class="invoice-from"><b>Pick up</b></h6>
+                          <span
+                            >18:11 | 4:11 Galen Pl, London WC1A 2JL, UK</span
+                          >
+                        </div>
+                        <div class="mb-1">
+                          <h6 class="invoice-from"><b>Drop-off</b></h6>
+                          <span>18:28 | 157, Milbank, SW1P 4FA, UK</span>
+                        </div>
+                      </div>
+                      <div class="col-sm-6 col-12 mt-1">
+                        <div class="mb-1">
+                          <h6 class="invoice-to"><b>ID Job</b></h6>
+                          <span>#216210182</span>
+                        </div>
+                        <div class="mb-1">
+                          <h6 class="invoice-to"><b>Job date</b></h6>
+                          <span>2022-09-20</span>
+                        </div>
+                        <div class="mb-1">
+                          <h6 class="invoice-to"><b>Travelled distance</b></h6>
+                          <span>3.912 km</span>
+                        </div>
+                        <div class="mb-1">
+                          <h6 class="invoice-to"><b>Job time</b></h6>
+                          <span>17 min</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- product details table-->
+                  <div
+                    class="invoice-product-details table-responsive mt-1 px-2 mb-5"
+                  >
+                    <table class="table table-borderless mb-0 responsive-table">
+                      <thead class="border-bottom">
+                        <tr class="border-0">
+                          <th class="col-6 font-medium-2 text-bold-500">
+                            INVOICE DETAILS
+                          </th>
+                          <th class="col-2 font-medium-2 text-bold-500">
+                            QUANTITY
+                          </th>
+                          <th class="col-2 font-medium-2 text-bold-500">
+                            UNIT PRICE
+                          </th>
+                          <th class="col-2 font-medium-2 text-bold-500">
+                            TOTAL PRICE
+                          </th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>Delivery price exl. VAT</td>
+                          <td class="text-center">1</td>
+                          <td class="text-center">12.07 £</td>
+                          <td class="text-dark text-left font-weight-bold">
+                            12.07 £
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>Total price exl. VAT</td>
+                          <td></td>
+                          <td></td>
+                          <td class="text-dark text-left font-weight-bold">
+                            12.07 £
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>VAT amount(0%)(1)</td>
+                          <td></td>
+                          <td></td>
+                          <td class="text-dark text-left font-weight-bold">
+                            -
+                          </td>
+                        </tr>
+                        <tr class="bg-primary bg-lighten-5">
+                          <td><b>Price including VAT(2)</b></td>
+                          <td></td>
+                          <td></td>
+                          <td class="text-dark text-left font-weight-bold">
+                            <b>12.07 £</b>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+
+                  <!-- invoice subtotal -->
+                  <div class="card-body pt-0 mx-25">
+                    <hr />
+                    <div class="row d-flex justify-content-center">
+                      <div class="d-flex flex-column align-items-center">
+                        <span class="text-center"
+                          >WeLokal Ltd – 5th Floor, 167-169 Great Portland St -
+                          London - W1J 5PF – UK</span
+                        >
+                        <span class="text-center">support@we-lokal.com</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- invoice action  -->
+              <div class="col-xl-3 col-md-4 col-12">
+                <div class="card invoice-action-wrapper shadow-none border">
+                  <div class="card-body">
+                    <div class="invoice-action-btn mb-1">
+                      <button
+                        class="btn btn-primary btn-block invoice-send-btn"
+                      >
+                        <i class="bx bx-send"></i>
+                        <span>Send Invoice</span>
+                      </button>
+                    </div>
+                    <div class="invoice-action-btn mb-1">
+                      <button class="btn btn-light-primary btn-block">
+                        <span>Download Invoice</span>
+                      </button>
+                    </div>
+                    <div class="invoice-action-btn mb-1">
+                      <button class="btn btn-light-primary btn-block">
+                        Preview
+                      </button>
+                    </div>
+                    <div class="invoice-action-btn mb-1">
+                      <button class="btn btn-light-primary btn-block">
+                        Save
+                      </button>
+                    </div>
+                    <div class="invoice-action-btn mb-1">
+                      <button class="btn btn-success btn-block">
+                        <i class="bx bx-dollar"></i>
+                        <span>Add Payment</span>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+    </div>
+    <!-- END: Content-->
+
+    <!-- demo chat-->
+    <div class="widget-chat-demo">
+      <!-- widget chat demo footer button start -->
+      <button class="btn btn-primary chat-demo-button glow">
+        <i
+          class="livicon-evo"
+          data-options="name: comments.svg; style: lines; size: 24px; strokeColor: #fff; autoPlay: true; repeat: loop;"
+        ></i>
+      </button>
+      <!-- widget chat demo footer button ends -->
+      <!-- widget chat demo start -->
+      <div class="widget-chat widget-chat-demo d-none">
+        <div class="card mb-0">
+          <div class="card-header border-bottom p-0">
+            <div class="media m-75">
+              <a href="JavaScript:void(0);">
+                <div class="avatar mr-75">
+                  <img
+                    src="../app-assets/images/portrait/small/avatar-s-2.jpg"
+                    alt="avtar images"
+                    width="32"
+                    height="32"
+                  />
+                  <span class="avatar-status-online"></span>
+                </div>
+              </a>
+              <div class="media-body">
+                <h6 class="media-heading mb-0 pt-25">
+                  <a href="javaScript:void(0);">Kiara Cruiser</a>
+                </h6>
+                <span class="text-muted font-small-3">Active</span>
+              </div>
+            </div>
+            <div class="heading-elements">
+              <i
+                class="bx bx-x widget-chat-close float-right my-auto cursor-pointer"
+              ></i>
+            </div>
+          </div>
+          <div class="card-body widget-chat-container widget-chat-demo-scroll">
+            <div class="chat-content">
+              <div class="badge badge-pill badge-light-secondary my-1">
+                today
+              </div>
+              <div class="chat">
+                <div class="chat-body">
+                  <div class="chat-message">
+                    <p>How can we help? 😄</p>
+                    <span class="chat-time">7:45 AM</span>
+                  </div>
+                </div>
+              </div>
+              <div class="chat chat-left">
+                <div class="chat-body">
+                  <div class="chat-message">
+                    <p>Hey John, I am looking for the best admin template.</p>
+                    <p>Could you please help me to find it out? 🤔</p>
+                    <span class="chat-time">7:50 AM</span>
+                  </div>
+                </div>
+              </div>
+              <div class="chat">
+                <div class="chat-body">
+                  <div class="chat-message">
+                    <p>
+                      Stack admin is the responsive bootstrap 4 admin template.
+                    </p>
+                    <span class="chat-time">8:01 AM</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card-footer border-top p-1">
+            <form
+              class="d-flex"
+              onsubmit="widgetChatMessageDemo();"
+              action="javascript:void(0);"
+            >
+              <input
+                type="text"
+                class="form-control chat-message-demo mr-75"
+                placeholder="Type here..."
+              />
+              <button type="submit" class="btn btn-primary glow px-1">
+                <i class="bx bx-paper-plane"></i>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+      <!-- widget chat demo ends -->
+    </div>
+    <div class="sidenav-overlay"></div>
+    <div class="drag-target"></div>
+
+    <!-- BEGIN: Footer-->
+    <footer class="footer footer-static footer-dark">
+      <p class="clearfix mb-0">
+        <span class="float-left d-inline-block">2021 &copy; PIXINVENT</span
+        ><span class="float-right d-sm-inline-block d-none"
+          >Crafted with<i class="bx bxs-heart pink mx-50 font-small-3"></i>by<a
+            class="text-uppercase"
+            href="https://1.envato.market/pixinvent_portfolio"
+            target="_blank"
+            >Pixinvent</a
+          ></span
+        >
+        <button class="btn btn-primary btn-icon scroll-top" type="button">
+          <i class="bx bx-up-arrow-alt"></i>
+        </button>
+      </p>
+    </footer>
+    <!-- END: Footer-->
+
+    <!-- BEGIN: Vendor JS-->
+    <script src="app-assets/vendors/js/vendors.min.js"></script>
+    <script src="app-assets/fonts/LivIconsEvo/js/LivIconsEvo.tools.js"></script>
+    <script src="app-assets/fonts/LivIconsEvo/js/LivIconsEvo.defaults.js"></script>
+    <script src="app-assets/fonts/LivIconsEvo/js/LivIconsEvo.min.js"></script>
+    <!-- BEGIN Vendor JS-->
+
+    <!-- BEGIN: Page Vendor JS-->
+    <script src="app-assets/vendors/js/charts/apexcharts.min.js"></script>
+    <script src="app-assets/vendors/js/extensions/swiper.min.js"></script>
+    <!-- END: Page Vendor JS-->
+
+    <!-- BEGIN: Theme JS-->
+    <script src="app-assets/js/scripts/configs/vertical-menu-dark.js"></script>
+    <script src="app-assets/js/core/app-menu.js"></script>
+    <script src="app-assets/js/core/app.js"></script>
+    <script src="app-assets/js/scripts/components.js"></script>
+    <script src="app-assets/js/scripts/footer.js"></script>
+    <!-- END: Theme JS-->
+
+    <!-- BEGIN: Page JS-->
+    <script src="app-assets/js/scripts/pages/dashboard-ecommerce.js"></script>
+    <script src="app-assets/map/js/map.js"></script>
+    <script src="assets/js/scripts.js"></script>
+  </body>
+  <!-- END: Body-->
+</html>

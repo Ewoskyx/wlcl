@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html class="loading" lang="en" data-textdirection="ltr">
+<!-- BEGIN: Head-->
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+    <title>We Lokal- Yönetim Paneli</title>
+    <link rel="apple-touch-icon" href="app-assets/images/ico/apple-icon-120.png">
+    <link rel="shortcut icon" type="image/x-icon" href="app-assets/images/favicon.jpeg">
+    <link href="https://fonts.googleapis.com/css?family=Rubik:300,400,500,600%7CIBM+Plex+Sans:300,400,500,600,700"
+          rel="stylesheet">
+
+    <!-- BEGIN: Vendor CSS-->
+    <link rel="stylesheet" type="text/css" href="app-assets/vendors/css/vendors.min.css">
+    <link rel="stylesheet" type="text/css" href="app-assets/vendors/css/charts/apexcharts.css">
+    <link rel="stylesheet" type="text/css" href="app-assets/vendors/css/extensions/swiper.min.css">
+    <!-- END: Vendor CSS-->
+
+    <!-- BEGIN: Theme CSS-->
+    <link rel="stylesheet" type="text/css" href="app-assets/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="app-assets/css/bootstrap-extended.css">
+    <link rel="stylesheet" type="text/css" href="app-assets/css/colors.css">
+    <link rel="stylesheet" type="text/css" href="app-assets/css/components.css">
+    <link rel="stylesheet" type="text/css" href="app-assets/css/themes/dark-layout.css">
+    <link rel="stylesheet" type="text/css" href="app-assets/css/themes/semi-dark-layout.css">
+    <link rel="stylesheet" type="text/css" href="app-assets/map/css/style.css">
+    <!-- END: Theme CSS-->
+
+    <!-- BEGIN: Page CSS-->
+    <link rel="stylesheet" type="text/css" href="app-assets/css/core/menu/menu-types/vertical-menu.css">
+    <link rel="stylesheet" type="text/css" href="app-assets/css/pages/dashboard-ecommerce.css">
+    <!-- END: Page CSS-->
+
+    <!-- BEGIN: Custom CSS-->
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <!-- END: Custom CSS-->
+
+    <link rel="stylesheet" href="assets/map/demo.css">
+    <link rel="stylesheet" href="assets/css/costum.css">
+
+</head>
+<!-- END: Head-->
+
+<!-- BEGIN: Body-->
+
+<body class="vertical-layout vertical-menu-modern dark-layout 2-columns  navbar-sticky footer-static  " data-open="click" data-menu="vertical-menu-modern" data-col="2-columns" data-layout="dark-layout">
+
+<div id="loader">
+    <div class="boxes">
+        <div class="box">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <div class="box">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <div class="box">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <div class="box">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+</div>
+<div data-include="header"></div>
+
+ <!-- BEGIN: Main Menu-->
+ <div class="main-menu menu-fixed menu-dark menu-accordion menu-shadow" data-scroll-to-active="true">
+    <div class="navbar-header">
+        <ul class="nav navbar-nav flex-row">
+            <li class="nav-item mr-auto">
+                <a class="navbar-brand" href="dashboard.html">
+                    
+                    <h2 class="brand-text mb-0"><img style="margin-top: 9px" height="45"
+                            src="app-assets/images/logo-dark.png" alt=""></h2>
+                </a>
+            </li>
+            <li class="nav-item nav-toggle"><a class="nav-link modern-nav-toggle pr-0" data-toggle="collapse"><i
+                        class="bx bx-x d-block d-xl-none font-medium-4 primary"></i><i
+                        class="toggle-icon bx bx-disc font-medium-4 d-none d-xl-block primary"
+                        data-ticon="bx-disc"></i></a></li>
+        </ul>
+    </div>
+    <div class="shadow-bottom"></div>
+
+    <style>
+        .main-menu-content ul>li {
+            margin-top: 5px !important;
+        }
+    </style>
+    <div class="main-menu-content">
+        <ul class="navigation navigation-main" id="main-menu-navigation" data-menu="menu-navigation"
+            data-icon-style="lines">
+            <li class=" nav-item"><a href="dashboard.html"><i class="menu-livicon" data-icon="home"></i><span
+                        class="menu-title text-truncate" data-i18n="Anasayfa">Anasayfa</span></a>
+            </li>
+
+            <li class=" nav-item"><a href="kurye-yonetimi.html"><i class="menu-livicon" data-icon="users"></i><span
+                        class="menu-title text-truncate" data-i18n="Kurye Yönetimi">Kurye Yönetimi</span></a>
+            </li>
+
+            <li class="nav-item"><a href="#"><i class="menu-livicon" data-icon="briefcase"></i><span
+                    class="menu-title text-truncate" data-i18n="Müşteri Yönetimi">Müşteri Yönetimi</span></a>
+                <ul class="menu-content">
+                    <li><a class="d-flex align-items-center" href="carikart.html"><i
+                            class="bx bx-right-arrow-alt"></i><span class="menu-item text-truncate"
+                                                                    data-i18n="Cari Kart">Cari Kart </span></a>
+                    </li>
+
+                    <li><a class="d-flex align-items-center" href="siparis-bilgileri.html"><i
+                            class="bx bx-right-arrow-alt"></i><span class="menu-item text-truncate"
+                                                                    data-i18n="Kurye Takip">Sipariş Bilgileri</span></a>
+                    </li>
+                    <li><a class="d-flex align-items-center" href="fiyat-listesi.html"><i
+                            class="bx bx-right-arrow-alt"></i><span class="menu-item text-truncate"
+                                                                    data-i18n="Kurye Takip">Fiyat Listesi</span></a>
+                    </li>
+                    <li><a class="d-flex align-items-center" href="belge-basim.html"><i
+                            class="bx bx-right-arrow-alt"></i><span class="menu-item text-truncate"
+                                                                    data-i18n="Belge Basım">Belge Basım</span></a>
+                    </li>
+
+
+                </ul>
+            </li>
+            <li class=" nav-item"><a href="depo.html"><i class="menu-livicon" data-icon="home"></i><span
+                    class="menu-title text-truncate" data-i18n="Depo Yönetimi">Depo Yönetimi</span></a>
+
+            </li>
+            <li class="nav-item"><a href="#"><i class="menu-livicon" data-icon="truck"></i><span
+                        class="menu-title text-truncate" data-i18n="Gönderi Yönetimi">Gönderi Yönetimi</span></a>
+                <ul class="menu-content">
+                    <li><a class="d-flex align-items-center" href="shipment-all.html"><i
+                            class="bx bx-right-arrow-alt"></i><span class="menu-item text-truncate"
+                                                                    data-i18n="Tüm Gönderiler">Tüm Gönderiler</span></a>
+                    </li>
+                    <li><a class="d-flex align-items-center" href="add-shipment.html"><i
+                                class="bx bx-right-arrow-alt"></i><span class="menu-item text-truncate"
+                                data-i18n="Yeni Sipariş Ekle">Yeni Sipariş Ekle</span></a>
+                    </li>
+                    <li><a class="d-flex align-items-center" href="file-shipment.html"><i
+                                class="bx bx-right-arrow-alt"></i><span class="menu-item text-truncate"
+                                data-i18n="Dosyadan Yükle">Dosyadan Yükle</span></a>
+                    </li>
+                </ul>
+            </li>
+            <li class=" nav-item"><a href="follow-up.html"><i class="menu-livicon" data-icon="compass"></i><span
+                        class="menu-title text-truncate" data-i18n="Sipariş Yönetimi">Sipariş Yönetimi</span></a>
+            </li>
+
+            <li class=" nav-item"><a href="#"><i class="menu-livicon" data-icon="users"></i><span
+                    class="menu-title text-truncate" data-i18n="Kullanıcılar">Kullanıcılar</span></a>
+                <ul class="menu-content">
+
+
+                    <li><a class="d-flex align-items-center" href="app-users-list.html"><i
+                            class="bx bx-right-arrow-alt"></i><span class="menu-item text-truncate"
+                                                                    data-i18n="Kullanıcı Listesi">Kullanıcı Listesi</span></a></li>
+
+                    <li><a class="d-flex align-items-center" href="app-users-view.html"><i
+                            class="bx bx-right-arrow-alt"></i><span class="menu-item text-truncate"
+                                                                    data-i18n="Kullanıcı Görüntüle">Kullanıcı Görüntüle</span></a></li>
+
+
+                    <li><a class="d-flex align-items-center" href="app-users-edit.html"><i
+                            class="bx bx-right-arrow-alt"></i><span class="menu-item text-truncate"
+                                                                    data-i18n="Kullanıcı Düzenle">Kullanıcı Düzenle</span></a></li>
+
+
+                </ul>
+            </li>
+            <li class=" nav-item"><a href="#"><i class="menu-livicon" data-icon="bar-chart"></i><span
+                    class="menu-title text-truncate" data-i18n="Proforma">Proforma</span></a>
+                <ul class="menu-content">
+
+
+                    <li><a class="d-flex align-items-center" href="app-invoice-list.html"><i
+                            class="bx bx-right-arrow-alt"></i><span class="menu-item text-truncate"
+                                                                    data-i18n="Proforma Listesi">Proforma Listesi</span></a></li>
+
+
+                    <li><a class="d-flex align-items-center" href="app-invoice.html"><i
+                            class="bx bx-right-arrow-alt"></i><span class="menu-item text-truncate"
+                                                                    data-i18n="Proforma">Proforma</span></a></li>
+
+
+
+                    <li><a class="d-flex align-items-center" href="app-invoice-edit.html"><i
+                            class="bx bx-right-arrow-alt"></i><span class="menu-item text-truncate"
+                                                                    data-i18n="Proforma Düzenle">Proforma Düzenle</span></a></li>
+
+                    <li><a class="d-flex align-items-center" href="app-invoice-add.html"><i
+                            class="bx bx-right-arrow-alt"></i><span class="menu-item text-truncate"
+                                                                    data-i18n="Proforma Ekle">Proforma Ekle</span></a></li>
+
+
+
+                </ul>
+            </li>
+            <li class=" nav-item"><a href="#"><i class="menu-livicon" data-icon="bar-chart"></i><span
+                        class="menu-title text-truncate" data-i18n="Raporlar">Raporlar</span></a>
+                        <ul class="menu-content">
+
+                            <li><a class="d-flex align-items-center" href="yoldaki-siparisler-raporu.html"><i
+                                class="bx bx-right-arrow-alt"></i><span class="menu-item text-truncate"
+                                data-i18n="Yük Raporları">Yoldaki Siparişler Raporu</span></a></li>
+    
+                                <li><a class="d-flex align-items-center" href="zamaninda-teslim-raporu.html"><i
+                                    class="bx bx-right-arrow-alt"></i><span class="menu-item text-truncate"
+                                    data-i18n="Yük Raporları">Zamanında Teslim Raporu</span></a></li>
+    
+                                
+                            <li><a class="d-flex align-items-center" href="shipment-report.html"><i
+                                class="bx bx-right-arrow-alt"></i><span class="menu-item text-truncate"
+                                data-i18n="Yük Raporları">Yük Raporları</span></a></li>
+    
+    
+    
+                            <li><a class="d-flex align-items-center" href="geciken-teslimat-raporu.html"><i
+                                class="bx bx-right-arrow-alt"></i><span class="menu-item text-truncate"
+                                data-i18n="Şikayet Yönetimi Raporu">Geciken Teslimat Raporu</span></a></li>
+    
+                            <li><a class="d-flex align-items-center" href="complaint-report.html"><i
+                                        class="bx bx-right-arrow-alt"></i><span class="menu-item text-truncate"
+                                        data-i18n="Şikayet Yönetimi Raporu">Şikayet Yönetimi Raporu</span></a></li>
+    
+                            <li><a class="d-flex align-items-center" href="drive-report.html"><i
+                                        class="bx bx-right-arrow-alt"></i><span class="menu-item text-truncate"
+                                        data-i18n="Env. Sürücü Raporları">Env. Sürücü Raporları</span></a></li>
+    
+    
+    
+                            <li><a class="d-flex align-items-center" href="driver-score-report.html"><i
+                                        class="bx bx-right-arrow-alt"></i><span class="menu-item text-truncate"
+                                        data-i18n="Sürücü Puan Raporu">Sürücü Puan Raporu</span></a></li>
+    
+                            <li><a class="d-flex align-items-center" href="post-service-score-report.html"><i
+                                        class="bx bx-right-arrow-alt"></i><span class="menu-item text-truncate"
+                                        data-i18n="Hizmet Sonrası Anket Raporu">Hizmet Sonrası Anket Raporu</span></a></li>
+                                        
+                            <li><a class="d-flex align-items-center" href="overall-score-report.html"><i
+                                        class="bx bx-right-arrow-alt"></i><span class="menu-item text-truncate"
+                                        data-i18n="Genel Değerlendirme Anket Raporu">Genel Değerlendirme Anket
+                                        Raporu</span></a></li>
+                            <li><a class="d-flex align-items-center" href="customer-evaluation-score-report.html"><i
+                                        class="bx bx-right-arrow-alt"></i><span class="menu-item text-truncate"
+                                        data-i18n="Müşteri Değerlendirme Puan Raporu">Müşteri Değerlendirme Puan
+                                        Raporu</span></a></li>
+                        </ul>
+            </li>
+            <li class="nav-item"><a href="fatura.html"><i class="menu-livicon"
+                        data-icon="calculator"></i><span class="menu-title text-truncate"
+                        data-i18n="Dağıtım Bilgileri">Fatura Bilgileri</span></a>
+            </li>
+            <li class="nav-item"><a href="rating-system.html"><i class="menu-livicon" data-icon="touch"></i><span
+                        class="menu-title text-truncate" data-i18n="Rating Sistemleri">Rating Sistemleri</span></a>
+            </li>
+            <li class=" nav-item"><a href="definitions.html"><i class="menu-livicon" data-icon="briefcase"></i><span
+                        class="menu-title text-truncate" data-i18n="Tanımlamalar">Tanımlamalar</span></a>
+            </li>
+            <li class="active nav-item"><a href="profile.html"><i class="menu-livicon" data-icon="user"></i><span
+                        class="menu-title text-truncate" data-i18n="Profil">Profil</span></a>
+            </li>
+            <li class=" nav-item"><a href="help-page.html"><i class="menu-livicon" data-icon="help"></i><span
+                        class="menu-title text-truncate" data-i18n="Yardım">Yardım</span></a>
+            </li>
+        </ul>
+    </div>
+</div>
+<!-- END: Main Menu-->
+
+<!-- BEGIN: Content-->
+<div class="app-content content">
+    <div class="content-overlay"></div>
+    <div class="content-wrapper">
+        <div class="content-header row">
+            <div class="content-header-left col-12 mb-2 mt-1">
+                <div class="breadcrumbs-top">
+                    <div class="breadcrumb-wrapper d-none d-sm-block">
+                        <ol class="breadcrumb p-0 mb-0">
+                            <li class="breadcrumb-item"><a href="../dashboard.html"><i class="bx bx-home-alt"></i></a>
+                            </li>
+                            <li class="breadcrumb-item">Profil</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="content-body">
+            <!-- users edit start -->
+            <section class="users-edit">
+                <div class="card">
+                    <div class="card-body">
+                        <ul class="nav nav-tabs mb-2" role="tablist">
+                            <li class="nav-item">
+                                <a class="nav-link d-flex align-items-center active" id="account-tab" data-toggle="tab" href="#account" aria-controls="account" role="tab" aria-selected="true">
+                                    <i class="bx bx-user mr-25"></i><span class="d-none d-sm-block">Profil Bilgileri</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link d-flex align-items-center" id="information-tab" data-toggle="tab" href="#information" aria-controls="information" role="tab" aria-selected="false">
+                                    <i class="bx bx-lock mr-25"></i><span class="d-none d-sm-block">Şifremi Unuttum</span>
+                                </a>
+                            </li>
+                        </ul>
+                        <div class="tab-content">
+                            <div class="tab-pane active fade show" id="account" aria-labelledby="account-tab" role="tabpanel">
+                                <form class="form-validate">
+                                    <div class="row">
+                                        <div class="col-lg-12">
+                                            <h5 class="mb-1"><i class="bx bx-user mr-25"></i>Profil Bilgileri</h5>
+                                        </div>
+                                        <div class="col-12 col-lg-6">
+
+                                            <div class="form-group">
+                                                <div class="controls position-relative">
+                                                    <label>Adı</label>
+                                                    <input type="text" class="form-control birthdate-picker" placeholder="Adınızı Girin" name="dob">
+                                                </div>
+                                            </div>
+
+                                        </div>
+
+                                        <div class="col-12 col-lg-6 ">
+                                            <div class="form-group ">
+                                                <div class="controls position-relative">
+                                                    <label>Soyadı</label>
+                                                    <input type="text" class="form-control birthdate-picker" placeholder="Soyadınızı Girin" name="dob">
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-12 col-lg-6 ">
+                                            <div class="form-group">
+                                                <div class="controls position-relative">
+                                                    <label>E-Posta Adresi</label>
+                                                    <input type="text" class="form-control birthdate-picker" placeholder="E-Posta Adresinizi Girin" name="dob">
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-12 col-lg-6 ">
+
+                                            <div class="form-group">
+                                                <div class="controls position-relative">
+                                                    <label>Telefon No</label>
+                                                    <input type="text" class="form-control birthdate-picker" placeholder="Telefon No Girin" name="dob">
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                        <div class="col-12 d-flex flex-sm-row flex-column justify-content-end mt-1">
+                                            <button type="submit" class="btn btn-primary glow mb-1 mb-sm-0 mr-0 mr-sm-1">Kaydet</button>
+                                        </div>
+                                    </div>
+                                </form>
+
+                                <!-- users edit account form ends -->
+                            </div>
+
+                            <div class="tab-pane fade show" id="information" aria-labelledby="information-tab" role="tabpanel">
+                                <!-- users edit Info form start -->
+                                <form class="form-validate">
+                                    <div class="row">
+                                        <div class="col-12 col-lg-6 ">
+                                            <h5 class="mb-1"><i class="bx bx-phone mr-25"></i>İletişim</h5>
+                                            <div class="form-group">
+                                                <div class="controls position-relative">
+                                                    <label>Eski Şifre</label>
+                                                    <input type="text" class="form-control birthdate-picker" placeholder="Eski Şifrenizi Girin" name="dob">
+                                                </div>
+                                            </div>
+
+                                        </div>
+
+
+                                        <div class="col-12 col-lg-6  ">
+                                            <div class="form-group ">
+                                                <div class="controls">
+                                                    <label>Yeni Şifrenizi Onaylayın</label>
+                                                    <input type="text" class="form-control" placeholder="Yeni Şifrenizi Onaylayın" name="address">
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-12 col-lg-6 ">
+                                            <div class="form-group">
+                                                <div class="controls position-relative">
+                                                    <label>Yeni Şifre</label>
+                                                    <input type="text" class="form-control birthdate-picker" placeholder="Yeni Şifrenizi Girin" name="dob">
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-12 d-flex flex-sm-row flex-column justify-content-end mt-1">
+                                            <button type="submit" class="btn btn-primary glow mb-1 mb-sm-0 mr-0 mr-sm-1">Kaydet</button>
+                                        </div>
+                                    </div>
+                                </form>
+                                <!-- users edit Info form ends -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- users edit ends -->
+        </div>
+    </div>
+</div>
+<!-- END: Content-->
+
+<!-- demo chat-->
+<div class="widget-chat-demo">
+    <!-- widget chat demo footer button start -->
+    <button class="btn btn-primary chat-demo-button glow"><i class="livicon-evo"
+                                                             data-options="name: comments.svg; style: lines; size: 24px; strokeColor: #fff; autoPlay: true; repeat: loop;"></i></button>
+    <!-- widget chat demo footer button ends -->
+    <div class="widget-chat widget-chat-demo d-none">
+        <div class="card mb-0">
+            <div class="card-header border-bottom p-0">
+                <div class="media m-75">
+                    <a href="JavaScript:void(0);">
+                        <div class="avatar mr-75">
+                            <img src="app-assets/images/portrait/small/avatar-s-2.jpg" alt="avtar images" width="32"
+                                 height="32">
+                            <span class="avatar-status-online"></span>
+                        </div>
+                    </a>
+                    <div class="media-body">
+                        <h6 class="media-heading mb-0 pt-25"><a href="javaScript:void(0);">Temsilci</a></h6>
+                        <span class="text-muted font-small-3">Aktif</span>
+                    </div>
+                </div>
+                <div class="heading-elements">
+                    <i class="bx bx-x widget-chat-close float-right my-auto cursor-pointer"></i>
+                </div>
+            </div>
+            <div class="card-body widget-chat-container widget-chat-scroll">
+                <div class="chat-content">
+                    <div class="badge badge-pill badge-light-secondary my-1">Bugün</div>
+                    <div class="chat chat-left">
+                        <div class="chat-body">
+                            <div class="chat-message">
+                                <p>Merhaba, destek hattımıza hoşgeldiniz. Size nasıl yardımcı olabilirim ?</p>
+                                <span class="chat-time">7:50</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="chat">
+                        <div class="chat-body">
+                            <div class="chat-message">
+                                <p>Merhaba, siparişimin durumunu öğrenmek istiyorum.</p>
+                                <span class="chat-time">7:45</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="chat chat-left">
+                        <div class="chat-body">
+                            <div class="chat-message">
+                                <p>Kargonuz bugün yola çıkacak.</p>
+                                <span class="chat-time">7:44</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="chat">
+                        <div class="chat-body">
+                            <div class="chat-message">
+                                <p>Ne zaman teslim olur ?</p>
+                                <span class="chat-time">7:42</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="chat chat-left">
+                        <div class="chat-body">
+                            <div class="chat-message">
+                                <p>Üç iş günü içerisinde teslim olacaktır.</p>
+                                <span class="chat-time">7:40</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="chat">
+                        <div class="chat-body">
+                            <div class="chat-message">
+                                <p>Teşekkürler.</p>
+                                <span class="chat-time">7:37</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="chat chat-left">
+                        <div class="chat-body">
+                            <div class="chat-message">
+                                <p>İyi günler.</p>
+                                <span class="chat-time">7:33</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card-footer border-top p-1">
+                <form class="d-flex" onsubmit="widgetChatMessageDemo();" action="javascript:void(0);">
+                    <input type="text" class="form-control chat-message-demo mr-75" placeholder="Type here...">
+                    <button type="submit" class="btn btn-primary glow px-1"><i
+                            class="bx bx-paper-plane"></i></button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="sidenav-overlay"></div>
+<div class="drag-target"></div>
+<div class="modal fade" id="modal_id" tabindex="-1" role="dialog" aria-labelledby="modal_name_label" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="modal_name_label">
+                    Modal Başlık
+                </h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <i class="bx bx-x"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <section id="basic-datatable">
+                    <div class="filters-list-filter px-1">
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="card">
+                                <div class="card-body card-dashboard pt-0">
+                                    <div class="table-responsive">
+                                        <table id="example" class="table" data-searching="false">
+                                            <thead class="tableThead">
+                                            <tr>
+                                                <th>Kodu</th>
+                                                <th>#</th>
+                                                <th>#</th>
+                                                <th>#</th>
+                                                <th>Toplam Sipariş</th>
+                                                <th>Toplam Ağırlık</th>
+                                            </tr>
+                                            </thead>
+                                            <tbody class="tableText">
+                                            <tr>
+                                                <td>CRM30027</td>
+                                                <td>#</td>
+                                                <td>#</td>
+                                                <td>#</td>
+                                                <td>300</td>
+                                                <td>350 kg.</td>
+                                            </tr>
+                                            <tr>
+                                                <td>CRM30027</td>
+                                                <td>#</td>
+                                                <td>#</td>
+                                                <td>#</td>
+                                                <td>300</td>
+                                                <td>350 kg.</td>
+                                            </tr>
+                                            <tr>
+                                                <td>CRM30027</td>
+                                                <td>#</td>
+                                                <td>#</td>
+                                                <td>#</td>
+                                                <td>300</td>
+                                                <td>350 kg.</td>
+                                            </tr>
+                                            <tr>
+                                                <td>CRM30027</td>
+                                                <td>#</td>
+                                                <td>#</td>
+                                                <td>#</td>
+                                                <td>300</td>
+                                                <td>350 kg.</td>
+                                            </tr>
+                                            <tr>
+                                                <td>CRM30027</td>
+                                                <td>#</td>
+                                                <td>#</td>
+                                                <td>#</td>
+                                                <td>300</td>
+                                                <td>350 kg.</td>
+                                            </tr>
+                                            <tr>
+                                                <td>CRM30027</td>
+                                                <td>#</td>
+                                                <td>#</td>
+                                                <td>#</td>
+                                                <td>300</td>
+                                                <td>350 kg.</td>
+                                            </tr>
+                                            </tbody>
+                                            <tfoot>
+                                            <tr>
+                                                <th>Kodu</th>
+                                                <th>#</th>
+                                                <th>#</th>
+                                                <th>#</th>
+                                                <th>Toplam Sipariş</th>
+                                                <th>Toplam Ağırlık</th>
+                                            </tr>
+                                            </tfoot>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <div class="modal-footer mt-2">
+                <button type="button" class="btn btn-light-secondary mr-1 mb-1" data-dismiss="modal">
+                    Kapat
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- BEGIN: Footer-->
+<div data-include="footer"></div>
+<!-- END: Footer-->
+
+
+<!-- BEGIN: Vendor JS-->
+<script src="app-assets/vendors/js/vendors.min.js"></script>
+<script src="app-assets/fonts/LivIconsEvo/js/LivIconsEvo.tools.js"></script>
+<script src="app-assets/fonts/LivIconsEvo/js/LivIconsEvo.defaults.js"></script>
+<script src="app-assets/fonts/LivIconsEvo/js/LivIconsEvo.min.js"></script>
+<!-- BEGIN Vendor JS-->
+
+<!-- BEGIN: Page Vendor JS-->
+<script src="app-assets/vendors/js/charts/apexcharts.min.js"></script>
+<script src="app-assets/vendors/js/extensions/swiper.min.js"></script>
+<!-- END: Page Vendor JS-->
+
+<!-- BEGIN: Theme JS-->
+<script src="app-assets/js/scripts/configs/vertical-menu-dark.js"></script>
+<script src="app-assets/js/core/app-menu.js"></script>
+<script src="app-assets/js/core/app.js"></script>
+<script src="app-assets/js/scripts/components.js"></script>
+<script src="app-assets/js/scripts/footer.js"></script>
+<!-- END: Theme JS-->
+
+<!-- BEGIN: Page JS-->
+<script src="app-assets/js/scripts/pages/dashboard-ecommerce.js"></script>
+<script src="app-assets/map/js/map.js"></script>
+<script src="assets/js/scripts.js"></script>
+<script>
+    svgturkiyeharitasi();
+</script>
+<script src="assets/map/ammap.js"></script>
+<script src="assets/map/dark.js"></script>
+
+<script>
+    AmCharts.makeChart("chartdiv", {
+        "type": "map",
+        "theme": "dark",
+        "dataProvider": {
+            "mapURL": "https://www.amcharts.com/lib/3/maps/svg/unitedKingdomHigh.svg",
+            "getAreasFromMap": true
+        },
+        "areasSettings": {
+            "autoZoom": true,
+            "selectedColor": "#CC0000"
+        }
+    });</script>
+<!-- END: Page JS-->
+
+
+</body>
+<!-- END: Body-->
+
+</html>

@@ -1,0 +1,239 @@
+<!-- BEGIN: Header-->
+<div class="header-navbar-shadow"></div>
+
+
+<nav class="header-navbar main-header-navbar navbar-expand-lg navbar navbar-with-menu fixed-top navbar-dark">
+    <div class="navbar-wrapper">
+        <div class="navbar-container content">
+            <div class="navbar-collapse" id="navbar-mobile">
+                <div class="mr-auto float-left bookmark-wrapper d-flex align-items-center">
+                    <ul class="nav navbar-nav">
+                        <li class="nav-item mobile-menu d-xl-none mr-auto"><a class="nav-link nav-menu-main menu-toggle hidden-xs" href="javascript:void(0);"><i class="ficon bx bx-menu"></i></a></li>
+                    </ul>
+                    <ul class="nav navbar-nav bookmark-icons">
+                        <li class="nav-item d-none d-lg-block">
+                            <div class="custom-control custom-switch">
+                                <input type="checkbox" class="custom-control-input" checked id="geceModu">
+                                <label class="custom-control-label" for="geceModu">
+                                    <span class="switch-icon-left"><i class="bx bx-moon"></i></span>
+                                    <span class="switch-icon-right"><i class="bx bxs-sun"></i></span>
+                                </label>
+                            </div>
+                        </li>
+                    </ul>
+                    <ul class="nav navbar-nav">
+
+                    </ul>
+
+                    <script type="text/javascript">
+                        function setCookie(cname, cvalue, exdays) {
+                            const d = new Date();
+                            d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+                            let expires = "expires="+d.toUTCString();
+                            document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+                        }
+
+                        function getCookie(cname) {
+                            let name = cname + "=";
+                            let ca = document.cookie.split(';');
+                            for(let i = 0; i < ca.length; i++) {
+                                let c = ca[i];
+                                while (c.charAt(0) == ' ') {
+                                    c = c.substring(1);
+                                }
+                                if (c.indexOf(name) == 0) {
+                                    return c.substring(name.length, c.length);
+                                }
+                            }
+                            return "";
+                        }
+                        $(document).ready(function () {
+                            $('#geceModu').change(function() {
+                                if(this.checked) {
+                                    setCookie('geceModu','active',1)
+                                    $('body').addClass('dark-layout');
+                                    $('.main-menu').removeClass('menu-light').addClass('menu-dark')
+                                    $('.brand-logo img').attr('src','app-assets/images/icon-dark.png')
+                                    $('.brand-text img').attr('src','app-assets/images/logo-dark.png')
+                                }else{
+                                    //günduz modu
+                                    setCookie('geceModu','passive',1)
+                                    $('body').removeClass("dark-layout");
+                                    $('.main-menu').removeClass('menu-dark').addClass('menu-light')
+                                    $('.brand-logo img').attr('src','app-assets/images/icon-light.png')
+                                    $('.brand-text img').attr('src','app-assets/images/logo-light.png')
+                                }
+                            });
+
+                            setTimeout(function () {
+                                $('#loader').remove();
+                            },300);
+                        })
+                        if (getCookie('geceModu') == "active"){
+                            $('#geceModu').attr('checked',true);
+                            $('body').addClass('dark-layout');
+                            $('.main-menu').removeClass('menu-light').addClass('menu-dark')
+                            $('.brand-logo img').attr('src','app-assets/images/icon-dark.png')
+                            $('.brand-text img').attr('src','app-assets/images/logo-dark.png')
+                        }else{
+                            setCookie('geceModu','passive')
+                            $('#geceModu').attr('checked',false);
+                            $('body').removeClass("dark-layout");
+                            $('.main-menu').removeClass('menu-dark').addClass('menu-light')
+                            $('.brand-logo img').attr('src','app-assets/images/icon-light.png')
+                            $('.brand-text img').attr('src','app-assets/images/logo-light.png')
+                        }
+                    </script>
+                </div>
+                <ul class="nav navbar-nav float-right">
+                    <li class="dropdown dropdown-notification nav-item"><a class="nav-link nav-link-label" href="javascript:void(0);" data-toggle="dropdown"><i class="ficon bx bx-bell bx-tada bx-flip-horizontal"></i><span class="badge badge-pill badge-danger badge-up">6</span></a>
+                        <ul class="dropdown-menu dropdown-menu-media dropdown-menu-right">
+                            <li class="dropdown-menu-header">
+                                <div class="dropdown-header px-1 py-75 d-flex justify-content-between"><span class="notification-title">7 yeni bildirim</span><span class="text-bold-400 cursor-pointer">Tümünü okundu olarak işaretle</span></div>
+                            </li>
+                            <li class="scrollable-container media-list">
+                                <a class="d-flex justify-content-between" href="javascript:void(0);">
+                                    <div class="media d-flex align-items-center">
+                                        <div class="media-left pr-0">
+                                            <div class="avatar mr-1 m-0">
+                                                <img src="app-assets/images/portrait/small/avatar-s-11.jpg" alt="avatar" height="39" width="39">
+                                            </div>
+                                        </div>
+                                        <div class="media-body">
+                                            <h6 class="media-heading">
+                                                <span class="text-bold-500">Ahmet Yıldırım</span> yeni sipariş oluşturdu.
+                                            </h6>
+                                            <small class="notification-text">30 dakika önce</small>
+                                        </div>
+                                    </div>
+                                </a>
+                                <a class="d-flex justify-content-between read-notification cursor-pointer" href="javascript:void(0);">
+                                    <div class="media d-flex align-items-center">
+                                        <div class="media-left pr-0">
+                                            <div class="avatar mr-1 m-0">
+                                                <img src="app-assets/images/portrait/small/avatar-s-16.jpg" alt="avatar" height="39" width="39">
+                                            </div>
+                                        </div>
+                                        <div class="media-body">
+                                            <h6 class="media-heading">
+                                                <span class="text-bold-500">Dilek Kaplan</span> yeni sipariş oluşturdu.
+                                            </h6>
+                                            <small class="notification-text">55 dakika önce</small>
+                                        </div>
+                                    </div>
+                                </a>
+                                <a class="d-flex justify-content-between cursor-pointer" href="javascript:void(0);">
+                                    <div class="media d-flex align-items-center">
+                                        <div class="media-left pr-0">
+                                            <div class="avatar bg-primary bg-lighten-5 mr-1 m-0 p-25">
+                                                <span class="avatar-content text-primary font-medium-2">KD</span></div>
+                                        </div>
+                                        <div class="media-body">
+                                            <h6 class="media-heading">
+                                                <span class="text-bold-500">Kadir Derin</span> yeni kayıt oluşturdu.
+                                            </h6>
+                                            <small class="notification-text">1 saat önce</small>
+                                        </div>
+                                    </div>
+                                </a>
+                                <a class="d-flex justify-content-between" href="javascript:void(0);">
+                                    <div class="media d-flex align-items-center">
+                                        <div class="media-left pr-0">
+                                            <div class="avatar mr-1 m-0">
+                                                <img src="app-assets/images/portrait/small/avatar-s-11.jpg" alt="avatar" height="39" width="39">
+                                            </div>
+                                        </div>
+                                        <div class="media-body">
+                                            <h6 class="media-heading">
+                                                <span class="text-bold-500">Hasan Akdoğan</span> yeni sipariş oluşturdu.
+                                            </h6>
+                                            <small class="notification-text">1 dakika önce</small>
+                                        </div>
+                                    </div>
+                                </a>
+                                <a class="d-flex justify-content-between cursor-pointer" href="javascript:void(0);">
+                                    <div class="media d-flex align-items-center">
+                                        <div class="media-left pr-0">
+                                            <div class="avatar bg-primary bg-lighten-5 mr-1 m-0 p-25">
+                                                <span class="avatar-content text-primary font-medium-2">MY</span></div>
+                                        </div>
+                                        <div class="media-body">
+                                            <h6 class="media-heading">
+                                                <span class="text-bold-500">Mehmet Yunus</span> yeni kayıt oluşturdu.
+                                            </h6>
+                                            <small class="notification-text">2 saat önce</small>
+                                        </div>
+                                    </div>
+                                </a>
+                                <a class="d-flex justify-content-between cursor-pointer" href="javascript:void(0);">
+                                    <div class="media d-flex align-items-center">
+                                        <div class="media-left pr-0">
+                                            <div class="avatar bg-primary bg-lighten-5 mr-1 m-0 p-25">
+                                                <span class="avatar-content text-primary font-medium-2">SK</span></div>
+                                        </div>
+                                        <div class="media-body">
+                                            <h6 class="media-heading">
+                                                <span class="text-bold-500">Sinan Kaya</span> yeni kayıt oluşturdu.
+                                            </h6>
+                                            <small class="notification-text">4 saat önce</small>
+                                        </div>
+                                    </div>
+                                </a>
+
+                            </li>
+                            <li class="dropdown-menu-footer"><a class="dropdown-item p-50 text-primary justify-content-center" href="javascript:void(0)">Tümünü görüntüle</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown dropdown-user nav-item"><a class="dropdown-toggle nav-link dropdown-user-link" href="javascript:void(0);" data-toggle="dropdown">
+                            <div class="user-nav d-sm-flex d-none"><span class="user-name">WE LOCAL A.Ş.</span><span class="user-status text-muted">Çevrimiçi</span></div><span><img class="round" src="app-assets/images/portrait/small/avatar-s-11.jpg" alt="avatar" height="40" width="40"></span>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right pb-0">
+                            <a class="dropdown-item" href="profile.html"><i class="bx bx-user mr-50"></i> PROFİL</a>
+                            <div class="dropdown-divider mb-0"></div>
+
+                            <a class="dropdown-item" data-toggle="modal" data-target="#userStatus"  href="javascript:void(0)"><i class="bx bxl-discourse mr-50"></i> DURUM</a>
+
+                            <div class="dropdown-divider mb-0"></div>
+                            <a class="dropdown-item" href="login.html"><i class="bx bx-power-off mr-50"></i> ÇIKIŞ YAP</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<div class="modal fade" id="userStatus" tabindex="-1" role="dialog" aria-labelledby="myModalLabel33" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="myModalLabel33">
+                    Durum Güncellemesi
+                </h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <i class="bx bx-x"></i>
+                </button>
+            </div>
+            <div class="row px-1 mt-1">
+                <div class="col-lg-12">
+                    <div class="form-group">
+                        <select data-placeholder="Araç Sayısı" id="aracTipi"
+                                class="select2-icons form-control" id="select2-icons">
+                            <option value="6teker" selected>Çevrimiçi</option>
+                            <option value="10teker">Meşgul</option>
+                            <option value="kirkayak">Çevrimdışı</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-light-secondary mr-1 mb-1" data-dismiss="modal">
+                    Kapat
+                </button>
+                <button type="button" class="btn btn-success glow mr-1 mb-1"  data-dismiss="modal">Kaydet</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- END: Header-->

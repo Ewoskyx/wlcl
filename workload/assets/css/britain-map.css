@@ -1,0 +1,34 @@
+.map-link .st0 {
+    transition: 0.5s;
+    z-index:9999;
+  }
+  
+  .map-link:hover .st0 {
+    fill: #000E2F;
+    transition: 0.5s;
+    z-index:9999;
+  }
+  .map-link:hover .st1 {
+    fill: #000E2F;
+    transition: 0.5s;
+  }
+  .map-link:hover .st2 {
+    fill: #000E2F;
+    transition: 0.5s;
+  }
+  .map-link:hover .st3 {
+    fill: #000E2F;
+    transition: 0.5s;
+  }
+  
+  /* Text Labels */
+  
+  .labels {
+      fill: #fff;
+      font-family: Arial;
+      font-size: 6px;
+      line-height: 12px;
+      font-weight: normal;
+      z-index: 1;
+      display: block;
+  }

@@ -1,0 +1,6 @@
+[28-Jul-2022 07:12:19 America/Chicago] PHP Deprecated:  Required parameter $order_id follows optional parameter $app_language_id in /home2/lmnst/public_html/sushidotto/mobile/courier_app/initialize.php on line 331
+[28-Jul-2022 15:12:19 Europe/Istanbul] PHP Warning:  Attempt to read property "num_rows" on bool in /home2/lmnst/public_html/sushidotto/mobile/courier_app/qr_code/check_scanned_qrcode.php on line 33
+[28-Jul-2022 07:12:37 America/Chicago] PHP Deprecated:  Required parameter $order_id follows optional parameter $app_language_id in /home2/lmnst/public_html/sushidotto/mobile/courier_app/initialize.php on line 331
+[28-Jul-2022 15:12:37 Europe/Istanbul] PHP Warning:  Attempt to read property "num_rows" on bool in /home2/lmnst/public_html/sushidotto/mobile/courier_app/qr_code/check_scanned_qrcode.php on line 33
+[28-Jul-2022 07:17:43 America/Chicago] PHP Deprecated:  Required parameter $order_id follows optional parameter $app_language_id in /home2/lmnst/public_html/sushidotto/mobile/courier_app/initialize.php on line 331
+[01-Aug-2022 05:44:02 America/Chicago] PHP Deprecated:  Required parameter $order_id follows optional parameter $app_language_id in /home2/lmnst/public_html/sushidotto/mobile/courier_app/initialize.php on line 331

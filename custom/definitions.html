@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html class="loading" lang="tr" data-textdirection="ltr">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+    <title>Raporlar - Yük Raporları</title>
+    <link rel="shortcut icon" type="image/x-icon" href="app-assets/images/favicon.jpeg">
+
+    <!-- BEGIN: Vendor CSS-->
+    <link rel="stylesheet" type="text/css" href="app-assets/vendors/css/vendors.min.css">
+    <link rel="stylesheet" type="text/css" href="app-assets/vendors/css/charts/apexcharts.css">
+    <link rel="stylesheet" type="text/css" href="app-assets/vendors/css/extensions/swiper.min.css">
+    <!-- END: Vendor CSS-->
+
+    <!-- BEGIN: Theme CSS-->
+    <link rel="stylesheet" type="text/css" href="app-assets/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="app-assets/css/bootstrap-extended.css">
+    <link rel="stylesheet" type="text/css" href="app-assets/css/colors.css">
+    <link rel="stylesheet" type="text/css" href="app-assets/css/components.css">
+    <link rel="stylesheet" type="text/css" href="app-assets/css/themes/dark-layout.css">
+    <link rel="stylesheet" type="text/css" href="app-assets/css/themes/semi-dark-layout.css">
+    <!-- END: Theme CSS-->
+
+    <!-- BEGIN: Page CSS-->
+    <link rel="stylesheet" type="text/css" href="app-assets/css/core/menu/menu-types/vertical-menu.css">
+    <link rel="stylesheet" type="text/css" href="app-assets/css/pages/dashboard-ecommerce.css">
+    <!-- END: Page CSS-->
+
+    <!-- BEGIN: Custom CSS-->
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <!-- END: Custom CSS-->
+
+    <link rel="stylesheet" type="text/css" href="app-assets/vendors/css/tables/datatable/dataTables.bootstrap4.min.css">
+    <link rel="stylesheet" type="text/css" href="app-assets/vendors/css/tables/datatable/responsive.bootstrap4.min.css">
+    <link rel="stylesheet" type="text/css" href="app-assets/vendors/css/tables/datatable/buttons.bootstrap4.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.4.1/css/buttons.dataTables.min.css">
+
+    <link rel="stylesheet" href="assets/css/costum.css">
+
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.12.1/css/dataTables.bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.3.0/css/responsive.bootstrap.min.css">
+</head>
+<!-- END: Head-->
+
+<!-- BEGIN: Body-->
+
+<body class="vertical-layout vertical-menu-modern dark-layout 2-columns  navbar-sticky footer-static  "
+    data-open="click" data-menu="vertical-menu-modern" data-col="2-columns" data-layout="dark-layout">
+
+    <div id="loader">
+        <div class="boxes">
+            <div class="box">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <div class="box">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <div class="box">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <div class="box">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+    </div>
+    <div data-include="header"></div>
+
+    <!-- BEGIN: Main Menu-->
+    <div class="main-menu menu-fixed menu-dark menu-accordion menu-shadow" data-scroll-to-active="true">
+        <div class="navbar-header">
+            <ul class="nav navbar-nav flex-row">
+                <li class="nav-item mr-auto">
+                    <a class="navbar-brand" href="dashboard.html">
+
+                        <h2 class="brand-text mb-0"><img style="margin-top: 9px" height="45"
+                                src="app-assets/images/logo-dark.png" alt=""></h2>
+                    </a>
+                </li>
+                <li class="nav-item nav-toggle"><a class="nav-link modern-nav-toggle pr-0" data-toggle="collapse"><i
+                            class="bx bx-x d-block d-xl-none font-medium-4 primary"></i><i
+                            class="toggle-icon bx bx-disc font-medium-4 d-none d-xl-block primary"
+                            data-ticon="bx-disc"></i></a></li>
+            </ul>
+        </div>
+        <div class="shadow-bottom"></div>
+
+        <style>
+            .main-menu-content ul>li {
+                margin-top: 5px !important;
+            }
+        </style>
+        <div class="main-menu-content">
+            <ul class="navigation navigation-main" id="main-menu-navigation" data-menu="menu-navigation"
+                data-icon-style="lines">
+                <li class=" nav-item"><a href="dashboard.html"><i class="menu-livicon" data-icon="home"></i><span
+                    class="menu-title text-truncate" data-i18n="Anasayfa">Anasayfa</span></a>
+        </li>
+                <li class=" nav-item"><a href="book.html"><i class="menu-livicon" data-icon="map"></i><span
+                            class="menu-title text-truncate" data-i18n="Book">Book</span></a>
+                </li>
+                <li class=" nav-item"><a href="job-board.html"><i class="menu-livicon" data-icon="list"></i><span
+                    class="menu-title text-truncate" data-i18n="Job Board">Job Board</span></a>
+        </li>
+                
+                <li class=" nav-item"><a class="d-flex align-items-center" href="siparis.html"><i
+                            class="bx bx-right-arrow-alt"></i><span class="menu-item text-truncate"
+                            data-i18n="Depo Sevkiyat">Siparisler</span></a>
+                </li>
+                <li class=" nav-item"><a class="d-flex align-items-center" href="sikayet.html"><i
+                            class="bx bx-right-arrow-alt"></i><span class="menu-item text-truncate"
+                            data-i18n="Şikayetler">Şikayetler</span></a>
+                </li>
+
+                <li class="nav-item"><a href="fatura.html"><i class="menu-livicon" data-icon="calculator"></i><span
+                            class="menu-title text-truncate" data-i18n="Dağıtım Bilgileri">Fatura Bilgileri</span></a>
+                </li>
+                <li class=" nav-item"><a href="favorites.html"><i class="menu-livicon" data-icon="star"></i><span
+                    class="menu-title text-truncate" data-i18n="Favoriler">Favoriler</span></a>
+        </li>
+                <li class=" nav-item"><a href="profile.html"><i class="menu-livicon" data-icon="user"></i><span
+                            class="menu-title text-truncate" data-i18n="Profil">Profil</span></a>
+                </li>
+                <li class="nav-item">
+                    <a href="team.html"
+                      ><i class="menu-livicon" data-icon="users"></i
+                      ><span class="menu-title text-truncate" data-i18n="Profil"
+                        >Team</span
+                      ></a
+                    >
+                  </li>
+                <li class="active nav-item"><a href="definitions.html"><i class="menu-livicon"
+                            data-icon="briefcase"></i><span class="menu-title text-truncate"
+                            data-i18n="Tanımlamalar">Tanımlamalar</span></a>
+                </li>
+                <li class=" nav-item"><a href="co2.html"><i class="menu-livicon" data-icon="adjust"></i><span
+                    class="menu-title text-truncate" data-i18n="co2">CO2</span></a>
+                </li>
+                <li class=" nav-item"><a href="help.html"><i class="menu-livicon" data-icon="help"></i><span
+                            class="menu-title text-truncate" data-i18n="Tanımlamalar">Help</span></a>
+                </li>
+
+
+
+
+
+            </ul>
+        </div>
+    </div>
+    <!-- END: Main Menu-->
+
+    <!-- BEGIN: Content-->
+    <div class="app-content content">
+        <div class="content-overlay"></div>
+        <div class="content-wrapper">
+            <div class="content-header row">
+                <div class="content-header-left col-12 mb-2 mt-1">
+                    <div class="breadcrumbs-top">
+                        <div class="breadcrumb-wrapper d-none d-sm-block">
+                            <ol class="breadcrumb p-0 mb-0">
+                                <li class="breadcrumb-item"><a href="dashboard.html"><i class="bx bx-home-alt"></i></a>
+                                </li>
+                                <li class="breadcrumb-item">Tanımlamalar</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-body">
+                <!-- users edit start -->
+                <section class="users-edit">
+                    <div class="card">
+                        <div class="card-body">
+                            <ul class="nav nav-tabs mb-2" role="tablist">
+                                <li class="nav-item">
+                                    <a class="nav-link d-flex align-items-center active" id="account-tab"
+                                        data-toggle="tab" href="#account" aria-controls="account" role="tab"
+                                        aria-selected="true">
+                                        <i class="bx bx-briefcase mr-25"></i><span
+                                            class="d-none d-sm-block">Tanımlamalar</span>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link d-flex align-items-center" id="information-tab" data-toggle="tab"
+                                        href="#information" aria-controls="information" role="tab"
+                                        aria-selected="false">
+                                        <i class="bx bx-info-circle mr-25"></i><span class="d-none d-sm-block">Şirket
+                                            Bilgileri</span>
+                                    </a>
+                                </li>
+                            </ul>
+                            <div class="tab-content">
+                                <div class="tab-pane active fade show" id="account" aria-labelledby="account-tab"
+                                    role="tabpanel">
+                                    <!-- users edit media object start -->
+                                    <div class="media mb-2">
+                                        <a class="mr-2" href="javascript:void(0);">
+                                            <img src="app-assets/images/avatar.jpeg" alt="users avatar"
+                                                class="users-avatar-shadow rounded-circle" height="64" width="64">
+                                        </a>
+                                        <div class="media-body">
+                                            <h4 class="media-heading">Limonist Yazılım Mühendislik</h4>
+                                            <div class="col-12 px-0 d-flex">
+                                                <a href="javascript:void(0);"
+                                                    class="btn btn-sm btn-primary mr-50">Değiştir</a>
+                                                <a href="javascript:void(0);"
+                                                    class="btn btn-sm btn-light-secondary">Sil</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- users edit media object ends -->
+                                    <!-- users edit account form start -->
+                                    <form class="form-validate">
+                                        <div class="row">
+                                            <div class="col-12 col-sm-4">
+                                                <div class="form-group">
+                                                    <div class="controls">
+                                                        <label>Vergi Dairesi</label>
+                                                        <p class="text-muted font-size-small">Bahçelievler Vergi Dairesi
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <div class="controls">
+                                                        <label>Vergi Numarası</label>
+                                                        <p class="text-muted font-size-small">52465923478</p>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <div class="controls">
+                                                        <label>Web Sitesi Adresi</label>
+                                                        <p class="text-muted font-size-small">
+                                                            <a href="https://www.limonist.com">limonist.com</a>
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label>Telefon Numarası / Dahili Numara</label>
+                                                    <p class="text-muted font-size-small">05372568941 / 02123456984</p>
+                                                </div>
+                                            </div>
+                                            <div class="col-12 col-sm-4">
+                                                <div class="form-group">
+                                                    <label>İl</label>
+                                                    <p class="text-muted font-size-small">İstanbul</p>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label>İlçe</label>
+                                                    <p class="text-muted font-size-small">Bahçelievler</p>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label>Semt / Mahalle</label>
+                                                    <p class="text-muted font-size-small">Gül Mahallesi</p>
+                                                </div>
+                                            </div>
+                                            <div class="col-12 col-sm-4">
+                                                <div class="form-group">
+                                                    <label>Sokak</label>
+                                                    <p class="text-muted font-size-small">Asma Sk.</p>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label>Kapı No</label>
+                                                    <p class="text-muted font-size-small">17</p>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label>Posta Kodu</label>
+                                                    <p class="text-muted font-size-small">34000</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                    <!-- users edit account form ends -->
+                                </div>
+
+                                <div class="tab-pane fade show" id="information" aria-labelledby="information-tab"
+                                    role="tabpanel">
+                                    <!-- users edit Info form start -->
+                                    <form class="form-validate">
+                                        <div class="row">
+                                            <div class="col-12 col-sm-6">
+                                                <h5 class="mb-1"><i class="bx bx-info-circle mr-25"></i>Şirket Bilgileri
+                                                </h5>
+                                                <div class="form-group">
+                                                    <label>Şirket Adı</label>
+                                                    <input class="form-control" type="text" value="Şirket Adı">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label>Aylık Ortalama Taşıma Sayısı</label>
+                                                    <select class="form-control" id="accountSelect1">
+                                                        <option>0-10</option>
+                                                        <option>10-50</option>
+                                                        <option>50-100</option>
+                                                        <option>100-300</option>
+                                                        <option>300+</option>
+                                                    </select>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label>Vergi Dairesi</label>
+                                                    <input class="form-control" type="text" placeholder="Vergi Dairesi">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label>Vergi Numarası</label>
+                                                    <input class="form-control" type="text"
+                                                        placeholder="Vergi Numarası">
+                                                </div>
+                                            </div>
+                                            <div class="col-12 col-sm-6 mt-1 mt-sm-0">
+                                                <h5 class="mb-1"><i class="bx bx-phone mr-25"></i>İletişim</h5>
+                                                <div class="form-group">
+                                                    <div class="controls position-relative">
+                                                        <label>İl</label>
+                                                        <input type="text" class="form-control birthdate-picker"
+                                                            placeholder="İl" name="dob">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <div class="controls position-relative">
+                                                        <label>İlçe</label>
+                                                        <input type="text" class="form-control birthdate-picker"
+                                                            placeholder="İlçe" name="dob">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <div class="controls">
+                                                        <label>Semt / Mahalle</label>
+                                                        <input type="text" class="form-control"
+                                                            placeholder="Semt / Mahalle" name="phone">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <div class="controls">
+                                                        <label>Cadde / Sokak</label>
+                                                        <input type="text" class="form-control"
+                                                            placeholder="Cadde / Sokak" name="address">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-12">
+                                                <div class="form-group">
+                                                    <label>Kapı No</label>
+                                                    <input type="text" class="form-control" placeholder="Kapı No"
+                                                        name="website">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label>Posta Kodu</label>
+                                                    <input type="text" class="form-control" placeholder="Posta Kodu"
+                                                        name="website">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label>Telefon No</label>
+                                                    <input type="text" class="form-control" placeholder="Telefon No"
+                                                        name="website">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label>Dahili No</label>
+                                                    <input type="text" class="form-control" placeholder="Dahili No"
+                                                        name="website">
+                                                </div>
+                                            </div>
+                                            <div class="col-12 d-flex flex-sm-row flex-column justify-content-end mt-1">
+                                                <button type="submit"
+                                                    class="btn btn-primary glow mb-1 mb-sm-0 mr-0 mr-sm-1">Kaydet</button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                    <!-- users edit Info form ends -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- users edit ends -->
+            </div>
+        </div>
+    </div>
+    <!-- END: Content-->
+
+    <!-- demo chat-->
+    <div class="widget-chat-demo">
+        <!-- widget chat demo footer button start -->
+        <button class="btn btn-primary chat-demo-button glow"><i class="livicon-evo"
+                data-options="name: comments.svg; style: lines; size: 24px; strokeColor: #fff; autoPlay: true; repeat: loop;"></i></button>
+        <!-- widget chat demo footer button ends -->
+        <div class="widget-chat widget-chat-demo d-none">
+            <div class="card mb-0">
+                <div class="card-header border-bottom p-0">
+                    <div class="media m-75">
+                        <a href="JavaScript:void(0);">
+                            <div class="avatar mr-75">
+                                <img src="app-assets/images/portrait/small/avatar-s-2.jpg" alt="avtar images" width="32"
+                                    height="32">
+                                <span class="avatar-status-online"></span>
+                            </div>
+                        </a>
+                        <div class="media-body">
+                            <h6 class="media-heading mb-0 pt-25"><a href="javaScript:void(0);">Temsilci</a></h6>
+                            <span class="text-muted font-small-3">Aktif</span>
+                        </div>
+                    </div>
+                    <div class="heading-elements">
+                        <i class="bx bx-x widget-chat-close float-right my-auto cursor-pointer"></i>
+                    </div>
+                </div>
+                <div class="card-body widget-chat-container widget-chat-scroll">
+                    <div class="chat-content">
+                        <div class="badge badge-pill badge-light-secondary my-1">Bugün</div>
+                        <div class="chat chat-left">
+                            <div class="chat-body">
+                                <div class="chat-message">
+                                    <p>Merhaba, destek hattımıza hoşgeldiniz. Size nasıl yardımcı olabilirim ?</p>
+                                    <span class="chat-time">7:50</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="chat">
+                            <div class="chat-body">
+                                <div class="chat-message">
+                                    <p>Merhaba, siparişimin durumunu öğrenmek istiyorum.</p>
+                                    <span class="chat-time">7:45</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="chat chat-left">
+                            <div class="chat-body">
+                                <div class="chat-message">
+                                    <p>Kargonuz bugün yola çıkacak.</p>
+                                    <span class="chat-time">7:44</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="chat">
+                            <div class="chat-body">
+                                <div class="chat-message">
+                                    <p>Ne zaman teslim olur ?</p>
+                                    <span class="chat-time">7:42</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="chat chat-left">
+                            <div class="chat-body">
+                                <div class="chat-message">
+                                    <p>Üç iş günü içerisinde teslim olacaktır.</p>
+                                    <span class="chat-time">7:40</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="chat">
+                            <div class="chat-body">
+                                <div class="chat-message">
+                                    <p>Teşekkürler.</p>
+                                    <span class="chat-time">7:37</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="chat chat-left">
+                            <div class="chat-body">
+                                <div class="chat-message">
+                                    <p>İyi günler.</p>
+                                    <span class="chat-time">7:33</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer border-top p-1">
+                    <form class="d-flex" onsubmit="widgetChatMessageDemo();" action="javascript:void(0);">
+                        <input type="text" class="form-control chat-message-demo mr-75" placeholder="Type here...">
+                        <button type="submit" class="btn btn-primary glow px-1"><i
+                                class="bx bx-paper-plane"></i></button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+    <div class="sidenav-overlay"></div>
+    <div class="drag-target"></div>
+
+    <div data-include="footer"></div>
+
+    <!-- BEGIN: Vendor JS-->
+    <script src="app-assets/vendors/js/vendors.min.js"></script>
+    <script src="app-assets/fonts/LivIconsEvo/js/LivIconsEvo.tools.js"></script>
+    <script src="app-assets/fonts/LivIconsEvo/js/LivIconsEvo.defaults.js"></script>
+    <script src="app-assets/fonts/LivIconsEvo/js/LivIconsEvo.min.js"></script>
+    <!-- BEGIN Vendor JS-->
+
+    <!-- BEGIN: Page Vendor JS-->
+    <script src="app-assets/vendors/js/charts/apexcharts.min.js"></script>
+    <script src="app-assets/vendors/js/extensions/dragula.min.js"></script>
+    <!-- END: Page Vendor JS-->
+
+    <!-- BEGIN: Theme JS-->
+    <script src="app-assets/js/scripts/configs/vertical-menu-dark.js"></script>
+    <script src="app-assets/js/core/app-menu.js"></script>
+    <script src="app-assets/js/core/app.js"></script>
+    <script src="app-assets/js/scripts/components.js"></script>
+    <script src="app-assets/js/scripts/footer.js"></script>
+    <!-- END: Theme JS-->
+
+    <!-- BEGIN: Page JS-->
+    <script src="app-assets/js/scripts/pages/dashboard-analytics.js"></script>
+    <script src="assets/js/scripts.js"></script>
+    <!-- END: Page JS-->
+
+</body>
+<!-- END: Body-->
+
+</html>

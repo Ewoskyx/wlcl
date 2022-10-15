@@ -1,0 +1,807 @@
+<!DOCTYPE html>
+<html class="loading" lang="tr" data-textdirection="ltr">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+    <title>Sipariş Detay</title>
+    <link rel="shortcut icon" type="image/x-icon" href="../app-assets/images/favicon.jpeg">
+
+    <!-- BEGIN: Vendor CSS-->
+    <link rel="stylesheet" type="text/css" href="../app-assets/vendors/css/vendors.min.css">
+    <link rel="stylesheet" type="text/css" href="../app-assets/vendors/css/charts/apexcharts.css">
+    <link rel="stylesheet" type="text/css" href="../app-assets/vendors/css/extensions/swiper.min.css">
+    <!-- END: Vendor CSS-->
+
+    <!-- BEGIN: Theme CSS-->
+    <link rel="stylesheet" type="text/css" href="../app-assets/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="../app-assets/css/bootstrap-extended.css">
+    <link rel="stylesheet" type="text/css" href="../app-assets/css/colors.css">
+    <link rel="stylesheet" type="text/css" href="../app-assets/css/components.css">
+    <link rel="stylesheet" type="text/css" href="../app-assets/css/themes/dark-layout.css">
+    <link rel="stylesheet" type="text/css" href="../app-assets/css/themes/semi-dark-layout.css">
+    <!-- END: Theme CSS-->
+
+    <!-- BEGIN: Page CSS-->
+    <link rel="stylesheet" type="text/css" href="../app-assets/css/core/menu/menu-types/vertical-menu.css">
+    <link rel="stylesheet" type="text/css" href="../app-assets/css/pages/dashboard-ecommerce.css">
+    <!-- END: Page CSS-->
+
+    <!-- BEGIN: Custom CSS-->
+    <link rel="stylesheet" type="text/css" href="../assets/css/style.css">
+    <!-- END: Custom CSS-->
+
+    <link rel="stylesheet" type="text/css" href="../app-assets/vendors/css/forms/select/select2.min.css">
+    <link rel="stylesheet" type="text/css" href="../app-assets/vendors/css/tables/datatable/dataTables.bootstrap4.min.css">
+    <link rel="stylesheet" type="text/css" href="../app-assets/vendors/css/tables/datatable/responsive.bootstrap4.min.css">
+    <link rel="stylesheet" type="text/css" href="../app-assets/vendors/css/tables/datatable/buttons.bootstrap4.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.4.1/css/buttons.dataTables.min.css">
+
+</head>
+<!-- END: Head-->
+
+<!-- BEGIN: Body-->
+
+<body class="vertical-layout vertical-menu-modern dark-layout 2-columns  navbar-sticky footer-static  "
+      data-open="click" data-menu="vertical-menu-modern" data-col="2-columns" data-layout="dark-layout">
+
+<div id="loader">
+    <div class="boxes">
+        <div class="box">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <div class="box">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <div class="box">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <div class="box">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+</div>
+<div data-include="header"></div>
+
+  <!-- BEGIN: Main Menu-->
+  <div class="main-menu menu-fixed menu-dark menu-accordion menu-shadow" data-scroll-to-active="true">
+    <div class="navbar-header">
+        <ul class="nav navbar-nav flex-row">
+            <li class="nav-item mr-auto">
+                <a class="navbar-brand" href="../dashboard.html">
+                    
+                    <h2 class="brand-text mb-0"><img style="margin-top: 9px" height="45"
+                                                     src="../app-assets/images/logo-dark.png" alt=""></h2>
+                </a>
+            </li>
+            <li class="nav-item nav-toggle"><a class="nav-link modern-nav-toggle pr-0" data-toggle="collapse"><i
+                        class="bx bx-x d-block d-xl-none font-medium-4 primary"></i><i
+                        class="toggle-icon bx bx-disc font-medium-4 d-none d-xl-block primary"
+                        data-ticon="bx-disc"></i></a></li>
+        </ul>
+    </div>
+    <div class="shadow-bottom"></div>
+
+    <style>
+        .main-menu-content ul>li {
+            margin-top: 5px !important;
+        }
+    </style>
+    <div class="main-menu-content">
+        <ul class="navigation navigation-main" id="main-menu-navigation" data-menu="menu-navigation"
+            data-icon-style="lines">
+            <li class=" nav-item"><a href="../dashboard.html"><i class="menu-livicon" data-icon="home"></i><span
+                        class="menu-title text-truncate" data-i18n="Anasayfa">Anasayfa</span></a>
+            </li>
+            <li class="nav-item"><a href="#"><i class="menu-livicon" data-icon="calendar"></i><span
+                        class="menu-title text-truncate" data-i18n="Bülten">Bülten</span></a>
+            </li>
+            <li class=" nav-item"><a href="msiparisekrani.html"><i class="menu-livicon" data-icon="users"></i><span
+                        class="menu-title text-truncate" data-i18n="Kurye Yönetimi">Kurye Yönetimi</span></a>
+            </li>
+            <li class="nav-item"><a href="#"><i class="menu-livicon" data-icon="truck"></i><span
+                        class="menu-title text-truncate" data-i18n="Sipariş Yönetimi">Sipariş Yönetimi</span></a>
+                <ul class="menu-content">
+                    <li><a class="d-flex align-items-center" href="add-shipment.html"><i
+                                class="bx bx-right-arrow-alt"></i><span class="menu-item text-truncate"
+                                data-i18n="Yeni Sipariş Ekle">Yeni Sipariş Ekle</span></a>
+                    </li>
+                    <li><a class="d-flex align-items-center" href="file-shipment.html"><i
+                                class="bx bx-right-arrow-alt"></i><span class="menu-item text-truncate"
+                                data-i18n="Dosyadan Yükle">Dosyadan Yükle</span></a>
+                    </li>
+                </ul>
+            </li>
+            <li class="active nav-item"><a href="follow-up.html"><i class="menu-livicon" data-icon="compass"></i><span
+                        class="menu-title text-truncate" data-i18n="Sipariş Takip">Sipariş Takip</span></a>
+            </li>
+            <li class=" nav-item"><a href="#"><i class="menu-livicon" data-icon="bar-chart"></i><span
+                        class="menu-title text-truncate" data-i18n="Raporlar">Raporlar</span></a>
+                        <ul class="menu-content">
+
+                            <li><a class="d-flex align-items-center" href="yoldaki-siparisler-raporu.html"><i
+                                class="bx bx-right-arrow-alt"></i><span class="menu-item text-truncate"
+                                data-i18n="Yük Raporları">Yoldaki Siparişler Raporu</span></a></li>
+    
+                                <li><a class="d-flex align-items-center" href="zamaninda-teslim-raporu.html"><i
+                                    class="bx bx-right-arrow-alt"></i><span class="menu-item text-truncate"
+                                    data-i18n="Yük Raporları">Zamanında Teslim Raporu</span></a></li>
+    
+                                
+                            <li><a class="d-flex align-items-center" href="shipment-report.html"><i
+                                class="bx bx-right-arrow-alt"></i><span class="menu-item text-truncate"
+                                data-i18n="Yük Raporları">Yük Raporları</span></a></li>
+    
+    
+    
+                            <li><a class="d-flex align-items-center" href="geciken-teslimat-raporu.html"><i
+                                class="bx bx-right-arrow-alt"></i><span class="menu-item text-truncate"
+                                data-i18n="Şikayet Yönetimi Raporu">Geciken Teslimat Raporu</span></a></li>
+    
+                            <li><a class="d-flex align-items-center" href="complaint-report.html"><i
+                                        class="bx bx-right-arrow-alt"></i><span class="menu-item text-truncate"
+                                        data-i18n="Şikayet Yönetimi Raporu">Şikayet Yönetimi Raporu</span></a></li>
+    
+                            <li><a class="d-flex align-items-center" href="drive-report.html"><i
+                                        class="bx bx-right-arrow-alt"></i><span class="menu-item text-truncate"
+                                        data-i18n="Env. Sürücü Raporları">Env. Sürücü Raporları</span></a></li>
+    
+    
+    
+                            <li><a class="d-flex align-items-center" href="driver-score-report.html"><i
+                                        class="bx bx-right-arrow-alt"></i><span class="menu-item text-truncate"
+                                        data-i18n="Sürücü Puan Raporu">Sürücü Puan Raporu</span></a></li>
+    
+                            <li><a class="d-flex align-items-center" href="post-service-score-report.html"><i
+                                        class="bx bx-right-arrow-alt"></i><span class="menu-item text-truncate"
+                                        data-i18n="Hizmet Sonrası Anket Raporu">Hizmet Sonrası Anket Raporu</span></a></li>
+                                        
+                            <li><a class="d-flex align-items-center" href="overall-score-report.html"><i
+                                        class="bx bx-right-arrow-alt"></i><span class="menu-item text-truncate"
+                                        data-i18n="Genel Değerlendirme Anket Raporu">Genel Değerlendirme Anket
+                                        Raporu</span></a></li>
+                            <li><a class="d-flex align-items-center" href="customer-evaluation-score-report.html"><i
+                                        class="bx bx-right-arrow-alt"></i><span class="menu-item text-truncate"
+                                        data-i18n="Müşteri Değerlendirme Puan Raporu">Müşteri Değerlendirme Puan
+                                        Raporu</span></a></li>
+                        </ul>
+            </li>
+            <li class="nav-item"><a href="invoice-information.html"><i class="menu-livicon"
+                                                                       data-icon="calculator"></i><span class="menu-title text-truncate"
+                        data-i18n="Dağıtım Bilgileri">Fatura Bilgileri</span></a>
+            </li>
+            <li class="nav-item"><a href="rating-system.html"><i class="menu-livicon" data-icon="touch"></i><span
+                        class="menu-title text-truncate" data-i18n="Rating Sistemleri">Rating Sistemleri</span></a>
+            </li>
+            <li class=" nav-item"><a href="definitions.html"><i class="menu-livicon" data-icon="briefcase"></i><span
+                        class="menu-title text-truncate" data-i18n="Tanımlamalar">Tanımlamalar</span></a>
+            </li>
+            <li class=" nav-item"><a href="profile.html"><i class="menu-livicon" data-icon="user"></i><span
+                        class="menu-title text-truncate" data-i18n="Profil">Profil</span></a>
+            </li>
+            <li class=" nav-item"><a href="help-page.html"><i class="menu-livicon" data-icon="help"></i><span
+                        class="menu-title text-truncate" data-i18n="Yardım">Yardım</span></a>
+            </li>
+        </ul>
+    </div>
+</div>
+<!-- END: Main Menu-->
+
+<!-- BEGIN: Content-->
+<div class="app-content content">
+    <div class="content-overlay"></div>
+    <div class="content-wrapper">
+        <div class="content-header row">
+            <div class="content-header-left col-12 mb-2 mt-1">
+                <div class="breadcrumbs-top">
+                    <div class="breadcrumb-wrapper d-none d-sm-block">
+                        <ol class="breadcrumb p-0 mb-0">
+                            <li class="breadcrumb-item"><a href="../dashboard.html"><i class="bx bx-home-alt"></i></a>
+                            </li>
+                            <li class="breadcrumb-item">Sipariş Detay
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="content-body">
+            <!-- Zero configuration table -->
+            <section id="basic-datatable">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <ul class="nav nav-tabs mb-2" role="tablist">
+                                    <li class="nav-item">
+                                        <a class="nav-link d-flex align-items-center active" id="account-tab" data-toggle="tab" href="#account" aria-controls="account" role="tab" aria-selected="true">
+                                            <i class="bx bx-briefcase mr-25"></i>
+                                            <span class="d-none d-sm-block">Sipariş Detay</span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link d-flex align-items-center" id="information-tab" data-toggle="tab" href="#information" aria-controls="information" role="tab" aria-selected="false">
+                                            <i class="bx bx-info-circle mr-25"></i>
+                                            <span class="d-none d-sm-block">Konum</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                                <div class="tab-content">
+                                    <div class="tab-pane active fade show" id="account" aria-labelledby="account-tab" role="tabpanel">
+                                        <div class="row">
+                                            <div class="col-lg-6 border-dark" style="border-radius: 5px">
+                                                <div class="row pb-2 pt-2  border-bottom-dark">
+                                                  <div class="col-lg-12">
+                                                      <div class="row">
+                                                          <div class="col-md-6">
+                                                              <div class="col-lg-12">
+                                                                  <p class="card-title title-p">Kargo Durumu</p>
+                                                                  <h3 class="title-h3">GÖNDERİCİDEN ALIM AŞAMASINDA</h3>
+                                                              </div>
+                                                          </div>
+                                                          <div class="col-md-6">
+                                                              <div class="col-lg-12">
+                                                                  <p class="card-title title-p">Kargo Takip No</p>
+                                                                  <h6 class="takip-no">19D803512</h6>
+                                                              </div>
+                                                          </div>
+                                                      </div>
+                                                  </div>
+                                                </div>
+
+                                                <div class="row">
+                                                    <div class="col-lg-12 border-bottom-dark">
+                                                        <div class="row">
+                                                            <div class="col-lg-12 border-bottom-dark">
+                                                                <ul class="nav nav-tabs process-model more-icon-preocess" role="tablist">
+                                                                    <li role="presentation" class="active iconBox">
+                                                                        <a href="#" aria-controls="discover" role="tab" data-toggle="tab">
+                                                    <span>
+                                                        <i class="menu-livicon" data-icon="home"></i>
+                                                    </span>
+                                                            <p class="status">
+                                                                Müşteri Teslim Edecek
+                                                            </p>
+                                                        </a>
+                                                    </li>
+                                                    <li role="presentation" class="iconBox"><a href="#" aria-controls="strategy" role="tab" data-toggle="tab">
+                                               <span>
+                                                    <i class="menu-livicon" data-icon="bank"></i>
+                                               </span>
+                                                        <p class="status">
+                                                            Depoda
+                                                        </p>
+                                                    </a></li>
+                                                    <li role="presentation" class="iconBox"><a href="#" aria-controls="optimization" role="tab" data-toggle="tab">
+                                                <span>
+                                                    <i class="menu-livicon" data-icon="truck"></i>
+                                                </span>
+                                                        <p class="status">
+                                                           Yolda
+                                                        </p>
+                                                    </a>
+                                                    </li>
+                                                    <li class="justify-content-end iconBox" role="presentation">
+                                                        <a href="#" aria-controls="content" role="tab" data-toggle="tab">
+                                                    <span>
+                                                        <i class="menu-livicon" data-icon="check"></i>
+                                                    </span>
+                                                            <p class="status">
+                                                                Teslim Edildi
+                                                            </p>
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                                    <div class="col-lg-12">
+                                                        <div class="table-responsive">
+                                                            <div class="card-header d-flex justify-content-between align-items-center pb-0">
+                                                                <h5 class="title-p">Gönderi Bilgileri</h5>
+                                                            </div>
+                                                            <table id="table-marketing-campaigns" class="table table-borderless table-marketing-campaigns mb-0">
+
+                                                                <tbody>
+                                                                <tr>
+                                                                    <td>
+                                                                        <span class="line-height">Gönderici Ünvan / Ad Soyad</span>
+                                                                        <h5 class="small">ELMACIOĞLU TÜKETİM MALLARI TİC. A.Ş.</h5>
+                                                                    </td>
+                                                                    <td>
+                                                                        <span class="line-height">Alıcı Ünvan / Ad Soyad</span>
+                                                                        <h5 class="small">F*** A*** G*** M***</h5>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>
+                                                                        <span class="line-height">Sipariş Numarası</span>
+                                                                        <h5 class="small">EDİLİYOR</h5>
+                                                                    </td>
+                                                                    <td>
+                                                                        <span class="line-height">Alıcı İlçe / İl</span>
+                                                                        <h5 class="small">ATAŞEHİR / İSTANBUL</h5>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>
+                                                                        <span class="line-height">Kago Adedi</span>
+                                                                        <h5 class="small">1</h5>
+                                                                    </td>
+                                                                    <td>
+                                                                        <span class="line-height">Tahmini Teslim Tarihi</span>
+                                                                        <h5 class="small">28-01-2020</h5>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td>
+                                                                        <span class="line-height">Desi / KG</span>
+                                                                        <h5 class="small">1</h5>
+                                                                    </td>
+                                                                    <td>
+                                                                        <span class="line-height">POD Dökümanı</span>
+                                                                        <h5 class="small"><a data-toggle="modal" data-target="#exampleModal" href="#exampleModal">Görüntüle</a></h5>
+                                                                    </td>
+                                                                </tr>
+
+
+                                                                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                                    <div class="modal-dialog">
+                                                                        <div class="modal-content">
+                                                                            <div class="modal-header">
+                                                                                <h5 class="modal-title" id="exampleModalLabel">Pod Dökümanı</h5>
+                                                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                                    <span aria-hidden="true">&times;</span>
+                                                                                </button>
+                                                                            </div>
+                                                                            <div class="modal-body">
+                                                                                <a href="../app-assets/images/irsaliye.png" id="link" download="app-assets/images/irsaliye.png">
+                                                                                    <img src="../app-assets/images/irsaliye.png" alt="">
+                                                                                </a>
+                                                                            </div>
+                                                                            <div class="modal-footer">
+                                                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Kapat</button>
+                                                                                <button type="submit" class="btn btn-primary" onclick="document.getElementById('link').click()">İndir</button>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+
+                                                                </tbody>
+
+                                                            </table>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-12 border-top-dark pt-2">
+                                                        <p class="table-footer">Kişisel verileriniz mevzuata uygun işlenmekte ve korunmaktadır.
+                                                            <br> Aydınlatma metnine <a href="#">buradan</a> ulaşabilirsiniz</p>
+                                                    </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane fade show" id="information" aria-labelledby="information-tab" role="tabpanel">
+                                        <!-- users edit Info form start -->
+                                            <div class="row">
+                                                <div class="col-lg-12">
+                                                    <div class="mapouter"><div class="gmap_canvas"><iframe style="width: 100%;" height="350" id="gmap_canvas" src="https://maps.google.com/maps?q=istanbul&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><br><style>.mapouter{position:relative;text-align:right;height:350px}</style><style>.gmap_canvas {overflow:hidden;background:none!important;height:350px;}</style></div></div>
+                                                </div>
+
+                                            </div>
+                                        <!-- users edit Info form ends -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+</div>
+<!-- END: Content-->
+
+<!-- demo chat-->
+<div class="widget-chat-demo">
+    <!-- widget chat demo footer button start -->
+    <button class="btn btn-primary chat-demo-button glow"><i class="livicon-evo" data-options="name: comments.svg; style: lines; size: 24px; strokeColor: #fff; autoPlay: true; repeat: loop;"></i></button>
+    <!-- widget chat demo footer button ends -->
+    <<div class="widget-chat widget-chat-demo d-none">
+    <div class="card mb-0">
+        <div class="card-header border-bottom p-0">
+            <div class="media m-75">
+                <a href="JavaScript:void(0);">
+                    <div class="avatar mr-75">
+                        <img src="../app-assets/images/portrait/small/avatar-s-2.jpg" alt="avtar images" width="32" height="32">
+                        <span class="avatar-status-online"></span>
+                    </div>
+                </a>
+                <div class="media-body">
+                    <h6 class="media-heading mb-0 pt-25"><a href="javaScript:void(0);">Temsilci</a></h6>
+                    <span class="text-muted font-small-3">Aktif</span>
+                </div>
+            </div>
+            <div class="heading-elements">
+                <i class="bx bx-x widget-chat-close float-right my-auto cursor-pointer"></i>
+            </div>
+        </div>
+        <div class="card-body widget-chat-container widget-chat-scroll">
+            <div class="chat-content">
+                <div class="badge badge-pill badge-light-secondary my-1">Bugün</div>
+                <div class="chat chat-left">
+                    <div class="chat-body">
+                        <div class="chat-message">
+                            <p>Merhaba, destek hattımıza hoşgeldiniz. Size nasıl yardımcı olabilirim ?</p>
+                            <span class="chat-time">7:50</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="chat">
+                    <div class="chat-body">
+                        <div class="chat-message">
+                            <p>Merhaba, siparişimin durumunu öğrenmek istiyorum.</p>
+                            <span class="chat-time">7:45</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="chat chat-left">
+                    <div class="chat-body">
+                        <div class="chat-message">
+                            <p>Kargonuz bugün yola çıkacak.</p>
+                            <span class="chat-time">7:44</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="chat">
+                    <div class="chat-body">
+                        <div class="chat-message">
+                            <p>Ne zaman teslim olur ?</p>
+                            <span class="chat-time">7:42</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="chat chat-left">
+                    <div class="chat-body">
+                        <div class="chat-message">
+                            <p>Üç iş günü içerisinde teslim olacaktır.</p>
+                            <span class="chat-time">7:40</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="chat">
+                    <div class="chat-body">
+                        <div class="chat-message">
+                            <p>Teşekkürler.</p>
+                            <span class="chat-time">7:37</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="chat chat-left">
+                    <div class="chat-body">
+                        <div class="chat-message">
+                            <p>İyi günler.</p>
+                            <span class="chat-time">7:33</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card-footer border-top p-1">
+            <form class="d-flex" onsubmit="widgetChatMessageDemo();" action="javascript:void(0);">
+                <input type="text" class="form-control chat-message-demo mr-75" placeholder="Type here...">
+                <button type="submit" class="btn btn-primary glow px-1"><i class="bx bx-paper-plane"></i></button>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+</div>
+
+<div class="sidenav-overlay"></div>
+<div class="drag-target"></div>
+
+<div data-include="footer"></div>
+
+
+
+<!-- BEGIN: Vendor JS-->
+<script src="../app-assets/vendors/js/vendors.min.js"></script>
+<script src="../app-assets/fonts/LivIconsEvo/js/LivIconsEvo.tools.js"></script>
+<script src="../app-assets/fonts/LivIconsEvo/js/LivIconsEvo.defaults.js"></script>
+<script src="../app-assets/fonts/LivIconsEvo/js/LivIconsEvo.min.js"></script>
+<!-- BEGIN Vendor JS-->
+
+<!-- BEGIN: Page Vendor JS-->
+<script src="../app-assets/vendors/js/tables/datatable/jquery.dataTables.min.js"></script>
+<script src="../app-assets/vendors/js/tables/datatable/dataTables.bootstrap4.min.js"></script>
+<script src="../app-assets/vendors/js/tables/datatable/dataTables.buttons.min.js"></script>
+<script src="../app-assets/vendors/js/tables/datatable/buttons.html5.min.js"></script>
+<script src="../app-assets/vendors/js/tables/datatable/buttons.print.min.js"></script>
+<script src="../app-assets/vendors/js/tables/datatable/buttons.bootstrap4.min.js"></script>
+<script src="../app-assets/vendors/js/tables/datatable/pdfmake.min.js"></script>
+<script src="../app-assets/vendors/js/tables/datatable/vfs_fonts.js"></script>
+<script src="../app-assets/vendors/js/forms/select/select2.full.min.js"></script>
+<!-- END: Page Vendor JS-->
+
+<!-- BEGIN: Theme JS-->
+<script src="../app-assets/js/scripts/configs/vertical-menu-dark.js"></script>
+<script src="../app-assets/js/core/app-menu.js"></script>
+<script src="../app-assets/js/core/app.js"></script>
+<script src="../app-assets/js/scripts/components.js"></script>
+<script src="../app-assets/js/scripts/footer.js"></script>
+<!-- END: Theme JS-->
+
+<!-- BEGIN: Page JS-->
+<script src="../app-assets/js/scripts/datatables/datatable.js"></script>
+<script src="../app-assets/js/scripts/forms/select/form-select2.js"></script>
+<script src="../assets/js/scripts.js"></script>
+<!-- END: Page JS-->
+
+<style>
+    .title-h3{
+        text-align: center;
+        margin-bottom: 5px !important ;
+        font-size: 14px !important;
+    }
+    .title-p{
+        text-align: center;
+        margin-bottom: 5px !important ;
+        font-size: 20px;
+    }
+    .takip-no{
+        text-align: center;
+        color: red !important;
+        font-weight: bold;
+    }
+
+    .design-process-content img {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 0;
+        max-height: 100%;
+    }
+    .design-process-content h3 {
+        margin-bottom: 16px;
+    }
+    .design-process-content p {
+        line-height: 26px;
+        margin-bottom: 12px;
+    }
+    .process-model {
+        overflow: hidden;
+        justify-content: center;
+        list-style: none;
+        padding: 0;
+        position: relative;
+        max-width: 600px;
+        margin: 20px auto 26px;
+        border: none;
+        z-index: 0;
+    }
+    .title-p{
+        opacity: 0.7;
+    }
+    .process-model li::after {
+        background: #c2ccce none repeat scroll 0 0 ;
+        bottom: 0;
+        content: "";
+        display: block;
+        height: 4px;
+        margin: 0 auto;
+        position: absolute;
+        top: 33px;
+        width: 100%;
+        right: 0;
+        z-index: -1;
+    }
+    body.dark-layout .process-model li::after{
+        background: #36c5f4 none repeat scroll 0 0;
+    }
+    .process-model li.active p, .process-model li.visited p{
+        font-weight: 600 !important;
+        color: #1f3767 !important;
+    }
+    .process-model li.visited::after {
+        background: #D6DA28;
+    }
+    .process-model li:last-child::after {
+        width: 0;
+    }
+    .process-model li {
+        display: inline-block;
+        width: 25%;
+        text-align: center;
+        float: none;
+    }
+    .nav-tabs.process-model > li.active > a, .nav-tabs.process-model > li.active > a:hover, .nav-tabs.process-model > li.active > a:focus, .process-model li a:hover, .process-model li a:focus {
+        border: none;
+        background: transparent;
+    }
+    .process-model li a {
+        padding: 0;
+        border: none;
+        color: #606060;
+    }
+    .process-model li.active,
+    .process-model li.visited {
+        color: #D6DA28;
+    }
+    .process-model li.active a,
+    .process-model li.active a:hover,
+    .process-model li.active a:focus,
+    .process-model li.visited a,
+    .process-model li.visited a:hover,
+    .process-model li.visited a:focus {
+        color: #D6DA28;
+    }
+    .process-model li.active p,
+    .process-model li.visited p {
+        font-weight: 600;
+        color: #36c6f4;
+    }
+    body.dark-layout .process-model li.active p, body.dark-layout .process-model li.visited p{
+        font-weight: 600 !important;
+        color: #36c6f4 !important;
+    }
+    body.dark-layout .process-model li span{
+        background: #272e48;
+    }
+    body.dark-layout .process-model li span{
+        border: 3px solid #36c5f4 !important;
+        color: #36c6f4 !important;
+    }
+    body.dark-layout .process-model li span svg {
+        filter: none;
+    }
+    .process-model li span svg {
+        filter: invert(0%) sepia(14%) saturate(12%) hue-rotate(236deg) brightness(107%) contrast(100%);
+    }
+
+    body.dark-layout .process-model li span{
+        border: 3px solid #36c5f4 ;
+        color: #36c6f4;
+    }
+
+    .process-model li span {
+        border: 3px solid #dadada !important;
+        color: #dadada !important;
+        display: block;
+        height: 68px;
+        width: 68px;
+        text-align: center;
+        background: #f2f4f4;
+        margin: 0 auto;
+        line-height: 65px;
+        font-size: 30px;
+        border-radius: 50%;
+    }
+    body.dark-layout .process-model li.active span, .process-model li.visited span  {
+        border-color: #36c5f4 !important;
+        color: #36c5f4 !important;
+    }
+    .process-model li.active span, .process-model li.visited span  {
+        border-color: #1f3767 !important;
+        color: #1f3767 !important;
+    }
+    body.dark-layout .process-model li.active span, .process-model li.visited span  {
+        border-color: #36c5f4;
+        color: #36c5f4;
+    }
+    .process-model li.active span, .process-model li.visited span  {
+        border-color: #1f3767;
+        color: #1f3767;
+    }
+
+    .process-model li p {
+        font-size: 14px;
+        margin-top: 11px;
+    }
+    .process-model.contact-us-tab li.visited a, .process-model.contact-us-tab li.visited p {
+        color: #606060!important;
+        font-weight: normal
+    }
+    .process-model.contact-us-tab li::after  {
+        display: none;
+    }
+    .process-model.contact-us-tab li.visited i {
+        border-color: #e5e5e5;
+    }
+    .process-model li.active span, .process-model li.visited span  {
+        border-color: #36c5f4;
+        color: #36c5f4;
+    }
+    .process-model li p {
+        font-size: 14px;
+        margin-top: 11px;
+    }
+    .process-model.contact-us-tab li.visited a, .process-model.contact-us-tab li.visited p {
+        color: #606060!important;
+        font-weight: normal
+    }
+    .process-model.contact-us-tab li::after  {
+        display: none;
+    }
+    .process-model.contact-us-tab li.visited i {
+        border-color: #e5e5e5;
+    }
+
+
+
+    @media screen and (max-width: 560px) {
+        .more-icon-preocess.process-model li span {
+            font-size: 23px;
+            height: 50px;
+            line-height: 46px;
+            width: 50px;
+        }
+        .more-icon-preocess.process-model li::after {
+            top: 24px;
+        }
+    }
+    @media screen and (max-width: 380px) {
+        .process-model.more-icon-preocess li {
+            width: 16%;
+        }
+        .more-icon-preocess.process-model li span {
+            font-size: 16px;
+            height: 35px;
+            line-height: 32px;
+            width: 35px;
+        }
+        .more-icon-preocess.process-model li p {
+            font-size: 8px;
+        }
+        .more-icon-preocess.process-model li::after {
+            top: 18px;
+        }
+        .process-model.more-icon-preocess {
+            text-align: center;
+        }
+    }
+    .table-footer a{
+        color:red;
+    }
+    .table-footer{
+        text-align: center;
+        font-size: 14px;
+    }
+    .iconBox span{
+        padding: 8px;
+    }
+    .iconBox span i div{
+        display: flex;
+    }
+    .small{
+        font-size: 76%;
+    }
+    .table-responsive{
+        overflow-x:hidden ;
+    }
+    .status{
+        font-size: 13px !important;
+    }
+    #table-marketing-campaigns td{
+        padding-bottom: 0;
+    }
+</style>
+
+</body>
+<!-- END: Body-->
+
+</html>

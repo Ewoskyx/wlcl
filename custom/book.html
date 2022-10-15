@@ -1,0 +1,1862 @@
+<!DOCTYPE html>
+<html class="loading" lang="en" data-textdirection="ltr">
+<!-- BEGIN: Head-->
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+    <title>We Lokal- Yönetim Paneli</title>
+    <link rel="apple-touch-icon" href="app-assets/images/ico/apple-icon-120.png">
+    <link rel="shortcut icon" type="image/x-icon" href="app-assets/images/favicon.jpeg">
+    <link href="https://fonts.googleapis.com/css?family=Rubik:300,400,500,600%7CIBM+Plex+Sans:300,400,500,600,700"
+        rel="stylesheet">
+
+    <!-- BEGIN: Vendor CSS-->
+    <link rel="stylesheet" type="text/css" href="app-assets/vendors/css/vendors.min.css">
+    <link rel="stylesheet" type="text/css" href="app-assets/vendors/css/forms/spinner/jquery.bootstrap-touchspin.css">
+    <link rel="stylesheet" type="text/css" href="app-assets/vendors/css/charts/apexcharts.css">
+    <link rel="stylesheet" type="text/css" href="app-assets/vendors/css/extensions/swiper.min.css">
+    <link rel="stylesheet" type="text/css" href="app-assets/vendors/css/maps/leaflet.min.css">
+    <link rel="stylesheet" type="text/css" href="app-assets/vendors/css/extensions/nouislider.min.css">
+    <link rel="stylesheet" type="text/css" href="app-assets/vendors/css/pickers/pickadate/pickadate.css">
+    <link rel="stylesheet" type="text/css" href="app-assets/vendors/css/pickers/daterange/daterangepicker.css">
+
+    <!-- END: Vendor CSS-->
+
+    <!-- BEGIN: Theme CSS-->
+    <link rel="stylesheet" type="text/css" href="app-assets/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="app-assets/css/bootstrap-extended.css">
+    <link rel="stylesheet" type="text/css" href="app-assets/css/colors.css">
+    <link rel="stylesheet" type="text/css" href="app-assets/css/components.css">
+    <link rel="stylesheet" type="text/css" href="app-assets/css/themes/dark-layout.css">
+    <link rel="stylesheet" type="text/css" href="app-assets/css/themes/semi-dark-layout.css">
+    <link rel="stylesheet" type="text/css" href="app-assets/map/css/style.css">
+ 
+    <!-- END: Theme CSS-->
+
+    <!-- BEGIN: Page CSS-->
+    <link rel="stylesheet" type="text/css" href="app-assets/css/core/menu/menu-types/vertical-menu.css">
+    <link rel="stylesheet" type="text/css" href="app-assets/css/plugins/maps/maps-leaflet.css">
+    <link rel="stylesheet" type="text/css" href="app-assets/css/pages/dashboard-ecommerce.css">
+    <link rel="stylesheet" type="text/css" href="app-assets/css/plugins/extensions/noui-slider.css">
+    <link rel="stylesheet" type="text/css" href="app-assets/css/core/colors/palette-noui.css">
+    <!-- END: Page CSS-->
+
+    <!-- BEGIN: Custom CSS-->
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <!-- END: Custom CSS-->
+
+    <link rel="stylesheet" href="assets/map/demo.css">
+
+    <link rel="stylesheet" href="assets/css/costum.css">
+
+    <style>
+        .map-sidebar {
+            width: 400px;
+            height: 100%;
+            background: white;
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 9;
+            transform: translateX(105%);
+            transition: ease all .25s
+        }
+
+        .map-sidebar.show {
+            transform: translateX(0);
+            transition: ease all .25s
+        }
+
+        .transX {
+            transform: scaleX(-1);
+        }
+
+        .chat-demo-button {
+            z-index: 8
+        }
+
+        .box-size {
+            border: 1px #a4a4a4 dotted;
+            border-radius: 3%;
+            background-color: #f8f8f8;
+        }
+    </style>
+</head>
+<!-- END: Head-->
+
+<!-- BEGIN: Body-->
+
+<body class="vertical-layout vertical-menu-modern dark-layout 2-columns  navbar-sticky footer-static" data-open="click"
+    data-menu="vertical-menu-modern" data-col="2-columns" data-layout="dark-layout">
+
+    <div id="loader" style="height: 100vh; position: fixed; inset: 0;">
+        <div class="boxes">
+            <div class="box">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <div class="box">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <div class="box">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <div class="box">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+    </div>
+    <style>
+        .agree-confirmation {
+            position: absolute;
+            z-index: 9999;
+            width: 100vw;
+            height: 100vh;
+        }
+
+        .agree-confirmation::after {
+            content: '';
+            position: absolute;
+            background-color: rgba(255, 255, 255, 0.8);
+            inset: 0;
+            width: 100vw;
+            height: 100vh;
+        }
+
+        .agree-confirmation .area img {
+            width: 300px;
+        }
+
+        .agree-confirmation .area {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 12;
+        }
+
+        #transport-tab>li>a.active span {
+            background-color: rgb(255, 255, 255);
+        }
+    </style>
+    <div class="agree-confirmation">
+        <div class="area text-center">
+            <img src="app-assets/images/logo-light.png" alt="">
+            <h1 class="mt-5">HELLO CUSTOMER </h1>
+            <p>We have new <a href="#" target="_blank">Terms and Conditions </a>.</p>
+
+            <button class="btn btn-success btn-block" onclick="$('.agree-confirmation').hide()">I AGREE</button>
+        </div>
+    </div>
+    <div data-include="header"></div>
+
+    <!-- BEGIN: Main Menu-->
+    <div class="main-menu menu-fixed menu-dark menu-accordion menu-shadow" data-scroll-to-active="true">
+        <div class="navbar-header">
+            <ul class="nav navbar-nav flex-row">
+                <li class="nav-item mr-auto">
+                    <a class="navbar-brand" href="dashboard.html">
+
+                        <h2 class="brand-text mb-0"><img style="margin-top: 9px" height="45"
+                                src="app-assets/images/logo-dark.png" alt=""></h2>
+                    </a>
+                </li>
+                <li class="nav-item nav-toggle"><a class="nav-link modern-nav-toggle pr-0" data-toggle="collapse"><i
+                            class="bx bx-x d-block d-xl-none font-medium-4 primary"></i><i
+                            class="toggle-icon bx bx-disc font-medium-4 d-none d-xl-block primary"
+                            data-ticon="bx-disc"></i></a></li>
+            </ul>
+        </div>
+        <div class="shadow-bottom"></div>
+
+        <style>
+            .main-menu-content ul>li {
+                margin-top: 5px !important;
+            }
+        </style>
+        <div class="main-menu-content">
+            <ul class="navigation navigation-main" id="main-menu-navigation" data-menu="menu-navigation"
+                data-icon-style="lines">
+                <li class=" nav-item"><a href="dashboard.html"><i class="menu-livicon" data-icon="home"></i><span
+                    class="menu-title text-truncate" data-i18n="Anasayfa">Anasayfa</span></a>
+        </li>
+                <li class="active nav-item"><a href="book.html"><i class="menu-livicon" data-icon="map"></i><span
+                            class="menu-title text-truncate" data-i18n="Book">Book</span></a>
+                </li>
+                <li class=" nav-item"><a href="job-board.html"><i class="menu-livicon" data-icon="list"></i><span
+                    class="menu-title text-truncate" data-i18n="Job Board">Job Board</span></a>
+        </li>
+                
+                
+                <li><a class="d-flex align-items-center" href="siparis.html"><i class="bx bx-right-arrow-alt"></i><span
+                            class="menu-item text-truncate" data-i18n="Depo Sevkiyat">Siparisler</span></a>
+                </li>
+                <li><a class="d-flex align-items-center" href="sikayet.html"><i class="bx bx-right-arrow-alt"></i><span
+                            class="menu-item text-truncate" data-i18n="Şikayetler">Şikayetler</span></a>
+                </li>
+
+                <li class="nav-item"><a href="billing.html"><i class="menu-livicon" data-icon="calculator"></i><span
+                            class="menu-title text-truncate" data-i18n="Dağıtım Bilgileri">Fatura Bilgileri</span></a>
+                </li>
+                <li class=" nav-item"><a href="favorites.html"><i class="menu-livicon" data-icon="star"></i><span
+                    class="menu-title text-truncate" data-i18n="Favoriler">Favoriler</span></a>
+        </li>
+                <li class=" nav-item"><a href="profile.html"><i class="menu-livicon" data-icon="user"></i><span
+                            class="menu-title text-truncate" data-i18n="Profil">Profil</span></a>
+                </li>
+                <li class="nav-item">
+                    <a href="team.html"
+                      ><i class="menu-livicon" data-icon="users"></i
+                      ><span class="menu-title text-truncate" data-i18n="Profil"
+                        >Team</span
+                      ></a
+                    >
+                  </li>
+                <li class=" nav-item"><a href="definitions.html"><i class="menu-livicon" data-icon="briefcase"></i><span
+                            class="menu-title text-truncate" data-i18n="Tanımlamalar">Tanımlamalar</span></a>
+                </li>
+                <li class=" nav-item"><a href="co2.html"><i class="menu-livicon" data-icon="adjust"></i><span
+                    class="menu-title text-truncate" data-i18n="co2">CO2</span></a>
+                </li>
+                <li class=" nav-item"><a href="help.html"><i class="menu-livicon" data-icon="help"></i><span
+                            class="menu-title text-truncate" data-i18n="Tanımlamalar">Help</span></a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!-- END: Main Menu-->
+
+    <!-- BEGIN: Content-->
+    <div class="app-content content">
+        <div class="content-overlay"></div>
+        <div class="content-wrapper">
+            <div class="content-header row">
+            </div>
+            <div class="content-body">
+                <!-- Dashboard Ecommerce Starts -->
+                <section id="dashboard-ecommerce">
+                    <div class="row">
+                        <div class="col-xl-4 col-12 p-0">
+                            <div class="card w-100" style="height:calc(100vh - 160px)">
+                                <div class="card-header bg-success " style="padding: 10px">
+                                    <h4 class="card-title text-white">Yeni Taşıma</h4>
+                                </div>
+                                <div class="card-body p-0">
+
+                                    <!-- Nav tabs -->
+                                    <ul class="nav nav-tabs nav-fill" id="myTab" role="tablist">
+                                        <li class="nav-item m-0 p-0">
+                                            <a class="nav-link active rounded-0 " id="home-tab-fill" data-toggle="tab"
+                                                href="#home-fill" role="tab" aria-controls="home-fill"
+                                                aria-selected="true">
+                                                TESLİM AL
+                                            </a>
+                                        </li>
+                                        <li class="nav-item m-0 p-0">
+                                            <a class="nav-link rounded-0" id="profile-tab-fill" data-toggle="tab"
+                                                href="#profile-fill" role="tab" aria-controls="profile-fill"
+                                                aria-selected="false">
+                                                TESLİM ET
+                                            </a>
+                                        </li>
+
+                                    </ul>
+
+                                    <!-- Tab panes -->
+                                    <div class="tab-content p-0" style="height: calc(100vh - 275px);overflow-y:scroll;max-width: 100%;
+                                    overflow-x: hidden;">
+                                        <div class="tab-pane active" id="home-fill" role="tabpanel"
+                                            aria-labelledby="home-tab-fill">
+                                            <div class="row">
+
+                                                <div class="col-sm-12">
+                                                    <fieldset class="form-group position-relative has-icon-left m-0">
+                                                        <div class="pac-container">
+                                                            <input type="text"
+                                                            class="form-control border-top-0 border-right-0 border-left-0 rounded-0"
+                                                            id="pac-input"
+                                                            placeholder="İşyeri adı veya mahalle yada sokak no girin. ">
+                                                        </div>
+                                                        <div class="form-control-position">
+                                                            <i class="bx bx-search"></i>
+                                                        </div>
+                                                    </fieldset>
+                                                </div>
+
+                                            </div>
+
+                                            <ul class="list-group list-group-flush">
+                                                <li class="list-group-item d-flex align-items-center justify-content-between cursor-pointer"
+                                                    onclick="$('#profile-tab-fill').trigger('click')">
+                                                    <div class="w-75 mt-3">
+                                                        <div class="fonticon-wrap d-flex align-items-center">
+                                                            <i class="bx bxs-user-circle mr-1"
+                                                                style="font-size:42px"></i>
+
+                                                            <div class="">
+                                                                <p class="m-0 fs-16 font-weight-bold" id="place1_name"></p>
+                                                                <p class="m-0 fs-12 " id="place1_address"></p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="w-25 text-right">
+                                                        <svg width="17px" height="17px" viewBox="0 0 17 17"
+                                                            version="1.1" xmlns="http://www.w3.org/2000/svg"
+                                                            xmlns:xlink="http://www.w3.org/1999/xlink">
+                                                            <g>
+                                                            </g>
+                                                            <path
+                                                                d="M13.207 8.472l-7.854 7.854-0.707-0.707 7.146-7.146-7.146-7.148 0.707-0.707 7.854 7.854z"
+                                                                fill="#596F88" />
+                                                        </svg>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="tab-pane w-100" id="profile-fill" role="tabpanel"
+                                            aria-labelledby="profile-tab-fill">
+                                            <div class="row w-100">
+
+                                                <div class="col-sm-12">
+                                                    <fieldset class="form-group position-relative has-icon-left m-0">
+                                                       <div class="pac-container w-100">
+                                                         <input type="text"
+                                                            class="form-control border-top-0 border-right-0 border-left-0 rounded-0 w-100"
+                                                            id="pac-input2"
+                                                            placeholder="İşyeri adı veya mahalle yada sokak no girin.">
+                                                       </div>
+                                                        <div class="form-control-position">
+                                                            <i class="bx bx-search"></i>
+                                                        </div>
+                                                    </fieldset>
+                                                </div>
+
+                                            </div>
+                                            <ul class="list-group list-group-flush">
+                                                <li onclick="$('.map-sidebar').addClass('show')"
+                                                    class="list-group-item d-flex align-items-center justify-content-between cursor-pointer">
+                                                    <div class="w-75 mt-3">
+                                                        <div class="fonticon-wrap d-flex align-items-center">
+                                                            <i class="bx bxs-map text-success mr-1"
+                                                                style="font-size:42px"></i>
+                                                            <div class="">
+                                                                <p class="m-0 fs-16 font-weight-bold" id="place2_name"></p>
+                                                                <p class="m-0 fs-12 " id="place2_address"></p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="w-25 text-right">
+                                                        <i class="bx bxs-edit"></i>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                            
+                                            <div class="form-body p-2">
+                                                <div class="d-flex justify-content-between">
+                                                    <div
+                                                        class="custom-control custom-switch custom-switch-success mr-2 mb-1">
+                                                        <p class="mb-0">Wait & Return Order ?</p>
+                                                        <input type="checkbox" class="custom-control-input"
+                                                            id="customSwitchcolor2">
+                                                        <label class="custom-control-label"
+                                                            for="customSwitchcolor2"></label>
+                                                        <p class="small mt-1"> <i class="bx bx-info-circle bx-xs"></i>
+                                                            Customers will have 15 minutes to try the items. If they are
+                                                            not fully satisfied with their purchase, we will return the
+                                                            item back to the store.
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                                <ul class="nav nav-tabs process-model more-icon-preocess mt-0 mb-0"
+                                                    id="transport-tab" role="tablist">
+                                                    <li role="presentation" class="iconBox">
+                                                        <a href="#pickup" aria-controls="pickup" role="tab"
+                                                            data-toggle="tab" class="active" id="pickup-tab" role="tab"
+                                                            aria-selected="true">
+                                                            <span>
+                                                                <img class="" src="app-assets/images/1.png" alt="">
+                                                                <!-- <i class="menu-livicon" data-icon="home"></i> -->
+                                                            </span>
+                                                            <p class="status">
+                                                                Pick Up
+                                                            </p>
+                                                        </a>
+                                                    </li>
+                                                    <li role="presentation" class="iconBox"><a href="#drop"
+                                                            aria-controls="drop" role="tab" data-toggle="tab" class=" "
+                                                            id="drop-tab" role="tab" aria-selected="true">
+                                                            <span>
+                                                                <img class="image" src="app-assets/images/2.png" alt="">
+                                                                <!-- <i class="menu-livicon" data-icon="bank"></i> -->
+                                                            </span>
+                                                            <p class="status">
+                                                                Drop Off
+
+                                                            </p>
+                                                        </a></li>
+                                                    <li role="presentation" class="iconBox"><a href="#parcel"
+                                                            aria-controls="parcel" role="tab" data-toggle="tab"
+                                                            class=" " id="parcel-tab" role="tab" aria-selected="true">
+                                                            <span>
+                                                                <img class="image" src="app-assets/images/3.png" alt="">
+                                                                <!-- <i class="menu-livicon" data-icon="truck"></i> -->
+                                                            </span>
+                                                            <p class="status">
+                                                                Parcel
+
+                                                            </p>
+                                                        </a>
+                                                    </li>
+                                                    <li class="justify-content-end iconBox" role="presentation">
+                                                        <a role="presentation" class="iconBox"><a href="#courier"
+                                                                aria-controls="courier" role="tab" data-toggle="tab"
+                                                                class=" " id="courier-tab" role="tab"
+                                                                aria-selected="true">
+                                                                <span>
+                                                                    <img class="image" src="app-assets/images/4.png"
+                                                                        alt="">
+                                                                    <!-- <i class="menu-livicon" data-icon="check"></i> -->
+                                                                </span>
+                                                                <p class="status">
+                                                                    When do you need a courier?
+
+                                                                </p>
+                                                            </a>
+                                                    </li>
+                                                </ul>
+                                                <div class="tab-content">
+                                                    <div class="tab-pane active" id="pickup"
+                                                        aria-labelledby="pickup-tab" role="tabpanel">
+                                                        <div class="row">
+                                                            <div class="col-12">
+                                                                <h4>Pick Up</h4>
+                                                            </div>
+                                                            <div class="col-12">
+                                                                <div class="form-group required">
+                                                                    <label for="street-vertical">Street name and
+                                                                        number *</label>
+                                                                    <input type="text" id="street-vertical"
+                                                                        class="form-control" name="street"
+                                                                        placeholder="Street name and number">
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-6">
+                                                                <div class="form-group required">
+                                                                    <label for="postcode">Postcode *</label>
+                                                                    <input type="text" id="postcode"
+                                                                        class="form-control" name="postcode"
+                                                                        placeholder="Postcode">
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-6">
+                                                                <div class="form-group">
+                                                                    <label for="floor-id-vertical">Building name /
+                                                                        floor</label>
+                                                                    <input type="floor" id="floor-id-vertical"
+                                                                        class="form-control" name="floor-id"
+                                                                        placeholder="Building name / floor">
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="col-6">
+                                                                <div class="form-group required">
+                                                                    <label for="city-name-vertical">City *</label>
+                                                                    <input type="text" id="city-name-vertical"
+                                                                        class="form-control" name="city"
+                                                                        placeholder="City">
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-6">
+                                                                <div class="form-group">
+                                                                    <label for="country-id-vertical">Country *</label>
+                                                                    <input type="country" id="country-id-vertical"
+                                                                        class="form-control" name="country-id"
+                                                                        placeholder="Country">
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-6">
+                                                                <div class="form-group">
+                                                                    <label for="person-id-vertical">Person Name</label>
+                                                                    <input type="person" id="person-id-vertical"
+                                                                        class="form-control" name="person-id"
+                                                                        placeholder="Person Name">
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="col-6">
+                                                                <div class="form-group">
+                                                                    <label for="company-name-vertical">Company
+                                                                        Name</label>
+                                                                    <input type="text" id="company-name-vertical"
+                                                                        class="form-control" name="company"
+                                                                        placeholder="Company">
+                                                                </div>
+                                                            </div>
+
+
+                                                            <div class="col-6">
+                                                                <div class="form-group">
+                                                                    <label for="telephone-id-vertical">Telephone</label>
+                                                                    <input type="telephone" id="telephone-id-vertical"
+                                                                        class="form-control" name="telephone-id"
+                                                                        placeholder="Telephone">
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="col-6">
+                                                                <div class="form-group">
+                                                                    <label for="first-name-vertical">Email</label>
+                                                                    <input type="text" id="first-name-vertical"
+                                                                        class="form-control" name="email"
+                                                                        placeholder="Email">
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-12">
+                                                                <div class="form-group">
+                                                                    <label for="detail-id-vertical">Add details for the
+                                                                        courier (floor number door, other informatin,
+                                                                        etc.)</label>
+                                                                    <input type="detail" id="detail-id-vertical"
+                                                                        class="form-control" name="detail"
+                                                                        placeholder="Detail">
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-12">
+                                                                <div
+                                                                    class="custom-control custom-switch custom-control-inline mb-1 d-block">
+                                                                    <input type="checkbox" class="custom-control-input"
+                                                                        checked id="tracking">
+                                                                    <label class="custom-control-label mr-1"
+                                                                        for="tracking">
+                                                                    </label><span>Share tracking link?</span>
+                                                                </div>
+                                                                <div
+                                                                    class="custom-control custom-switch custom-control-inline mb-1">
+                                                                    <input type="checkbox" class="custom-control-input"
+                                                                        id="customSwitch1">
+                                                                    <label class="custom-control-label mr-1"
+                                                                        for="customSwitch1">
+                                                                    </label><span>Save to address book</span>
+                                                                </div>
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
+                                                    <div class="tab-pane" id="drop" aria-labelledby="drop-tab"
+                                                        role="tabpanel">
+                                                        <div class="row">
+                                                            <div class="col-12">
+                                                                <h4>Drop Off</h4>
+                                                            </div>
+                                                            <div class="col-12">
+                                                                <div class="form-group required">
+                                                                    <label for="street-vertical">Street name and
+                                                                        number *</label>
+                                                                    <input type="text" id="street-vertical"
+                                                                        class="form-control" name="street"
+                                                                        placeholder="Street name and number">
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-6">
+                                                                <div class="form-group required">
+                                                                    <label for="postcode">Postcode *</label>
+                                                                    <input type="text" id="postcode"
+                                                                        class="form-control" name="postcode"
+                                                                        placeholder="Postcode">
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-6">
+                                                                <div class="form-group">
+                                                                    <label for="floor-id-vertical">Building name /
+                                                                        floor</label>
+                                                                    <input type="floor" id="floor-id-vertical"
+                                                                        class="form-control" name="floor-id"
+                                                                        placeholder="Building name / floor">
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="col-6">
+                                                                <div class="form-group required">
+                                                                    <label for="city-name-vertical">City *</label>
+                                                                    <input type="text" id="city-name-vertical"
+                                                                        class="form-control" name="city"
+                                                                        placeholder="City">
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-6">
+                                                                <div class="form-group">
+                                                                    <label for="country-id-vertical">Country *</label>
+                                                                    <input type="country" id="country-id-vertical"
+                                                                        class="form-control" name="country-id"
+                                                                        placeholder="Country">
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-6">
+                                                                <div class="form-group">
+                                                                    <label for="person-id-vertical">Person Name</label>
+                                                                    <input type="person" id="person-id-vertical"
+                                                                        class="form-control" name="person-id"
+                                                                        placeholder="Person Name">
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="col-6">
+                                                                <div class="form-group">
+                                                                    <label for="company-name-vertical">Company
+                                                                        Name</label>
+                                                                    <input type="text" id="company-name-vertical"
+                                                                        class="form-control" name="company"
+                                                                        placeholder="Company">
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="col-6">
+                                                                <div class="form-group">
+                                                                    <label for="telephone-id-vertical">Telephone</label>
+                                                                    <input type="telephone" id="telephone-id-vertical"
+                                                                        class="form-control" name="telephone-id"
+                                                                        placeholder="Telephone">
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="col-6">
+                                                                <div class="form-group">
+                                                                    <label for="first-name-vertical">Email</label>
+                                                                    <input type="text" id="first-name-vertical"
+                                                                        class="form-control" name="email"
+                                                                        placeholder="Email">
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-12">
+                                                                <div class="form-group">
+                                                                    <label for="detail-id-vertical">Add details for the
+                                                                        courier (floor number door, other informatin,
+                                                                        etc.)</label>
+                                                                    <input type="detail" id="detail-id-vertical"
+                                                                        class="form-control" name="detail"
+                                                                        placeholder="Detail">
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-12">
+                                                                <div
+                                                                    class="custom-control custom-switch custom-control-inline mb-1 d-block">
+                                                                    <input type="checkbox" class="custom-control-input"
+                                                                        checked id="tracking1">
+                                                                    <label class="custom-control-label mr-1"
+                                                                        for="tracking1">
+                                                                    </label><span>Share tracking link?</span>
+                                                                </div>
+
+                                                            </div>
+                                                            <div class="col-12">
+                                                                <button class="btn btn-primary btn-block"> <i class="bx bx-plus-circle
+                                                                        "></i> Add another dropoff</button>
+
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
+                                                    <div class="tab-pane" id="parcel" aria-labelledby="parcel-tab"
+                                                        role="tabpanel">
+                                                        <div class="row">
+                                                            <div class="col-12">
+                                                                <h4>Order Details</h4>
+                                                            </div>
+                                                            <div class="col-12">
+                                                                <div class="form-group">
+                                                                    <label for="order-name-vertical">Order ID</label>
+                                                                    <input type="text" id="order-name-vertical"
+                                                                        class="form-control" name="orderId"
+                                                                        placeholder="Order ID">
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-12">
+                                                                <div class="form-group">
+                                                                    <label for="order-information-vertical">Order
+                                                                        Information</label>
+                                                                    <input type="text" id="order-information-vertical"
+                                                                        class="form-control" name="orderInformation"
+                                                                        placeholder="Order Information">
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-12">
+                                                                <h4 class="mt-1">Package Size <i
+                                                                        class="bx bx-help-circle bxs-sm cursor-pointer"></i>
+                                                                </h4>
+
+                                                            </div>
+                                                            <div class="col-xl-6 col-md-4 col-sm-6">
+                                                                <div class="card text-center cursor-pointer">
+                                                                    <div
+                                                                        class="card-body d-flex justify-content-between align-items-center p-1 box-size">
+                                                                        <div class=" ">
+                                                                            <img style="width:58px;" class="transX"
+                                                                                src="img/svg/delivery-man.png">
+                                                                        </div>
+                                                                        <div class="text-left mx-auto">
+                                                                            <h5 class="mb-0">Extra Small</h5>
+                                                                            <p
+                                                                                class="text-muted mb-0 line-ellipsis small">
+                                                                                Fits in an envelope</p>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-xl-6 col-md-4 col-sm-6">
+                                                                <div class="card text-center cursor-pointer">
+                                                                    <div
+                                                                        class="card-body d-flex justify-content-between align-items-center p-1 box-size">
+                                                                        <div class=" ">
+                                                                            <img style="width:58px;" class="transX"
+                                                                                src="img/svg/scooter.png">
+                                                                        </div>
+                                                                        <div class="text-left mx-auto">
+                                                                            <h5 class="mb-0">Small</h5>
+                                                                            <p
+                                                                                class="text-muted mb-0 line-ellipsis small">
+                                                                                Fits in a shoe box</p>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-xl-6 col-md-4 col-sm-6">
+                                                                <div class="card text-center cursor-pointer">
+                                                                    <div
+                                                                        class="card-body d-flex justify-content-between align-items-center p-1 box-size">
+                                                                        <div class=" ">
+                                                                            <img style="width:58px;" class="transX"
+                                                                                src="img/svg/van.png">
+                                                                        </div>
+                                                                        <div class="text-left mx-auto">
+                                                                            <h5 class="mb-0">Medium</h5>
+                                                                            <p
+                                                                                class="text-muted mb-0 line-ellipsis small">
+                                                                                Fits in a backpack</p>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-xl-6 col-md-4 col-sm-6">
+                                                                <div class="card text-center cursor-pointer">
+                                                                    <div
+                                                                        class="card-body d-flex justify-content-between align-items-center p-1 box-size">
+                                                                        <div class=" ">
+                                                                            <img style="width:58px;" class=""
+                                                                                src="img/svg/cargo-truck.png">
+                                                                        </div>
+                                                                        <div class="text-left mx-auto">
+                                                                            <h5 class="mb-0">Large</h5>
+                                                                            <p
+                                                                                class="text-muted mb-0 line-ellipsis small">
+                                                                                Fits in a large suitcase</p>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-xl-6 col-md-4 col-sm-6">
+                                                                <div class="card text-center cursor-pointer">
+                                                                    <div
+                                                                        class="card-body d-flex justify-content-between align-items-center p-1 box-size">
+                                                                        <div class=" ">
+                                                                            <img style="width:58px;" class=""
+                                                                                src="img/svg/extra-large.png">
+                                                                        </div>
+                                                                        <div class="text-left mx-auto">
+                                                                            <h5 class="mb-0">Extra-large</h5>
+                                                                            <p
+                                                                                class="text-muted mb-0 line-ellipsis small">
+                                                                                Fits in a car boot</p>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-xl-6 col-md-4 col-sm-6 collapsible">
+                                                                <div class="card text-center cursor-pointer" data-toggle="collapse" role="button" data-target="#collapse1" aria-expanded="false" aria-controls="collapse1">
+                                                                    <div class="card-body d-flex justify-content-between align-items-center p-1 box-size">
+                                                                        <div class=" ">
+                                                                            <img style="width:58px;" class="" src="img/svg/custom.png">
+                                                                        </div>
+                                                                        <div class="text-left mx-auto">
+                                                                            <h5 class="mb-0">Custom</h5>
+                                                                            <p class="text-muted mb-0 line-ellipsis small">Custom sizes</p>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                    
+                                                            </div>
+                                                            <div id="collapse1" role="tabpanel" aria-labelledby="headingCollapse1" class="collapse mb-3 mt-3">
+                                                                <div class="row">
+                                                                    <div class="col-4 mb-1">
+                                                                        <div class="input-group-sm touchspin-glow text-center">
+                                                                            <label  for="custom_width">Width(cm)*</label>
+                                                                            <input type="text" class="touchspin" value="35" name="custom_width" />
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-4 mb-1">
+                                                                        <div class="input-group-sm touchspin-glow text-center">
+                                                                            <label  for="custom_height">Height(cm)*</label>
+                                                                            <input type="text" class="touchspin" value="25" name="custom_height" />
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-4 mb-1">
+                                                                        <div class="input-group-sm touchspin-glow text-center">
+                                                                            <label  for="custom_depth">Depth(cm)*</label>
+                                                                            <input type="text" class="touchspin" value="2.5" name="custom_depth" data-bts-step="0.1" data-bts-decimals="1" />
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-lg-4">
+                                                                <div class="card widget-notification">
+                                                                    <div class="card-header border-bottom p-0 mb-1">
+                                                                        <h4
+                                                                            class="card-title d-flex align-items-center">
+                                                                            </i>Insurance <i
+                                                                                class="bx bx-help-circle bxs-sm cursor-pointer" title="Tip about insurance"></i>
+                                                                        </h4>
+                                                                    </div>
+                                                                    <div class="card-body p-0">
+                                                                        <ul class="list-group list-group-flush">
+                                                                            <li
+                                                                                class="mb-1 list-group-item list-group-item-action border-0 p-0 d-flex align-items-center justify-content-between">
+                                                                                <div class="radio radio-primary radio-glow">
+                                                                                    <input type="radio" id="radioGlow1" name="radioGlow" value="NO INSURANCE" checked>
+                                                                                    <label for="radioGlow1" class="font-small-2">NO INSURANCE</label>
+                                                                                </div>
+                                                                            </li>
+                                                                            <li
+                                                                                class="mb-1 list-group-item list-group-item-action border-0 p-0 d-flex align-items-center justify-content-between">
+                                                                                <div class="radio radio-primary radio-glow">
+                                                                                    <input type="radio" id="radioGlow2" name="radioGlow" value="UP TO £100">
+                                                                                    <label for="radioGlow2" class="font-small-2">UP TO £100</label>
+                                                                                </div>
+                                                                            </li>
+                                                                            <li
+                                                                                class="mb-1 list-group-item list-group-item-action border-0 p-0 d-flex align-items-center justify-content-between">
+                                                                                <div class="radio radio-primary radio-glow">
+                                                                                    <input type="radio" id="radioGlow3" name="radioGlow" value="UP TO £1000">
+                                                                                    <label for="radioGlow3" class="font-small-2">UP TO £1000</label>
+                                                                                </div>
+                                                                            </li>
+                                                                            <li
+                                                                                class="mb-1 list-group-item list-group-item-action border-0 p-0 d-flex align-items-center justify-content-between">
+                                                                                <div class="radio radio-primary radio-glow">
+                                                                                    <input type="radio" id="radioGlow4" name="radioGlow" value="UP TO £2000">
+                                                                                    <label for="radioGlow4" class="font-small-2">UP TO £2000</label>
+                                                                                </div>
+                                                                            </li>
+                                                                            <li
+                                                                                class="mb-1 list-group-item list-group-item-action border-0 p-0 d-flex align-items-center justify-content-between">
+                                                                                <div class="radio radio-primary radio-glow">
+                                                                                    <input type="radio" id="radioGlow5" name="radioGlow" value="UP TO £3000">
+                                                                                    <label for="radioGlow5" class="font-small-2">UP TO £3000</label>
+                                                                                </div>
+                                                                            </li>
+                                                                            <li
+                                                                                class="mb-1 list-group-item list-group-item-action border-0 p-0 d-flex align-items-center justify-content-between">
+                                                                                <div class="radio radio-primary radio-glow">
+                                                                                    <input type="radio" id="radioGlow6" name="radioGlow" value="UP TO £4000">
+                                                                                    <label for="radioGlow6" class="font-small-2">UP TO £4000</label>
+                                                                                </div>
+                                                                            </li>
+                                                                            <li
+                                                                                class="mb-1 list-group-item list-group-item-action border-0 p-0 d-flex align-items-center justify-content-between">
+                                                                                <div class="radio radio-primary radio-glow">
+                                                                                    <input type="radio" id="radioGlow7" name="radioGlow" value="UP TO £5000">
+                                                                                    <label for="radioGlow7" class="font-small-2">UP TO £5000</label>
+                                                                                </div>
+                                                                            </li>
+                                                                            <li
+                                                                                class="mb-1 list-group-item list-group-item-action border-0 p-0 d-flex align-items-center justify-content-between">
+                                                                                <div class="radio radio-primary radio-glow">
+                                                                                    <input type="radio" id="radioGlow8" name="radioGlow" value="Custom">
+                                                                                    <label for="radioGlow8" class="font-small-2">Custom</label>
+                                                                                </div>
+                                                                            </li>
+                                                                        </ul>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="col-lg-4">
+                                                                <div class="card widget-notification">
+                                                                    <div class="card-header border-bottom p-0 mb-1">
+                                                                        <h4
+                                                                            class="card-title d-flex align-items-center">
+                                                                            </i>Fragile <i
+                                                                                class="bx bx-help-circle bxs-sm cursor-pointer" title="Tip about fragile"></i>
+                                                                        </h4>
+                                                                    </div>
+                                                                    <div class="card-body p-0">
+                                                                        <ul class="list-group list-group-flush">
+                                                                            <li
+                                                                                class="mb-1 list-group-item list-group-item-action border-0 p-0 d-flex align-items-center justify-content-between">
+                                                                                <div class="radio radio-primary radio-glow">
+                                                                                    <input type="radio" id="radioGlow9" name="radioGlowFragile" value="NOT FRAGILE" checked>
+                                                                                    <label for="radioGlow9" class="font-small-2">NOT FRAGILE</label>
+                                                                                </div>
+                                                                            </li>
+                                                                            <li
+                                                                                class="mb-1 list-group-item list-group-item-action border-0 p-0 d-flex align-items-center justify-content-between">
+                                                                                <div class="radio radio-primary radio-glow">
+                                                                                    <input type="radio" id="radioGlow10" name="radioGlowFragile" value="FRAGILE">
+                                                                                    <label for="radioGlow10" class="font-small-2">FRAGILE</label>
+                                                                                </div>
+                                                                            </li>
+                                                                            <li
+                                                                                class="mb-1 list-group-item list-group-item-action border-0 p-0 d-flex align-items-center justify-content-between">
+                                                                                <div class="radio radio-primary radio-glow">
+                                                                                    <input type="radio" id="radioGlow11" name="radioGlowFragile" value="GLASS">
+                                                                                    <label for="radioGlow11" class="font-small-2">GLASS</label>
+                                                                                </div>
+                                                                            </li>
+                                                                            <li
+                                                                                class="mb-1 list-group-item list-group-item-action border-0 p-0 d-flex align-items-center justify-content-between">
+                                                                                <div class="radio radio-primary radio-glow">
+                                                                                    <input type="radio" id="radioGlow12" name="radioGlowFragile" value="MEDICAL">
+                                                                                    <label for="radioGlow12" class="font-small-2">MEDICAL</label>
+                                                                                </div>
+                                                                            </li>
+                                                                            <li
+                                                                                class="mb-1 list-group-item list-group-item-action border-0 p-0 d-flex align-items-center justify-content-between">
+                                                                                <div class="radio radio-primary radio-glow">
+                                                                                    <input type="radio" id="radioGlow13" name="radioGlowFragile" value="FLOWERS">
+                                                                                    <label for="radioGlow13" class="font-small-2">FLOWERS</label>
+                                                                                </div>
+                                                                            </li>
+                                                                            <li
+                                                                                class="mb-1 list-group-item list-group-item-action border-0 p-0 d-flex align-items-center justify-content-between">
+                                                                                <div class="radio radio-primary radio-glow">
+                                                                                    <input type="radio" id="radioGlow14" name="radioGlowFragile" value="DO NOT ROTATE">
+                                                                                    <label for="radioGlow14" class="font-small-2">DO NOT ROTATE</label>
+                                                                                </div>
+                                                                            </li>
+                                                                        </ul>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                           
+
+                                                            <div class="col-lg-4">
+                                                                <div class="card widget-notification">
+                                                                    <div class="card-header border-bottom p-0 mb-1">
+                                                                        <h6 class="card-title d-flex align-items-center">
+                                                                            Food or Liquid <i
+                                                                                class="bx bx-help-circle bxs-sm cursor-pointer" title="Tip about food or liquid"></i>
+                                                                        </h6>
+                                                                    </div>
+                                                                    <div class="card-body p-0">
+                                                                        <ul class="list-group list-group-flush">
+                                                                            <li
+                                                                                class="mb-1 list-group-item list-group-item-action border-0 p-0 d-flex align-items-center justify-content-between">
+                                                                                <div class="radio radio-primary radio-glow">
+                                                                                    <input type="radio" id="radioGlow15" name="radioGlowFol" value="NONE" checked>
+                                                                                    <label for="radioGlow15" class="font-small-2">NONE</label>
+                                                                                </div>
+                                                                            </li>
+                                                                            <li
+                                                                                class="mb-1 list-group-item list-group-item-action border-0 p-0 d-flex align-items-center justify-content-between">
+                                                                                <div class="radio radio-primary radio-glow">
+                                                                                    <input type="radio" id="radioGlow16" name="radioGlowFol" value="HOT FOOD">
+                                                                                    <label for="radioGlow16" class="font-small-2">HOT FOOD</label>
+                                                                                </div>
+                                                                            </li>
+                                                                            <li
+                                                                                class="mb-1 list-group-item list-group-item-action border-0 p-0 d-flex align-items-center justify-content-between">
+                                                                                <div class="radio radio-primary radio-glow">
+                                                                                    <input type="radio" id="radioGlow17" name="radioGlowFol" value="LIQUID ITEM">
+                                                                                    <label for="radioGlow17" class="font-small-2">LIQUID ITEM</label>
+                                                                                </div>
+                                                                            </li>
+                                                                            <li
+                                                                                class="mb-1 list-group-item list-group-item-action border-0 p-0 d-flex align-items-center justify-content-between">
+                                                                                <div class="radio radio-primary radio-glow">
+                                                                                    <input type="radio" id="radioGlow18" name="radioGlowFol" value="ALCOHOL">
+                                                                                    <label for="radioGlow18" class="font-small-2">ALCOHOL</label>
+                                                                                </div>
+                                                                            </li>
+                                                                         </ul>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
+                                                    <div class="tab-pane" id="courier" aria-labelledby="courier-tab"
+                                                        role="tabpanel">
+                                                        <div class="row">
+                                                            <div class="col-12 col-md-6">
+                                                                <div class="d-flex p-1  bg-dark">
+                                                                    <div id="carousel-example-generic"
+                                                                        class="carousel slide w-100 "
+                                                                        data-bs-interval="false">
+                                                                        <ol class="carousel-indicators d-none">
+                                                                            <li data-target="#carousel-example-generic"
+                                                                                data-slide-to="0" class="active"></li>
+                                                                            <li data-target="#carousel-example-generic"
+                                                                                data-slide-to="1"></li>
+                                                                            <li data-target="#carousel-example-generic"
+                                                                                data-slide-to="2"></li>
+                                                                        </ol>
+                                                                        <div class="carousel-inner text-center text-white"
+                                                                            role="listbox">
+                                                                            <div class="carousel-item active">
+                                                                                (Bugün) 04 Ekim 2022
+                                                                            </div>
+                                                                            <div class="carousel-item ">
+                                                                                05 Ekim 2022
+                                                                            </div>
+                                                                            <div class="carousel-item">
+                                                                                06 Ekim 2022
+                                                                            </div>
+                                                                            <div class="carousel-item">
+                                                                                07 Ekim 2022
+                                                                            </div>
+                                                                            <div class="carousel-item">
+                                                                                08 Ekim 2022
+                                                                            </div>
+                                                                            <div class="carousel-item">
+                                                                                09 Ekim 2022
+                                                                            </div>
+                                                                            <div class="carousel-item">
+                                                                                10 Ekim 2022
+                                                                            </div>
+                                                                            <div class="carousel-item">
+                                                                                11 Ekim 2022
+                                                                            </div>
+                                                                            <div class="carousel-item">
+                                                                                12 Ekim 2022
+                                                                            </div>
+                                                                        </div>
+                                                                        <a class="carousel-control-prev"
+                                                                            href="#carousel-example-generic"
+                                                                            role="button" data-slide="prev">
+                                                                            <span class="carousel-control-prev-icon"
+                                                                                aria-hidden="true"></span>
+                                                                            <span class="sr-only">Previous</span>
+                                                                        </a>
+                                                                        <a class="carousel-control-next"
+                                                                            href="#carousel-example-generic"
+                                                                            role="button" data-slide="next">
+                                                                            <span class="carousel-control-next-icon"
+                                                                                aria-hidden="true"></span>
+                                                                            <span class="sr-only">Next</span>
+                                                                        </a>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="d-flex" id="slider-colors-handles">
+                                                                    <fieldset class="mt-3"
+                                                                        style="width:100%;padding:0px">
+                                                                        <div class="circle-filled slider-success my-1"
+                                                                            id="default-slider2" style="width:100%">
+                                                                        </div>
+                                                                    </fieldset>
+                                                                    </div>
+                                                                <div
+                                                                    class="d-flex justify-content-between align-items-center ">
+                                                                    <div class="d-flex align-items-center"> <i
+                                                                            class="bx bx-map text-success font-large-1"></i>
+                                                                        PICKUP AFTER</div>
+                                                                    <div class="d-flex align-items-center text-right">
+                                                                        DELIVERY
+                                                                        BEFORE <i
+                                                                            class="bx bxs-map text-danger font-large-1"></i>
+                                                                    </div>
+
+
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="col-12 col-md-6">
+                                                                <ul class="list-unstyled mb-0">
+                                                                    <li class="d-inline-block mr-2 mb-1">
+                                                                        <fieldset>
+                                                                            <div class="radio">
+                                                                                <input type="radio" name="bsradio"
+                                                                                    value="now" id="now" checked>
+                                                                                <label for="now">Now</label>
+                                                                            </div>
+                                                                        </fieldset>
+                                                                    </li>
+                                                                    <li class="d-inline-block mr-2 mb-1">
+                                                                        <fieldset>
+                                                                            <div class="radio">
+                                                                                <input type="radio" name="bsradio"
+                                                                                    value="later" id="later">
+                                                                                <label for="later">Later</label>
+                                                                            </div>
+                                                                        </fieldset>
+                                                                    </li>
+                                                                </ul>
+                                                                <fieldset
+                                                                    class="now-field form-group position-relative has-icon-left">
+                                                                    <span>Estimated pickup : <b id="estimated_pickup">14 min</b></span>
+                                                                </fieldset>
+                                                                <fieldset  style="display:none"
+                                                                    class="later-field form-group position-relative has-icon-left">
+                                                                    <input type="text" class="form-control pickadate"
+                                                                        placeholder="Select Date">
+                                                                    <div class="form-control-position">
+                                                                        <i class='bx bx-history'></i>
+                                                                    </div>
+                                                                </fieldset>
+                                                                <fieldset   style="display:none"
+                                                                    class="later-field form-group position-relative has-icon-left">
+                                                                    <select class="form-control form-select">
+                                                                        <option>17:00 - 17:15</option>
+                                                                        <option>17:15 - 17:30</option>
+                                                                        <option>17:30 - 17:45</option>
+                                                                        <option>17:45 - 18:00</option>
+                                                                        <option>18:00 - 18:15</option>
+                                                                        <option>18:15 - 18:30</option>
+                                                                        <option>18:30 - 18:45</option>
+                                                                        <option>18:45 - 19:00</option>
+                                                                        <option>19:00 - 19:15</option>
+                                                                        <option>19:15 - 19:30</option>
+
+                                                                    </select>
+                                                                    <div class="form-control-position">
+                                                                        <i class='bx bx-history'></i>
+                                                                    </div>
+
+                                                                </fieldset>
+
+                                                                
+                                                            </div>
+                                                            
+                                                        </div>
+                                                       
+                                                    </div>
+                                                   
+                                                </div>
+
+                                            </div>
+                                            <div class="col-xl-6 col-md-4 col-sm-6 collapsible">
+                                                <div class="card text-center cursor-pointer" data-toggle="collapse" role="button" data-target="#collapse2" aria-expanded="false" aria-controls="collapse2">
+                                                    <button class="btn btn-dark">Show Price</button>
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="card-body border-top collapse mb-3 mt-3" id="collapse2" role="tabpanel" aria-labelledby="headingCollapse1">
+                                                <div class="card-title font-large-1">Price</div>
+                                                <div class="row">
+                                                    <div class="col-12 d-flex align-items-center bg-primary bg-lighten-5 p-1">
+                                                        <div class="col-8">
+                                                            <img style="width:32px;" class=""
+                                                            src="img/svg/price.png">
+                                                            <h5 class="mb-0 d-inline">Total(excl. VAT): <b>£22.20</b></h5>
+                                                        </div>
+                                                        <div class="col-4">
+                                                            <button class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">Request</button>
+                                                            <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                                                                <div class="modal-dialog modal-dialog-centered modal-dialog-centered modal-dialog-scrollable">
+                                                                    <div class="modal-content">
+                                                                        <form action="">
+                                                                        <div class="modal-header">
+                                                                            <h5 class="modal-title" id="exampleModalCenterTitle">Payment Details</h5>
+                                                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                                <i class="bx bx-x"></i>
+                                                                            </button>
+                                                                        </div>
+                                                                        <div class="modal-body">
+                                                                            
+                                                                            <p class="mb-2">
+                                                                                Please enter your credit card details below.<br>
+                                                                                You will be charged <b>£12.07</b> once the delivery is complette.
+                                                                            </p>
+                                                                            <div class="col-sm-12 border-bottom mb-1">
+                                                                               
+                                                                                <input title="Credit card format is not valid" type="tel" inputmode="numeric" pattern="[0-9\s]{13,19}" autocomplete="cc-number" maxlength="19" class="custom_input col-sm-10" id="credit_card_number" placeholder="Card Number" required />
+                                                                                <img src="img/svg/cc-front.png" style="width:36px ;" class="cols-sm-2">
+                                                                    
+                                                                            </div>
+                                                                            <div class="col-sm-12 border-bottom mb-1">
+                                                                               
+                                                                                <input type="text" pattern="(?:0[1-9]|1[0-2])/[0-9]{2}"
+                                                                                title="Enter a date in this format MM/YY" class="custom_input col-sm-10" id="credit_card_date" placeholder="MM/YY"  required />
+                                                                    
+                                                                            </div>
+                                                                            <div class="col-sm-12 border-bottom mb-1">
+                                                                               
+                                                                                <input type="text" title="Please provide the CVC of your credit card" minlength="3" maxlength="3" class="custom_input col-sm-10" id="credit_card_cvc" placeholder="CVC"  required />
+                                                                                <img src="img/svg/cc-back.png" style="width:36px ;" class="cols-sm-2">
+                                                                            </div>
+                                                                            <div class="col-sm-12 border-bottom mb-1">
+                                                                               
+                                                                                <input type="text" inputmode="text" class="custom_input col-sm-10" id="credit_card_name" placeholder="Card name"  required />
+                                                                    
+                                                                            </div>
+                                                                            <div class="form-check">
+                                                                                <input type="checkbox" class="checkbox-glow" id="exampleCheck1">
+                                                                                <label class="form-check-label" for="exampleCheck1">By ticking this box you agree our <a href="#">bank terms</a></label>
+                                                                              </div>
+                                                                        </div>
+                                                                        <div class="modal-footer">
+                                                                            <button type="button" class="btn btn-light-secondary" data-dismiss="modal">
+                                                                                <i class="bx bx-x d-block d-sm-none"></i>
+                                                                                <span class="d-none d-sm-block">Cancel</span>
+                                                                            </button>
+                                                                            <button type="submit" class="btn btn-primary ml-1">
+                                                                                <i class="bx bx-check d-block d-sm-none"></i>
+                                                                                <span class="d-none d-sm-block">Request now</span>
+                                                                            </button>
+                                                                        </div>
+                                                                    </form>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-12 mt-2 font-medium-1 wait_return_none" id="wait_and_return_info">
+                                                        <i class="bx bx-info-circle"></i>
+                                                        This includes 20 minutes of courier waiting time at collection, delivery and during try-on.
+                                                         For more information on how additional time may affect your final price,
+                                                         please click <b><a href="profile.html">here</a></b>. Customers will have 15 minutes to try the items.
+                                                          If they are not fully satisfied with their purchase,
+                                                           we will return the item back to the store.
+                                                    </div>
+                                                </div>
+                                               
+                                            </div>
+                                            
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="col-xl-8 col-12 p-0 position-relative" style="height:calc(100vh - 160px)">
+                            <!-- Draggable Marker With Popup starts -->
+                            <div class="map-sidebar">
+                                <div class="card w-100" style="height:calc(100vh - 160px)">
+                                    <div class="card-header bg-dark " style="padding:10px">
+                                        <h4 class="card-title text-white">QUOTE</h4>
+                                        <a class="heading-elements-toggle">
+                                            <i class='bx bx-dots-vertical font-medium-3'></i>
+                                        </a>
+                                        <div class="heading-elements">
+                                            <ul class="list-inline mb-0">
+
+                                                <li>
+                                                    <a onclick="$('.map-sidebar').removeClass('show')">
+                                                        <i class="bx bx-x"></i>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="card-body p-0">
+                                        <div class="d-flex justify-content-center align-items-center">
+                                            <div class="text-center mt-2">
+                                                <h1 class="text-secondary font-large-2 text-bold-500">€829</h1>
+                                                <p>Including VAT</p>
+                                            </div>
+                                        </div>
+                                        <div class="d-flex flex-wrap  justify-content-center">
+                                            <a href="#" class="m-1"><img style="width:74px;" class="transX"
+                                                    src="img/svg/bike.png"></a>
+                                            <a href="#" class="m-1"><img style="width:74px;" class="transX"
+                                                    src="img/svg/motorcycle.png"></a>
+                                            <a href="#" class="m-1"><img style="width:74px;" class="transX"
+                                                    src="img/svg/car.png"></a>
+                                            <a href="#" class="m-1"><img style="width:74px;" class="transX"
+                                                    src="img/svg/suv-car.png"></a>
+                                            <a href="#" class="m-1"><img style="width:74px;" class="transX"
+                                                    src="img/svg/cargo-truck.png"></a>
+                                            <a href="#" class="m-1"><img style="width:74px;" class="transX"
+                                                    src="img/svg/space-shuttle.png"></a>
+                                        </div>
+                                        <div class="d-flex p-1 mb-2 mt-2 bg-dark">
+                                            <div id="carousel-example-generic" class="carousel slide w-100 "
+                                                data-bs-interval="false">
+                                                <ol class="carousel-indicators d-none">
+                                                    <li data-target="#carousel-example-generic" data-slide-to="0"
+                                                        class="active"></li>
+                                                    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+                                                    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+                                                </ol>
+                                                <div class="carousel-inner text-center text-white" role="listbox">
+                                                    <div class="carousel-item active">
+                                                        (Bugün) 04 Ekim 2022
+                                                    </div>
+                                                    <div class="carousel-item ">
+                                                        05 Ekim 2022
+                                                    </div>
+                                                    <div class="carousel-item">
+                                                        06 Ekim 2022
+                                                    </div>
+                                                    <div class="carousel-item">
+                                                        07 Ekim 2022
+                                                    </div>
+                                                    <div class="carousel-item">
+                                                        08 Ekim 2022
+                                                    </div>
+                                                    <div class="carousel-item">
+                                                        09 Ekim 2022
+                                                    </div>
+                                                    <div class="carousel-item">
+                                                        10 Ekim 2022
+                                                    </div>
+                                                    <div class="carousel-item">
+                                                        11 Ekim 2022
+                                                    </div>
+                                                    <div class="carousel-item">
+                                                        12 Ekim 2022
+                                                    </div>
+                                                </div>
+                                                <a class="carousel-control-prev" href="#carousel-example-generic"
+                                                    role="button" data-slide="prev">
+                                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                                    <span class="sr-only">Previous</span>
+                                                </a>
+                                                <a class="carousel-control-next" href="#carousel-example-generic"
+                                                    role="button" data-slide="next">
+                                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                                    <span class="sr-only">Next</span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="d-flex" id="slider-colors-handles">
+                                            <fieldset style="width:100%;padding:22px">
+                                                <div class="slider-primary my-1" id="default-slider" style="width:100%">
+                                                </div>
+                                            </fieldset>
+                                            <style>
+                                                .noUi-connect {
+                                                    background: #5A8DEE;
+                                                    box-shadow: none;
+                                                }
+                                            </style>
+                                        </div>
+
+                                        <div class="d-flex justify-content-between align-items-center p-1">
+                                            <div class="d-flex align-items-center"> <i
+                                                    class="bx bx-map text-success font-large-1"></i> PICKUP AFTER</div>
+                                            <div class="d-flex align-items-center ">DELIVERY BEFORE <i
+                                                    class="bx bxs-map text-danger font-large-1"></i></div>
+
+
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="leaflet-map" style="height:100%" id="map">
+
+                            </div>
+
+
+                            <!-- Draggable Marker With Popup ends -->
+                        </div>
+
+                    </div>
+            </div>
+            </section>
+            <!-- Dashboard Ecommerce ends -->
+        </div>
+    </div>
+    </div>
+    <!-- END: Content-->
+
+    <!-- demo chat-->
+    <div class="widget-chat-demo">
+        <!-- widget chat demo footer button start -->
+        <button class="btn btn-primary chat-demo-button glow"><i class="livicon-evo"
+                data-options="name: comments.svg; style: lines; size: 24px; strokeColor: #fff; autoPlay: true; repeat: loop;"></i></button>
+        <!-- widget chat demo footer button ends -->
+        <div class="widget-chat widget-chat-demo d-none">
+            <div class="card mb-0">
+                <div class="card-header border-bottom p-0">
+                    <div class="media m-75">
+                        <a href="JavaScript:void(0);">
+                            <div class="avatar mr-75">
+                                <img src="app-assets/images/portrait/small/avatar-s-2.jpg" alt="avtar images" width="32"
+                                    height="32">
+                                <span class="avatar-status-online"></span>
+                            </div>
+                        </a>
+                        <div class="media-body">
+                            <h6 class="media-heading mb-0 pt-25"><a href="javaScript:void(0);">Temsilci</a></h6>
+                            <span class="text-muted font-small-3">Aktif</span>
+                        </div>
+                    </div>
+                    <div class="heading-elements">
+                        <i class="bx bx-x widget-chat-close float-right my-auto cursor-pointer"></i>
+                    </div>
+                </div>
+                <div class="card-body widget-chat-container widget-chat-scroll">
+                    <div class="chat-content">
+                        <div class="badge badge-pill badge-light-secondary my-1">Bugün</div>
+                        <div class="chat chat-left">
+                            <div class="chat-body">
+                                <div class="chat-message">
+                                    <p>Merhaba, destek hattımıza hoşgeldiniz. Size nasıl yardımcı olabilirim ?</p>
+                                    <span class="chat-time">7:50</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="chat">
+                            <div class="chat-body">
+                                <div class="chat-message">
+                                    <p>Merhaba, siparişimin durumunu öğrenmek istiyorum.</p>
+                                    <span class="chat-time">7:45</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="chat chat-left">
+                            <div class="chat-body">
+                                <div class="chat-message">
+                                    <p>Kargonuz bugün yola çıkacak.</p>
+                                    <span class="chat-time">7:44</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="chat">
+                            <div class="chat-body">
+                                <div class="chat-message">
+                                    <p>Ne zaman teslim olur ?</p>
+                                    <span class="chat-time">7:42</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="chat chat-left">
+                            <div class="chat-body">
+                                <div class="chat-message">
+                                    <p>Üç iş günü içerisinde teslim olacaktır.</p>
+                                    <span class="chat-time">7:40</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="chat">
+                            <div class="chat-body">
+                                <div class="chat-message">
+                                    <p>Teşekkürler.</p>
+                                    <span class="chat-time">7:37</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="chat chat-left">
+                            <div class="chat-body">
+                                <div class="chat-message">
+                                    <p>İyi günler.</p>
+                                    <span class="chat-time">7:33</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer border-top p-1">
+                    <form class="d-flex" onsubmit="widgetChatMessageDemo();" action="javascript:void(0);">
+                        <input type="text" class="form-control chat-message-demo mr-75" placeholder="Type here...">
+                        <button type="submit" class="btn btn-primary glow px-1"><i
+                                class="bx bx-paper-plane"></i></button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="sidenav-overlay"></div>
+    <div class="drag-target"></div>
+    <div class="modal fade" id="modal_id" tabindex="-1" role="dialog" aria-labelledby="modal_name_label"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="modal_name_label">
+                        Modal Başlık
+                    </h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <i class="bx bx-x"></i>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <section id="basic-datatable">
+                        <div class="filters-list-filter px-1">
+                        </div>
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="card">
+                                    <div class="card-body card-dashboard pt-0">
+                                        <div class="table-responsive">
+                                            <table id="example" class="table" data-searching="false">
+                                                <thead class="tableThead">
+                                                    <tr>
+                                                        <th>Kodu</th>
+                                                        <th>#</th>
+                                                        <th>#</th>
+                                                        <th>#</th>
+                                                        <th>Toplam Sipariş</th>
+                                                        <th>Toplam Ağırlık</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody class="tableText">
+                                                    <tr>
+                                                        <td>CRM30027</td>
+                                                        <td>#</td>
+                                                        <td>#</td>
+                                                        <td>#</td>
+                                                        <td>300</td>
+                                                        <td>350 kg.</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>CRM30027</td>
+                                                        <td>#</td>
+                                                        <td>#</td>
+                                                        <td>#</td>
+                                                        <td>300</td>
+                                                        <td>350 kg.</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>CRM30027</td>
+                                                        <td>#</td>
+                                                        <td>#</td>
+                                                        <td>#</td>
+                                                        <td>300</td>
+                                                        <td>350 kg.</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>CRM30027</td>
+                                                        <td>#</td>
+                                                        <td>#</td>
+                                                        <td>#</td>
+                                                        <td>300</td>
+                                                        <td>350 kg.</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>CRM30027</td>
+                                                        <td>#</td>
+                                                        <td>#</td>
+                                                        <td>#</td>
+                                                        <td>300</td>
+                                                        <td>350 kg.</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>CRM30027</td>
+                                                        <td>#</td>
+                                                        <td>#</td>
+                                                        <td>#</td>
+                                                        <td>300</td>
+                                                        <td>350 kg.</td>
+                                                    </tr>
+                                                </tbody>
+                                                <tfoot>
+                                                    <tr>
+                                                        <th>Kodu</th>
+                                                        <th>#</th>
+                                                        <th>#</th>
+                                                        <th>#</th>
+                                                        <th>Toplam Sipariş</th>
+                                                        <th>Toplam Ağırlık</th>
+                                                    </tr>
+                                                </tfoot>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+                <div class="modal-footer mt-2">
+                    <button type="button" class="btn btn-light-secondary mr-1 mb-1" data-dismiss="modal">
+                        Kapat
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- BEGIN: Footer-->
+    <div data-include="footer"></div>
+    <!-- END: Footer-->
+
+
+    <!-- BEGIN: Vendor JS-->
+    <script src="app-assets/vendors/js/vendors.min.js"></script>
+    <script src="app-assets/fonts/LivIconsEvo/js/LivIconsEvo.tools.js"></script>
+    <script src="app-assets/fonts/LivIconsEvo/js/LivIconsEvo.defaults.js"></script>
+    <script src="app-assets/fonts/LivIconsEvo/js/LivIconsEvo.min.js"></script>
+    <!-- BEGIN Vendor JS-->
+
+    <!-- BEGIN: Page Vendor JS-->
+    <script src="app-assets/vendors/js/forms/spinner/jquery.bootstrap-touchspin.js"></script>
+    <script src="app-assets/vendors/js/charts/apexcharts.min.js"></script>
+    <script src="app-assets/vendors/js/extensions/swiper.min.js"></script>
+    <script src="app-assets/vendors/js/extensions/nouislider.min.js"></script>
+    <script src="app-assets/vendors/js/pickers/daterange/daterangepicker.js"></script>
+    <script src="app-assets/vendors/js/pickers/pickadate/picker.js"></script>
+    <script src="app-assets/vendors/js/pickers/pickadate/picker.date.js"></script>
+    <script src="app-assets/vendors/js/pickers/pickadate/picker.time.js"></script>
+    <script src="app-assets/vendors/js/pickers/pickadate/legacy.js"></script>
+    <!-- END: Page Vendor JS-->
+
+    <!-- BEGIN: Theme JS-->
+    <script src="app-assets/js/scripts/configs/vertical-menu-dark.js"></script>
+    <script src="app-assets/js/core/app-menu.js"></script>
+    <script src="app-assets/js/core/app.js"></script>
+    <script src="app-assets/js/scripts/components.js"></script>
+    <script src="app-assets/js/scripts/footer.js"></script>
+    <!-- END: Theme JS-->
+
+    <!-- BEGIN: Page JS-->
+    <script src="app-assets/js/scripts/forms/number-input.js"></script>
+    <script src="app-assets/map/js/map.js"></script>
+    <!-- BEGIN: Page Vendor JS-->
+    <script src="app-assets/vendors/js/maps/leaflet.min.js"></script>
+    <!-- END: Page Vendor JS-->
+    <script src="assets/js/scripts.js"></script>
+
+    <script src="app-assets/js/scripts/maps/maps-leaflet.js"></script>
+    <script src="app-assets/js/scripts/extensions/noui-slider.js"></script>
+
+    <script>
+        var valuesSlider = document.getElementById('default-slider');
+        var valuesSlider2 = document.getElementById('default-slider2');
+        var valuesForSlider = ["00:00", "00:15", "00:30", "00:45", "01:00", "01:15", "01:30", "01:45", "02:00", "02:15",
+            "02:30", "02:45", "03:00", "03:15", "03:30", "03:45","04:00","04:15","04:30","04:45","05:00","05:15","05:30",
+            "05:45","06:00","06:15","06:30","06:45","07:00","07:15","07:30","07:45","08:00","08:15","08:30","08:45","09:00",
+            "09:15","09:30","09:45","10:00","10:15","10:30","10:45","11:00","11:15","11:30","11:45","12:00","12:15","12:30","12:45",
+            "13:00","13:15","13:30","13:45","14:00","14:15","14:30","14:45","15:00","15:15","15:30","15:45","16:00","16:15","16:30",
+            "16:45","17:00","17:15","17:30","17:45","18:00","18:15","18:30","18:45","19:00","19:15","19:30","19:45","20:00","20:15",
+            "20:30","20:45","21:00","21:15","21:30","21:45","22:00","22:15","22:30","22:45","23:00","23:15","23:30","23:45","00:00"
+        ];
+      
+
+        var format = {
+            to: function (value) {
+                return valuesForSlider[Math.round(value)];
+            },
+            from: function (value) {
+                return valuesForSlider.indexOf(Number(value));
+            }
+        };
+        
+
+        noUiSlider.create(valuesSlider2, {
+            start: [0, 0],
+            direction: "ltr",
+            behaviour: 'tap-drag',
+            connect:true,
+            // A linear range from 0 to 15 (16 values)
+            range: {
+                min: 0,
+                max: valuesForSlider.length - 1
+            },
+            // steps of 1
+            step: 1,
+            tooltips: [true,true],
+            format: format,
+        });
+
+
+
+        noUiSlider.create(valuesSlider, {
+            start: [18, 20],
+            direction: "ltr",
+            behaviour: 'tap-drag',
+            // A linear range from 0 to 15 (16 values)
+            range: {
+                min: 0,
+                max: valuesForSlider.length - 1
+            },
+            // steps of 1
+            step: 1,
+            tooltips: true,
+            format: format,
+
+
+        });
+
+        // The display values can be used to control the slider
+    </script>
+    <script src="assets/map/ammap.js"></script>
+    <script src="assets/map/dark.js"></script>
+    <!-- <script src="app-assets/js/scripts/pickers/dateTime/pick-a-datetime.js"></script> -->
+    
+
+    <script>
+        (function (window, document, $) {
+            'use strict'
+            $('.pickadate').pickadate();
+            //  $('.pickatime').pickatime();
+
+            $('#now').on('change', function () {
+                $('.now-field').show();
+                $('.later-field').hide();
+            })
+
+            $('#later').on('change', function () {
+                $('.now-field').hide();
+                $('.later-field').show();
+            })
+
+        })(window, document, jQuery);
+
+
+
+        $(document).ready(function () {
+
+
+            $('#carousel-example-generic').carousel({
+                pause: true,
+                interval: false,
+            });
+
+        });
+    </script>
+    
+    <script>
+        const waitAndReturn = document.getElementById('customSwitchcolor2');
+        let waitAndReturnInfo = document.getElementById('wait_and_return_info');
+        
+        waitAndReturn.addEventListener('change', function () {
+            if(this.checked) {
+          waitAndReturnInfo.classList.remove('wait_return_none')
+        } else {
+            waitAndReturnInfo.classList.add('wait_return_none');
+        }
+        
+        });
+    </script>
+
+
+     <!--Google start-->
+  
+     <script>
+ 
+       function initMap() {
+         const map = new google.maps.Map(document.getElementById("map"), {
+           center: { lat: 51.505, lng: -0.09 },
+           zoom: 13,
+           mapTypeControl: false,
+         });
+         const place1Name = document.getElementById('place1_name');
+         const place1Address = document.getElementById('place1_address');
+         const place2Name = document.getElementById('place2_name');
+         const place2Address = document.getElementById('place2_address');
+         const card = document.getElementById("pac-card");
+         const input = document.getElementById("pac-input");
+         const input2 = document.getElementById("pac-input2");
+         const biasInputElement = document.getElementById("use-location-bias");
+         const strictBoundsInputElement = document.getElementById("use-strict-bounds");
+         const options = {
+           fields: ["formatted_address", "geometry", "name"],
+           strictBounds: false,
+           types: ["establishment"],
+         };
+       
+         map.controls[google.maps.ControlPosition.TOP_LEFT].push(card);
+       
+         // AC 1 init
+         const autocomplete = new google.maps.places.Autocomplete(input, options);
+         autocomplete.setComponentRestrictions({
+           country: ["gb"],
+         });
+
+         // AC 2 init
+         const autocomplete2 = new google.maps.places.Autocomplete(input2, options);
+         autocomplete2.setComponentRestrictions({
+           country: ["gb"],
+         });
+
+         // ac binds
+         autocomplete.bindTo("bounds", map);
+         autocomplete2.bindTo("bounds", map);
+       
+         const infowindow = new google.maps.InfoWindow();
+         const infowindowContent = document.getElementById("infowindow-content");
+       
+         infowindow.setContent(infowindowContent);
+       
+         const marker = new google.maps.Marker({
+           map,
+           anchorPoint: new google.maps.Point(0, -29),
+         });
+       
+         // ac 1
+         autocomplete.addListener("place_changed", () => {
+           infowindow.close();
+           marker.setVisible(false);
+       
+           const place = autocomplete.getPlace();
+           //ac1 dynamic inputs
+           place1Name.innerHTML = place.name;
+           place1Address.innerHTML = place.formatted_address;
+
+           if (!place.geometry || !place.geometry.location) {
+             window.alert("No details available for input: '" + place.name + "'");
+             return;
+           }
+       
+
+           if (place.geometry.viewport) {
+             map.fitBounds(place.geometry.viewport);
+           } else {
+             map.setCenter(place.geometry.location);
+             map.setZoom(17);
+           }
+       
+           marker.setPosition(place.geometry.location);
+           marker.setVisible(true);
+         });
+
+         // ac 2
+         autocomplete2.addListener("place_changed", () => {
+           infowindow.close();
+           marker.setVisible(false);
+       
+           const place2 = autocomplete2.getPlace();
+
+           //ac2 dynamic inputs
+           place2Name.innerHTML = place2.name;
+           place2Address.innerHTML = place2.formatted_address;
+
+           if (!place2.geometry || !place2.geometry.location) {
+             window.alert("No details available for input: '" + place2.name + "'");
+             return;
+           }
+       
+           if (place2.geometry.viewport) {
+             map.fitBounds(place2.geometry.viewport);
+           } else {
+             map.setCenter(place2.geometry.location);
+             map.setZoom(17);
+           }
+       
+           marker.setPosition(place2.geometry.location);
+           marker.setVisible(true);
+         });
+         
+        
+       }
+       
+       window.initMap = initMap;
+
+       </script>
+          <script
+          src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBhpogR3ePL3nFimrwAyNdUn3qo8B26taU&callback=initMap&libraries=places&v=weekly"
+          
+        ></script>
+</body>
+<!-- END: Body-->
+
+</html>

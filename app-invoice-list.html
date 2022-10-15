@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<html class="loading" lang="en" data-textdirection="ltr">
+<!-- BEGIN: Head-->
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+    <title>We Lokal - Yönetim Paneli</title>
+    <link rel="apple-touch-icon" href="app-assets/images/ico/apple-icon-120.png">
+    <link rel="shortcut icon" type="image/x-icon" href="app-assets/images/favicon.jpeg">
+    <link href="https://fonts.googleapis.com/css?family=Rubik:300,400,500,600%7CIBM+Plex+Sans:300,400,500,600,700"
+          rel="stylesheet">
+
+    <!-- BEGIN: Vendor CSS-->
+    <link rel="stylesheet" type="text/css" href="app-assets/vendors/css/vendors.min.css">
+    <link rel="stylesheet" type="text/css" href="app-assets/vendors/css/charts/apexcharts.css">
+    <link rel="stylesheet" type="text/css" href="app-assets/vendors/css/extensions/swiper.min.css">
+    <!-- END: Vendor CSS-->
+
+    <!-- BEGIN: Theme CSS-->
+    <link rel="stylesheet" type="text/css" href="app-assets/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="app-assets/css/bootstrap-extended.css">
+    <link rel="stylesheet" type="text/css" href="app-assets/css/colors.css">
+    <link rel="stylesheet" type="text/css" href="app-assets/css/components.css">
+    <link rel="stylesheet" type="text/css" href="app-assets/css/themes/dark-layout.css">
+    <link rel="stylesheet" type="text/css" href="app-assets/css/themes/semi-dark-layout.css">
+    <link rel="stylesheet" type="text/css" href="app-assets/map/css/style.css">
+    <!-- END: Theme CSS-->
+
+    <!-- BEGIN: Page CSS-->
+    <link rel="stylesheet" type="text/css" href="app-assets/css/core/menu/menu-types/vertical-menu.css">
+    <link rel="stylesheet" type="text/css" href="app-assets/css/pages/dashboard-ecommerce.css">
+    <!-- END: Page CSS-->
+
+    <!-- BEGIN: Custom CSS-->
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <!-- END: Custom CSS-->
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="assets/css/costum.css">
+
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.12.1/css/dataTables.bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.3.0/css/responsive.bootstrap.min.css">
+
+
+</head>
+<!-- END: Head-->
+
+<!-- BEGIN: Body-->
+<body class="vertical-layout vertical-menu-modern dark-layout 2-columns  navbar-sticky footer-static" data-open="click"
+      data-menu="vertical-menu-modern" data-col="2-columns" data-layout="dark-layout">
+
+<div id="loader" style="height: 100vh; position: fixed; inset: 0;">
+    <div class="boxes">
+        <div class="box">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <div class="box">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <div class="box">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <div class="box">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+</div>
+<div data-include="header"></div>
+
+<!-- BEGIN: Main Menu-->
+<div class="main-menu menu-fixed menu-dark menu-accordion menu-shadow" data-scroll-to-active="true">
+    <div class="navbar-header">
+        <ul class="nav navbar-nav flex-row">
+            <li class="nav-item mr-auto">
+                <a class="navbar-brand" href="dashboard.html">
+
+                    <h2 class="brand-text mb-0"><img style="margin-top: 9px" height="45"
+                                                     src="app-assets/images/logo-dark.png" alt=""></h2>
+                </a>
+            </li>
+            <li class="nav-item nav-toggle"><a class="nav-link modern-nav-toggle pr-0" data-toggle="collapse"><i
+                    class="bx bx-x d-block d-xl-none font-medium-4 primary"></i><i
+                    class="toggle-icon bx bx-disc font-medium-4 d-none d-xl-block primary"
+                    data-ticon="bx-disc"></i></a></li>
+        </ul>
+    </div>
+    <div class="shadow-bottom"></div>
+
+    <style>
+        .main-menu-content ul>li {
+            margin-top: 5px !important;
+        }
+    </style>
+    <div class="main-menu-content">
+        <ul class="navigation navigation-main" id="main-menu-navigation" data-menu="menu-navigation"
+            data-icon-style="lines">
+            <li class=" nav-item"><a href="dashboard.html"><i class="menu-livicon" data-icon="home"></i><span
+                    class="menu-title text-truncate" data-i18n="Anasayfa">Anasayfa</span></a>
+            </li>
+
+            <li class=" nav-item"><a href="#"><i class="menu-livicon" data-icon="users"></i><span
+                    class="menu-title text-truncate" data-i18n="Kurye Yönetimi">Kurye Yönetimi</span></a>
+            </li>
+            <li class="nav-item"><a href="#"><i class="menu-livicon" data-icon="briefcase"></i><span
+                    class="menu-title text-truncate" data-i18n="Müşteri Yönetimi">Müşteri Yönetimi</span></a>
+                <ul class="menu-content">
+                    <li><a class="d-flex align-items-center" href="carikart.html"><i
+                            class="bx bx-right-arrow-alt"></i><span class="menu-item text-truncate"
+                                                                    data-i18n="Cari Kart">Cari Kart </span></a>
+                    </li>
+
+                    <li><a class="d-flex align-items-center" href="siparis-bilgileri.html"><i
+                            class="bx bx-right-arrow-alt"></i><span class="menu-item text-truncate"
+                                                                    data-i18n="Kurye Takip">Sipariş Bilgileri</span></a>
+                    </li>
+                    <li><a class="d-flex align-items-center" href="fiyat-listesi.html"><i
+                            class="bx bx-right-arrow-alt"></i><span class="menu-item text-truncate"
+                                                                    data-i18n="Kurye Takip">Fiyat Listesi</span></a>
+                    </li>
+                    <li><a class="d-flex align-items-center" href="belge-basim.html"><i
+                            class="bx bx-right-arrow-alt"></i><span class="menu-item text-truncate"
+                                                                    data-i18n="Belge Basım">Belge Basım</span></a>
+                    </li>
+
+
+                </ul>
+            </li>
+            <li class=" nav-item"><a href="depo.html"><i class="menu-livicon" data-icon="home"></i><span
+                    class="menu-title text-truncate" data-i18n="Depo Yönetimi">Depo Yönetimi</span></a>
+
+            </li>
+            <li class="nav-item"><a href="#"><i class="menu-livicon" data-icon="truck"></i><span
+                    class="menu-title text-truncate" data-i18n="Sipariş Yönetimi">Sipariş Yönetimi</span></a>
+                <ul class="menu-content">
+                    <li ><a class="d-flex align-items-center" href="shipment-all.html"><i
+                            class="bx bx-right-arrow-alt"></i><span class="menu-item text-truncate"
+                                                                    data-i18n="Tüm Gönderiler">Tüm Gönderiler</span></a>
+                    </li>
+                    <li><a class="d-flex align-items-center" href="add-shipment.html"><i
+                            class="bx bx-right-arrow-alt"></i><span class="menu-item text-truncate"
+                                                                    data-i18n="Yeni Yük Ekle">Yeni Sipariş Ekle</span></a>
+                    </li>
+                    <li><a class="d-flex align-items-center" href="file-shipment.html"><i
+                            class="bx bx-right-arrow-alt"></i><span class="menu-item text-truncate"
+                                                                    data-i18n="Dosyadan Yükle">Dosyadan Yükle</span></a>
+                    </li>
+                </ul>
+            </li>
+            <li class=" nav-item"><a href="follow-up.html"><i class="menu-livicon" data-icon="compass"></i><span
+                    class="menu-title text-truncate" data-i18n="Sipariş Yönetimi">Sipariş Yönetimi</span></a>
+            </li>
+
+            <li class=" nav-item"><a href="#"><i class="menu-livicon" data-icon="users"></i><span
+                    class="menu-title text-truncate" data-i18n="Kullanıcılar">Kullanıcılar</span></a>
+                <ul class="menu-content">
+
+
+                    <li><a class="d-flex align-items-center" href="app-users-list.html"><i
+                            class="bx bx-right-arrow-alt"></i><span class="menu-item text-truncate"
+                                                                    data-i18n="Kullanıcı Listesi">Kullanıcı Listesi</span></a></li>
+
+                    <li><a class="d-flex align-items-center" href="app-users-view.html"><i
+                            class="bx bx-right-arrow-alt"></i><span class="menu-item text-truncate"
+                                                                    data-i18n="Kullanıcı Görüntüle">Kullanıcı Görüntüle</span></a></li>
+
+
+                    <li><a class="d-flex align-items-center" href="app-users-edit.html"><i
+                            class="bx bx-right-arrow-alt"></i><span class="menu-item text-truncate"
+                                                                    data-i18n="Kullanıcı Düzenle">Kullanıcı Düzenle</span></a></li>
+
+
+                </ul>
+            </li>
+
+            <li class="open nav-item"><a href="#"><i class="menu-livicon" data-icon="bar-chart"></i><span
+                    class="menu-title text-truncate" data-i18n="Proforma">Proforma</span></a>
+                <ul class="menu-content">
+
+
+                    <li class="active"><a class="d-flex align-items-center" href="app-invoice-list.html"><i
+                            class="bx bx-right-arrow-alt"></i><span class="menu-item text-truncate"
+                                                                    data-i18n="Proforma Listesi">Proforma Listesi</span></a></li>
+
+
+                    <li><a class="d-flex align-items-center" href="app-invoice.html"><i
+                            class="bx bx-right-arrow-alt"></i><span class="menu-item text-truncate"
+                                                                    data-i18n="Proforma">Proforma</span></a></li>
+
+
+
+                    <li><a class="d-flex align-items-center" href="app-invoice-edit.html"><i
+                            class="bx bx-right-arrow-alt"></i><span class="menu-item text-truncate"
+                                                                    data-i18n="Proforma Düzenle">Proforma Düzenle</span></a></li>
+
+                    <li><a class="d-flex align-items-center" href="app-invoice-add.html"><i
+                            class="bx bx-right-arrow-alt"></i><span class="menu-item text-truncate"
+                                                                    data-i18n="Proforma Ekle">Proforma Ekle</span></a></li>
+
+                    <li><a class="d-flex align-items-center" href="app-invoice-add.html"><i
+                            class="bx bx-right-arrow-alt"></i><span class="menu-item text-truncate"
+                                                                    data-i18n="Env. Sürücü Raporları">Env. Sürücü Raporları</span></a></li>
+
+                </ul>
+            </li>
+            <li class=" nav-item"><a href="#"><i class="menu-livicon" data-icon="bar-chart"></i><span
+                    class="menu-title text-truncate" data-i18n="Raporlar">Raporlar</span></a>
+                <ul class="menu-content">
+
+                    <li><a class="d-flex align-items-center" href="yoldaki-siparisler-raporu.html"><i
+                            class="bx bx-right-arrow-alt"></i><span class="menu-item text-truncate"
+                                                                    data-i18n="Yük Raporları">Yoldaki Siparişler Raporu</span></a></li>
+
+                    <li><a class="d-flex align-items-center" href="zamaninda-teslim-raporu.html"><i
+                            class="bx bx-right-arrow-alt"></i><span class="menu-item text-truncate"
+                                                                    data-i18n="Yük Raporları">Zamanında Teslim Raporu</span></a></li>
+
+
+                    <li><a class="d-flex align-items-center" href="shipment-report.html"><i
+                            class="bx bx-right-arrow-alt"></i><span class="menu-item text-truncate"
+                                                                    data-i18n="Yük Raporları">Yük Raporları</span></a></li>
+
+
+
+                    <li><a class="d-flex align-items-center" href="geciken-teslimat-raporu.html"><i
+                            class="bx bx-right-arrow-alt"></i><span class="menu-item text-truncate"
+                                                                    data-i18n="Şikayet Yönetimi Raporu">Geciken Teslimat Raporu</span></a></li>
+
+                    <li><a class="d-flex align-items-center" href="complaint-report.html"><i
+                            class="bx bx-right-arrow-alt"></i><span class="menu-item text-truncate"
+                                                                    data-i18n="Şikayet Yönetimi Raporu">Şikayet Yönetimi Raporu</span></a></li>
+
+                    <li><a class="d-flex align-items-center" href="drive-report.html"><i
+                            class="bx bx-right-arrow-alt"></i><span class="menu-item text-truncate"
+                                                                    data-i18n="Env. Sürücü Raporları">Env. Sürücü Raporları</span></a></li>
+
+
+
+                    <li><a class="d-flex align-items-center" href="driver-score-report.html"><i
+                            class="bx bx-right-arrow-alt"></i><span class="menu-item text-truncate"
+                                                                    data-i18n="Sürücü Puan Raporu">Sürücü Puan Raporu</span></a></li>
+
+                    <li><a class="d-flex align-items-center" href="post-service-score-report.html"><i
+                            class="bx bx-right-arrow-alt"></i><span class="menu-item text-truncate"
+                                                                    data-i18n="Hizmet Sonrası Anket Raporu">Hizmet Sonrası Anket Raporu</span></a></li>
+
+                    <li><a class="d-flex align-items-center" href="overall-score-report.html"><i
+                            class="bx bx-right-arrow-alt"></i><span class="menu-item text-truncate"
+                                                                    data-i18n="Genel Değerlendirme Anket Raporu">Genel Değerlendirme Anket
+                                            Raporu</span></a></li>
+                    <li><a class="d-flex align-items-center" href="customer-evaluation-score-report.html"><i
+                            class="bx bx-right-arrow-alt"></i><span class="menu-item text-truncate"
+                                                                    data-i18n="Müşteri Değerlendirme Puan Raporu">Müşteri Değerlendirme Puan
+                                            Raporu</span></a></li>
+                </ul>
+            </li>
+            <li class="nav-item"><a href="fatura.html"><i class="menu-livicon"
+                                                                       data-icon="calculator"></i><span class="menu-title text-truncate"
+                                                                                                        data-i18n="Dağıtım Bilgileri">Fatura Bilgileri</span></a>
+            </li>
+            <li class="nav-item"><a href="rating-system.html"><i class="menu-livicon" data-icon="touch"></i><span
+                    class="menu-title text-truncate" data-i18n="Rating Sistemleri">Rating Sistemleri</span></a>
+            </li>
+            <li class=" nav-item"><a href="definitions.html"><i class="menu-livicon" data-icon="briefcase"></i><span
+                    class="menu-title text-truncate" data-i18n="Tanımlamalar">Tanımlamalar</span></a>
+            </li>
+            <li class=" nav-item"><a href="profile.html"><i class="menu-livicon" data-icon="user"></i><span
+                    class="menu-title text-truncate" data-i18n="Profil">Profil</span></a>
+            </li>
+            <li class=" nav-item"><a href="help-page.html"><i class="menu-livicon" data-icon="help"></i><span
+                    class="menu-title text-truncate" data-i18n="Yardım">Yardım</span></a>
+            </li>
+        </ul>
+    </div>
+</div>
+<!-- END: Main Menu-->
+
+    <!-- BEGIN: Content-->
+    <div class="app-content content">
+        <div class="content-overlay"></div>
+        <div class="content-wrapper">
+            <div class="content-header row">
+            </div>
+            <div class="content-body">
+                <!-- invoice list -->
+                <section class="invoice-list-wrapper">
+                    <!-- create invoice button-->
+                    <div class="invoice-create-btn mb-1">
+                        <a href="app-invoice-add.html" class="btn btn-primary glow invoice-create" role="button" aria-pressed="true">Create
+                            Invoice</a>
+                    </div>
+                    <!-- Options and filter dropdown button-->
+                    <div class="action-dropdown-btn d-none">
+                        <div class="dropdown invoice-filter-action">
+                            <button class="btn border dropdown-toggle mr-1" type="button" id="invoice-filter-btn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Filter Invoice
+                            </button>
+                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="invoice-filter-btn">
+                                <a class="dropdown-item" href="javascript:;">Downloaded</a>
+                                <a class="dropdown-item" href="javascript:;">Sent</a>
+                                <a class="dropdown-item" href="javascript:;">Partial Payment</a>
+                                <a class="dropdown-item" href="javascript:;">Paid</a>
+                            </div>
+                        </div>
+                        <div class="dropdown invoice-options">
+                            <button class="btn border dropdown-toggle mr-2" type="button" id="invoice-options-btn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Options
+                            </button>
+                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="invoice-options-btn">
+                                <a class="dropdown-item" href="javascript:;">Delete</a>
+                                <a class="dropdown-item" href="javascript:;">Edit</a>
+                                <a class="dropdown-item" href="javascript:;">View</a>
+                                <a class="dropdown-item" href="javascript:;">Send</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="table invoice-data-table dt-responsive nowrap Gönderi Yönetimi" style="width:100%">
+                            <thead>
+                                <tr>
+                                    <th></th>
+                                    <th></th>
+                                    <th>
+                                        <span class="align-middle">Invoice#</span>
+                                    </th>
+                                    <th>Amount</th>
+                                    <th>Date</th>
+                                    <th>Customer</th>
+                                    <th>Tags</th>
+                                    <th>Status</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td>
+                                        <a href="app-invoice.html">INV-00956</a>
+                                    </td>
+                                    <td><span class="invoice-amount">$459.30</span></td>
+                                    <td><small class="text-muted">12-08-19</small></td>
+                                    <td><span class="invoice-customer">ZARA</span></td>
+                                    <td>
+                                        <span class="bullet bullet-success bullet-sm"></span>
+                                        <small class="text-muted">Technology</small>
+                                    </td>
+                                    <td><span class="badge badge-light-danger badge-pill">UNPAID</span></td>
+                                    <td>
+                                        <div class="invoice-action">
+                                            <a href="app-invoice.html" class="invoice-action-view mr-1">
+                                                <i class="bx bx-show-alt"></i>
+                                            </a>
+                                            <a href="app-invoice-edit.html" class="invoice-action-edit cursor-pointer">
+                                                <i class="bx bx-edit"></i>
+                                            </a>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td>
+                                        <a href="app-invoice.html">INV-00349</a>
+                                    </td>
+                                    <td><span class="invoice-amount">$125.00</span></td>
+                                    <td><small class="text-muted">08-08-19</small></td>
+                                    <td><span class="invoice-customer">MANGO</span></td>
+                                    <td>
+                                        <span class="bullet bullet-primary bullet-sm"></span>
+                                        <small class="text-muted">Car</small>
+                                    </td>
+                                    <td><span class="badge badge-light-success badge-pill">PAID</span></td>
+                                    <td>
+                                        <div class="invoice-action">
+                                            <a href="app-invoice.html" class="invoice-action-view mr-1">
+                                                <i class="bx bx-show-alt"></i>
+                                            </a>
+                                            <a href="app-invoice-edit.html" class="invoice-action-edit cursor-pointer">
+                                                <i class="bx bx-edit"></i>
+                                            </a>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td>
+                                        <a href="app-invoice.html">INV-00853</a>
+                                    </td>
+                                    <td><span class="invoice-amount">$10,503</span></td>
+                                    <td><small class="text-muted">02-08-19</small></td>
+                                    <td><span class="invoice-customer">ADIDAS</span></td>
+                                    <td>
+                                        <span class="bullet bullet-dark bullet-sm"></span>
+                                        <small class="text-muted">Corporation</small>
+                                    </td>
+                                    <td><span class="badge badge-light-danger badge-pill">UNPAID</span></td>
+                                    <td>
+                                        <div class="invoice-action">
+                                            <a href="app-invoice.html" class="invoice-action-view mr-1">
+                                                <i class="bx bx-show-alt"></i>
+                                            </a>
+                                            <a href="app-invoice-edit.html" class="invoice-action-edit cursor-pointer">
+                                                <i class="bx bx-edit"></i>
+                                            </a>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td>
+                                        <a href="app-invoice.html">INV-00452</a>
+                                    </td>
+                                    <td><span class="invoice-amount">$90</span></td>
+                                    <td><small class="text-muted">28-07-19</small></td>
+                                    <td><span class="invoice-customer">LC WAKIKI</span></td>
+                                    <td>
+                                        <span class="bullet bullet-info bullet-sm"></span>
+                                        <small class="text-muted">Electronic</small>
+                                    </td>
+                                    <td><span class="badge badge-light-warning badge-pill">Partially Paid</span></td>
+                                    <td>
+                                        <div class="invoice-action">
+                                            <a href="app-invoice.html" class="invoice-action-view mr-1">
+                                                <i class="bx bx-show-alt"></i>
+                                            </a>
+                                            <a href="app-invoice-edit.html" class="invoice-action-edit cursor-pointer">
+                                                <i class="bx bx-edit"></i>
+                                            </a>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td>
+                                        <a href="app-invoice.html">INV-00123</a>
+                                    </td>
+                                    <td><span class="invoice-amount">$15,900</span></td>
+                                    <td><small class="text-muted">23-07-19</small></td>
+                                    <td><span class="invoice-customer">PRADA</span></td>
+                                    <td>
+                                        <span class="bullet bullet-primary bullet-sm"></span>
+                                        <small class="text-muted">Car</small>
+                                    </td>
+                                    <td><span class="badge badge-light-success badge-pill">PAID</span></td>
+                                    <td>
+                                        <div class="invoice-action">
+                                            <a href="app-invoice.html" class="invoice-action-view mr-1">
+                                                <i class="bx bx-show-alt"></i>
+                                            </a>
+                                            <a href="app-invoice-edit.html" class="invoice-action-edit cursor-pointer">
+                                                <i class="bx bx-edit"></i>
+                                            </a>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td>
+                                        <a href="app-invoice.html">INV-00853</a>
+                                    </td>
+                                    <td><span class="invoice-amount">$115.06</span></td>
+                                    <td><small class="text-muted">24-06-19</small></td>
+                                    <td><span class="invoice-customer">CHANEL</span></td>
+                                    <td>
+                                        <span class="bullet bullet-info bullet-sm"></span>
+                                        <small class="text-muted">Electronic</small>
+                                    </td>
+                                    <td><span class="badge badge-light-success badge-pill">PAID</span></td>
+                                    <td>
+                                        <div class="invoice-action">
+                                            <a href="app-invoice.html" class="invoice-action-view mr-1">
+                                                <i class="bx bx-show-alt"></i>
+                                            </a>
+                                            <a href="app-invoice-edit.html" class="invoice-action-edit cursor-pointer">
+                                                <i class="bx bx-edit"></i>
+                                            </a>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td>
+                                        <a href="app-invoice.html">INV-00153</a>
+                                    </td>
+                                    <td><span class="invoice-amount">$1,090</span></td>
+                                    <td><small class="text-muted">23-05-19</small></td>
+                                    <td><span class="invoice-customer">DIOR</span></td>
+                                    <td>
+                                        <span class="bullet bullet-dark bullet-sm"></span>
+                                        <small class="text-muted">Corporation</small>
+                                    </td>
+                                    <td><span class="badge badge-light-danger badge-pill">UNPAID</span></td>
+                                    <td>
+                                        <div class="invoice-action">
+                                            <a href="app-invoice.html" class="invoice-action-view mr-1">
+                                                <i class="bx bx-show-alt"></i>
+                                            </a>
+                                            <a href="app-invoice-edit.html" class="invoice-action-edit cursor-pointer">
+                                                <i class="bx bx-edit"></i>
+                                            </a>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td>
+                                        <a href="app-invoice.html">INV-00788</a>
+                                    </td>
+                                    <td><span class="invoice-amount">$555.50</span></td>
+                                    <td><small class="text-muted">10-06-19</small></td>
+                                    <td><span class="invoice-customer">GIVENCHY</span></td>
+                                    <td>
+                                        <span class="bullet bullet-warning bullet-sm"></span>
+                                        <small class="text-muted">Mobile</small>
+                                    </td>
+                                    <td><span class="badge badge-light-danger badge-pill">UNPAID</span></td>
+                                    <td>
+                                        <div class="invoice-action">
+                                            <a href="app-invoice.html" class="invoice-action-view mr-1">
+                                                <i class="bx bx-show-alt"></i>
+                                            </a>
+                                            <a href="app-invoice-edit.html" class="invoice-action-edit cursor-pointer">
+                                                <i class="bx bx-edit"></i>
+                                            </a>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td>
+                                        <a href="app-invoice.html">INV-00326</a>
+                                    </td>
+                                    <td><span class="invoice-amount">$8,563</span></td>
+                                    <td><small class="text-muted">06-01-19</small></td>
+                                    <td><span class="invoice-customer">HERMES</span></td>
+                                    <td>
+                                        <span class="bullet bullet-danger bullet-sm"></span>
+                                        <small class="text-muted">Food</small>
+                                    </td>
+                                    <td><span class="badge badge-light-success badge-pill">PAID</span></td>
+                                    <td>
+                                        <div class="invoice-action">
+                                            <a href="app-invoice.html" class="invoice-action-view mr-1">
+                                                <i class="bx bx-show-alt"></i>
+                                            </a>
+                                            <a href="app-invoice-edit.html" class="invoice-action-edit cursor-pointer">
+                                                <i class="bx bx-edit"></i>
+                                            </a>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td>
+                                        <a href="app-invoice.html">INV-00759</a>
+                                    </td>
+                                    <td><span class="invoice-amount">$10,960.20</span></td>
+                                    <td><small class="text-muted">22-05-19</small></td>
+                                    <td><span class="invoice-customer">GUCCI</span></td>
+                                    <td>
+                                        <span class="bullet bullet-dark bullet-sm"></span>
+                                        <small class="text-muted">Corporation</small>
+                                    </td>
+                                    <td><span class="badge badge-light-warning badge-pill">Partially Paid</span></td>
+                                    <td>
+                                        <div class="invoice-action">
+                                            <a href="app-invoice.html" class="invoice-action-view mr-1">
+                                                <i class="bx bx-show-alt"></i>
+                                            </a>
+                                            <a href="app-invoice-edit.html" class="invoice-action-edit cursor-pointer">
+                                                <i class="bx bx-edit"></i>
+                                            </a>
+                                        </div>
+                                    </td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+    <!-- END: Content-->
+
+    <!-- demo chat-->
+    <div class="widget-chat-demo">
+        <!-- widget chat demo footer button start -->
+        <button class="btn btn-primary chat-demo-button glow"><i class="livicon-evo" data-options="name: comments.svg; style: lines; size: 24px; strokeColor: #fff; autoPlay: true; repeat: loop;"></i></button>
+        <!-- widget chat demo footer button ends -->
+        <!-- widget chat demo start -->
+        <div class="widget-chat widget-chat-demo d-none">
+            <div class="card mb-0">
+                <div class="card-header border-bottom p-0">
+                    <div class="media m-75">
+                        <a href="JavaScript:void(0);">
+                            <div class="avatar mr-75">
+                                <img src="../app-assets/images/portrait/small/avatar-s-2.jpg" alt="avtar images" width="32" height="32">
+                                <span class="avatar-status-online"></span>
+                            </div>
+                        </a>
+                        <div class="media-body">
+                            <h6 class="media-heading mb-0 pt-25"><a href="javaScript:void(0);">Kiara Cruiser</a></h6>
+                            <span class="text-muted font-small-3">Active</span>
+                        </div>
+                    </div>
+                    <div class="heading-elements">
+                        <i class="bx bx-x widget-chat-close float-right my-auto cursor-pointer"></i>
+                    </div>
+                </div>
+                <div class="card-body widget-chat-container widget-chat-demo-scroll">
+                    <div class="chat-content">
+                        <div class="badge badge-pill badge-light-secondary my-1">today</div>
+                        <div class="chat">
+                            <div class="chat-body">
+                                <div class="chat-message">
+                                    <p>How can we help? 😄</p>
+                                    <span class="chat-time">7:45 AM</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="chat chat-left">
+                            <div class="chat-body">
+                                <div class="chat-message">
+                                    <p>Hey John, I am looking for the best admin template.</p>
+                                    <p>Could you please help me to find it out? 🤔</p>
+                                    <span class="chat-time">7:50 AM</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="chat">
+                            <div class="chat-body">
+                                <div class="chat-message">
+                                    <p>Stack admin is the responsive bootstrap 4 admin template.</p>
+                                    <span class="chat-time">8:01 AM</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer border-top p-1">
+                    <form class="d-flex" onsubmit="widgetChatMessageDemo();" action="javascript:void(0);">
+                        <input type="text" class="form-control chat-message-demo mr-75" placeholder="Type here...">
+                        <button type="submit" class="btn btn-primary glow px-1"><i class="bx bx-paper-plane"></i></button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <!-- widget chat demo ends -->
+
+    </div>
+    <div class="sidenav-overlay"></div>
+    <div class="drag-target"></div>
+
+    <!-- BEGIN: Footer-->
+    <footer class="footer footer-static footer-dark">
+        <p class="clearfix mb-0"><span class="float-left d-inline-block">2021 &copy; PIXINVENT</span><span class="float-right d-sm-inline-block d-none">Crafted with<i class="bx bxs-heart pink mx-50 font-small-3"></i>by<a class="text-uppercase" href="https://1.envato.market/pixinvent_portfolio" target="_blank">Pixinvent</a></span>
+            <button class="btn btn-primary btn-icon scroll-top" type="button"><i class="bx bx-up-arrow-alt"></i></button>
+        </p>
+    </footer>
+    <!-- END: Footer-->
+
+
+
+<!-- BEGIN: Vendor JS-->
+<script src="app-assets/vendors/js/vendors.min.js"></script>
+<script src="app-assets/fonts/LivIconsEvo/js/LivIconsEvo.tools.js"></script>
+<script src="app-assets/fonts/LivIconsEvo/js/LivIconsEvo.defaults.js"></script>
+<script src="app-assets/fonts/LivIconsEvo/js/LivIconsEvo.min.js"></script>
+<!-- BEGIN Vendor JS-->
+
+<!-- BEGIN: Page Vendor JS-->
+<script src="app-assets/vendors/js/charts/apexcharts.min.js"></script>
+<script src="app-assets/vendors/js/extensions/swiper.min.js"></script>
+<!-- END: Page Vendor JS-->
+
+<!-- BEGIN: Theme JS-->
+<script src="app-assets/js/scripts/configs/vertical-menu-dark.js"></script>
+<script src="app-assets/js/core/app-menu.js"></script>
+<script src="app-assets/js/core/app.js"></script>
+<script src="app-assets/js/scripts/components.js"></script>
+<script src="app-assets/js/scripts/footer.js"></script>
+<!-- END: Theme JS-->
+
+<!-- BEGIN: Page JS-->
+<script src="app-assets/js/scripts/pages/dashboard-ecommerce.js"></script>
+<script src="app-assets/map/js/map.js"></script>
+<script src="assets/js/scripts.js"></script>
+
+</body>
+<!-- END: Body-->
+
+</html>

@@ -1,0 +1,1396 @@
+<!DOCTYPE html>
+<html class="loading" lang="en" data-textdirection="ltr">
+<!-- BEGIN: Head-->
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+    <title>We Lokal- Yönetim Paneli</title>
+    <link rel="apple-touch-icon" href="app-assets/images/ico/apple-icon-120.png">
+    <link rel="shortcut icon" type="image/x-icon" href="app-assets/images/favicon.jpeg">
+    <link href="https://fonts.googleapis.com/css?family=Rubik:300,400,500,600%7CIBM+Plex+Sans:300,400,500,600,700"
+        rel="stylesheet">
+    <!-- BEGIN: Vendor CSS-->
+    <link rel="stylesheet" type="text/css" href="app-assets/vendors/css/vendors.min.css">
+    <link rel="stylesheet" type="text/css" href="app-assets/vendors/css/charts/apexcharts.css">
+    <link rel="stylesheet" type="text/css" href="app-assets/vendors/css/extensions/swiper.min.css">
+    <link rel="stylesheet" type="text/css" href="app-assets/vendors/css/maps/leaflet.min.css">
+    <link rel="stylesheet" type="text/css" href="app-assets/vendors/css/extensions/nouislider.min.css">
+    <link rel="stylesheet" type="text/css" href="app-assets/vendors/css/pickers/pickadate/pickadate.css">
+    <link rel="stylesheet" type="text/css" href="app-assets/vendors/css/pickers/daterange/daterangepicker.css">
+    <!-- END: Vendor CSS-->
+    <!-- BEGIN: Theme CSS-->
+    <link rel="stylesheet" type="text/css" href="app-assets/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="app-assets/css/bootstrap-extended.css">
+    <link rel="stylesheet" type="text/css" href="app-assets/css/colors.css">
+    <link rel="stylesheet" type="text/css" href="app-assets/css/components.css">
+    <link rel="stylesheet" type="text/css" href="app-assets/css/themes/dark-layout.css">
+    <link rel="stylesheet" type="text/css" href="app-assets/css/themes/semi-dark-layout.css">
+    <link rel="stylesheet" type="text/css" href="app-assets/map/css/style.css">
+    <script
+        src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&libraries=places&key=AIzaSyBhpogR3ePL3nFimrwAyNdUn3qo8B26taU">
+        </script>
+    <!-- END: Theme CSS-->
+    <!-- BEGIN: Page CSS-->
+    <link rel="stylesheet" type="text/css" href="app-assets/css/core/menu/menu-types/vertical-menu.css">
+    <link rel="stylesheet" type="text/css" href="app-assets/css/plugins/maps/maps-leaflet.css">
+    <link rel="stylesheet" type="text/css" href="app-assets/css/pages/dashboard-ecommerce.css">
+    <link rel="stylesheet" type="text/css" href="app-assets/css/plugins/extensions/noui-slider.css">
+    <link rel="stylesheet" type="text/css" href="app-assets/css/core/colors/palette-noui.css">
+    <!-- END: Page CSS-->
+    <!-- BEGIN: Custom CSS-->
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <!-- END: Custom CSS-->
+    <link rel="stylesheet" href="assets/map/demo.css">
+    <link rel="stylesheet" href="assets/css/costum.css">
+    <style>
+        .map-sidebar {
+            width: 400px;
+            height: 100%;
+            background: white;
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 9;
+            transform: translateX(105%);
+            transition: ease all .25s
+        }
+
+        .map-sidebar.show {
+            transform: translateX(0);
+            transition: ease all .25s
+        }
+
+        .transX {
+            transform: scaleX(-1);
+        }
+
+        .chat-demo-button {
+            z-index: 8
+        }
+
+        .box-size {
+            border: 1px #a4a4a4 dotted;
+            border-radius: 3%;
+            background-color: #f8f8f8;
+        }
+
+        .search_con {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        .job_search {
+            width: 300px;
+            padding: 5px;
+        }
+
+        .app-content content {
+            position: relative;
+        }
+
+        .custom_model, #past_model {
+            display: flex;
+            width: 80%;
+            height: 700px;
+            background-color: #fff;
+            box-shadow: 2px 2px 2px #ccc;
+            position: absolute;
+            z-index: 100;
+            top: 100px;
+            left: 50px;
+            border-radius: 5px;
+            padding: 20px;
+            border: 10px solid #dbe5f3;
+            display: none;
+        }
+
+        #past_model{
+            display: flex;
+            flex-direction: column;
+            height: 770px;
+            display: none;
+        }
+        #past_model_con{
+            display: flex;
+            background-color: #f2f4f4;
+        }
+        #past_model_con > div{
+            display: flex;
+            flex-direction: column;
+            margin: 30px;
+            background-color: #fff;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        #past_left{
+            min-width: 340px;
+        }
+        #past_right{
+            width: 100%;
+            background-color: #f2f4f4;
+        }
+        #past_right > div{
+            display: flex;
+            flex-direction: column;
+            margin: 30px;
+            background-color: #fff;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        #past_right_bottom_con{
+            height: 360px;
+        }
+        .sidebar {
+            position: absolute;
+            z-index: 1000;
+            top: 50px;
+            left: 50px;
+            color: #000;
+            background-color: floralwhite;
+            width: 480px;
+            height: auto;
+            border-radius: 5px;
+            padding: 10px;
+            font-size: 14px;
+            border: 5px solid #ddd;
+        }
+
+        .addressDot {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .addressDot > li {
+            display: flex;
+            height: 30px;
+            align-items: center;
+        }
+
+        .listDot {
+            display: block;
+            width: 12px;
+            height: 12px;
+            border-radius: 20px;
+            margin-right: 10px;
+        }
+
+        .listDotFirst {
+            background-color: orange;
+        }
+
+        .listDotSecond {
+            background-color: cadetblue;
+        }
+
+        .sidebarBottom {
+            display: flex;
+        }
+
+        .sideBarBottomInside{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            font-size: 14px;
+        }
+        .sideBarBtn {
+            display: flex;
+            justify-content: flex-end;
+            padding: 5px 10px;
+        }
+        .close_btn{
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            z-index: 1001;
+            cursor: pointer;
+        }
+        #past_icons{
+            display: flex;
+            justify-content: space-between;
+            font-size: 12px;
+            color: #444;
+            margin-top: 20px;
+        }
+        #past_icons > div > img{
+            margin-right: 5px;
+        }
+        #past_map{
+            border-radius: 4px;
+            background-color: #ccc;
+            height: 200px;
+            margin-top: 20px;
+        }
+        #past_btn_group{
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+        #past_btn_group > button {
+            display: flex;
+        }
+        #past_info{
+            margin-top: 20px;
+        }
+        #past_info > div{
+            display: flex;
+            justify-content: space-between;
+            padding:5px 0;
+            border-bottom: 1px solid #ddd;
+        }
+        #past_photo_section{
+            margin-top: 20px;
+            border-top: 20px solid #f2f4f4;
+        }
+        .past_right_top{
+            display: flex;
+            align-items: center;
+        }
+        #share_btn{
+            position: relative;
+        }
+        #share_model{
+            position: absolute;
+            top: 38px;
+            left: 0;
+            z-index: 1002;
+            width: 133px;
+            height: auto;
+            border: 1px solid #ccc;
+            border-bottom-left-radius: 4px;
+            border-bottom-right-radius: 4px;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            display: none;
+        }
+        #share_model > li{
+            display: flex;
+            color: #fff;
+            padding: 5px 2px;
+            border-bottom: 1px solid #ddd;
+            background-color: cadetblue;
+        }
+        #share_model > li:hover{
+            background-color: #598eee;
+        }
+        #share_btn:hover{
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
+        }
+        #share_btn:hover #share_model{
+            display: block;
+        }
+        .live_track_model{
+            position: absolute;
+            top: 50px;
+            left: 0;
+            z-index: 1100;
+            width: 70%;
+            height: 60%;
+            border-radius: 5px;
+            border: 10px solid #dbe5f3;
+            display: none;
+        }
+    </style>
+</head>
+<!-- END: Head-->
+<!-- BEGIN: Body-->
+
+<body class="vertical-layout vertical-menu-modern dark-layout 2-columns  navbar-sticky footer-static" data-open="click"
+    data-menu="vertical-menu-modern" data-col="2-columns" data-layout="dark-layout">
+    <div id="loader" style="height: 100vh; position: fixed; inset: 0;">
+        <div class="boxes">
+            <div class="box">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <div class="box">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <div class="box">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <div class="box">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+    </div>
+    <style>
+        .agree-confirmation {
+            position: absolute;
+            z-index: 9999;
+            width: 100vw;
+            height: 100vh;
+        }
+
+        .agree-confirmation::after {
+            content: '';
+            position: absolute;
+            background-color: rgba(255, 255, 255, 0.8);
+            inset: 0;
+            width: 100vw;
+            height: 100vh;
+        }
+
+        .agree-confirmation .area img {
+            width: 300px;
+        }
+
+        .agree-confirmation .area {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 12;
+        }
+
+        #transport-tab>li>a.active span {
+            background-color: rgb(255, 255, 255);
+        }
+    </style>
+
+    <div data-include="header"></div>
+    <!-- BEGIN: Main Menu-->
+    <div class="main-menu menu-fixed menu-dark menu-accordion menu-shadow" data-scroll-to-active="true">
+        <div class="navbar-header">
+            <ul class="nav navbar-nav flex-row">
+                <li class="nav-item mr-auto">
+                    <a class="navbar-brand" href="dashboard.html">
+                        <h2 class="brand-text mb-0"><img style="margin-top: 9px" height="45"
+                                src="app-assets/images/logo-dark.png" alt=""></h2>
+                    </a>
+                </li>
+                <li class="nav-item nav-toggle"><a class="nav-link modern-nav-toggle pr-0" data-toggle="collapse"><i
+                            class="bx bx-x d-block d-xl-none font-medium-4 primary"></i><i
+                            class="toggle-icon bx bx-disc font-medium-4 d-none d-xl-block primary"
+                            data-ticon="bx-disc"></i></a></li>
+            </ul>
+        </div>
+        <div class="shadow-bottom"></div>
+        <style>
+            .main-menu-content ul>li {
+                margin-top: 5px !important;
+            }
+        </style>
+        <div class="main-menu-content">
+            <ul class="navigation navigation-main" id="main-menu-navigation" data-menu="menu-navigation"
+                data-icon-style="lines">
+                <li class="nav-item"><a href="dashboard.html"><i class="menu-livicon" data-icon="home"></i><span
+                            class="menu-title text-truncate" data-i18n="Anasayfa">Anasayfa</span></a>
+                </li>
+                <li class=" nav-item"><a href="book.html"><i class="menu-livicon" data-icon="map"></i><span
+                            class="menu-title text-truncate" data-i18n="Book">Book</span></a>
+                </li>
+                <li class="active nav-item"><a href="job-board.html"><i class="menu-livicon" data-icon="list"></i><span
+                            class="menu-title text-truncate" data-i18n="Job Board">Job Board</span></a>
+                </li>
+
+                <li><a class="d-flex align-items-center" href="siparis.html"><i class="bx bx-right-arrow-alt"></i><span
+                            class="menu-item text-truncate" data-i18n="Depo Sevkiyat">Siparisler</span></a>
+                </li>
+                <li><a class="d-flex align-items-center" href="sikayet.html"><i class="bx bx-right-arrow-alt"></i><span
+                            class="menu-item text-truncate" data-i18n="Şikayetler">Şikayetler</span></a>
+                </li>
+
+                <li class="nav-item"><a href="billing.html"><i class="menu-livicon" data-icon="calculator"></i><span
+                            class="menu-title text-truncate" data-i18n="Dağıtım Bilgileri">Fatura Bilgileri</span></a>
+                </li>
+                <li class=" nav-item"><a href="favorites.html"><i class="menu-livicon" data-icon="star"></i><span
+                    class="menu-title text-truncate" data-i18n="Favoriler">Favoriler</span></a>
+        </li>
+                <li class=" nav-item"><a href="profile.html"><i class="menu-livicon" data-icon="user"></i><span
+                            class="menu-title text-truncate" data-i18n="Profil">Profil</span></a>
+                </li>
+                <li class="nav-item">
+                    <a href="team.html"
+                      ><i class="menu-livicon" data-icon="users"></i
+                      ><span class="menu-title text-truncate" data-i18n="Profil"
+                        >Team</span
+                      ></a
+                    >
+                  </li>
+                <li class=" nav-item"><a href="definitions.html"><i class="menu-livicon" data-icon="briefcase"></i><span
+                            class="menu-title text-truncate" data-i18n="Tanımlamalar">Tanımlamalar</span></a>
+                </li>
+                <li class=" nav-item"><a href="co2.html"><i class="menu-livicon" data-icon="adjust"></i><span
+                    class="menu-title text-truncate" data-i18n="co2">CO2</span></a>
+                </li>
+                <li class=" nav-item"><a href="help.html"><i class="menu-livicon" data-icon="help"></i><span
+                            class="menu-title text-truncate" data-i18n="Tanımlamalar">Help</span></a>
+                </li>
+                
+            </ul>
+        </div>
+    </div>
+    <!-- END: Main Menu-->
+    <!-- BEGIN: Content-->
+    <div class="app-content content">
+        <div class="content-overlay"></div>
+        <div class="content-wrapper">
+            <div class="content-header row">
+                <div class="content-header-left col-12 mb-2 mt-1">
+                    <div class="breadcrumbs-top">
+                        <div class="breadcrumb-wrapper d-none d-sm-block">
+                            <ol class="breadcrumb p-0 mb-0">
+                                <li class="breadcrumb-item"><a href="dashboard.html"><i class="bx bx-home-alt"></i></a>
+                                </li>
+                                <li class="breadcrumb-item">Job Board Section
+                                </li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-body">
+                <!-- Dashboard Ecommerce Starts -->
+                <section id="dashboard-ecommerce">
+                    <div class="row">
+                        <div class="col-xl-12 col-12 p-0">
+                            <div class="card w-100" style="height:calc(100vh - 160px)">
+                                <div class="card-body p-0">
+                                    <!-- Nav tabs -->
+                                    <ul class="nav nav-tabs nav-fill" id="myTab" role="tablist">
+                                        <li class="nav-item m-0 p-0">
+                                            <a class="nav-link active rounded-0 " id="ongoing-tab-fill"
+                                                data-toggle="tab" href="#ongoing-fill" role="tab"
+                                                aria-controls="ongoing-fill" aria-selected="true">
+                                                Ongoing
+                                            </a>
+                                        </li>
+                                        <li class="nav-item m-0 p-0">
+                                            <a class="nav-link rounded-0" id="scheduled-tab-fill" data-toggle="tab"
+                                                href="#scheduled-fill" role="tab" aria-controls="scheduled-fill"
+                                                aria-selected="false">
+                                                Scheduled
+                                            </a>
+                                        </li>
+                                        <li class="nav-item m-0 p-0">
+                                            <a class="nav-link rounded-0" id="past-tab-fill" data-toggle="tab"
+                                                href="#past-fill" role="tab" aria-controls="past-fill"
+                                                aria-selected="false">
+                                                Past
+                                            </a>
+                                        </li>
+                                    </ul>
+                                    <!-- Tab panes -->
+                                    <div class="tab-content" style="height: calc(100vh - 275px);overflow-y:scroll;max-width: 100%;
+                                    overflow-x: hidden;">
+                                        <!-- ongoing content -->
+                                        <div class="tab-pane active" id="ongoing-fill" role="tabpanel"
+                                            aria-labelledby="ongoing-tab-fill">
+                                            <!-- datatable start -->
+                                            <div class="table-responsive">
+                                                <div id="users-list-datatable_wrapper"
+                                                    class="dataTables_wrapper dt-bootstrap4 no-footer">
+                                                    <h4 class="media-heading text-center">
+                                                        <div class="search_con">
+                                                            <input type="search" name="" id="ongoing_search"
+                                                                class="form-control job_search" placeholder="search...">
+                                                            <span class="badge badge-success" id="ongoingCSV">Download
+                                                                CSV</span>
+                                                        </div>
+                                                    </h4>
+                                                    <div class="row">
+                                                        <div class="col-sm-12">
+                                                            <table id="ongoing_table"
+                                                                class="table table-striped table-bordered dt-responsive nowrap no-footer "
+                                                                role="grid"
+                                                                aria-describedby="users-list-datatable_info">
+                                                                <thead>
+                                                                    <tr role="row">
+                                                                        <th class="sorting_asc" tabindex="0"
+                                                                            aria-controls="users-list-datatable"
+                                                                            rowspan="1" colspan="1"
+                                                                            aria-sort="ascending"
+                                                                            aria-label="id: activate to sort column descending">
+                                                                            Delivery ID</th>
+                                                                        <th class="sorting_asc" tabindex="0"
+                                                                            aria-controls="users-list-datatable"
+                                                                            rowspan="1" colspan="1"
+                                                                            aria-sort="ascending"
+                                                                            aria-label="id: activate to sort column descending">
+                                                                            Delivery Status
+                                                                        </th>
+                                                                        <th class="sorting_asc" tabindex="0"
+                                                                            aria-controls="users-list-datatable"
+                                                                            rowspan="1" colspan="1"
+                                                                            aria-sort="ascending"
+                                                                            aria-label="id: activate to sort column descending">
+                                                                            Order ID
+                                                                        </th>
+                                                                        <th class="sorting" tabindex="0"
+                                                                            aria-controls="users-list-datatable"
+                                                                            rowspan="1" colspan="1"
+                                                                            aria-label="name: activate to sort column ascending">
+                                                                            Recipient</th>
+                                                                        <th class="sorting" tabindex="0"
+                                                                            aria-controls="users-list-datatable"
+                                                                            rowspan="1" colspan="1"
+                                                                            aria-label="last activity: activate to sort column ascending">
+                                                                            Label</th>
+                                                                        <th class="sorting" tabindex="0"
+                                                                            aria-controls="users-list-datatable"
+                                                                            rowspan="1" colspan="1"
+                                                                            aria-label="last activity: activate to sort column ascending">
+                                                                            Collection Time</th>
+                                                                        <th class="sorting" tabindex="0"
+                                                                            aria-controls="users-list-datatable"
+                                                                            rowspan="1" colspan="1"
+                                                                            aria-label="last activity: activate to sort column ascending">
+                                                                            Shipping Class</th>
+                                                                        <th class="sorting" tabindex="0"
+                                                                            aria-controls="users-list-datatable"
+                                                                            rowspan="1" colspan="1"
+                                                                            aria-label="last activity: activate to sort column ascending">
+                                                                            Pick Up</th>
+                                                                        <th class="sorting" tabindex="0"
+                                                                            aria-controls="users-list-datatable"
+                                                                            rowspan="1" colspan="1"
+                                                                            aria-label="last activity: activate to sort column ascending">
+                                                                            Drop Of</th>
+                                                                        <th class="sorting" tabindex="0"
+                                                                            aria-controls="users-list-datatable"
+                                                                            rowspan="1" colspan="1"
+                                                                            aria-label="last activity: activate to sort column ascending">
+                                                                            Parcel Size</th>
+                                                                    </tr>
+                                                                </thead>
+                                                                <tbody>
+                                                                    <tr role="row" class="odd">
+                                                                        <td class="sorting_1">1</td>
+                                                                        <td class="text-center"><img src="./img/images.png" width="48" />
+                                                                        </td>
+                                                                        <td>1</td>
+                                                                        <td>Jhon Doe</td>
+                                                                        <td id="job_label" class="text-center">
+                                                                            <a href="label.html" target="_blank" onclick="handleParent(event)"><img
+                                                                                    src="app-assets/images/TOPLAMSIPARIS.png"
+                                                                                    alt="" width="32"></a>
+                                                                        </td>
+                                                                        <td>00:00</td>
+                                                                        <td>
+                                                                            <select data-placeholder="Gönderi Tipi"
+                                                                                id="aracTipi"
+                                                                                class="select2-icons form-control select2-hidden-accessible"
+                                                                                data-select2-id="aracTipi" tabindex="-1"
+                                                                                aria-hidden="true" onclick="handleParent(event)">
+                                                                                <option value="Rush" selected=""
+                                                                                    data-select2-id="2">Rush</option>
+                                                                                <option value="SameDay">Same Day
+                                                                                </option>
+                                                                                <option value="NextDay">Next Day
+                                                                                </option>
+                                                                                <option value="CollectReturn">Collect &
+                                                                                    Return</option>
+                                                                                <option value="WaitReturn">Wait & Return
+                                                                                </option>
+                                                                            </select>
+                                                                            <div
+                                                                                class="custom-control custom-switch custom-control-inline mt-1 d-block" onclick="handleParent(event)">
+                                                                                <input type="checkbox"
+                                                                                    class="custom-control-input"
+                                                                                    checked="" id="collectReturn">
+                                                                                <label class="custom-control-label mr-1"
+                                                                                    for="collectReturn">
+                                                                                </label><span>Collect & Return </span>
+                                                                            </div>
+                                                                        </td>
+                                                                        <td>address</td>
+                                                                        <td>address</td>
+                                                                        <td class="text-center">
+                                                                            <div
+                                                                                class="badge badge-light-seccondary d-inline-flex align-items-center">
+                                                                                <span>Small</span></div>
+                                                                        </td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- datatable ends -->
+                                        </div>
+                                        <!-- scheduled content -->
+                                        <div class="tab-pane" id="scheduled-fill" role="tabpanel"
+                                            aria-labelledby="scheduled-tab-fill">
+                                            <div class="tab-pane active" id="schedelud-fill" role="tabpanel"
+                                                aria-labelledby="schedelud-tab-fill">
+                                                <!-- datatable start -->
+                                                <div class="table-responsive">
+                                                    <div id="users-list-datatable_wrapper"
+                                                        class="dataTables_wrapper dt-bootstrap4 no-footer">
+                                                        <h4 class="media-heading text-center">
+                                                            <div class="search_con">
+                                                                <input type="search" name="" id="schedelud_search"
+                                                                    class="form-control job_search"
+                                                                    placeholder="search...">
+                                                                <span class="badge badge-success"
+                                                                    id="scheduledCSV">Download CSV</span>
+                                                            </div>
+                                                        </h4>
+                                                        <div class="row">
+                                                            <div class="col-sm-12">
+                                                                <table id="scheduled_table"
+                                                                    class="table table-striped table-bordered dt-responsive nowrap no-footer "
+                                                                    role="grid"
+                                                                    aria-describedby="users-list-datatable_info">
+                                                                    <thead>
+                                                                        <tr role="row">
+                                                                            <th class="sorting_asc" tabindex="0"
+                                                                                aria-controls="users-list-datatable"
+                                                                                rowspan="1" colspan="1"
+                                                                                aria-sort="ascending"
+                                                                                aria-label="id: activate to sort column descending">
+                                                                                Dete</th>
+                                                                            <th class="sorting_asc" tabindex="0"
+                                                                                aria-controls="users-list-datatable"
+                                                                                rowspan="1" colspan="1"
+                                                                                aria-sort="ascending"
+                                                                                aria-label="id: activate to sort column descending">
+                                                                                Delivery ID
+                                                                            </th>
+                                                                            <th class="sorting_asc" tabindex="0"
+                                                                                aria-controls="users-list-datatable"
+                                                                                rowspan="1" colspan="1"
+                                                                                aria-sort="ascending"
+                                                                                aria-label="id: activate to sort column descending">
+                                                                                Order ID
+                                                                            </th>
+                                                                            <th class="sorting" tabindex="0"
+                                                                                aria-controls="users-list-datatable"
+                                                                                rowspan="1" colspan="1"
+                                                                                aria-label="last activity: activate to sort column ascending">
+                                                                                Pick Up</th>
+                                                                            <th class="sorting" tabindex="0"
+                                                                                aria-controls="users-list-datatable"
+                                                                                rowspan="1" colspan="1"
+                                                                                aria-label="last activity: activate to sort column ascending">
+                                                                                Drop Of</th>
+                                                                        </tr>
+                                                                    </thead>
+                                                                    <tbody>
+                                                                        <tr role="row" class="odd">
+                                                                            <td class="sorting_1">00/00/00</td>
+                                                                            <td>1</td>
+                                                                            <td>1</td>
+                                                                            <td>Address</td>
+                                                                            <td>Address</td>
+                                                                        </tr>
+                                                                    </tbody>
+                                                                </table>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!-- datatable ends -->
+                                            </div>
+                                        </div>
+                                        <!-- past content -->
+                                        <div class="tab-pane" id="past-fill" role="tabpanel"
+                                            aria-labelledby="past-tab-fill">
+                                            <div class="tab-pane" id="scheduled-fill" role="tabpanel"
+                                                aria-labelledby="scheduled-tab-fill">
+                                                <div class="tab-pane active" id="ongoing-fill" role="tabpanel"
+                                                    aria-labelledby="ongoing-tab-fill">
+                                                    <!-- datatable start -->
+                                                    <div class="table-responsive">
+                                                        <div id="users-list-datatable_wrapper"
+                                                            class="dataTables_wrapper dt-bootstrap4 no-footer">
+                                                            <h4 class="media-heading text-center">
+                                                                <div class="search_con">
+                                                                    <input type="search" name="" id="past_search"
+                                                                        class="form-control job_search"
+                                                                        placeholder="search...">
+                                                                    <span class="badge badge-success"
+                                                                        id="pastCSV">Download CSV</span>
+                                                                </div>
+                                                            </h4>
+                                                            <div class="row">
+                                                                <div class="col-sm-12">
+                                                                    <table id="past_table"
+                                                                        class="table table-striped table-bordered dt-responsive nowrap no-footer "
+                                                                        role="grid"
+                                                                        aria-describedby="users-list-datatable_info">
+                                                                        <thead>
+                                                                            <tr role="row">
+                                                                                <th class="sorting_asc" tabindex="0"
+                                                                                    aria-controls="users-list-datatable"
+                                                                                    rowspan="1" colspan="1"
+                                                                                    aria-sort="ascending"
+                                                                                    aria-label="id: activate to sort column descending">
+                                                                                    Dete</th>
+                                                                                <th class="sorting" tabindex="0"
+                                                                                    aria-controls="users-list-datatable"
+                                                                                    rowspan="1" colspan="1"
+                                                                                    aria-label="last activity: activate to sort column ascending">
+                                                                                    Status</th>
+                                                                                <th class="sorting_asc" tabindex="0"
+                                                                                    aria-controls="users-list-datatable"
+                                                                                    rowspan="1" colspan="1"
+                                                                                    aria-sort="ascending"
+                                                                                    aria-label="id: activate to sort column descending">
+                                                                                    Delivery ID
+                                                                                </th>
+                                                                                <th class="sorting_asc" tabindex="0"
+                                                                                    aria-controls="users-list-datatable"
+                                                                                    rowspan="1" colspan="1"
+                                                                                    aria-sort="ascending"
+                                                                                    aria-label="id: activate to sort column descending">
+                                                                                    Order ID
+                                                                                </th>
+                                                                                <th class="sorting" tabindex="0"
+                                                                                    aria-controls="users-list-datatable"
+                                                                                    rowspan="1" colspan="1"
+                                                                                    aria-label="last activity: activate to sort column ascending">
+                                                                                    Time</th>
+                                                                                <th class="sorting" tabindex="0"
+                                                                                    aria-controls="users-list-datatable"
+                                                                                    rowspan="1" colspan="1"
+                                                                                    aria-label="last activity: activate to sort column ascending">
+                                                                                    Drop Of</th>
+                                                                                <th class="sorting" tabindex="0"
+                                                                                    aria-controls="users-list-datatable"
+                                                                                    rowspan="1" colspan="1"
+                                                                                    aria-label="last activity: activate to sort column ascending">
+                                                                                    Invoice</th>
+                                                                                <th class="sorting" tabindex="0"
+                                                                                    aria-controls="users-list-datatable"
+                                                                                    rowspan="1" colspan="1"
+                                                                                    aria-label="last activity: activate to sort column ascending">
+                                                                                    Price</th>
+                                                                            </tr>
+                                                                        </thead>
+                                                                        <tbody>
+                                                                            <tr role="row" class="odd">
+                                                                                <td class="sorting_1">00/00/00</td>
+                                                                                <td>Delivered </td>
+                                                                                <td>x1</td>
+                                                                                <td>None</td>
+                                                                                <td>00:00</td>
+                                                                                <td>Address</td>
+                                                                                <td class="text-center"><a href="invoice.html"
+                                                                                        target="_blank" onclick="handleParent(event)"><img
+                                                                                            src="./img/invoice.png" /></a>
+                                                                                </td>
+                                                                                <td>300</td>
+                                                                            </tr>
+                                                                        </tbody>
+                                                                    </table>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <!-- datatable ends -->
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- <div class="card-footer">
+                                    <button class="btn btn-success btn-block">CONTINUE</button>
+                                </div> -->
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <!-- Dashboard Ecommerce ends -->
+        </div>
+
+
+        <div class="leaflet-map custom_model" style="height:80%;" id="draggable-marker-map1">
+            <div id="side"></div>
+            <img src="./img/close-icon.png" alt="" class="close_btn" id="close_btn_ongoing">
+        </div>
+        <div id="past_model">
+            <h3 class="text-center">Past Delivery Details</h3>
+            <div id="past_model_con">
+                 <div id="past_left">
+                    <div id="past_left_top">
+                        <h6>00/00/00</h6>
+                    <div>
+                       <div id="past_icons">
+                            <div><img src="./img/chart-icon.png" alt=""><span>ss</span></div>
+                            <div><img src="./img/Map-Marker-Marker-Outside-Azure-icon.png" alt=""><span>mm</span></div>
+                       </div>
+                        <div id="past_map">Map</div>
+                        <div id="past_btn_group">
+                            <button class="btn btn-primary" id="share_btn">
+                                <i class="bx bx-share mr-35"></i>
+                                <span class="d-none d-sm-block">Share Link</span>
+                                <ul id="share_model">
+                                    <li>
+                                        <img src="./img/YouTube-icon.png" alt="" class="mr-1">
+                                        <span>Youtube</span>
+                                    </li>
+                                    <li>
+                                        <img src="./img/social-facebook-button-blue-icon.png" alt="" class="mr-1">
+                                        <span>Facebook</span>
+                                    </li>
+                                    <li>
+                                        <img src="./img/social-linkedin-button-blue-icon.png" alt="" class="mr-1">
+                                        <span>LinkedIn</span>
+                                    </li>
+                                    <li>
+                                        <img src="./img/social-twitter-box-blue-icon.png" alt="" class="mr-1">
+                                        <span>Twitter</span>
+                                    </li>
+                                </ul>
+                            </button>
+                            <button class="btn btn-primary" id="live_track">
+                                <i class="bx bx-link mr-35"></i>
+                                <span class="d-none d-sm-block">Live Track</span>
+                            </button>
+                        </div>
+                        <div id="past_info">
+                            <div>
+                                <span>Subtotal</span>
+                                <span>$12</span>
+                            </div>
+                            <div>
+                                <span>Tax</span>
+                                <span>$2</span>
+                            </div>
+                            <div>
+                                <strong>Total</strong>
+                                <strong>$14</strong>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+                    <div id="past_photo_section">
+                        <div class="sideBarPhoto">
+                            <div class="media mt-1">
+                                <a class="mr-2" href="javascript:void(0);">
+                                    <img src="app-assets/images/avatar.jpeg" alt="users avatar" class="users-avatar-shadow rounded-circle" height="64" width="64">
+                                </a>
+                                <div class="media-body">
+                                    <strong class="media-heading">Raiana B.</strong>
+                                    <p style="font-size:12px;">44445444454545</p>
+                                </div>
+                                <img src="./img/svg/motorcycle.png" alt="" width="48" style="margin-top:20px;">
+                            </div>
+                        </div>
+                    </div>
+                 </div>
+                <div id="past_right">
+                    <div id="past_right_top_con">
+                        <div class="past_right_top">
+                            <img src="./img/svg/pickup-car.png" width="32" alt="" class="mr-1 mb-1">
+                            <h6 class="mr-1 mb-1">PICK UP</h6>
+                            <span class="mb-1">00:00</span>
+                        </div>
+                        <p>Address</p>
+                    </div>
+                    <div id="past_right_bottom_con">
+                        <div class="past_right_top">
+                            <img src="./img/svg/van.png" width="32" alt="" class="mr-1 mb-1">
+                            <h6 class="mr-1 mb-1">DROP OFF</h6>
+                            <span class="mb-1">00:00</span>
+                        </div>
+                        <hr>
+                        <p>Address</p>
+                        <hr>
+                        <p>Please leave at the reception for Apartment</p>
+                        <div class="sidebarBottom">
+                            <img src="./img/icons8-human-64.png" alt="">
+                            <div class="sideBarBottomInside">
+                                <div>OrderID: none</div>
+                                <div>PackageSize: Extra</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+            <img src="./img/close-icon.png" width="48" alt="" class="close_btn" id="close_btn_past" style="top: 5px;right:5px">
+        </div>
+
+        <div id="live_track_map" class="live_track_model">
+            <img src="./img/close-icon.png" width="48" alt="" class="close_btn" id="close_btn_live_track" style="top: 5px;right:5px">
+        </div>
+
+    </div>
+    <!-- END: Content-->
+    <!-- demo chat-->
+    <div class="widget-chat-demo">
+        <!-- widget chat demo footer button start -->
+        <button class="btn btn-primary chat-demo-button glow"><i class="livicon-evo"
+                data-options="name: comments.svg; style: lines; size: 24px; strokeColor: #fff; autoPlay: true; repeat: loop;"></i></button>
+        <!-- widget chat demo footer button ends -->
+        <div class="widget-chat widget-chat-demo d-none">
+            <div class="card mb-0">
+                <div class="card-header border-bottom p-0">
+                    <div class="media m-75">
+                        <a href="JavaScript:void(0);">
+                            <div class="avatar mr-75">
+                                <img src="app-assets/images/portrait/small/avatar-s-2.jpg" alt="avtar images" width="32"
+                                    height="32">
+                                <span class="avatar-status-online"></span>
+                            </div>
+                        </a>
+                        <div class="media-body">
+                            <h6 class="media-heading mb-0 pt-25"><a href="javaScript:void(0);">Temsilci</a></h6>
+                            <span class="text-muted font-small-3">Aktif</span>
+                        </div>
+                    </div>
+                    <div class="heading-elements">
+                        <i class="bx bx-x widget-chat-close float-right my-auto cursor-pointer"></i>
+                    </div>
+                </div>
+                <div class="card-body widget-chat-container widget-chat-scroll">
+                    <div class="chat-content">
+                        <div class="badge badge-pill badge-light-secondary my-1">Bugün</div>
+                        <div class="chat chat-left">
+                            <div class="chat-body">
+                                <div class="chat-message">
+                                    <p>Merhaba, destek hattımıza hoşgeldiniz. Size nasıl yardımcı olabilirim ?</p>
+                                    <span class="chat-time">7:50</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="chat">
+                            <div class="chat-body">
+                                <div class="chat-message">
+                                    <p>Merhaba, siparişimin durumunu öğrenmek istiyorum.</p>
+                                    <span class="chat-time">7:45</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="chat chat-left">
+                            <div class="chat-body">
+                                <div class="chat-message">
+                                    <p>Kargonuz bugün yola çıkacak.</p>
+                                    <span class="chat-time">7:44</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="chat">
+                            <div class="chat-body">
+                                <div class="chat-message">
+                                    <p>Ne zaman teslim olur ?</p>
+                                    <span class="chat-time">7:42</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="chat chat-left">
+                            <div class="chat-body">
+                                <div class="chat-message">
+                                    <p>Üç iş günü içerisinde teslim olacaktır.</p>
+                                    <span class="chat-time">7:40</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="chat">
+                            <div class="chat-body">
+                                <div class="chat-message">
+                                    <p>Teşekkürler.</p>
+                                    <span class="chat-time">7:37</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="chat chat-left">
+                            <div class="chat-body">
+                                <div class="chat-message">
+                                    <p>İyi günler.</p>
+                                    <span class="chat-time">7:33</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer border-top p-1">
+                    <form class="d-flex" onsubmit="widgetChatMessageDemo();" action="javascript:void(0);">
+                        <input type="text" class="form-control chat-message-demo mr-75" placeholder="Type here...">
+                        <button type="submit" class="btn btn-primary glow px-1"><i
+                                class="bx bx-paper-plane"></i></button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="sidenav-overlay"></div>
+    <div class="drag-target"></div>
+    <!-- BEGIN: Footer-->
+    <div data-include="footer"></div>
+    <!-- END: Footer-->
+    <!-- BEGIN: Vendor JS-->
+    <script src="app-assets/vendors/js/vendors.min.js"></script>
+    <script src="app-assets/fonts/LivIconsEvo/js/LivIconsEvo.tools.js"></script>
+    <script src="app-assets/fonts/LivIconsEvo/js/LivIconsEvo.defaults.js"></script>
+    <script src="app-assets/fonts/LivIconsEvo/js/LivIconsEvo.min.js"></script>
+    <!-- BEGIN Vendor JS-->
+    <!-- BEGIN: Page Vendor JS-->
+    <script src="app-assets/vendors/js/charts/apexcharts.min.js"></script>
+    <script src="app-assets/vendors/js/extensions/swiper.min.js"></script>
+    <script src="app-assets/vendors/js/extensions/nouislider.min.js"></script>
+    <script src="app-assets/vendors/js/pickers/daterange/daterangepicker.js"></script>
+    <script src="app-assets/vendors/js/pickers/pickadate/picker.js"></script>
+    <script src="app-assets/vendors/js/pickers/pickadate/picker.date.js"></script>
+    <script src="app-assets/vendors/js/pickers/pickadate/picker.time.js"></script>
+    <script src="app-assets/vendors/js/pickers/pickadate/legacy.js"></script>
+    <!-- END: Page Vendor JS-->
+    <!-- BEGIN: Theme JS-->
+    <script src="app-assets/js/scripts/configs/vertical-menu-dark.js"></script>
+    <script src="app-assets/js/core/app-menu.js"></script>
+    <script src="app-assets/js/core/app.js"></script>
+    <script src="app-assets/js/scripts/components.js"></script>
+    <script src="app-assets/js/scripts/footer.js"></script>
+    <!-- END: Theme JS-->
+    <!-- BEGIN: Page JS-->
+    <script src="app-assets/map/js/map.js"></script>
+    <!-- BEGIN: Page Vendor JS-->
+    <script src="app-assets/vendors/js/maps/leaflet.min.js"></script>
+    <!-- END: Page Vendor JS-->
+    <script src="assets/js/scripts.js"></script>
+    <script src="app-assets/js/scripts/maps/maps-leaflet.js"></script>
+    <script src="app-assets/js/scripts/extensions/noui-slider.js"></script>
+    <script>
+        var valuesSlider = document.getElementById('default-slider');
+        var valuesSlider2 = document.getElementById('default-slider2');
+        var valuesForSlider = ["15:30", "16:00", "16:30", "17:00", "17:30", "18:00", "18:30", "19:00", "19:30", "20:00",
+            "20:30", "21:00", "21:30", "22:00", "22:30", "23:00"
+        ];
+        //var valuesForSlider = [15,16,17,18,19,20,21,22,23]; // 16 values
+        var format = {
+            to: function (value) {
+                return valuesForSlider[Math.round(value)];
+            },
+            from: function (value) {
+                return valuesForSlider.indexOf(Number(value));
+            }
+        };
+        noUiSlider.create(valuesSlider2, {
+            start: [18, 20],
+            direction: "ltr",
+            behaviour: 'tap-drag',
+            // A linear range from 0 to 15 (16 values)
+            range: {
+                min: 0,
+                max: valuesForSlider.length - 1
+            },
+            // steps of 1
+            step: 1,
+            tooltips: true,
+            format: format,
+        });
+        noUiSlider.create(valuesSlider, {
+            start: [18, 20],
+            direction: "ltr",
+            behaviour: 'tap-drag',
+            // A linear range from 0 to 15 (16 values)
+            range: {
+                min: 0,
+                max: valuesForSlider.length - 1
+            },
+            // steps of 1
+            step: 1,
+            tooltips: true,
+            format: format,
+        });
+        // The display values can be used to control the slider
+    </script>
+    <script src="assets/map/ammap.js"></script>
+    <script src="assets/map/dark.js"></script>
+    <!-- <script src="app-assets/js/scripts/pickers/dateTime/pick-a-datetime.js"></script> -->
+    <script>
+        
+        (function (window, document, $) {
+            'use strict'
+            $('.pickadate').pickadate();
+            //  $('.pickatime').pickatime();
+            $('#now').on('change', function () {
+                $('.now-field').show();
+                $('.later-field').hide();
+            })
+            $('#later').on('change', function () {
+                $('.now-field').hide();
+                $('.later-field').show();
+            })
+        })(window, document, jQuery);
+        $(document).ready(function () {
+            $('#carousel-example-generic').carousel({
+                pause: true,
+                interval: false,
+            });
+        });
+        //csv section
+        function htmlToCSV(html, filename, table) {
+            var data = [];
+            var rows = document.querySelectorAll(`${table} tr`);
+            for (var i = 0; i < rows.length; i++) {
+                var row = [], cols = rows[i].querySelectorAll("td, th");
+                for (var j = 0; j < cols.length; j++) {
+                    row.push(cols[j].innerText);
+                }
+                data.push(row.join(","));
+            }
+            downloadCSVFile(data.join("\n"), filename);
+        }
+        function downloadCSVFile(csv, filename) {
+            var csv_file, download_link;
+            csv_file = new Blob([csv], { type: "text/csv" });
+            download_link = document.createElement("a");
+            download_link.download = filename;
+            download_link.href = window.URL.createObjectURL(csv_file);
+            download_link.style.display = "none";
+            document.body.appendChild(download_link);
+            download_link.click();
+        }
+        document.getElementById('ongoingCSV').addEventListener('click', () => {
+            var html = document.getElementById("ongoing_table").innerText;
+            htmlToCSV(html, "job_ongoing.csv", "#ongoing_table");
+        })
+        document.getElementById('scheduledCSV').addEventListener('click', () => {
+            var html = document.getElementById("scheduled_table").innerText;
+            htmlToCSV(html, "job.scheduled.csv", "#scheduled_table");
+        })
+        document.getElementById('pastCSV').addEventListener('click', () => {
+            var html = document.getElementById("past_table").innerText;
+            htmlToCSV(html, "job.past.csv", "#past_table");
+        })
+
+        //ongoing table actions
+        const CustomerLocation = {
+            //here have to come from db
+            lat: 0,
+            lng: 0
+        }
+        let draggableMap = ''
+        let pastMap = ''
+        let liveTrackMap = ''
+        document.getElementById('close_btn_ongoing').addEventListener('click', () => {
+            document.querySelector('.custom_model').setAttribute('style','display:none')
+            draggableMap.remove()
+        })
+        document.getElementById('close_btn_past').addEventListener('click', () => {
+            document.getElementById('past_model').setAttribute('style','display:none')
+            pastMap.remove()
+        })
+        document.getElementById('close_btn_live_track').addEventListener('click', () => {
+            document.querySelector('.live_track_model').setAttribute('style','display:none')
+            liveTrackMap.remove()
+        })
+
+        document.querySelectorAll('#ongoing_table tbody tr').forEach(item => {
+            item.addEventListener('click',() => {
+                document.querySelector('.custom_model').setAttribute('style','display:block')
+                document.getElementById('side').innerHTML = `<div id = "noCourier" class="sidebar">
+                    <div>
+                        <strong>We are doing our best to assaign a courier. <span class="ml-1">#56767677</span></strong>
+                    </div>
+                    <div><strong>Please check again later.</strong></div>
+                    <hr>
+                    <ul class="addressDot">
+                        <li><span class="listDot listDotFirst"></span> Company Address</li>
+                        <li><span class="listDot listDotSecond"></span> Receiver Address</li>
+                    </ul>
+                    <hr>
+                    <p>Please leave at the reception for Apartment</p>
+                    <div class="sidebarBottom">
+                        <img src="./img/icons8-human-64.png" alt="">
+                        <div class="sideBarBottomInside">
+                            <div>OrderID: none</div>
+                            <div>PackageSize: Extra</div>
+                        </div>
+                    </div>
+                    <br>
+                    <hr>
+                    <div class="sideBarBtn">
+                        <button class="btn btn-outline-danger">Cancel delivery</button>
+                    </div>
+    
+                </div>`
+
+                /*document.getElementById('side').innerHTML = 
+                `<div id="withCourier" class="sidebar">
+                    <div>
+                        <strong>Drop of in 11 minutes<span class="ml-1">#56767677</span></strong>
+                    </div>
+                    <br>
+                   <div style="background-color:darkcyan;height:5px;width:60%;"></div>
+                    <hr>
+                    <ul class="addressDot">
+                        <li><span class="listDot listDotFirst"></span> Company Address</li>
+                        <li><span class="listDot listDotSecond"></span> Receiver Address</li>
+                    </ul>
+                    <hr>
+                    <p>Please leave at the reception for Apartment</p>
+                    <div class="sidebarBottom">
+                        <img src="./img/icons8-human-64.png" alt="">
+                        <div class="sideBarBottomInside">
+                            <div>OrderID: none</div>
+                            <div>PackageSize: Extra</div>
+                        </div>
+                    </div>
+                    <br>
+                    <hr>
+                    <div class="sideBarPhoto">
+                        <div class="media mb-2">
+                            <a class="mr-2" href="javascript:void(0);">
+                                <img src="app-assets/images/avatar.jpeg" alt="users avatar" class="users-avatar-shadow rounded-circle" height="64" width="64">
+                            </a>
+                            <div class="media-body">
+                                <strong class="media-heading">Raiana B.</strong>
+                                <p style="font-size:12px;">44445444454545</p>
+                            </div>
+                            <img src="./img/svg/motorcycle.png" alt="" width="48" style="margin-top:20px;">
+                        </div>
+                    </div>
+                </div>` */
+                initMapSet()
+            })
+        })
+        //scheduled table actions
+        function handleParent(e){
+            if(e && e.stopPropagation) e.stopPropagation(); 
+        }
+
+        document.querySelectorAll('#scheduled_table tbody tr').forEach(item => {
+            item.addEventListener('click',() => {
+                document.querySelector('.custom_model').setAttribute('style','display:block')
+                document.getElementById('side').innerHTML = `<div id = "noCourier" class="sidebar">
+                    <div>
+                        <strong>We are doing our best to assaign a courier. <span class="ml-1">#56767677</span></strong>
+                    </div>
+                    <div><strong>Please check again later.</strong></div>
+                    <hr>
+                    <ul class="addressDot">
+                        <li><span class="listDot listDotFirst"></span> Company Address</li>
+                        <li><span class="listDot listDotSecond"></span> Receiver Address</li>
+                    </ul>
+                    <hr>
+                    <p>Please leave at the reception for Apartment</p>
+                    <div class="sidebarBottom">
+                        <img src="./img/icons8-human-64.png" alt="">
+                        <div class="sideBarBottomInside">
+                            <div>OrderID: none</div>
+                            <div>PackageSize: Extra</div>
+                        </div>
+                    </div>
+                    <br>
+                    <hr>
+                    <div class="sideBarBtn">
+                        <button class="btn btn-outline-danger">Cancel delivery</button>
+                    </div>
+    
+                </div>`
+                initMapSet()
+            })
+        })
+        
+        document.querySelectorAll('#past_table tbody tr').forEach(item => {
+            item.addEventListener('click',() => {
+                document.getElementById('past_model').setAttribute('style','display:block')
+                function initMapSetPast(lat = 38.9637, lng = 35.2433) {
+                    pastMap = L.map("past_map").setView(
+                        [lat, lng],
+                        5
+                    );
+                    var customIcon = L.icon({
+                        iconUrl: './img/svg/motorcycle.png',
+                        iconSize: [48, 48], // size of the icon
+                    })
+                    let markerLocation = L.marker([37.08963043497288, 37.33726125397331],{icon:customIcon} ,{
+                        draggable: "true",
+                    }).bindPopup('Please patient!').addTo(pastMap);
+                    L.tileLayer("https://{s}.tile.osm.org/{z}/{x}/{y}.png", {
+                        maxZoom: 12,
+                    }).addTo(pastMap);
+                }
+                initMapSetPast()
+            })
+        })
+
+        function initMapSet(lat = 38.9637, lng = 35.2433) {
+            draggableMap = L.map("draggable-marker-map1").setView(
+                [lat, lng],
+                6
+            );
+            CustomerLocation.lat = 37.08963043497288,
+            CustomerLocation.lng = 37.33726125397331
+            var customIcon = L.icon({
+                iconUrl: './img/svg/motorcycle.png',
+                iconSize: [48, 48], // size of the icon
+            })
+            var markerLocation = L.marker([CustomerLocation.lat, CustomerLocation.lng], {icon:customIcon}, {
+                draggable: "true",
+            }).bindPopup('Please patient!').addTo(draggableMap);
+            L.tileLayer("https://{s}.tile.osm.org/{z}/{x}/{y}.png", {
+                maxZoom: 12,
+            }).addTo(draggableMap);
+        }
+        
+        document.getElementById('live_track').addEventListener('click',() => {
+            document.querySelector('.live_track_model').setAttribute('style','display:block')
+            function initMapSetLiveTrack(lat = 38.9637, lng = 35.2433) {
+                liveTrackMap = L.map("live_track_map").setView(
+                    [lat, lng],
+                    5
+                );
+                var customIcon = L.icon({
+                    iconUrl: './img/svg/motorcycle.png',
+                    iconSize: [48, 48], // size of the icon
+                })
+                let markerLocation = L.marker([37.08963043497288, 37.33726125397331], {icon:customIcon}, {
+                    draggable: "true",
+                }).bindPopup('Please patient!').addTo(liveTrackMap);
+                L.tileLayer("https://{s}.tile.osm.org/{z}/{x}/{y}.png", {
+                    maxZoom: 12,
+                }).addTo(liveTrackMap);
+            }
+            initMapSetLiveTrack()
+        })
+
+        document.getElementById('customerLocation').addEventListener('click', () => {
+            document.querySelector('.map-sidebar').classList.add('show')
+            CustomerLocation.lat = 41.17344993108261,
+            CustomerLocation.lng = 29.049417849426295
+            draggableMap.remove()
+            initMapSet()
+        })
+
+        function initialize() {
+            var input = document.getElementById('searchTextField1');
+            var input2 = document.getElementById('searchTextField2');
+            let autocomplete1 = new google.maps.places.Autocomplete(input);
+            let autocomplete2 = new google.maps.places.Autocomplete(input2);
+            google.maps.event.addListener(autocomplete1, 'place_changed', function () {
+                var place = autocomplete1.getPlace();
+                initMapSet(place.geometry.location.lat(), place.geometry.location.lng())
+            });
+            google.maps.event.addListener(autocomplete2, 'place_changed', function () {
+                var place = autocomplete2.getPlace();
+                CustomerLocation.lat = place.geometry.location.lat(),
+                    CustomerLocation.lng = place.geometry.location.lng()
+                draggableMap.remove()
+                initMapSet()
+            });
+        }
+        google.maps.event.addDomListener(window, 'load', initialize);
+
+    </script>
+</body>
+<!-- END: Body-->
+
+</html>

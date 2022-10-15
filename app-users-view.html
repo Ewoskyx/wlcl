@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html class="loading" lang="en" data-textdirection="ltr">
+<!-- BEGIN: Head-->
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+    <title>We Lokal- Yönetim Paneli</title>
+    <link rel="apple-touch-icon" href="app-assets/images/ico/apple-icon-120.png">
+    <link rel="shortcut icon" type="image/x-icon" href="app-assets/images/favicon.jpeg">
+    <link href="https://fonts.googleapis.com/css?family=Rubik:300,400,500,600%7CIBM+Plex+Sans:300,400,500,600,700"
+          rel="stylesheet">
+
+    <!-- BEGIN: Vendor CSS-->
+    <link rel="stylesheet" type="text/css" href="app-assets/vendors/css/vendors.min.css">
+    <link rel="stylesheet" type="text/css" href="app-assets/vendors/css/charts/apexcharts.css">
+    <link rel="stylesheet" type="text/css" href="app-assets/vendors/css/extensions/swiper.min.css">
+    <!-- END: Vendor CSS-->
+
+    <!-- BEGIN: Theme CSS-->
+    <link rel="stylesheet" type="text/css" href="app-assets/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="app-assets/css/bootstrap-extended.css">
+    <link rel="stylesheet" type="text/css" href="app-assets/css/colors.css">
+    <link rel="stylesheet" type="text/css" href="app-assets/css/components.css">
+    <link rel="stylesheet" type="text/css" href="app-assets/css/themes/dark-layout.css">
+    <link rel="stylesheet" type="text/css" href="app-assets/css/themes/semi-dark-layout.css">
+    <link rel="stylesheet" type="text/css" href="app-assets/map/css/style.css">
+    <!-- END: Theme CSS-->
+
+    <!-- BEGIN: Page CSS-->
+    <link rel="stylesheet" type="text/css" href="app-assets/css/core/menu/menu-types/vertical-menu.css">
+    <link rel="stylesheet" type="text/css" href="app-assets/css/pages/dashboard-ecommerce.css">
+    <!-- END: Page CSS-->
+
+    <!-- BEGIN: Custom CSS-->
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <!-- END: Custom CSS-->
+
+    <link rel="stylesheet" href="assets/map/demo.css">
+
+    <link rel="stylesheet" href="assets/css/costum.css">
+
+</head>
+<!-- END: Head-->
+
+<!-- BEGIN: Body-->
+
+<body class="vertical-layout vertical-menu-modern dark-layout 2-columns  navbar-sticky footer-static" data-open="click"
+      data-menu="vertical-menu-modern" data-col="2-columns" data-layout="dark-layout">
+
+<div id="loader" style="height: 100vh; position: fixed; inset: 0;">
+    <div class="boxes">
+        <div class="box">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <div class="box">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <div class="box">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <div class="box">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+</div>
+<div data-include="header"></div>
+
+<!-- BEGIN: Main Menu-->
+<div class="main-menu menu-fixed menu-dark menu-accordion menu-shadow" data-scroll-to-active="true">
+    <div class="navbar-header">
+        <ul class="nav navbar-nav flex-row">
+            <li class="nav-item mr-auto">
+                <a class="navbar-brand" href="dashboard.html">
+
+                    <h2 class="brand-text mb-0"><img style="margin-top: 9px" height="45"
+                                                     src="app-assets/images/logo-dark.png" alt=""></h2>
+                </a>
+            </li>
+            <li class="nav-item nav-toggle"><a class="nav-link modern-nav-toggle pr-0" data-toggle="collapse"><i
+                    class="bx bx-x d-block d-xl-none font-medium-4 primary"></i><i
+                    class="toggle-icon bx bx-disc font-medium-4 d-none d-xl-block primary"
+                    data-ticon="bx-disc"></i></a></li>
+        </ul>
+    </div>
+    <div class="shadow-bottom"></div>
+
+    <style>
+        .main-menu-content ul>li {
+            margin-top: 5px !important;
+        }
+    </style>
+    <div class="main-menu-content">
+        <ul class="navigation navigation-main" id="main-menu-navigation" data-menu="menu-navigation"
+            data-icon-style="lines">
+            <li class=" nav-item"><a href="dashboard.html"><i class="menu-livicon" data-icon="home"></i><span
+                    class="menu-title text-truncate" data-i18n="Anasayfa">Anasayfa</span></a>
+            </li>
+
+            <li class=" nav-item"><a href="kurye-yonetimi.html"><i class="menu-livicon" data-icon="users"></i><span
+                    class="menu-title text-truncate" data-i18n="Kurye Yönetimi">Kurye Yönetimi</span></a>
+            </li>
+            <li class="nav-item"><a href="#"><i class="menu-livicon" data-icon="briefcase"></i><span
+                    class="menu-title text-truncate" data-i18n="Müşteri Yönetimi">Müşteri Yönetimi</span></a>
+                <ul class="menu-content">
+                    <li><a class="d-flex align-items-center" href="carikart.html"><i
+                            class="bx bx-right-arrow-alt"></i><span class="menu-item text-truncate"
+                                                                    data-i18n="Cari Kart">Cari Kart </span></a>
+                    </li>
+
+                    <li><a class="d-flex align-items-center" href="siparis-bilgileri.html"><i
+                            class="bx bx-right-arrow-alt"></i><span class="menu-item text-truncate"
+                                                                    data-i18n="Kurye Takip">Sipariş Bilgileri</span></a>
+                    </li>
+                    <li><a class="d-flex align-items-center" href="fiyat-listesi.html"><i
+                            class="bx bx-right-arrow-alt"></i><span class="menu-item text-truncate"
+                                                                    data-i18n="Kurye Takip">Fiyat Listesi</span></a>
+                    </li>
+                    <li><a class="d-flex align-items-center" href="belge-basim.html"><i
+                            class="bx bx-right-arrow-alt"></i><span class="menu-item text-truncate"
+                                                                    data-i18n="Belge Basım">Belge Basım</span></a>
+                    </li>
+
+
+                </ul>
+            </li>
+            <li class=" nav-item"><a href="depo.html"><i class="menu-livicon" data-icon="home"></i><span
+                    class="menu-title text-truncate" data-i18n="Depo Yönetimi">Depo Yönetimi</span></a>
+
+            </li>
+            <li class="nav-item"><a href="#"><i class="menu-livicon" data-icon="truck"></i><span
+                    class="menu-title text-truncate" data-i18n="Gönderi Yönetimi">Gönderi Yönetimi</span></a>
+                <ul class="menu-content">
+                    <li><a class="d-flex align-items-center" href="shipment-all.html"><i
+                            class="bx bx-right-arrow-alt"></i><span class="menu-item text-truncate"
+                                                                    data-i18n="Tüm Gönderiler">Tüm Gönderiler</span></a>
+                    </li>
+                    <li><a class="d-flex align-items-center" href="add-shipment.html"><i
+                            class="bx bx-right-arrow-alt"></i><span class="menu-item text-truncate"
+                                                                    data-i18n="Yeni Sipariş Ekle">Yeni Sipariş Ekle</span></a>
+                    </li>
+                    <li><a class="d-flex align-items-center" href="file-shipment.html"><i
+                            class="bx bx-right-arrow-alt"></i><span class="menu-item text-truncate"
+                                                                    data-i18n="Dosyadan Yükle">Dosyadan Yükle</span></a>
+                    </li>
+                </ul>
+            </li>
+            <li class=" nav-item"><a href="follow-up.html"><i class="menu-livicon" data-icon="compass"></i><span
+                    class="menu-title text-truncate" data-i18n="Sipariş Yönetimi">Sipariş Yönetimi</span></a>
+            </li>
+
+            <li class="open nav-item"><a href="#"><i class="menu-livicon" data-icon="users"></i><span
+                    class="menu-title text-truncate" data-i18n="Kullanıcılar">Kullanıcılar</span></a>
+                <ul class="menu-content">
+
+
+                    <li><a class="d-flex align-items-center" href="app-users-list.html"><i
+                            class="bx bx-right-arrow-alt"></i><span class="menu-item text-truncate"
+                                                                    data-i18n="Kullanıcı Listesi">Kullanıcı Listesi</span></a></li>
+
+                    <li class="active"><a class="d-flex align-items-center" href="app-users-view.html"><i
+                            class="bx bx-right-arrow-alt"></i><span class="menu-item text-truncate"
+                                                                    data-i18n="Kullanıcı Görüntüle">Kullanıcı Görüntüle</span></a></li>
+
+
+                    <li><a class="d-flex align-items-center" href="app-users-edit.html"><i
+                            class="bx bx-right-arrow-alt"></i><span class="menu-item text-truncate"
+                                                                    data-i18n="Kullanıcı Düzenle">Kullanıcı Düzenle</span></a></li>
+
+
+                </ul>
+            </li>
+            <li class=" nav-item"><a href="#"><i class="menu-livicon" data-icon="bar-chart"></i><span
+                    class="menu-title text-truncate" data-i18n="Proforma">Proforma</span></a>
+                <ul class="menu-content">
+
+
+                    <li><a class="d-flex align-items-center" href="app-invoice-list.html"><i
+                            class="bx bx-right-arrow-alt"></i><span class="menu-item text-truncate"
+                                                                    data-i18n="Proforma Listesi">Proforma Listesi</span></a></li>
+
+
+                    <li><a class="d-flex align-items-center" href="app-invoice.html"><i
+                            class="bx bx-right-arrow-alt"></i><span class="menu-item text-truncate"
+                                                                    data-i18n="Proforma">Proforma</span></a></li>
+
+
+
+                    <li><a class="d-flex align-items-center" href="app-invoice-edit.html"><i
+                            class="bx bx-right-arrow-alt"></i><span class="menu-item text-truncate"
+                                                                    data-i18n="Proforma Düzenle">Proforma Düzenle</span></a></li>
+
+                    <li><a class="d-flex align-items-center" href="app-invoice-add.html"><i
+                            class="bx bx-right-arrow-alt"></i><span class="menu-item text-truncate"
+                                                                    data-i18n="Proforma Ekle">Proforma Ekle</span></a></li>
+
+
+
+                </ul>
+            </li>
+
+
+            <li class=" nav-item"><a href="#"><i class="menu-livicon" data-icon="bar-chart"></i><span
+                    class="menu-title text-truncate" data-i18n="Raporlar">Raporlar</span></a>
+                <ul class="menu-content">
+                    <li><a class="d-flex align-items-center" href="complaint-report.html"><i
+                            class="bx bx-right-arrow-alt"></i><span class="menu-item text-truncate"
+                                                                    data-i18n="Yük Raporları">Yük Raporları</span></a></li>
+                    <li><a class="d-flex align-items-center" href="complaint-report.html"><i
+                            class="bx bx-right-arrow-alt"></i><span class="menu-item text-truncate"
+                                                                    data-i18n="Şikayet Yönetimi Raporu">Geciken Teslimat Raporu</span></a></li>
+                    <li><a class="d-flex align-items-center" href="complaint-report.html"><i
+                            class="bx bx-right-arrow-alt"></i><span class="menu-item text-truncate"
+                                                                    data-i18n="Şikayet Yönetimi Raporu">Şikayet Yönetimi Raporu</span></a></li>
+                    <li><a class="d-flex align-items-center" href="drive-report.html"><i
+                            class="bx bx-right-arrow-alt"></i><span class="menu-item text-truncate"
+                                                                    data-i18n="Env. Sürücü Raporları">Env. Sürücü Raporları</span></a></li>
+                    <li><a class="d-flex align-items-center" href="driver-score-report.html"><i
+                            class="bx bx-right-arrow-alt"></i><span class="menu-item text-truncate"
+                                                                    data-i18n="Sürücü Puan Raporu">Sürücü Puan Raporu</span></a></li>
+                    <li><a class="d-flex align-items-center" href="post-service-score-report.html"><i
+                            class="bx bx-right-arrow-alt"></i><span class="menu-item text-truncate"
+                                                                    data-i18n="Hizmet Sonrası Anket Raporu">Hizmet Sonrası Anket Raporu</span></a></li>
+                    <li><a class="d-flex align-items-center" href="overall-score-report.html"><i
+                            class="bx bx-right-arrow-alt"></i><span class="menu-item text-truncate"
+                                                                    data-i18n="Genel Değerlendirme Anket Raporu">Genel Değerlendirme Anket
+                                    Raporu</span></a></li>
+                    <li><a class="d-flex align-items-center" href="customer-evaluation-score-report.html"><i
+                            class="bx bx-right-arrow-alt"></i><span class="menu-item text-truncate"
+                                                                    data-i18n="Müşteri Değerlendirme Puan Raporu">Müşteri Değerlendirme Puan
+                                    Raporu</span></a></li>
+                </ul>
+            </li>
+            <li class="nav-item"><a href="fatura.html"><i class="menu-livicon"
+                                                                       data-icon="calculator"></i><span class="menu-title text-truncate"
+                                                                                                        data-i18n="Dağıtım Bilgileri">Fatura Bilgileri</span></a>
+            </li>
+            <li class="nav-item"><a href="rating-system.html"><i class="menu-livicon" data-icon="touch"></i><span
+                    class="menu-title text-truncate" data-i18n="Rating Sistemleri">Rating Sistemleri</span></a>
+            </li>
+            <li class=" nav-item"><a href="definitions.html"><i class="menu-livicon" data-icon="briefcase"></i><span
+                    class="menu-title text-truncate" data-i18n="Tanımlamalar">Tanımlamalar</span></a>
+            </li>
+            <li class=" nav-item"><a href="profile.html"><i class="menu-livicon" data-icon="user"></i><span
+                    class="menu-title text-truncate" data-i18n="Profil">Profil</span></a>
+            </li>
+            <li class=" nav-item"><a href="help-page.html"><i class="menu-livicon" data-icon="help"></i><span
+                    class="menu-title text-truncate" data-i18n="Yardım">Yardım</span></a>
+            </li>
+        </ul>
+    </div>
+</div>
+<!-- END: Main Menu-->
+
+    <!-- BEGIN: Content-->
+    <div class="app-content content">
+        <div class="content-overlay"></div>
+        <div class="content-wrapper">
+            <div class="content-header row">
+            </div>
+            <div class="content-body">
+                <!-- users view start -->
+                <section class="users-view">
+                    <!-- users view media object start -->
+                    <div class="row">
+                        <div class="col-12 col-sm-7">
+                            <div class="media mb-2">
+                                <a class="mr-1" href="javascript:void(0);">
+                                    <img src="../app-assets/images/portrait/small/avatar-s-26.jpg" alt="users view avatar" class="users-avatar-shadow rounded-circle" height="64" width="64">
+                                </a>
+                                <div class="media-body pt-25">
+                                    <h4 class="media-heading"><span class="users-view-name">Dean Stanley </span><span class="text-muted font-medium-1"> @</span><span class="users-view-username text-muted font-medium-1 ">candy007</span></h4>
+                                    <span>ID:</span>
+                                    <span class="users-view-id">305</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-5 px-0 d-flex justify-content-end align-items-center px-1 mb-2">
+                            <a href="javascript:void(0);" class="btn btn-sm mr-25 border"><i class="bx bx-envelope font-small-3"></i></a>
+                            <a href="javascript:void(0);" class="btn btn-sm mr-25 border">Profile</a>
+                            <a href="../html/ltr/vertical-menu-template/app-users-edit.html" class="btn btn-sm btn-primary">Edit</a>
+                        </div>
+                    </div>
+                    <!-- users view media object ends -->
+                    <!-- users view card data start -->
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-12 col-md-4">
+                                    <table  class="table table-borderless ">
+                                        <tbody>
+                                            <tr>
+                                                <td>Registered:</td>
+                                                <td>01/01/2019</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Latest Activity:</td>
+                                                <td class="users-view-latest-activity">30/04/2019</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Verified:</td>
+                                                <td class="users-view-verified">Yes</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Role:</td>
+                                                <td class="users-view-role">Staff</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Status:</td>
+                                                <td><span class="badge badge-light-success users-view-status">Active</span></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="col-12 col-md-8">
+                                    <div class="table-responsive">
+                                        <table class="table mb-0 responsive-table">
+                                            <thead>
+                                                <tr>
+                                                    <th>Module Permission</th>
+                                                    <th>Read</th>
+                                                    <th>Write</th>
+                                                    <th>Create</th>
+                                                    <th>Delete</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>Users</td>
+                                                    <td>Yes</td>
+                                                    <td>No</td>
+                                                    <td>No</td>
+                                                    <td>Yes</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Articles</td>
+                                                    <td>No</td>
+                                                    <td>Yes</td>
+                                                    <td>No</td>
+                                                    <td>Yes</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Staff</td>
+                                                    <td>Yes</td>
+                                                    <td>Yes</td>
+                                                    <td>No</td>
+                                                    <td>No</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- users view card data ends -->
+                    <!-- users view card details start -->
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="row bg-primary bg-lighten-5 rounded mb-2 mx-25 text-center text-lg-left">
+                                <div class="col-12 col-sm-4 p-2">
+                                    <h6 class="text-primary mb-0">Posts: <span class="font-large-1 align-middle">125</span></h6>
+                                </div>
+                                <div class="col-12 col-sm-4 p-2">
+                                    <h6 class="text-primary mb-0">Followers: <span class="font-large-1 align-middle">534</span></h6>
+                                </div>
+                                <div class="col-12 col-sm-4 p-2">
+                                    <h6 class="text-primary mb-0">Following: <span class="font-large-1 align-middle">256</span></h6>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <table class="table table-borderless responsive-table">
+                                    <tbody>
+                                        <tr>
+                                            <td>Username:</td>
+                                            <td class="users-view-username">dean3004</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Name:</td>
+                                            <td class="users-view-name">Dean Stanley</td>
+                                        </tr>
+                                        <tr>
+                                            <td>E-mail:</td>
+                                            <td class="users-view-email">deanstanley@gmail.com</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Comapny:</td>
+                                            <td>XYZ Corp. Ltd.</td>
+                                        </tr>
+
+                                    </tbody>
+                                </table>
+                                <h5 class="mb-1"><i class="bx bx-link"></i> Social Links</h5>
+                                <table id="social" class="table table-borderless responsive-table">
+                                    <tbody>
+                                        <tr>
+                                            <td>Twitter:</td>
+                                            <td><a href="javascript:void(0);">https://www.twitter.com/</a></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Facebook:</td>
+                                            <td><a href="javascript:void(0);">https://www.facebook.com/</a></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Instagram:</td>
+                                            <td><a href="javascript:void(0);">https://www.instagram.com/</a></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <h5 class="mb-1"><i class="bx bx-info-circle"></i> Personal Info</h5>
+                                <table class="table table-borderless mb-0">
+                                    <tbody>
+                                        <tr>
+                                            <td>Birthday:</td>
+                                            <td>03/04/1990</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Country:</td>
+                                            <td>USA</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Languages:</td>
+                                            <td>English</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Contact:</td>
+                                            <td>+(305) 254 24668</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- users view card details ends -->
+
+                </section>
+                <!-- users view ends -->
+
+            </div>
+        </div>
+    </div>
+    <!-- END: Content-->
+
+    <!-- demo chat-->
+    <div class="widget-chat-demo">
+        <!-- widget chat demo footer button start -->
+        <button class="btn btn-primary chat-demo-button glow"><i class="livicon-evo" data-options="name: comments.svg; style: lines; size: 24px; strokeColor: #fff; autoPlay: true; repeat: loop;"></i></button>
+        <!-- widget chat demo footer button ends -->
+        <!-- widget chat demo start -->
+        <div class="widget-chat widget-chat-demo d-none">
+            <div class="card mb-0">
+                <div class="card-header border-bottom p-0">
+                    <div class="media m-75">
+                        <a href="JavaScript:void(0);">
+                            <div class="avatar mr-75">
+                                <img src="../app-assets/images/portrait/small/avatar-s-2.jpg" alt="avtar images" width="32" height="32">
+                                <span class="avatar-status-online"></span>
+                            </div>
+                        </a>
+                        <div class="media-body">
+                            <h6 class="media-heading mb-0 pt-25"><a href="javaScript:void(0);">Kiara Cruiser</a></h6>
+                            <span class="text-muted font-small-3">Active</span>
+                        </div>
+                    </div>
+                    <div class="heading-elements">
+                        <i class="bx bx-x widget-chat-close float-right my-auto cursor-pointer"></i>
+                    </div>
+                </div>
+                <div class="card-body widget-chat-container widget-chat-demo-scroll">
+                    <div class="chat-content">
+                        <div class="badge badge-pill badge-light-secondary my-1">today</div>
+                        <div class="chat">
+                            <div class="chat-body">
+                                <div class="chat-message">
+                                    <p>How can we help? 😄</p>
+                                    <span class="chat-time">7:45 AM</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="chat chat-left">
+                            <div class="chat-body">
+                                <div class="chat-message">
+                                    <p>Hey John, I am looking for the best admin template.</p>
+                                    <p>Could you please help me to find it out? 🤔</p>
+                                    <span class="chat-time">7:50 AM</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="chat">
+                            <div class="chat-body">
+                                <div class="chat-message">
+                                    <p>Stack admin is the responsive bootstrap 4 admin template.</p>
+                                    <span class="chat-time">8:01 AM</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer border-top p-1">
+                    <form class="d-flex" onsubmit="widgetChatMessageDemo();" action="javascript:void(0);">
+                        <input type="text" class="form-control chat-message-demo mr-75" placeholder="Type here...">
+                        <button type="submit" class="btn btn-primary glow px-1"><i class="bx bx-paper-plane"></i></button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <!-- widget chat demo ends -->
+
+    </div>
+    <div class="sidenav-overlay"></div>
+    <div class="drag-target"></div>
+
+    <!-- BEGIN: Footer-->
+    <footer class="footer footer-static footer-dark">
+        <p class="clearfix mb-0"><span class="float-left d-inline-block">2021 &copy; PIXINVENT</span><span class="float-right d-sm-inline-block d-none">Crafted with<i class="bx bxs-heart pink mx-50 font-small-3"></i>by<a class="text-uppercase" href="https://1.envato.market/pixinvent_portfolio" target="_blank">Pixinvent</a></span>
+            <button class="btn btn-primary btn-icon scroll-top" type="button"><i class="bx bx-up-arrow-alt"></i></button>
+        </p>
+    </footer>
+    <!-- END: Footer-->
+
+
+<!-- BEGIN: Vendor JS-->
+<script src="app-assets/vendors/js/vendors.min.js"></script>
+<script src="app-assets/fonts/LivIconsEvo/js/LivIconsEvo.tools.js"></script>
+<script src="app-assets/fonts/LivIconsEvo/js/LivIconsEvo.defaults.js"></script>
+<script src="app-assets/fonts/LivIconsEvo/js/LivIconsEvo.min.js"></script>
+<!-- BEGIN Vendor JS-->
+
+<!-- BEGIN: Page Vendor JS-->
+<script src="app-assets/vendors/js/charts/apexcharts.min.js"></script>
+<script src="app-assets/vendors/js/extensions/swiper.min.js"></script>
+<!-- END: Page Vendor JS-->
+
+<!-- BEGIN: Theme JS-->
+<script src="app-assets/js/scripts/configs/vertical-menu-dark.js"></script>
+<script src="app-assets/js/core/app-menu.js"></script>
+<script src="app-assets/js/core/app.js"></script>
+<script src="app-assets/js/scripts/components.js"></script>
+<script src="app-assets/js/scripts/footer.js"></script>
+<!-- END: Theme JS-->
+
+<!-- BEGIN: Page JS-->
+<script src="app-assets/js/scripts/pages/dashboard-ecommerce.js"></script>
+<script src="app-assets/map/js/map.js"></script>
+<script src="assets/js/scripts.js"></script>
+<script>
+    svgturkiyeharitasi();
+</script>
+<script src="assets/map/ammap.js"></script>
+<script src="assets/map/dark.js"></script>
+
+<script>
+    AmCharts.makeChart("chartdiv", {
+        "type": "map",
+        "theme": "dark",
+        "dataProvider": {
+            "mapURL": "https://www.amcharts.com/lib/3/maps/svg/unitedKingdomHigh.svg",
+            "getAreasFromMap": true
+        },
+        "areasSettings": {
+            "autoZoom": true,
+            "selectedColor": "#CC0000"
+        }
+    });</script>
+<!-- END: Page JS-->
+
+
+</body>
+<!-- END: Body-->
+
+</html>

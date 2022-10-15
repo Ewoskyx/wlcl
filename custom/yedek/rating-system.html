@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+<html class="loading" lang="tr" data-textdirection="ltr">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Rating Sistemleri - We Lokal</title>
+    <link rel="shortcut icon" type="image/x-icon" href="../app-assets/images/favicon.jpeg">
+
+    <!-- BEGIN: Vendor CSS-->
+    <link rel="stylesheet" type="text/css" href="../app-assets/vendors/css/vendors.min.css">
+    <link rel="stylesheet" type="text/css" href="../app-assets/vendors/css/charts/apexcharts.css">
+    <link rel="stylesheet" type="text/css" href="../app-assets/vendors/css/extensions/swiper.min.css">
+    <!-- END: Vendor CSS-->
+
+    <!-- BEGIN: Theme CSS-->
+    <link rel="stylesheet" type="text/css" href="../app-assets/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="../app-assets/css/bootstrap-extended.css">
+    <link rel="stylesheet" type="text/css" href="../app-assets/css/colors.css">
+    <link rel="stylesheet" type="text/css" href="../app-assets/css/components.css">
+    <link rel="stylesheet" type="text/css" href="../app-assets/css/themes/dark-layout.css">
+    <link rel="stylesheet" type="text/css" href="../app-assets/css/themes/semi-dark-layout.css">
+    <!-- END: Theme CSS-->
+
+    <!-- BEGIN: Page CSS-->
+    <link rel="stylesheet" type="text/css" href="../app-assets/css/core/menu/menu-types/vertical-menu.css">
+    <link rel="stylesheet" type="text/css" href="../app-assets/css/pages/dashboard-ecommerce.css">
+    <!-- END: Page CSS-->
+
+    <!-- BEGIN: Custom CSS-->
+    <link rel="stylesheet" type="text/css" href="../assets/css/style.css">
+    <!-- END: Custom CSS-->
+</head>
+<!-- END: Head-->
+
+<!-- BEGIN: Body-->
+
+<body class="vertical-layout vertical-menu-modern dark-layout 2-columns  navbar-sticky footer-static  " data-open="click" data-menu="vertical-menu-modern" data-col="2-columns" data-layout="dark-layout">
+
+<div id="loader">
+    <div class="boxes">
+        <div class="box">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <div class="box">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <div class="box">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <div class="box">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+</div>
+<div data-include="header"></div>
+
+ <!-- BEGIN: Main Menu-->
+ <div class="main-menu menu-fixed menu-dark menu-accordion menu-shadow" data-scroll-to-active="true">
+    <div class="navbar-header">
+        <ul class="nav navbar-nav flex-row">
+            <li class="nav-item mr-auto">
+                <a class="navbar-brand" href="../dashboard.html">
+                    
+                    <h2 class="brand-text mb-0"><img style="margin-top: 9px" height="45"
+                                                     src="../app-assets/images/logo-dark.png" alt=""></h2>
+                </a>
+            </li>
+            <li class="nav-item nav-toggle"><a class="nav-link modern-nav-toggle pr-0" data-toggle="collapse"><i
+                        class="bx bx-x d-block d-xl-none font-medium-4 primary"></i><i
+                        class="toggle-icon bx bx-disc font-medium-4 d-none d-xl-block primary"
+                        data-ticon="bx-disc"></i></a></li>
+        </ul>
+    </div>
+    <div class="shadow-bottom"></div>
+
+    <style>
+        .main-menu-content ul>li {
+            margin-top: 5px !important;
+        }
+    </style>
+    <div class="main-menu-content">
+        <ul class="navigation navigation-main" id="main-menu-navigation" data-menu="menu-navigation"
+            data-icon-style="lines">
+            <li class=" nav-item"><a href="../dashboard.html"><i class="menu-livicon" data-icon="home"></i><span
+                        class="menu-title text-truncate" data-i18n="Anasayfa">Anasayfa</span></a>
+            </li>
+            <li class="nav-item"><a href="#"><i class="menu-livicon" data-icon="calendar"></i><span
+                        class="menu-title text-truncate" data-i18n="Bülten">Bülten</span></a>
+            </li>
+            <li class=" nav-item"><a href="msiparisekrani.html"><i class="menu-livicon" data-icon="users"></i><span
+                        class="menu-title text-truncate" data-i18n="Kurye Yönetimi">Kurye Yönetimi</span></a>
+            </li>
+            <li class="nav-item"><a href="#"><i class="menu-livicon" data-icon="truck"></i><span
+                        class="menu-title text-truncate" data-i18n="Sipariş Yönetimi">Sipariş Yönetimi</span></a>
+                <ul class="menu-content">
+                    <li><a class="d-flex align-items-center" href="add-shipment.html"><i
+                                class="bx bx-right-arrow-alt"></i><span class="menu-item text-truncate"
+                                data-i18n="Yeni Sipariş Ekle">Yeni Sipariş Ekle</span></a>
+                    </li>
+                    <li><a class="d-flex align-items-center" href="file-shipment.html"><i
+                                class="bx bx-right-arrow-alt"></i><span class="menu-item text-truncate"
+                                data-i18n="Dosyadan Yükle">Dosyadan Yükle</span></a>
+                    </li>
+                </ul>
+            </li>
+            <li class=" nav-item"><a href="follow-up.html"><i class="menu-livicon" data-icon="compass"></i><span
+                        class="menu-title text-truncate" data-i18n="Sipariş Takip">Sipariş Takip</span></a>
+            </li>
+            <li class=" nav-item"><a href="#"><i class="menu-livicon" data-icon="bar-chart"></i><span
+                        class="menu-title text-truncate" data-i18n="Raporlar">Raporlar</span></a>
+                        <ul class="menu-content">
+
+                            <li><a class="d-flex align-items-center" href="yoldaki-siparisler-raporu.html"><i
+                                class="bx bx-right-arrow-alt"></i><span class="menu-item text-truncate"
+                                data-i18n="Yük Raporları">Yoldaki Siparişler Raporu</span></a></li>
+    
+                                <li><a class="d-flex align-items-center" href="zamaninda-teslim-raporu.html"><i
+                                    class="bx bx-right-arrow-alt"></i><span class="menu-item text-truncate"
+                                    data-i18n="Yük Raporları">Zamanında Teslim Raporu</span></a></li>
+    
+                                
+                            <li><a class="d-flex align-items-center" href="shipment-report.html"><i
+                                class="bx bx-right-arrow-alt"></i><span class="menu-item text-truncate"
+                                data-i18n="Yük Raporları">Yük Raporları</span></a></li>
+    
+    
+    
+                            <li><a class="d-flex align-items-center" href="geciken-teslimat-raporu.html"><i
+                                class="bx bx-right-arrow-alt"></i><span class="menu-item text-truncate"
+                                data-i18n="Şikayet Yönetimi Raporu">Geciken Teslimat Raporu</span></a></li>
+    
+                            <li><a class="d-flex align-items-center" href="complaint-report.html"><i
+                                        class="bx bx-right-arrow-alt"></i><span class="menu-item text-truncate"
+                                        data-i18n="Şikayet Yönetimi Raporu">Şikayet Yönetimi Raporu</span></a></li>
+    
+                            <li><a class="d-flex align-items-center" href="drive-report.html"><i
+                                        class="bx bx-right-arrow-alt"></i><span class="menu-item text-truncate"
+                                        data-i18n="Env. Sürücü Raporları">Env. Sürücü Raporları</span></a></li>
+    
+    
+    
+                            <li><a class="d-flex align-items-center" href="driver-score-report.html"><i
+                                        class="bx bx-right-arrow-alt"></i><span class="menu-item text-truncate"
+                                        data-i18n="Sürücü Puan Raporu">Sürücü Puan Raporu</span></a></li>
+    
+                            <li><a class="d-flex align-items-center" href="post-service-score-report.html"><i
+                                        class="bx bx-right-arrow-alt"></i><span class="menu-item text-truncate"
+                                        data-i18n="Hizmet Sonrası Anket Raporu">Hizmet Sonrası Anket Raporu</span></a></li>
+                                        
+                            <li><a class="d-flex align-items-center" href="overall-score-report.html"><i
+                                        class="bx bx-right-arrow-alt"></i><span class="menu-item text-truncate"
+                                        data-i18n="Genel Değerlendirme Anket Raporu">Genel Değerlendirme Anket
+                                        Raporu</span></a></li>
+                            <li><a class="d-flex align-items-center" href="customer-evaluation-score-report.html"><i
+                                        class="bx bx-right-arrow-alt"></i><span class="menu-item text-truncate"
+                                        data-i18n="Müşteri Değerlendirme Puan Raporu">Müşteri Değerlendirme Puan
+                                        Raporu</span></a></li>
+                        </ul>
+            </li>
+            <li class="nav-item"><a href="invoice-information.html"><i class="menu-livicon"
+                                                                       data-icon="calculator"></i><span class="menu-title text-truncate"
+                        data-i18n="Dağıtım Bilgileri">Fatura Bilgileri</span></a>
+            </li>
+            <li class="active nav-item"><a href="rating-system.html"><i class="menu-livicon" data-icon="touch"></i><span
+                        class="menu-title text-truncate" data-i18n="Rating Sistemleri">Rating Sistemleri</span></a>
+            </li>
+            <li class=" nav-item"><a href="definitions.html"><i class="menu-livicon" data-icon="briefcase"></i><span
+                        class="menu-title text-truncate" data-i18n="Tanımlamalar">Tanımlamalar</span></a>
+            </li>
+            <li class=" nav-item"><a href="profile.html"><i class="menu-livicon" data-icon="user"></i><span
+                        class="menu-title text-truncate" data-i18n="Profil">Profil</span></a>
+            </li>
+            <li class=" nav-item"><a href="help-page.html"><i class="menu-livicon" data-icon="help"></i><span
+                        class="menu-title text-truncate" data-i18n="Yardım">Yardım</span></a>
+            </li>
+        </ul>
+    </div>
+</div>
+<!-- END: Main Menu-->
+
+<!-- BEGIN: Content-->
+<div class="app-content content">
+    <div class="content-overlay"></div>
+    <div class="content-wrapper">
+        <div class="content-header row">
+            <div class="content-header-left col-12 mb-2 mt-1">
+                <div class="breadcrumbs-top">
+                    <div class="breadcrumb-wrapper d-none d-sm-block">
+                        <ol class="breadcrumb p-0 mb-0">
+                            <li class="breadcrumb-item"><a href="../dashboard.html"><i class="bx bx-home-alt"></i></a>
+                            </li>
+                            <li class="breadcrumb-item">Rating Sistemleri</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="content-body">
+            <!-- account setting page start -->
+            <section id="page-account-settings">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="row">
+                            <!-- left menu section -->
+                            <div class="col-md-4 mb-2 mb-md-0 pills-stacked">
+                                <ul class="nav nav-pills flex-column padding-9">
+                                    <li class="nav-item">
+                                        <a class="nav-link d-flex align-items-center active" id="account-pill-notifications" data-toggle="pill" href="#account-vertical-notifications" aria-expanded="false">
+                                            <i class="bx bxs-truck"></i>
+                                            <span>Sürücü Rating Sistemleri</span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link d-flex align-items-center" id="account-pill-social" data-toggle="pill" href="#account-vertical-social" aria-expanded="false">
+                                            <i class="bx bx-group"></i>
+                                            <span>Müşteri Rating Sistemleri</span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link d-flex align-items-center" id="account-pill" data-toggle="pill" href="#account-vertical" aria-expanded="false">
+                                            <i class="bx bx-sort"></i>
+                                            <span>Hizmet Sonrası Dinçer Rating Sistemi</span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link d-flex align-items-center" id="account-pill2" data-toggle="pill" href="#account-vertical2" aria-expanded="false">
+                                            <i class="bx bx-trending-up"></i>
+                                            <span>Dinçer Genel Rating Sistemi</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <!-- right content section -->
+                            <div class="col-md-8">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <div class="tab-content">
+                                            <div class="tab-pane fade " id="account-vertical-social" role="tabpanel" aria-labelledby="account-pill-social" aria-expanded="false">
+                                                <form>
+                                                    <div class="row">
+                                                        <div class="col-12">
+                                                            <div class="form-group">
+
+                                                                <span class="w-200">Araç aşağıdaki sebeplerden dolayı bekletildi.</span>
+                                                                <li class="d-block mr-2  mt-1">
+                                                                    <fieldset>
+                                                                        <div class="checkbox checkbox-sm checkbox-success checkbox-glow">
+                                                                            <input type="checkbox" id="checkboxGlow2" >
+                                                                            <label for="checkboxGlow2">Ürünler hazır değildi</label>
+                                                                        </div>
+                                                                    </fieldset>
+                                                                </li>
+                                                                <li class="d-block mr-2 mb-1">
+                                                                    <fieldset>
+                                                                        <div class="checkbox checkbox-sm checkbox-success checkbox-glow">
+                                                                            <input type="checkbox" id="checkboxGlow4" >
+                                                                            <label for="checkboxGlow4">Verilen adres doğru değildi.</label>
+                                                                        </div>
+                                                                    </fieldset>
+                                                                </li>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-12 d-flex flex-sm-row flex-column justify-content-end">
+                                                            <button type="submit" class="btn btn-primary glow mr-sm-1 mb-1">Kaydet</button>
+                                                        </div>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                            <div class="tab-pane active" id="account-vertical-notifications" role="tabpanel" aria-labelledby="account-pill-notifications" aria-expanded="false">
+                                                <div class="row">
+                                                    <div class="col-12 mb-1">
+                                                        <span class="switch-label w-200">Araç zamanında geldi mi?</span>
+                                                        <fieldset>
+                                                            <div class="custom-control custom-radio">
+                                                                <input type="radio" class="custom-control-input bg-success" name="customRadioColored" id="customColorRadio1">
+                                                                <label class="custom-control-label" for="customColorRadio1">Evet</label>
+                                                            </div>
+                                                        </fieldset>
+                                                        <fieldset>
+                                                            <div class="custom-control custom-radio">
+                                                                <input type="radio" class="custom-control-input bg-danger" name="customRadioColored" id="customColorRadio2">
+                                                                <label class="custom-control-label" for="customColorRadio2">Hayır</label>
+                                                            </div>
+                                                        </fieldset>
+
+                                                    </div>
+                                                    <div class="col-12 mb-1">
+                                                        <span class="switch-label w-200">Sürücü iyi davrandı mı?</span>
+                                                        <fieldset>
+                                                            <div class="custom-control custom-radio">
+                                                                <input type="radio" class="custom-control-input bg-success" name="customRadioColored1" id="customColorRadio3">
+                                                                <label class="custom-control-label" for="customColorRadio3">Evet</label>
+                                                            </div>
+                                                        </fieldset>
+                                                        <fieldset>
+                                                            <div class="custom-control custom-radio">
+                                                                <input type="radio" class="custom-control-input bg-danger" name="customRadioColored1" id="customColorRadio4">
+                                                                <label class="custom-control-label" for="customColorRadio4">Hayır</label>
+                                                            </div>
+                                                        </fieldset>
+                                                    </div>
+                                                    <div class="col-12 mb-1">
+                                                        <span class="switch-label w-200">Zamanında teslim edildi mi?</span>
+                                                        <fieldset>
+                                                            <div class="custom-control custom-radio">
+                                                                <input type="radio" class="custom-control-input bg-success" name="customRadioColored2" id="customColorRadio11">
+                                                                <label class="custom-control-label" for="customColorRadio11">Evet</label>
+                                                            </div>
+                                                        </fieldset>
+                                                        <fieldset>
+                                                            <div class="custom-control custom-radio">
+                                                                <input type="radio" class="custom-control-input bg-danger" name="customRadioColored2" id="customColorRadio22">
+                                                                <label class="custom-control-label" for="customColorRadio22">Hayır</label>
+                                                            </div>
+                                                        </fieldset>
+                                                    </div>
+                                                    <div class="col-12 d-flex flex-sm-row flex-column justify-content-end">
+                                                        <button type="submit" class="btn btn-primary glow mr-sm-1 mb-1">Kaydet</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="tab-pane fade" id="account-vertical" role="tabpanel" aria-labelledby="account-pill" aria-expanded="false">
+                                                <div class="row">
+                                                    <div class="col-lg-12">
+                                                        <div class="table-responsive">
+                                                            <table class="table" id="rateTable">
+                                                                <thead>
+                                                                <tr>
+                                                                    <th style="width: 30%">
+                                                                        <i class="fas fa-exclamation-circle ms-2 fs-16 info-box"
+                                                                           data-toggle="popover" data-placement="top"
+                                                                           data-trigger="hover"
+                                                                           data-container="body"
+                                                                           data-content="Anket bilgileri üçüncü şahıslarla paylaşılmayacak ya da aktarılmayacaktır"
+                                                                        ></i>
+                                                                    </th>
+                                                                    <th>Çok İyi</th>
+                                                                    <th>iyi</th>
+                                                                    <th>Orta</th>
+                                                                    <th>Zayıf</th>
+                                                                    <th>Fikrim <br> Yok</th>
+                                                                </tr>
+                                                                </thead>
+                                                                <tbody>
+                                                                <tr>
+                                                                    <td class="questionRow">
+                                                                        Portalımızdan memnun kaldınız mı?
+                                                                    </td>
+                                                                    <td>
+                                                                        <div class="checkbox"><input type="checkbox" id="users-checkbox1" class="checkbox-input" checked="">
+                                                                            <label for="users-checkbox1"></label>
+                                                                        </div>
+                                                                    </td>
+                                                                    <td>
+                                                                        <div class="checkbox"><input type="checkbox" id="users-checkbox2" class="checkbox-input">
+                                                                            <label for="users-checkbox2"></label>
+                                                                        </div>
+                                                                    </td>
+                                                                    <td>
+                                                                        <div class="checkbox"><input type="checkbox" id="users-checkbox3" class="checkbox-input">
+                                                                            <label for="users-checkbox3"></label>
+                                                                        </div>
+                                                                    </td>
+                                                                    <td>
+                                                                        <div class="checkbox"><input type="checkbox" id="users-checkbox4" class="checkbox-input" checked="">
+                                                                            <label for="users-checkbox4"></label>
+                                                                        </div>
+                                                                    </td>
+                                                                    <td>
+                                                                        <div class="checkbox"><input type="checkbox" id="users-checkbox5" class="checkbox-input" checked="">
+                                                                            <label for="users-checkbox5"></label>
+                                                                        </div>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td class="questionRow">Almış olduğunuz hizmet kalitesini nasıl değerlendiriyorsunuz?</td>
+                                                                    <td>
+                                                                        <div class="checkbox"><input type="checkbox" id="users-checkbox6" class="checkbox-input">
+                                                                            <label for="users-checkbox6"></label>
+                                                                        </div>
+                                                                    </td>
+                                                                    <td>
+                                                                        <div class="checkbox"><input type="checkbox" id="users-checkbox7" class="checkbox-input" checked="">
+                                                                            <label for="users-checkbox7"></label>
+                                                                        </div>
+                                                                    </td>
+                                                                    <td>
+                                                                        <div class="checkbox"><input type="checkbox" id="users-checkbox8" class="checkbox-input">
+                                                                            <label for="users-checkbox8"></label>
+                                                                        </div>
+                                                                    </td>
+                                                                    <td>
+                                                                        <div class="checkbox"><input type="checkbox" id="users-checkbox9" class="checkbox-input" checked="">
+                                                                            <label for="users-checkbox9"></label>
+                                                                        </div>
+                                                                    </td>
+                                                                    <td>
+                                                                        <div class="checkbox"><input type="checkbox" id="users-checkbox15" class="checkbox-input" checked="">
+                                                                            <label for="users-checkbox15"></label>
+                                                                        </div>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td class="questionRow">Gelecekte bizimle tekrar çalışmayı düşünüyor musunuz?</td>
+                                                                    <td>
+                                                                        <div class="checkbox"><input type="checkbox" id="users-checkbox10" class="checkbox-input" checked="">
+                                                                            <label for="users-checkbox10"></label>
+                                                                        </div>
+                                                                    </td>
+                                                                    <td>
+                                                                        <div class="checkbox"><input type="checkbox" id="users-checkbox11" class="checkbox-input" checked="">
+                                                                            <label for="users-checkbox11"></label>
+                                                                        </div>
+                                                                    </td>
+                                                                    <td>
+                                                                        <div class="checkbox"><input type="checkbox" id="users-checkbox12" class="checkbox-input">
+                                                                            <label for="users-checkbox12"></label>
+                                                                        </div>
+                                                                    </td>
+                                                                    <td>
+                                                                        <div class="checkbox"><input type="checkbox" id="users-checkbox13" class="checkbox-input">
+                                                                            <label for="users-checkbox13"></label>
+                                                                        </div>
+                                                                    </td>
+                                                                    <td>
+                                                                        <div class="checkbox"><input type="checkbox" id="users-checkbox14" class="checkbox-input">
+                                                                            <label for="users-checkbox14"></label>
+                                                                        </div>
+                                                                    </td>
+                                                                </tr>
+                                                                </tbody>
+                                                            </table>
+                                                        </div>
+                                                        <div class="col-12 d-flex flex-sm-row flex-column justify-content-end">
+                                                            <button type="submit" class="btn btn-primary glow mr-sm-1 mb-1">Kaydet</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="tab-pane fade height-150" id="account-vertical2" role="tabpanel" aria-labelledby="account-pill2" aria-expanded="false">
+
+                                                <div class="col-lg-12">
+                                                    <button type="button" class="btn btn-success" data-toggle="modal" data-target="#inlineForm">
+                                                        <i class="bx bxs-show"></i>
+                                                        <span class="align-middle ml-25">
+                                                    Önizleme
+                                                </span>
+                                                    </button>
+                                                </div>
+
+                                                <div class="modal fade " id="inlineForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel33" aria-hidden="true">
+                                                    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
+                                                        <div class="modal-content">
+                                                            <div class="modal-header">
+                                                                <h4 class="modal-title" id="myModalLabel33">
+                                                                    Dinçer Genel Rating Sistemleri
+                                                                </h4>
+                                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                    <i class="bx bx-x"></i>
+                                                                </button>
+                                                            </div>
+                                                            <div class="row px-1">
+                                                                <div class="col-lg-12">
+                                                                    <div class="table-responsive">
+                                                                        <table class="table" id="rateTable12">
+                                                                            <thead>
+                                                                            <tr>
+                                                                                <th style="width: 30%"></th>
+                                                                                <th>Çok İyi</th>
+                                                                                <th>iyi</th>
+                                                                                <th>Orta</th>
+                                                                                <th>Zayıf</th>
+                                                                                <th>Fikrim <br> Yok</th>
+                                                                            </tr>
+                                                                            </thead>
+                                                                            <tbody>
+                                                                            <tr>
+                                                                                <td class="questionRow">
+                                                                                    Dinçer Lojistik hizmet kalitesinden memnun musunuz?
+                                                                                </td>
+                                                                                <td>
+                                                                                    <div class="checkbox"><input type="checkbox" id="users-checkbox20" class="checke-input" checked>
+                                                                                        <label for="users-checkbox20"></label>
+                                                                                    </div>
+                                                                                </td>
+                                                                                <td>
+                                                                                    <div class="checkbox"><input type="checkbox" id="users-checkbox21" class="checkbox-input">
+                                                                                        <label for="users-checkbox21"></label>
+                                                                                    </div>
+                                                                                </td>
+                                                                                <td>
+                                                                                    <div class="checkbox"><input type="checkbox" id="users-checkbox22" class="checkbox-input">
+                                                                                        <label for="users-checkbox22"></label>
+                                                                                    </div>
+                                                                                </td>
+                                                                                <td>
+                                                                                    <div class="checkbox"><input type="checkbox" id="users-checkbox23" class="checkbox-input">
+                                                                                        <label for="users-checkbox23"></label>
+                                                                                    </div>
+                                                                                </td>
+                                                                                <td>
+                                                                                    <div class="checkbox"><input type="checkbox" id="users-checkbox24" class="checkbox-input">
+                                                                                        <label for="users-checkbox24"></label>
+                                                                                    </div>
+                                                                                </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td class="questionRow">
+                                                                                    Personellerimizin, size yaklaşım ve tutumlarından memnun musunuz?
+                                                                                </td>
+                                                                                <td>
+                                                                                    <div class="checkbox"><input type="checkbox" id="users-checkbox25" class="checkbox-input">
+                                                                                        <label for="users-checkbox25"></label>
+                                                                                    </div>
+                                                                                </td>
+                                                                                <td>
+                                                                                    <div class="checkbox"><input type="checkbox" id="users-checkbox26" class="checkbox-input" checked="select">
+                                                                                        <label for="users-checkbox26"></label>
+                                                                                    </div>
+                                                                                </td>
+                                                                                <td>
+                                                                                    <div class="checkbox"><input type="checkbox" id="users-checkbox27" class="checkbox-input">
+                                                                                        <label for="users-checkbox27"></label>
+                                                                                    </div>
+                                                                                </td>
+                                                                                <td>
+                                                                                    <div class="checkbox"><input type="checkbox" id="users-checkbox28" class="checkbox-input">
+                                                                                        <label for="users-checkbox28"></label>
+                                                                                    </div>
+                                                                                </td>
+                                                                                <td>
+                                                                                    <div class="checkbox"><input type="checkbox" id="users-checkbox29" class="checkbox-input">
+                                                                                        <label for="users-checkbox29"></label>
+                                                                                    </div>
+                                                                                </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td class="questionRow">
+                                                                                    Verilen hizmetlerin güvenilirliğinden memnun musunuz?
+                                                                                </td>
+                                                                                <td>
+                                                                                    <div class="checkbox"><input type="checkbox" id="users-checkbox30" class="checkbox-input" checked="">
+                                                                                        <label for="users-checkbox30"></label>
+                                                                                    </div>
+                                                                                </td>
+                                                                                <td>
+                                                                                    <div class="checkbox"><input type="checkbox" id="users-checkbox31" class="checkbox-input">
+                                                                                        <label for="users-checkbox31"></label>
+                                                                                    </div>
+                                                                                </td>
+                                                                                <td>
+                                                                                    <div class="checkbox"><input type="checkbox" id="users-checkbox32" class="checkbox-input">
+                                                                                        <label for="users-checkbox32"></label>
+                                                                                    </div>
+                                                                                </td>
+                                                                                <td>
+                                                                                    <div class="checkbox"><input type="checkbox" id="users-checkbox33" class="checkbox-input">
+                                                                                        <label for="users-checkbox33"></label>
+                                                                                    </div>
+                                                                                </td>
+                                                                                <td>
+                                                                                    <div class="checkbox"><input type="checkbox" id="users-checkbox34" class="checkbox-input">
+                                                                                        <label for="users-checkbox34"></label>
+                                                                                    </div>
+                                                                                </td>
+                                                                            </tr>
+                                                                            </tbody>
+                                                                        </table>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="modal-footer">
+                                                                <button type="button" class="btn btn-light-secondary mr-1 mb-1" data-dismiss="modal">
+                                                                    Kapat
+                                                                </button>
+                                                                <button type="button" class="btn btn-success glow mr-1 mb-1"  data-dismiss="modal">Kaydet</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- account setting page ends -->
+        </div>
+    </div>
+</div>
+
+<!-- END: Content-->
+
+<!-- demo chat-->
+<div class="widget-chat-demo">
+    <!-- widget chat demo footer button start -->
+    <button class="btn btn-primary chat-demo-button glow"><i class="livicon-evo" data-options="name: comments.svg; style: lines; size: 24px; strokeColor: #fff; autoPlay: true; repeat: loop;"></i></button>
+    <!-- widget chat demo footer button ends -->
+    <<div class="widget-chat widget-chat-demo d-none">
+    <div class="card mb-0">
+        <div class="card-header border-bottom p-0">
+            <div class="media m-75">
+                <a href="JavaScript:void(0);">
+                    <div class="avatar mr-75">
+                        <img src="../app-assets/images/portrait/small/avatar-s-2.jpg" alt="avtar images" width="32" height="32">
+                        <span class="avatar-status-online"></span>
+                    </div>
+                </a>
+                <div class="media-body">
+                    <h6 class="media-heading mb-0 pt-25"><a href="javaScript:void(0);">Temsilci</a></h6>
+                    <span class="text-muted font-small-3">Aktif</span>
+                </div>
+            </div>
+            <div class="heading-elements">
+                <i class="bx bx-x widget-chat-close float-right my-auto cursor-pointer"></i>
+            </div>
+        </div>
+        <div class="card-body widget-chat-container widget-chat-scroll">
+            <div class="chat-content">
+                <div class="badge badge-pill badge-light-secondary my-1">Bugün</div>
+                <div class="chat chat-left">
+                    <div class="chat-body">
+                        <div class="chat-message">
+                            <p>Merhaba, destek hattımıza hoşgeldiniz. Size nasıl yardımcı olabilirim ?</p>
+                            <span class="chat-time">7:50</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="chat">
+                    <div class="chat-body">
+                        <div class="chat-message">
+                            <p>Merhaba, siparişimin durumunu öğrenmek istiyorum.</p>
+                            <span class="chat-time">7:45</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="chat chat-left">
+                    <div class="chat-body">
+                        <div class="chat-message">
+                            <p>Kargonuz bugün yola çıkacak.</p>
+                            <span class="chat-time">7:44</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="chat">
+                    <div class="chat-body">
+                        <div class="chat-message">
+                            <p>Ne zaman teslim olur ?</p>
+                            <span class="chat-time">7:42</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="chat chat-left">
+                    <div class="chat-body">
+                        <div class="chat-message">
+                            <p>Üç iş günü içerisinde teslim olacaktır.</p>
+                            <span class="chat-time">7:40</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="chat">
+                    <div class="chat-body">
+                        <div class="chat-message">
+                            <p>Teşekkürler.</p>
+                            <span class="chat-time">7:37</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="chat chat-left">
+                    <div class="chat-body">
+                        <div class="chat-message">
+                            <p>İyi günler.</p>
+                            <span class="chat-time">7:33</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card-footer border-top p-1">
+            <form class="d-flex" onsubmit="widgetChatMessageDemo();" action="javascript:void(0);">
+                <input type="text" class="form-control chat-message-demo mr-75" placeholder="Type here...">
+                <button type="submit" class="btn btn-primary glow px-1"><i class="bx bx-paper-plane"></i></button>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+</div>
+
+<div class="sidenav-overlay"></div>
+<div class="drag-target"></div>
+
+<div data-include="footer"></div>
+
+<!-- BEGIN: Vendor JS-->
+<script src="../app-assets/vendors/js/vendors.min.js"></script>
+<script src="../app-assets/fonts/LivIconsEvo/js/LivIconsEvo.tools.js"></script>
+<script src="../app-assets/fonts/LivIconsEvo/js/LivIconsEvo.defaults.js"></script>
+<script src="../app-assets/fonts/LivIconsEvo/js/LivIconsEvo.min.js"></script>
+<!-- BEGIN Vendor JS-->
+
+<!-- BEGIN: Page Vendor JS-->
+<script src="../app-assets/vendors/js/charts/apexcharts.min.js"></script>
+<script src="../app-assets/vendors/js/extensions/dragula.min.js"></script>
+<!-- END: Page Vendor JS-->
+
+<!-- BEGIN: Theme JS-->
+<script src="../app-assets/js/scripts/configs/vertical-menu-dark.js"></script>
+<script src="../app-assets/js/core/app-menu.js"></script>
+<script src="../app-assets/js/core/app.js"></script>
+<script src="../app-assets/js/scripts/components.js"></script>
+<script src="../app-assets/js/scripts/footer.js"></script>
+<!-- END: Theme JS-->
+
+<!-- BEGIN: Page JS-->
+<script src="../app-assets/js/scripts/pages/dashboard-analytics.js"></script>
+<script src="../assets/js/scripts.js"></script>
+<script src="https://kit.fontawesome.com/c34546ed83.js" crossorigin="anonymous"></script>
+<script src="../app-assets/js/scripts/popover/popover.js"></script>
+<script src="../app-assets/js/scripts/tooltip/tooltip.js"></script>
+<!-- END: Page JS-->
+<style>
+    .padding-9 li a{
+        padding-left: 2px !important;
+    }
+    .table thead th{
+        font-size: 10px;
+    }
+    #rateTable th, #rateTable td {
+        padding-left: 0;
+        padding-right: 0;
+        text-align: center;
+    }
+    .questionRow{
+        text-align: left !important;
+    }
+    .fs-16{
+        font-size: 16px;
+    }
+    #rateTable12 th, #rateTable12 td {
+        padding-left: 0;
+        padding-right: 0;
+        text-align: center;
+    }
+    .questionRow{
+        text-align: left !important;
+    }
+</style>
+</body>
+<!-- END: Body-->
+</html>

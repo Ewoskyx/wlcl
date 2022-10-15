@@ -1,0 +1,616 @@
+.elementor-widget-heading .elementor-heading-title {
+	color: #e426bd;
+	font-weight: var(--e-global-typography-primary-font-weight);
+}
+
+.elementor-widget-image .widget-image-caption {
+	color: var(--e-global-color-text);
+	font-family: var(--e-global-typography-text-font-family), Sans-serif;
+	font-weight: var(--e-global-typography-text-font-weight);
+}
+
+.elementor-widget-text-editor {
+	color: var(--e-global-color-text);
+	font-family: var(--e-global-typography-text-font-family), Sans-serif;
+	font-weight: var(--e-global-typography-text-font-weight);
+}
+.special .elementor-widget-text-editor{
+	color: #fff;
+}
+.elementor-widget-text-editor.elementor-drop-cap-view-stacked .elementor-drop-cap {
+	background-color: var(--e-global-color-primary);
+}
+
+.elementor-widget-text-editor.elementor-drop-cap-view-framed .elementor-drop-cap,
+.elementor-widget-text-editor.elementor-drop-cap-view-default .elementor-drop-cap {
+	color: var(--e-global-color-primary);
+	border-color: var(--e-global-color-primary);
+}
+
+.elementor-widget-button .elementor-button {
+	font-weight: var(--e-global-typography-accent-font-weight);
+	background-color: ;
+}
+
+.elementor-widget-divider {
+	--divider-color: var(--e-global-color-secondary);
+}
+
+.elementor-widget-divider .elementor-divider__text {
+	color: var(--e-global-color-secondary);
+	font-weight: var(--e-global-typography-secondary-font-weight);
+}
+
+.elementor-widget-divider.elementor-view-stacked .elementor-icon {
+	background-color: var(--e-global-color-secondary);
+}
+
+.elementor-widget-divider.elementor-view-framed .elementor-icon,
+.elementor-widget-divider.elementor-view-default .elementor-icon {
+	color: var(--e-global-color-secondary);
+	border-color: var(--e-global-color-secondary);
+}
+
+.elementor-widget-divider.elementor-view-framed .elementor-icon,
+.elementor-widget-divider.elementor-view-default .elementor-icon svg {
+	fill: var(--e-global-color-secondary);
+}
+
+.elementor-widget-image-box .elementor-image-box-title {
+	color: var(--e-global-color-primary);
+	font-weight: var(--e-global-typography-primary-font-weight);
+}
+
+.elementor-widget-image-box .elementor-image-box-description {
+	color: var(--e-global-color-text);
+	font-family: var(--e-global-typography-text-font-family), Sans-serif;
+	font-weight: var(--e-global-typography-text-font-weight);
+}
+
+.elementor-widget-icon.elementor-view-stacked .elementor-icon {
+	background-color: #47ad48;
+}
+
+.elementor-widget-icon.elementor-view-framed .elementor-icon,
+.elementor-widget-icon.elementor-view-default .elementor-icon {
+	color: var(--e-global-color-primary);
+	border-color: var(--e-global-color-primary);
+}
+
+.elementor-widget-icon.elementor-view-framed .elementor-icon,
+.elementor-widget-icon.elementor-view-default .elementor-icon svg {
+	fill: var(--e-global-color-primary);
+}
+
+.elementor-widget-icon-box.elementor-view-stacked .elementor-icon {
+	background-color: var(--e-global-color-primary);
+}
+
+.elementor-widget-icon-box.elementor-view-framed .elementor-icon,
+.elementor-widget-icon-box.elementor-view-default .elementor-icon {
+	fill: var(--e-global-color-primary);
+	color: var(--e-global-color-primary);
+	border-color: var(--e-global-color-primary);
+}
+
+.elementor-widget-icon-box .elementor-icon-box-title {
+	color: var(--e-global-color-primary);
+}
+
+.elementor-widget-icon-box .elementor-icon-box-title,
+.elementor-widget-icon-box .elementor-icon-box-title a {
+	font-weight: var(--e-global-typography-primary-font-weight);
+}
+
+.elementor-widget-icon-box .elementor-icon-box-description {
+	color: var(--e-global-color-text);
+	font-family: var(--e-global-typography-text-font-family), Sans-serif;
+	font-weight: var(--e-global-typography-text-font-weight);
+}
+
+.elementor-widget-star-rating .elementor-star-rating__title {
+	color: var(--e-global-color-text);
+	font-family: var(--e-global-typography-text-font-family), Sans-serif;
+	font-weight: var(--e-global-typography-text-font-weight);
+}
+
+.elementor-widget-image-gallery .gallery-item .gallery-caption {
+	font-weight: var(--e-global-typography-accent-font-weight);
+}
+
+.elementor-widget-icon-list .elementor-icon-list-item:not(:last-child):after {
+	border-color: var(--e-global-color-text);
+}
+
+.elementor-widget-icon-list .elementor-icon-list-icon i {
+	color: var(--e-global-color-primary);
+}
+
+.elementor-widget-icon-list .elementor-icon-list-icon svg {
+	fill: var(--e-global-color-primary);
+}
+
+.elementor-widget-icon-list .elementor-icon-list-text {
+	color: var(--e-global-color-secondary);
+}
+
+.elementor-widget-icon-list .elementor-icon-list-item>.elementor-icon-list-text,
+.elementor-widget-icon-list .elementor-icon-list-item>a {
+	font-family: var(--e-global-typography-text-font-family), Sans-serif;
+	font-weight: var(--e-global-typography-text-font-weight);
+}
+
+.elementor-widget-counter .elementor-counter-number-wrapper {
+	color: var(--e-global-color-primary);
+	font-weight: var(--e-global-typography-primary-font-weight);
+}
+
+.elementor-widget-counter .elementor-counter-title {
+	color: var(--e-global-color-secondary);
+	font-weight: var(--e-global-typography-secondary-font-weight);
+}
+
+.elementor-widget-progress .elementor-progress-wrapper .elementor-progress-bar {
+	background-color: var(--e-global-color-primary);
+}
+
+.elementor-widget-progress .elementor-title {
+	color: var(--e-global-color-primary);
+	font-family: var(--e-global-typography-text-font-family), Sans-serif;
+	font-weight: var(--e-global-typography-text-font-weight);
+}
+
+.elementor-widget-testimonial .elementor-testimonial-content {
+	color: var(--e-global-color-text);
+	font-family: var(--e-global-typography-text-font-family), Sans-serif;
+	font-weight: var(--e-global-typography-text-font-weight);
+}
+
+.elementor-widget-testimonial .elementor-testimonial-name {
+	color: var(--e-global-color-primary);
+	font-weight: var(--e-global-typography-primary-font-weight);
+}
+
+.elementor-widget-testimonial .elementor-testimonial-job {
+	color: var(--e-global-color-secondary);
+	font-weight: var(--e-global-typography-secondary-font-weight);
+}
+
+.elementor-widget-tabs .elementor-tab-title,
+.elementor-widget-tabs .elementor-tab-title a {
+	color: var(--e-global-color-primary);
+}
+
+.elementor-widget-tabs .elementor-tab-title.elementor-active,
+.elementor-widget-tabs .elementor-tab-title.elementor-active a {
+	color: #47ad48;
+}
+
+.elementor-widget-tabs .elementor-tab-title {
+	font-weight: var(--e-global-typography-primary-font-weight);
+}
+
+.elementor-widget-tabs .elementor-tab-content {
+	color: var(--e-global-color-text);
+	font-family: var(--e-global-typography-text-font-family), Sans-serif;
+	font-weight: var(--e-global-typography-text-font-weight);
+}
+
+.elementor-widget-accordion .elementor-accordion-icon,
+.elementor-widget-accordion .elementor-accordion-title {
+	color: var(--e-global-color-primary);
+}
+
+.elementor-widget-accordion .elementor-accordion-icon svg {
+	fill: var(--e-global-color-primary);
+}
+
+.elementor-widget-accordion .elementor-active .elementor-accordion-icon,
+.elementor-widget-accordion .elementor-active .elementor-accordion-title {
+	color: #47ad48;
+}
+
+.elementor-widget-accordion .elementor-active .elementor-accordion-icon svg {
+	fill: #47ad48;
+}
+
+.elementor-widget-accordion .elementor-accordion-title {
+	font-weight: var(--e-global-typography-primary-font-weight);
+}
+
+.elementor-widget-accordion .elementor-tab-content {
+	color: var(--e-global-color-text);
+	font-family: var(--e-global-typography-text-font-family), Sans-serif;
+	font-weight: var(--e-global-typography-text-font-weight);
+}
+
+.elementor-widget-toggle .elementor-toggle-title,
+.elementor-widget-toggle .elementor-toggle-icon {
+	color: var(--e-global-color-primary);
+}
+
+.elementor-widget-toggle .elementor-toggle-icon svg {
+	fill: var(--e-global-color-primary);
+}
+
+.elementor-widget-toggle .elementor-tab-title.elementor-active a,
+.elementor-widget-toggle .elementor-tab-title.elementor-active .elementor-toggle-icon {
+	color: #47ad48;
+}
+
+.elementor-widget-toggle .elementor-toggle-title {
+	font-weight: var(--e-global-typography-primary-font-weight);
+}
+
+.elementor-widget-toggle .elementor-tab-content {
+	color: var(--e-global-color-text);
+	font-family: var(--e-global-typography-text-font-family), Sans-serif;
+	font-weight: var(--e-global-typography-text-font-weight);
+}
+
+.elementor-widget-alert .elementor-alert-title {
+	font-weight: var(--e-global-typography-primary-font-weight);
+}
+
+.elementor-widget-alert .elementor-alert-description {
+	font-family: var(--e-global-typography-text-font-family), Sans-serif;
+	font-weight: var(--e-global-typography-text-font-weight);
+}
+
+.elementor-widget-ha-infobox .ha-infobox-title {
+	font-weight: var(--e-global-typography-secondary-font-weight);
+}
+
+.elementor-widget-ha-infobox .ha-infobox-text {
+	font-family: var(--e-global-typography-text-font-family), Sans-serif;
+	font-weight: var(--e-global-typography-text-font-weight);
+}
+
+.elementor-widget-ha-infobox .ha-btn {
+	font-weight: var(--e-global-typography-accent-font-weight);
+}
+
+.elementor-widget-ha-card .ha-badge {
+	font-family: var(--e-global-typography-text-font-family), Sans-serif;
+	font-weight: var(--e-global-typography-text-font-weight);
+}
+
+.elementor-widget-ha-card .ha-card-title {
+	font-weight: var(--e-global-typography-secondary-font-weight);
+}
+
+.elementor-widget-ha-card .ha-card-text {
+	font-family: var(--e-global-typography-text-font-family), Sans-serif;
+	font-weight: var(--e-global-typography-text-font-weight);
+}
+
+.elementor-widget-ha-card .ha-btn {
+	font-weight: var(--e-global-typography-accent-font-weight);
+}
+
+.elementor-widget-ha-cf7 .wpcf7-form-control:not(.wpcf7-submit) {
+	font-family: var(--e-global-typography-text-font-family), Sans-serif;
+	font-weight: var(--e-global-typography-text-font-weight);
+}
+
+.elementor-widget-ha-cf7 label {
+	font-family: var(--e-global-typography-text-font-family), Sans-serif;
+	font-weight: var(--e-global-typography-text-font-weight);
+}
+
+.elementor-widget-ha-cf7 .wpcf7-submit {
+	font-weight: var(--e-global-typography-accent-font-weight);
+}
+
+.elementor-widget-ha-icon-box .ha-icon-box-title {
+	font-weight: var(--e-global-typography-secondary-font-weight);
+}
+
+.elementor-widget-ha-icon-box .ha-badge {
+	font-weight: var(--e-global-typography-text-font-weight);
+}
+
+.elementor-widget-ha-member .ha-member-name {
+	font-weight: var(--e-global-typography-secondary-font-weight);
+}
+
+.elementor-widget-ha-member .ha-member-position {
+	font-family: var(--e-global-typography-text-font-family), Sans-serif;
+	font-weight: var(--e-global-typography-text-font-weight);
+}
+
+.elementor-widget-ha-member .ha-member-bio {
+	font-family: var(--e-global-typography-text-font-family), Sans-serif;
+	font-weight: var(--e-global-typography-text-font-weight);
+}
+
+.elementor-widget-ha-member .ha-btn {
+	font-weight: var(--e-global-typography-accent-font-weight);
+}
+
+.elementor-widget-ha-review .ha-review-reviewer {
+	font-weight: var(--e-global-typography-secondary-font-weight);
+}
+
+.elementor-widget-ha-review .ha-review-position {
+	font-family: var(--e-global-typography-text-font-family), Sans-serif;
+	font-weight: var(--e-global-typography-text-font-weight);
+}
+
+.elementor-widget-ha-review .ha-review-desc {
+	font-family: var(--e-global-typography-text-font-family), Sans-serif;
+	font-weight: var(--e-global-typography-text-font-weight);
+}
+
+.elementor-widget-ha-image-compare .twentytwenty-before-label:before,
+.elementor-widget-ha-image-compare .twentytwenty-after-label:before {
+	font-family: var(--e-global-typography-text-font-family), Sans-serif;
+	font-weight: var(--e-global-typography-text-font-weight);
+}
+
+.elementor-widget-ha-justified-gallery .justified-gallery>.ha-justified-grid__item>.caption {
+	font-family: var(--e-global-typography-text-font-family), Sans-serif;
+	font-weight: var(--e-global-typography-text-font-weight);
+}
+
+.elementor-widget-ha-justified-gallery .ha-filter__item {
+	font-family: var(--e-global-typography-text-font-family), Sans-serif;
+	font-weight: var(--e-global-typography-text-font-weight);
+}
+
+.elementor-widget-ha-image-grid .ha-filter__item {
+	font-family: var(--e-global-typography-text-font-family), Sans-serif;
+	font-weight: var(--e-global-typography-text-font-weight);
+}
+
+.elementor-widget-ha-slider .ha-slick-title {
+	font-weight: var(--e-global-typography-secondary-font-weight);
+}
+
+.elementor-widget-ha-slider .ha-slick-subtitle {
+	font-family: var(--e-global-typography-text-font-family), Sans-serif;
+	font-weight: var(--e-global-typography-text-font-weight);
+}
+
+.elementor-widget-ha-skills .ha-skill-info {
+	font-family: var(--e-global-typography-text-font-family), Sans-serif;
+	font-weight: var(--e-global-typography-text-font-weight);
+}
+
+.elementor-widget-ha-dual-button .ha-dual-btn {
+	font-weight: var(--e-global-typography-accent-font-weight);
+}
+
+.elementor-widget-ha-dual-button .ha-dual-btn--left {
+	font-weight: var(--e-global-typography-accent-font-weight);
+}
+
+.elementor-widget-ha-dual-button .ha-dual-btn-connector {
+	font-family: var(--e-global-typography-text-font-family), Sans-serif;
+	font-weight: var(--e-global-typography-text-font-weight);
+}
+
+.elementor-widget-ha-dual-button .ha-dual-btn--right {
+	font-weight: var(--e-global-typography-accent-font-weight);
+}
+
+.elementor-widget-ha-testimonial .ha-testimonial__content {
+	font-family: var(--e-global-typography-text-font-family), Sans-serif;
+	font-weight: var(--e-global-typography-text-font-weight);
+}
+
+.elementor-widget-ha-testimonial .ha-testimonial__reviewer-name {
+	font-weight: var(--e-global-typography-secondary-font-weight);
+}
+
+.elementor-widget-ha-testimonial .ha-testimonial__reviewer-title {
+	font-family: var(--e-global-typography-text-font-family), Sans-serif;
+	font-weight: var(--e-global-typography-text-font-weight);
+}
+
+.elementor-widget-ha-step-flow .ha-steps-label {
+	font-weight: var(--e-global-typography-accent-font-weight);
+}
+
+.elementor-widget-ha-step-flow .ha-steps-title {
+	font-weight: var(--e-global-typography-secondary-font-weight);
+}
+
+.elementor-widget-ha-step-flow .ha-step-description {
+	font-family: var(--e-global-typography-text-font-family), Sans-serif;
+	font-weight: var(--e-global-typography-text-font-weight);
+}
+
+.elementor-widget-ha-news-ticker .ha-news-ticker-wrapper span.ha-news-ticker-sticky-title {
+	font-family: var(--e-global-typography-text-font-family), Sans-serif;
+	font-weight: var(--e-global-typography-text-font-weight);
+}
+
+.elementor-widget-ha-news-ticker .ha-news-ticker-wrapper li.ha-news-ticker-item .ha-news-ticker-title {
+	font-family: var(--e-global-typography-text-font-family), Sans-serif;
+	font-weight: var(--e-global-typography-text-font-weight);
+}
+
+.elementor-widget-ha-fun-factor .ha-fun-factor__content-number-prefix,
+.elementor-widget-ha-fun-factor .ha-fun-factor__content-number,
+.elementor-widget-ha-fun-factor .ha-fun-factor__content-number-suffix {
+	font-family: var(--e-global-typography-text-font-family), Sans-serif;
+	font-weight: var(--e-global-typography-text-font-weight);
+}
+
+.elementor-widget-ha-fun-factor .ha-fun-factor__content-text {
+	font-family: var(--e-global-typography-text-font-family), Sans-serif;
+	font-weight: var(--e-global-typography-text-font-weight);
+}
+
+.elementor-widget-ha-social-icons .ha-social-icon-label {
+	font-family: var(--e-global-typography-text-font-family), Sans-serif;
+	font-weight: var(--e-global-typography-text-font-weight);
+}
+
+.elementor-widget-ha-post-list .ha-post-list-title {
+	font-weight: var(--e-global-typography-secondary-font-weight);
+}
+
+.elementor-widget-ha-post-list .ha-post-list-excerpt p {
+	font-family: var(--e-global-typography-text-font-family), Sans-serif;
+	font-weight: var(--e-global-typography-text-font-weight);
+}
+
+.elementor-widget-ha-post-list .ha-post-list-meta-wrap span {
+	font-family: var(--e-global-typography-text-font-family), Sans-serif;
+	font-weight: var(--e-global-typography-text-font-weight);
+}
+
+.elementor-widget-ha-data-table .ha-table .ha-table__head-column-cell-text {
+	font-family: var(--e-global-typography-text-font-family), Sans-serif;
+	font-weight: var(--e-global-typography-text-font-weight);
+}
+
+.elementor-widget-ha-data-table .ha-table__body .ha-table__body-row-cell-text {
+	font-family: var(--e-global-typography-text-font-family), Sans-serif;
+	font-weight: var(--e-global-typography-text-font-weight);
+}
+
+.elementor-widget-ha-horizontal-timeline .ha-horizontal-timeline-date {
+	font-family: var(--e-global-typography-text-font-family), Sans-serif;
+	font-weight: var(--e-global-typography-text-font-weight);
+}
+
+.elementor-widget-ha-horizontal-timeline .ha-horizontal-timeline-title {
+	font-weight: var(--e-global-typography-secondary-font-weight);
+}
+
+.elementor-widget-ha-horizontal-timeline .ha-horizontal-timeline-subtitle {
+	font-family: var(--e-global-typography-text-font-family), Sans-serif;
+	font-weight: var(--e-global-typography-text-font-weight);
+}
+
+.elementor-widget-ha-horizontal-timeline .ha-horizontal-timeline-description {
+	font-family: var(--e-global-typography-text-font-family), Sans-serif;
+	font-weight: var(--e-global-typography-text-font-weight);
+}
+
+.elementor-widget-ha-creative-button .ha-creative-btn {
+	font-weight: var(--e-global-typography-accent-font-weight);
+}
+
+.elementor-widget-ha-pdf-view .ha-pdf-title {
+	font-weight: var(--e-global-typography-secondary-font-weight);
+}
+
+.elementor-widget-ha-pdf-view .ha-btn {
+	font-weight: var(--e-global-typography-accent-font-weight);
+}
+
+.elementor-widget-ha-comparison-table .ha-comparison-table-wrapper .ha-comparison-table__head-column-cell-title-tag {
+	font-family: var(--e-global-typography-text-font-family), Sans-serif;
+	font-weight: var(--e-global-typography-text-font-weight);
+}
+
+.elementor-widget-ha-comparison-table .ha-comparison-table-wrapper .ha-comparison-table__head-column-cell-content {
+	font-family: var(--e-global-typography-text-font-family), Sans-serif;
+	font-weight: var(--e-global-typography-text-font-weight);
+}
+
+.elementor-widget-ha-comparison-table .ha-comparison-table__row-item-cell-title {
+	font-family: var(--e-global-typography-text-font-family), Sans-serif;
+	font-weight: var(--e-global-typography-text-font-weight);
+}
+
+.elementor-widget-ha-comparison-table .ha-comparison-table__row-item-cell-content {
+	font-family: var(--e-global-typography-text-font-family), Sans-serif;
+	font-weight: var(--e-global-typography-text-font-weight);
+}
+
+.elementor-widget-ha-comparison-table .ha-comparison-table__btns-item--btn {
+	font-family: var(--e-global-typography-text-font-family), Sans-serif;
+	font-weight: var(--e-global-typography-text-font-weight);
+}
+
+.elementor-widget-text-path {
+	font-family: var(--e-global-typography-text-font-family), Sans-serif;
+	font-weight: var(--e-global-typography-text-font-weight);
+}
+
+#login_modal{
+	position: fixed;
+	z-index: 9999;
+	width: 35vw;
+	height: 35vh;
+	top: 350%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	background-color: #fff;
+	box-shadow: 0px 0px 0px 1000px rgba(0,0,0,0.25);
+	transition: ease all .25s;
+}
+#login_modal .header{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	border-bottom: 1px solid rgba(0,0,0,0.25);
+	padding: 15px 30px;
+	margin-bottom: 30px;
+}
+#login_modal .bdt-contact-form-form .title{
+	font-weight: bold;
+	font-size: 24px;
+	display: block;
+}
+#login_modal .bdt-form-controls{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+#login_modal .bdt-contact-form-form .bdt-input{
+	border: 0;
+	width: 80%;
+	display: inline-block;
+	margin: 0 auto 15px;
+	height: 60px;
+	background-color: #fff;
+	border: 1px solid rgba(71, 173, 73, 0.5);
+}
+#login_modal .bdt-button{
+	margin-left: 10%;
+	width: 25%;
+}
+#login_modal .bdt-button:hover span{
+	color: #fff;
+}
+#login_modal .bdt-grid-margin{
+	margin-top: 10px;
+}
+#login_modal.show{
+	top: 30%;
+	transition: ease all .25s;
+}
+.shipment-tracking label{
+	padding: 8px 12px;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+	background-color: rgba(255,255,255,0.5);
+	color: #47ad48;
+}
+.shipment-tracking #shipment-tracking{
+	height: 60px;
+	border: 1px solid rgba(255,255,255,0.5);
+	background-color: rgba(255,255,255,0.85);
+	color: #47ad48;
+	border-radius: 10px;
+	border-top-left-radius: 0px;
+}
+.shipment-tracking .post-query{
+	background-color: #fff;
+	border: 1px solid #fff;
+	color: #47ad48;
+	margin-top: 10px;
+	margin-left: auto;
+	border-radius: 10px;
+	float: right;
+}
+.shipment-tracking .post-query:hover{
+	color: #fff;
+	background-color: #47ad48;
+}

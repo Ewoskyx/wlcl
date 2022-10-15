@@ -1,0 +1,897 @@
+<!DOCTYPE html>
+<html class="loading" lang="en" data-textdirection="ltr">
+<!-- BEGIN: Head-->
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+    <title>We Lokal - Yönetim Paneli</title>
+    <link rel="apple-touch-icon" href="app-assets/images/ico/apple-icon-120.png">
+    <link rel="shortcut icon" type="image/x-icon" href="app-assets/images/favicon.jpeg">
+    <link href="https://fonts.googleapis.com/css?family=Rubik:300,400,500,600%7CIBM+Plex+Sans:300,400,500,600,700"
+        rel="stylesheet">
+
+    <!-- BEGIN: Vendor CSS-->
+    <link rel="stylesheet" type="text/css" href="app-assets/vendors/css/vendors.min.css">
+    <link rel="stylesheet" type="text/css" href="app-assets/vendors/css/charts/apexcharts.css">
+    <link rel="stylesheet" type="text/css" href="app-assets/vendors/css/extensions/swiper.min.css">
+    <!-- END: Vendor CSS-->
+
+    <!-- BEGIN: Theme CSS-->
+    <link rel="stylesheet" type="text/css" href="app-assets/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="app-assets/css/bootstrap-extended.css">
+    <link rel="stylesheet" type="text/css" href="app-assets/css/colors.css">
+    <link rel="stylesheet" type="text/css" href="app-assets/css/components.css">
+    <link rel="stylesheet" type="text/css" href="app-assets/css/themes/dark-layout.css">
+    <link rel="stylesheet" type="text/css" href="app-assets/css/themes/semi-dark-layout.css">
+    <link rel="stylesheet" type="text/css" href="app-assets/map/css/style.css">
+    <!-- END: Theme CSS-->
+
+    <!-- BEGIN: Page CSS-->
+    <link rel="stylesheet" type="text/css" href="app-assets/css/core/menu/menu-types/vertical-menu.css">
+    <link rel="stylesheet" type="text/css" href="app-assets/css/pages/dashboard-ecommerce.css">
+    <!-- END: Page CSS-->
+
+    <!-- BEGIN: Custom CSS-->
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <!-- END: Custom CSS-->
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+<!-- END: Head-->
+
+<!-- BEGIN: Body-->
+
+<body class="vertical-layout vertical-menu-modern dark-layout 2-columns  navbar-sticky footer-static" data-open="click"
+    data-menu="vertical-menu-modern" data-col="2-columns" data-layout="dark-layout">
+
+    <div id="loader" style="height: 100vh; position: fixed; inset: 0;">
+        <div class="boxes">
+            <div class="box">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <div class="box">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <div class="box">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <div class="box">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+    </div>
+    <div data-include="header"></div>
+
+    <!-- BEGIN: Main Menu-->
+    <div class="main-menu menu-fixed menu-dark menu-accordion menu-shadow" data-scroll-to-active="true">
+        <div class="navbar-header">
+            <ul class="nav navbar-nav flex-row">
+                <li class="nav-item mr-auto">
+                    <a class="navbar-brand" href="dashboard.html">
+
+                        <h2 class="brand-text mb-0"><img style="margin-top: 9px" height="45"
+                                                         src="app-assets/images/logo-dark.png" alt=""></h2>
+                    </a>
+                </li>
+                <li class="nav-item nav-toggle"><a class="nav-link modern-nav-toggle pr-0" data-toggle="collapse"><i
+                        class="bx bx-x d-block d-xl-none font-medium-4 primary"></i><i
+                        class="toggle-icon bx bx-disc font-medium-4 d-none d-xl-block primary"
+                        data-ticon="bx-disc"></i></a></li>
+            </ul>
+        </div>
+        <div class="shadow-bottom"></div>
+
+        <style>
+            .main-menu-content ul>li {
+                margin-top: 5px !important;
+            }
+        </style>
+        <div class="main-menu-content">
+            <ul class="navigation navigation-main" id="main-menu-navigation" data-menu="menu-navigation"
+                data-icon-style="lines">
+                <li class=" nav-item"><a href="dashboard.html"><i class="menu-livicon" data-icon="home"></i><span
+                        class="menu-title text-truncate" data-i18n="Anasayfa">Anasayfa</span></a>
+                </li>
+                <li class=" nav-item"><a href="rota.html"><i class="menu-livicon" data-icon="compass"></i><span
+                        class="menu-title text-truncate" data-i18n="Rota Yönetimi">Rota Yönetimi</span></a>
+                </li>
+                <li class=" nav-item"><a href="#"><i class="menu-livicon" data-icon="truck"></i><span
+                        class="menu-title text-truncate" data-i18n="Depo Yönetimi">Depo Yönetimi</span></a>
+                    <ul class="menu-content">
+                        <li class=""><a class="d-flex align-items-center" href="mal-kabul.html"><i
+                                class="bx bx-right-arrow-alt"></i><span class="menu-item text-truncate"
+                                                                        data-i18n="Depo Ürün Kabul">Depo Ürün Kabul</span></a>
+                        </li>
+                        <li class=""><a class="d-flex align-items-center" href="kurye-ata.html"><i
+                                class="bx bx-right-arrow-alt"></i><span class="menu-item text-truncate"
+                                                                        data-i18n="Depo Ürün Kabul">Ürünü Kuryeye Ata</span></a>
+                        </li>
+                        <li><a class="d-flex align-items-center" href="depo-sevkiyat.html"><i
+                                class="bx bx-right-arrow-alt"></i><span class="menu-item text-truncate"
+                                                                        data-i18n="Depo Sevkiyat">Depo Sevkiyat</span></a>
+                        </li>
+
+                    </ul>
+                </li>
+
+                <li class="nav-item"><a href="#"><i class="menu-livicon" data-icon="briefcase"></i><span
+                        class="menu-title text-truncate" data-i18n="Müşteri Yönetimi">Müşteri Yönetimi</span></a>
+                    <ul class="menu-content">
+                        <li><a class="d-flex align-items-center" href="carikart.html"><i
+                                class="bx bx-right-arrow-alt"></i><span class="menu-item text-truncate"
+                                                                        data-i18n="Cari Kart">Cari Kart</span></a>
+                        </li>
+                        <li><a class="d-flex align-items-center" href="siparis-bilgileri.html"><i
+                                class="bx bx-right-arrow-alt"></i><span class="menu-item text-truncate"
+                                                                        data-i18n="Kurye Takip">Sipariş Bilgileri</span></a>
+                        </li>
+                        <li><a class="d-flex align-items-center" href="fiyat-listesi.html"><i
+                                class="bx bx-right-arrow-alt"></i><span class="menu-item text-truncate"
+                                                                        data-i18n="Kurye Takip">Fiyat Listesi</span></a>
+                        </li>
+                        <li><a class="d-flex align-items-center" href="belge-basim.html"><i
+                                class="bx bx-right-arrow-alt"></i><span class="menu-item text-truncate"
+                                                                        data-i18n="Belge Basım">Belge Basım</span></a>
+                        </li>
+
+
+                    </ul>
+                </li>
+
+                <li class="nav-item"><a href="#"><i class="menu-livicon" data-icon="users"></i><span
+                        class="menu-title text-truncate" data-i18n="Personel Yönetimi">Personel Yönetimi</span></a>
+                    <ul class="menu-content open">
+                        <li class="active"><a class="d-flex align-items-center" href="ktakipekrani.html"><i
+                                class="bx bx-right-arrow-alt"></i><span class="menu-item text-truncate"
+                                                                        data-i18n="Kurye Takip">Kurye Takip</span></a>
+                        </li>
+                        <li><a class="d-flex align-items-center" href="rotalama.html"><i
+                                class="bx bx-right-arrow-alt"></i><span class="menu-item text-truncate"
+                                                                        data-i18n="Rotalama">Rotalama</span></a>
+                        </li>
+                        <li><a class="d-flex align-items-center" href="bildirim.html"><i
+                                class="bx bx-right-arrow-alt"></i><span class="menu-item text-truncate"
+                                                                        data-i18n="Bildirim">Bildirim</span></a>
+                        </li>
+                        <li><a class="d-flex align-items-center" href="mesajlasma.html"><i
+                                class="bx bx-right-arrow-alt"></i><span class="menu-item text-truncate"
+                                                                        data-i18n="Mesajlaşma">Mesajlaşma</span></a>
+                        </li>
+                        <li><a class="d-flex align-items-center" href="belge-basim.html"><i
+                                class="bx bx-right-arrow-alt"></i><span class="menu-item text-truncate"
+                                                                        data-i18n="Belge Basım">Belge Basım</span></a>
+                        </li>
+
+                    </ul>
+                </li>
+
+                <li class="nav-item"><a href="#"><i class="menu-livicon" data-icon="truck"></i><span
+                        class="menu-title text-truncate" data-i18n="Gönderi Yönetimi">Gönderi Yönetimi</span></a>
+                    <ul class="menu-content">
+                        <li><a class="d-flex align-items-center" href="gonderi.html"><i
+                                class="bx bx-right-arrow-alt"></i><span class="menu-item text-truncate"
+                                                                        data-i18n="Kurye Takip">Tüm Gönderiler</span></a>
+                        </li>
+                        <li><a class="d-flex align-items-center" href="iade.html"><i
+                                class="bx bx-right-arrow-alt"></i><span class="menu-item text-truncate"
+                                                                        data-i18n="İade İşlemleri">İade İşlemler</span></a>
+                        </li>
+                        <li><a class="d-flex align-items-center" href="siparis-onceliklendirme.html"><i
+                                class="bx bx-right-arrow-alt"></i><span class="menu-item text-truncate"
+                                                                        data-i18n="Bildirim">Sipariş Önceliklendirme</span></a>
+                        </li>
+                        <li><a class="d-flex align-items-center" href="siparis-gruplama.html"><i
+                                class="bx bx-right-arrow-alt"></i><span class="menu-item text-truncate"
+                                                                        data-i18n="Mesajlaşma">Sipariş Gruplama</span></a>
+                        </li>
+                        <li><a class="d-flex align-items-center" href="belge-basim.html"><i
+                                class="bx bx-right-arrow-alt"></i><span class="menu-item text-truncate"
+                                                                        data-i18n="Belge Basım">Belge Basım</span></a>
+                        </li>
+
+                    </ul>
+                </li>
+
+                <li class="nav-item"><a href="#"><i class="menu-livicon" data-icon="notebook"></i><span
+                        class="menu-title text-truncate" data-i18n="Ceza Promosyon İşlemleri">Ceza Promosyon İşlemleri</span></a>
+                    <ul class="menu-content">
+                        <li><a class="d-flex align-items-center" href="../custom/tanimlama.html"><i
+                                class="bx bx-right-arrow-alt"></i><span class="menu-item text-truncate"
+                                                                        data-i18n="Tanımlama">Tanımlama</span></a>
+                        </li>
+                        <li><a class="d-flex align-items-center" href="atama-gerialma.html"><i
+                                class="bx bx-right-arrow-alt"></i><span class="menu-item text-truncate"
+                                                                        data-i18n="Atama/Geri Alma"> Atama/Geri Alma</span></a>
+                        </li>
+
+
+                    </ul>
+                </li>
+
+                <li class="nav-item"><a href="#"><i class="menu-livicon" data-icon="bulb"></i><span
+                        class="menu-title text-truncate" data-i18n="Müşteri Hizmetleri">Müşteri Hizmetleri</span></a>
+                    <ul class="menu-content">
+                        <li><a class="d-flex align-items-center" href="kayitacma.html"><i
+                                class="bx bx-right-arrow-alt"></i><span class="menu-item text-truncate"
+                                                                        data-i18n="Sipariş Bazlı Müşteri Kaydı Açma">Kayıt Açma </span></a>
+                        </li>
+                        <li><a class="d-flex align-items-center" href="kayityanitlama.html"><i
+                                class="bx bx-right-arrow-alt"></i><span class="menu-item text-truncate"
+                                                                        data-i18n="Sipariş Bazlı Müşteri Kaydı Yanıtlama">Kayıt Yanıtlama</span></a>
+                        </li>
+                        <li><a class="d-flex align-items-center" href="cagriraporlama.html"><i
+                                class="bx bx-right-arrow-alt"></i><span class="menu-item text-truncate"
+                                                                        data-i18n="Sipariş Bazlı Müşteri Hizmetleri Çağrı Raporlama">Çağrı Raporlama</span></a>
+                        </li>
+                        <li><a class="d-flex align-items-center" href="history.html"><i
+                                class="bx bx-right-arrow-alt"></i><span class="menu-item text-truncate"
+                                                                        data-i18n="Sipariş Bazlı Çağrı History Oluşturmass">History Oluşturma</span></a>
+                        </li>
+
+
+                    </ul>
+                </li>
+
+                <li class=" nav-item"><a href="profile.html"><i class="menu-livicon" data-icon="user"></i><span
+                        class="menu-title text-truncate" data-i18n="Profil">Profil</span></a>
+                </li>
+                <li class=" nav-item"><a href="help-page.html"><i class="menu-livicon" data-icon="help"></i><span
+                        class="menu-title text-truncate" data-i18n="Yardım">Yardım</span></a>
+                </li>
+
+
+
+
+
+            </ul>
+        </div>
+    </div>
+    <!-- END: Main Menu-->
+
+    <!-- BEGIN: Content-->
+    <div class="app-content content">
+        <div class="content-overlay"></div>
+        <div class="content-wrapper">
+            <div class="content-header row">
+                <div class="content-header-left col-12 mb-2 mt-1">
+                    <div class="breadcrumbs-top">
+                        <div class="breadcrumb-wrapper d-none d-sm-block">
+                            <ol class="breadcrumb p-0 mb-0">
+                                <li class="breadcrumb-item"><a href="dashboard.html"><i class="bx bx-home-alt"></i></a>
+                                </li>
+                                <li class="breadcrumb-item">Kurye Listesi
+                                </li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-body">
+                <!-- Dashboard Ecommerce Starts -->
+                <section class="users-list-wrapper">
+                    <div class="users-list-filter px-1">
+                        <form>
+                            <div class="row border rounded py-2 mb-2">
+                                <div class="col-12 col-sm-6 col-lg-3">
+                                    <label for="users-list-verified">Tarih</label>
+                                    <fieldset class="form-group position-relative has-icon-left">
+                                        <input type="datetime-local" class="form-control " placeholder="Tarih Seç">
+                                        <div class="form-control-position">
+                                            <i class='bx bx-calendar'></i>
+                                        </div>
+                                    </fieldset>
+                                </div>
+                                <div class="col-12 col-sm-6 col-lg-3">
+                                    <label for="users-list-role">Yetki</label>
+                                    <fieldset class="form-group">
+                                        <select class="form-control" id="users-list-role">
+                                            <option value="">Dağıtım</option>
+                                            <option value="Active">Sevkiyat</option>
+                                            <option value="Close">Depo</option>
+                                        </select>
+                                    </fieldset>
+                                </div>
+                                <div class="col-12 col-sm-6 col-lg-3">
+                                    <label for="users-list-status">Durum</label>
+                                    <fieldset class="form-group">
+                                        <select class="form-control" id="users-list-status">
+                                            <option value="Active">Eski Personel</option>
+                                            <option value="Close">Çalışanlar</option>
+
+                                        </select>
+                                    </fieldset>
+                                </div>
+                                <div class="col-12 col-sm-6 col-lg-3 d-flex align-items-center">
+                                    <button type="reset"
+                                        class="btn btn-primary btn-block glow users-list-clear mb-0">Ara</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="users-list-table">
+                        <div class="card">
+                            <div class="card-body">
+                                <a class="btn btn-primary  glow users-list-clear mb-0" style="float: right" href="kurye.html"><i class="fa-solid fa-user-plus"></i> Yeni Kurye Ekle</a>
+                                <!-- datatable start -->
+                                <div class="table-responsive">
+                                    <div id="users-list-datatable_wrapper"
+                                        class="dataTables_wrapper dt-bootstrap4 no-footer">
+                                        <div class="row">
+                                            <div class="col-sm-12 col-md-6">
+                                                <div class="dataTables_length" id="users-list-datatable_length">
+                                                    <label>Show <select name="users-list-datatable_length"
+                                                            aria-controls="users-list-datatable"
+                                                            class="custom-select custom-select-sm form-control form-control-sm">
+                                                            <option value="10">10</option>
+                                                            <option value="25">25</option>
+                                                            <option value="50">50</option>
+                                                            <option value="100">100</option>
+                                                        </select> entries</label></div>
+                                            </div>
+                                            <div class="col-sm-12 col-md-6">
+                                                <div id="users-list-datatable_filter" class="dataTables_filter">
+                                                    <label>Search:<input type="search"
+                                                            class="form-control form-control-sm" placeholder=""
+                                                            aria-controls="users-list-datatable"></label></div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-sm-12">
+                                                <table id="users-list-datatable" class="table dataTable no-footer"
+                                                    role="grid" aria-describedby="users-list-datatable_info">
+                                                    <thead>
+                                                        <tr role="row">
+                                                            <th class="sorting_asc" tabindex="0"
+                                                                aria-controls="users-list-datatable" rowspan="1"
+                                                                colspan="1" aria-sort="ascending"
+                                                                aria-label="id: activate to sort column descending"
+                                                                style="width: 79.2031px;">id</th>
+                                                            <th class="sorting" tabindex="0"
+                                                                aria-controls="users-list-datatable" rowspan="1"
+                                                                colspan="1"
+                                                                aria-label="username: activate to sort column ascending"
+                                                                style="width: 189.203px;">Kullanıcı Adı</th>
+                                                            <th class="sorting" tabindex="0"
+                                                                aria-controls="users-list-datatable" rowspan="1"
+                                                                colspan="1"
+                                                                aria-label="name: activate to sort column ascending"
+                                                                style="width: 259.016px;">Ad Soyad</th>
+
+                                                                <th class="sorting" tabindex="0"
+                                                                aria-controls="users-list-datatable" rowspan="1"
+                                                                colspan="1"
+                                                                aria-label="last activity: activate to sort column ascending"
+                                                                style="width: 192.688px;">Değerlendirme</th>
+                                                               
+                                                            
+                                                           
+                                                            <th class="sorting" tabindex="0"
+                                                                aria-controls="users-list-datatable" rowspan="1"
+                                                                colspan="1"
+                                                                aria-label="role: activate to sort column ascending"
+                                                                style="width: 90.4922px;">Yetki</th>
+                                                            <th class="sorting" tabindex="0"
+                                                                aria-controls="users-list-datatable" rowspan="1"
+                                                                colspan="1"
+                                                                aria-label="status: activate to sort column ascending"
+                                                                style="width: 163.859px;">Durum</th>
+
+                                                            <th class="sorting_disabled" rowspan="1" colspan="1"
+                                                                aria-label="edit" style="width: 83.4531px;">İşlemler</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+
+                                                        <tr role="row" class="odd">
+                                                            <td class="sorting_1">310</td>
+                                                            <td><a
+                                                                    href="kurye.html">hsoner</a>
+                                                            </td>
+                                                            <td>Hasan Soner</td>
+                                                            <td>
+                                                                <div class="badge badge-light-seccondary d-inline-flex align-items-center">
+                                                                    <a href="ratings.html">
+                                                                        <i class="fa-solid fa-magnifying-glass font-size-small mr-25"></i>
+                                                                        <span>İncele</span>
+                                                                    </a>
+                                                                </div>
+                                                            </td>
+                                                            
+                                                            <td>Kurye</td>
+                                                            <td><span class="badge badge-light-success">Aktif</span>
+                                                            </td>
+                                                            <td><a
+                                                                    href="kurye.html"><i
+                                                                        class="bx bx-edit-alt"></i></a></td>
+                                                        </tr>
+                                                        <tr role="row" class="odd">
+                                                            <td class="sorting_1">199</td>
+                                                            <td><a
+                                                                    href="kurye.html">mkilic</a>
+                                                            </td>
+                                                            <td>Mehmet Kılıç</td>
+                                                            <td>
+                                                                <div class="badge badge-light-seccondary d-inline-flex align-items-center">
+                                                                    <a href="ratings.html">
+                                                                        <i class="fa-solid fa-magnifying-glass font-size-small mr-25"></i>
+                                                                        <span>İncele</span>
+                                                                    </a>
+                                                                </div>
+                                                            </td>
+                                                            
+                                                            <td>Sevkiyat</td>
+                                                            <td><span class="badge badge-light-success">Aktif</span>
+                                                            </td>
+                                                            <td><a
+                                                                    href="kurye.html"><i
+                                                                        class="bx bx-edit-alt"></i></a></td>
+                                                        </tr>
+                                                        <tr role="row" class="odd">
+                                                            <td class="sorting_1">465</td>
+                                                            <td><a
+                                                                    href="kurye.html">shacer</a>
+                                                            </td>
+                                                            <td>Sunay Hacer</td>
+                                                            <td>
+                                                                <div class="badge badge-light-seccondary d-inline-flex align-items-center">
+                                                                    <a href="ratings.html">
+                                                                        <i class="fa-solid fa-magnifying-glass font-size-small mr-25"></i>
+                                                                        <span>İncele</span>
+                                                                    </a>
+                                                                </div>
+                                                            </td>
+                                                            
+                                                            <td>Kurye</td>
+                                                            <td><span class="badge badge-light-success">Aktif</span>
+                                                            </td>
+                                                            <td><a
+                                                                    href="kurye.html"><i
+                                                                        class="bx bx-edit-alt"></i></a></td>
+                                                        </tr>
+                                                        <tr role="row" class="odd">
+                                                            <td class="sorting_1">10</td>
+                                                            <td><a
+                                                                    href="kurye.html">fsayar</a>
+                                                            </td>
+                                                            <td>Fazıl Sayar</td>
+                                                            <td>
+                                                                <div class="badge badge-light-seccondary d-inline-flex align-items-center">
+                                                                    <a href="ratings.html">
+                                                                        <i class="fa-solid fa-magnifying-glass font-size-small mr-25"></i>
+                                                                        <span>İncele</span>
+                                                                    </a>
+                                                                </div>
+                                                            </td>
+                                                            
+                                                            <td>Depo</td>
+                                                            <td><span class="badge badge-light-success">Aktif</span>
+                                                            </td>
+                                                            <td><a
+                                                                    href="kurye.html"><i
+                                                                        class="bx bx-edit-alt"></i></a></td>
+                                                        </tr>
+                                                     
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-sm-12 col-md-5">
+                                                <div class="dataTables_info" id="users-list-datatable_info"
+                                                    role="status" aria-live="polite">Showing 1 to 10 of 36 entries</div>
+                                            </div>
+                                            <div class="col-sm-12 col-md-7">
+                                                <div class="dataTables_paginate paging_simple_numbers"
+                                                    id="users-list-datatable_paginate">
+                                                    <ul class="pagination">
+                                                        <li class="paginate_button page-item previous disabled"
+                                                            id="users-list-datatable_previous"><a href="#"
+                                                                aria-controls="users-list-datatable" data-dt-idx="0"
+                                                                tabindex="0" class="page-link">Previous</a></li>
+                                                        <li class="paginate_button page-item active"><a href="#"
+                                                                aria-controls="users-list-datatable" data-dt-idx="1"
+                                                                tabindex="0" class="page-link">1</a></li>
+                                                        <li class="paginate_button page-item "><a href="#"
+                                                                aria-controls="users-list-datatable" data-dt-idx="2"
+                                                                tabindex="0" class="page-link">2</a></li>
+                                                        <li class="paginate_button page-item "><a href="#"
+                                                                aria-controls="users-list-datatable" data-dt-idx="3"
+                                                                tabindex="0" class="page-link">3</a></li>
+                                                        <li class="paginate_button page-item "><a href="#"
+                                                                aria-controls="users-list-datatable" data-dt-idx="4"
+                                                                tabindex="0" class="page-link">4</a></li>
+                                                        <li class="paginate_button page-item next"
+                                                            id="users-list-datatable_next"><a href="#"
+                                                                aria-controls="users-list-datatable" data-dt-idx="5"
+                                                                tabindex="0" class="page-link">Next</a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- datatable ends -->
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- Dashboard Ecommerce ends -->
+            </div>
+        </div>
+    </div>
+    <!-- END: Content-->
+
+
+
+
+    <!-- BEGIN: Footer-->
+    <div data-include="footer"></div>
+    <!-- END: Footer-->
+
+
+    <!-- BEGIN: Vendor JS-->
+    <script src="app-assets/vendors/js/vendors.min.js"></script>
+    <script src="app-assets/fonts/LivIconsEvo/js/LivIconsEvo.tools.js"></script>
+    <script src="app-assets/fonts/LivIconsEvo/js/LivIconsEvo.defaults.js"></script>
+    <script src="app-assets/fonts/LivIconsEvo/js/LivIconsEvo.min.js"></script>
+    <!-- BEGIN Vendor JS-->
+
+    <!-- BEGIN: Page Vendor JS-->
+    <script src="app-assets/vendors/js/charts/apexcharts.min.js"></script>
+    <script src="app-assets/vendors/js/extensions/swiper.min.js"></script>
+    <!-- END: Page Vendor JS-->
+
+    <!-- BEGIN: Theme JS-->
+    <script src="app-assets/js/scripts/configs/vertical-menu-dark.js"></script>
+    <script src="app-assets/js/core/app-menu.js"></script>
+    <script src="app-assets/js/core/app.js"></script>
+    <script src="app-assets/js/scripts/components.js"></script>
+    <script src="app-assets/js/scripts/footer.js"></script>
+    <!-- END: Theme JS-->
+
+    <!-- BEGIN: Page JS-->
+    <script src="app-assets/js/scripts/pages/dashboard-ecommerce.js"></script>
+    <script src="app-assets/map/js/map.js"></script>
+    <script src="assets/js/scripts.js"></script>
+    <script>
+        svgturkiyeharitasi();
+    </script>
+    <!-- END: Page JS-->
+    <style>
+        #dashboard-users .badge-circle.badge-circle-lg {
+            width: 30px;
+            height: 30px;
+            flex: 0 0 30px;
+        }
+
+        #dashboard-users .badge-circle.badge-circle-lg img {
+            height: 21px;
+            object-fit: cover;
+        }
+
+        .dashboard-users .card-body {
+            margin-bottom: 10px;
+        }
+
+        .title-p {
+            text-align: center;
+            margin-bottom: 5px !important;
+            font-size: 20px;
+        }
+
+        .takip-no {
+            text-align: center;
+            color: #36c6f4 !important;
+            font-weight: bold;
+        }
+
+        .dashboard-users .card-body .line-ellipsis {
+            margin-bottom: 7px;
+        }
+
+        .nav>li>a:focus,
+        .nav>li>a:hover {
+            background: transparent !important;
+        }
+
+        .design-process-section .text-align-center {
+            line-height: 25px;
+            margin-bottom: 12px;
+        }
+
+        .design-process-content {
+            border: 1px solid #e9e9e9;
+            position: relative;
+            padding: 16px 34% 30px 30px;
+        }
+
+        .design-process-content img {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 0;
+            max-height: 100%;
+        }
+
+        .design-process-content h3 {
+            margin-bottom: 16px;
+        }
+
+        .design-process-content p {
+            line-height: 26px;
+            margin-bottom: 12px;
+        }
+
+        .process-model {
+            overflow: hidden;
+            justify-content: center;
+            list-style: none;
+            padding: 0;
+            position: relative;
+            max-width: 800px;
+            margin: 20px auto 26px;
+            border: none;
+            z-index: 0;
+        }
+
+        body.dark-layout .process-model li::after {
+            background: #36c5f4 none repeat scroll 0 0;
+        }
+
+        .process-model li::after {
+            background: #dadada none repeat scroll 0 0;
+            bottom: 0;
+            content: "";
+            display: block;
+            height: 4px;
+            margin: 0 auto;
+            position: absolute;
+            top: 33px;
+            width: 100%;
+            right: 0;
+            z-index: -1;
+        }
+
+        .process-model li.visited::after {
+            background: #D6DA28;
+        }
+
+        .process-model li:last-child::after {
+            width: 0;
+        }
+
+        .process-model li {
+            display: inline-block;
+            width: 25%;
+            text-align: center;
+            float: none;
+        }
+
+        .nav-tabs.process-model>li.active>a,
+        .nav-tabs.process-model>li.active>a:hover,
+        .nav-tabs.process-model>li.active>a:focus,
+        .process-model li a:hover,
+        .process-model li a:focus {
+            border: none;
+            background: transparent;
+
+        }
+
+        .process-model li a {
+            padding: 0;
+            border: none;
+            color: #606060;
+        }
+
+        .process-model li.active,
+        .process-model li.visited {
+            color: #D6DA28;
+        }
+
+        .process-model li.active a,
+        .process-model li.active a:hover,
+        .process-model li.active a:focus,
+        .process-model li.visited a,
+        .process-model li.visited a:hover,
+        .process-model li.visited a:focus {
+            color: #D6DA28;
+        }
+
+        .process-model li.active p,
+        .process-model li.visited p {
+            font-weight: 600;
+            color: #1f3767;
+        }
+
+        body.dark-layout .process-model li.active p,
+        body.dark-layout .process-model li.visited p {
+            font-weight: 600;
+            color: #36c6f4;
+        }
+
+        body.dark-layout .process-model li span {
+            background: #272e48;
+        }
+
+        .process-model li span {
+            display: flex !important;
+            align-items: center;
+            justify-content: center;
+            padding: 0;
+        }
+
+        .process-model li span img {
+            height: 30px;
+            object-fit: contain;
+        }
+
+        body.dark-layout .process-model li span img {
+            filter: brightness(0) invert(1);
+        }
+
+        body.dark-layout .process-model li span svg {
+            filter: none;
+        }
+
+        .process-model li span svg {
+            filter: invert(0%) sepia(14%) saturate(12%) hue-rotate(236deg) brightness(107%) contrast(100%);
+        }
+
+        body.dark-layout .process-model li span {
+            border: 3px solid #36c5f4;
+            color: #36c6f4;
+        }
+
+        .process-model li span {
+            border: 3px solid #dadada;
+            color: #dadada;
+            display: block;
+            height: 68px;
+            width: 68px;
+            text-align: center;
+            background: #f2f4f4;
+            margin: 0 auto;
+            line-height: 65px;
+            font-size: 30px;
+            border-radius: 50%;
+        }
+
+        body.dark-layout .process-model li.active span,
+        .process-model li.visited span {
+            border-color: #36c5f4;
+            color: #36c5f4;
+        }
+
+        .process-model li.active span,
+        .process-model li.visited span {
+            border-color: #1f3767;
+            color: #1f3767;
+        }
+
+        .process-model li p {
+            font-size: 14px;
+            margin-top: 11px;
+        }
+
+        .process-model li p b {
+            display: block;
+            margin-top: 8px;
+        }
+
+        .process-model.contact-us-tab li.visited a,
+        .process-model.contact-us-tab li.visited p {
+            color: #606060 !important;
+            font-weight: normal
+        }
+
+        .process-model.contact-us-tab li::after {
+            display: none;
+        }
+
+        .process-model.contact-us-tab li.visited i {
+            border-color: #e5e5e5;
+        }
+
+
+
+        @media screen and (max-width: 560px) {
+            .more-icon-preocess.process-model li span {
+                font-size: 23px;
+                height: 50px;
+                line-height: 46px;
+                width: 50px;
+            }
+
+            .more-icon-preocess.process-model li::after {
+                top: 24px;
+            }
+        }
+
+        @media screen and (max-width: 380px) {
+            .process-model.more-icon-preocess li {
+                width: 16%;
+            }
+
+            .more-icon-preocess.process-model li span {
+                font-size: 16px;
+                height: 35px;
+                line-height: 32px;
+                width: 35px;
+            }
+
+            .more-icon-preocess.process-model li p {
+                font-size: 8px;
+            }
+
+            .more-icon-preocess.process-model li::after {
+                top: 18px;
+            }
+
+            .process-model.more-icon-preocess {
+                text-align: center;
+            }
+        }
+
+        .table-footer a {
+            color: #36c5f4;
+        }
+
+        .table-footer {
+            text-align: center;
+        }
+
+        .iconBox span {
+            padding: 8px;
+        }
+
+        .iconBox span i div {
+            display: flex;
+        }
+
+        .small {
+            font-size: 76%;
+        }
+
+        .table-responsive {
+            overflow-x: hidden;
+        }
+
+        .status {
+            font-size: 13px !important;
+        }
+
+        #table-marketing-campaigns td {
+            padding-bottom: 0;
+        }
+
+        .title-h3 {
+            text-align: center;
+            margin-bottom: 5px !important;
+            font-size: 14px !important;
+        }
+
+        .badge.badge-light-seccondary.d-inline-flex.align-items-center a{
+            color:white !important;
+        }
+    </style>
+
+</body>
+<!-- END: Body-->
+
+</html>

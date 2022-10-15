@@ -1,0 +1,1016 @@
+<!DOCTYPE html>
+<html class="loading" lang="en" data-textdirection="ltr">
+<!-- BEGIN: Head-->
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+    <title>We Lokal - Yönetim Paneli</title>
+    <link rel="apple-touch-icon" href="app-assets/images/ico/apple-icon-120.png">
+    <link rel="shortcut icon" type="image/x-icon" href="../app-assets/images/favicon.jpeg">
+    <link href="https://fonts.googleapis.com/css?family=Rubik:300,400,500,600%7CIBM+Plex+Sans:300,400,500,600,700"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- BEGIN: Vendor CSS-->
+    <link rel="stylesheet" type="text/css" href="../app-assets/vendors/css/vendors.min.css">
+    <link rel="stylesheet" type="text/css" href="../app-assets/vendors/css/charts/apexcharts.css">
+    <link rel="stylesheet" type="text/css" href="../app-assets/vendors/css/extensions/swiper.min.css">
+
+    <link rel="stylesheet" type="text/css" href="../app-assets/vendors/css/vendors.min.css">
+    <link rel="stylesheet" type="text/css" href="../app-assets/vendors/css/forms/select/select2.min.css">
+    <link rel="stylesheet" type="text/css" href="../app-assets/vendors/css/pickers/pickadate/pickadate.css">
+    <!-- END: Vendor CSS-->
+
+    <!-- BEGIN: Theme CSS-->
+    <link rel="stylesheet" type="text/css" href="../app-assets/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="../app-assets/css/bootstrap-extended.css">
+    <link rel="stylesheet" type="text/css" href="../app-assets/css/colors.css">
+    <link rel="stylesheet" type="text/css" href="../app-assets/css/components.css">
+    <link rel="stylesheet" type="text/css" href="../app-assets/css/themes/dark-layout.css">
+    <link rel="stylesheet" type="text/css" href="../app-assets/css/themes/semi-dark-layout.css">
+    <link rel="stylesheet" type="text/css" href="../app-assets/map/css/style.css">
+    <!-- END: Theme CSS-->
+
+    <!-- BEGIN: Page CSS-->
+    <link rel="stylesheet" type="text/css" href="../app-assets/css/core/menu/menu-types/vertical-menu.css">
+    <link rel="stylesheet" type="text/css" href="../app-assets/css/pages/dashboard-ecommerce.css">
+    <link rel="stylesheet" type="text/css" href="../app-assets/css/plugins/forms/validation/form-validation.css">
+    <!-- END: Page CSS-->
+
+    <!-- BEGIN: Custom CSS-->
+    <link rel="stylesheet" type="text/css" href="../assets/css/style.css">
+    <!-- END: Custom CSS-->
+    <link rel="stylesheet" type="text/css" href="../app-assets/css/plugins/file-uploaders/dropzone.css">
+    <link rel="stylesheet" type="text/css" href="../app-assets/vendors/css/ui/prism.min.css">
+    <link rel="stylesheet" type="text/css" href="../app-assets/vendors/css/file-uploaders/dropzone.min.css">
+
+
+
+
+
+
+
+
+</head>
+<!-- END: Head-->
+
+<!-- BEGIN: Body-->
+
+<body class="vertical-layout vertical-menu-modern dark-layout 2-columns  navbar-sticky footer-static" data-open="click"
+    data-menu="vertical-menu-modern" data-col="2-columns" data-layout="dark-layout">
+
+    <div id="loader" style="height: 100vh; position: fixed; inset: 0;">
+        <div class="boxes">
+            <div class="box">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <div class="box">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <div class="box">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <div class="box">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+    </div>
+    <div data-include="header"></div>
+
+    <!-- BEGIN: Main Menu-->
+    <div class="main-menu menu-fixed menu-dark menu-accordion menu-shadow" data-scroll-to-active="true">
+        <div class="navbar-header">
+            <ul class="nav navbar-nav flex-row">
+                <li class="nav-item mr-auto">
+                    <a class="navbar-brand" href="../dashboard.html">
+                        
+                        <h2 class="brand-text mb-0"><img style="margin-top: 9px" height="45"
+                                                         src="../app-assets/images/logo-dark.png" alt=""></h2>
+                    </a>
+                </li>
+                <li class="nav-item nav-toggle"><a class="nav-link modern-nav-toggle pr-0" data-toggle="collapse"><i
+                            class="bx bx-x d-block d-xl-none font-medium-4 primary"></i><i
+                            class="toggle-icon bx bx-disc font-medium-4 d-none d-xl-block primary"
+                            data-ticon="bx-disc"></i></a></li>
+            </ul>
+        </div>
+        <div class="shadow-bottom"></div>
+
+        <style>
+            .main-menu-content ul>li {
+                margin-top: 5px !important;
+            }
+        </style>
+        <div class="main-menu-content">
+            <ul class="navigation navigation-main" id="main-menu-navigation" data-menu="menu-navigation"
+                data-icon-style="lines">
+                <li class=" nav-item"><a href="../dashboard.html"><i class="menu-livicon" data-icon="home"></i><span
+                            class="menu-title text-truncate" data-i18n="Anasayfa">Anasayfa</span></a>
+                </li>
+                <li class="nav-item"><a href="#"><i class="menu-livicon" data-icon="calendar"></i><span
+                            class="menu-title text-truncate" data-i18n="Bülten">Bülten</span></a>
+                </li>
+                <li class="active nav-item"><a href="msiparisekrani.html"><i class="menu-livicon" data-icon="users"></i><span
+                            class="menu-title text-truncate" data-i18n="Kurye Yönetimi">Kurye Yönetimi</span></a>
+                </li>
+                <li class="nav-item"><a href="#"><i class="menu-livicon" data-icon="truck"></i><span
+                            class="menu-title text-truncate" data-i18n="Sipariş Yönetimi">Sipariş Yönetimi</span></a>
+                    <ul class="menu-content">
+                        <li><a class="d-flex align-items-center" href="add-shipment.html"><i
+                                    class="bx bx-right-arrow-alt"></i><span class="menu-item text-truncate"
+                                    data-i18n="Yeni Sipariş Ekle">Yeni Sipariş Ekle</span></a>
+                        </li>
+                        <li><a class="d-flex align-items-center" href="file-shipment.html"><i
+                                    class="bx bx-right-arrow-alt"></i><span class="menu-item text-truncate"
+                                    data-i18n="Dosyadan Yükle">Dosyadan Yükle</span></a>
+                        </li>
+                    </ul>
+                </li>
+                <li class=" nav-item"><a href="follow-up.html"><i class="menu-livicon" data-icon="compass"></i><span
+                            class="menu-title text-truncate" data-i18n="Sipariş Takip">Sipariş Takip</span></a>
+                </li>
+                <li class=" nav-item"><a href="#"><i class="menu-livicon" data-icon="bar-chart"></i><span
+                            class="menu-title text-truncate" data-i18n="Raporlar">Raporlar</span></a>
+                    <ul class="menu-content">
+
+                        <li><a class="d-flex align-items-center" href="yoldaki-siparisler-raporu.html"><i
+                            class="bx bx-right-arrow-alt"></i><span class="menu-item text-truncate"
+                            data-i18n="Yük Raporları">Yoldaki Siparişler Raporu</span></a></li>
+
+                            <li><a class="d-flex align-items-center" href="zamaninda-teslim-raporu.html"><i
+                                class="bx bx-right-arrow-alt"></i><span class="menu-item text-truncate"
+                                data-i18n="Yük Raporları">Zamanında Teslim Raporu</span></a></li>
+
+                            
+                        <li><a class="d-flex align-items-center" href="shipment-report.html"><i
+                            class="bx bx-right-arrow-alt"></i><span class="menu-item text-truncate"
+                            data-i18n="Yük Raporları">Yük Raporları</span></a></li>
+
+
+
+                        <li><a class="d-flex align-items-center" href="geciken-teslimat-raporu.html"><i
+                            class="bx bx-right-arrow-alt"></i><span class="menu-item text-truncate"
+                            data-i18n="Şikayet Yönetimi Raporu">Geciken Teslimat Raporu</span></a></li>
+
+                        <li><a class="d-flex align-items-center" href="complaint-report.html"><i
+                                    class="bx bx-right-arrow-alt"></i><span class="menu-item text-truncate"
+                                    data-i18n="Şikayet Yönetimi Raporu">Şikayet Yönetimi Raporu</span></a></li>
+
+                        <li><a class="d-flex align-items-center" href="drive-report.html"><i
+                                    class="bx bx-right-arrow-alt"></i><span class="menu-item text-truncate"
+                                    data-i18n="Env. Sürücü Raporları">Env. Sürücü Raporları</span></a></li>
+
+
+
+                        <li><a class="d-flex align-items-center" href="driver-score-report.html"><i
+                                    class="bx bx-right-arrow-alt"></i><span class="menu-item text-truncate"
+                                    data-i18n="Sürücü Puan Raporu">Sürücü Puan Raporu</span></a></li>
+
+                        <li><a class="d-flex align-items-center" href="post-service-score-report.html"><i
+                                    class="bx bx-right-arrow-alt"></i><span class="menu-item text-truncate"
+                                    data-i18n="Hizmet Sonrası Anket Raporu">Hizmet Sonrası Anket Raporu</span></a></li>
+                        <li><a class="d-flex align-items-center" href="overall-score-report.html"><i
+                                    class="bx bx-right-arrow-alt"></i><span class="menu-item text-truncate"
+                                    data-i18n="Genel Değerlendirme Anket Raporu">Genel Değerlendirme Anket
+                                    Raporu</span></a></li>
+                        <li><a class="d-flex align-items-center" href="customer-evaluation-score-report.html"><i
+                                    class="bx bx-right-arrow-alt"></i><span class="menu-item text-truncate"
+                                    data-i18n="Müşteri Değerlendirme Puan Raporu">Müşteri Değerlendirme Puan
+                                    Raporu</span></a></li>
+                    </ul>
+                </li>
+                <li class="nav-item"><a href="invoice-information.html"><i class="menu-livicon"
+                                                                           data-icon="calculator"></i><span class="menu-title text-truncate"
+                            data-i18n="Dağıtım Bilgileri">Fatura Bilgileri</span></a>
+                </li>
+                <li class="nav-item"><a href="rating-system.html"><i class="menu-livicon" data-icon="touch"></i><span
+                            class="menu-title text-truncate" data-i18n="Rating Sistemleri">Rating Sistemleri</span></a>
+                </li>
+                <li class=" nav-item"><a href="definitions.html"><i class="menu-livicon" data-icon="briefcase"></i><span
+                            class="menu-title text-truncate" data-i18n="Tanımlamalar">Tanımlamalar</span></a>
+                </li>
+                <li class=" nav-item"><a href="profile.html"><i class="menu-livicon" data-icon="user"></i><span
+                            class="menu-title text-truncate" data-i18n="Profil">Profil</span></a>
+                </li>
+                <li class=" nav-item"><a href="help-page.html"><i class="menu-livicon" data-icon="help"></i><span
+                            class="menu-title text-truncate" data-i18n="Yardım">Yardım</span></a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!-- END: Main Menu-->
+
+    <!-- BEGIN: Content-->
+    <div class="app-content content">
+        
+        <div class="content-overlay"></div>
+        <div class="content-wrapper">
+            <div class="content-header row">
+                <div class="content-header-left col-12 mb-2 mt-1">
+                    <div class="breadcrumbs-top">
+                        <div class="breadcrumb-wrapper d-none d-sm-block">
+                            <ol class="breadcrumb p-0 mb-0">
+                                <li class="breadcrumb-item"><a href="../dashboard.html"><i class="bx bx-home-alt"></i></a>
+                                </li>
+                                <li class="breadcrumb-item">Kurye Bilgilerini Güncelle
+                                </li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-header row">
+            </div>
+            <div class="content-body">
+                <!-- Dashboard Ecommerce Starts -->
+                <div class="content-body">
+                    <!-- account setting page start -->
+                    <section id="page-account-settings">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="row">
+                                    <!-- left menu section -->
+                                    <div class="col-md-3 mb-2 mb-md-0 pills-stacked">
+                                        <ul class="nav nav-pills flex-column">
+                                            <li class="nav-item">
+                                                <a class="nav-link d-flex align-items-center active"
+                                                    id="account-pill-general" data-toggle="pill"
+                                                    href="#account-vertical-general" aria-expanded="true">
+                                                    <i class="bx bx-cog"></i>
+                                                    <span>Genel</span>
+                                                </a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link d-flex align-items-center" id="account-pill-password"
+                                                    data-toggle="pill" href="#account-vertical-password"
+                                                    aria-expanded="false">
+                                                    <i class="bx bx-lock"></i>
+                                                    <span>Şifre Değiştir</span>
+                                                </a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link d-flex align-items-center" id="account-pill-info"
+                                                    data-toggle="pill" href="#account-vertical-info"
+                                                    aria-expanded="false">
+                                                    <i class="bx bx-info-circle"></i>
+                                                    <span>Hakkında</span>
+                                                </a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link d-flex align-items-center" id="account-pill-social"
+                                                    data-toggle="pill" href="#account-vertical-social"
+                                                    aria-expanded="false">
+                                                    <i class="bx bxl-twitch"></i>
+                                                    <span>Sosyal Medya</span>
+                                                </a>
+                                            </li>
+
+                                            <li class="nav-item">
+                                                <a class="nav-link d-flex align-items-center" id="account-pill-social"
+                                                    data-toggle="pill" href="#dosya"
+                                                    aria-expanded="false">
+                                                    <i class="bx bxl-twitch"></i>
+                                                    <span>Dosyalar</span>
+                                                </a>
+                                            </li>
+                                           
+                                            <li class="nav-item">
+                                                <a class="nav-link d-flex align-items-center"
+                                                    id="account-pill-notifications" data-toggle="pill"
+                                                    href="#account-vertical-notifications" aria-expanded="false">
+                                                    <i class="bx bx-bell"></i>
+                                                    <span>Bildirimler</span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <!-- right content section -->
+                                    <div class="col-md-9">
+                                        <div class="card">
+                                            <div class="card-body">
+                                                <div class="tab-content">
+                                                    <div role="tabpanel" class="tab-pane active"
+                                                        id="account-vertical-general"
+                                                        aria-labelledby="account-pill-general" aria-expanded="true">
+                                                        <div class="media">
+                                                            <a href="javascript: void(0);">
+                                                                <img src="../app-assets/images/portrait/small/avatar-s-16.jpg"
+                                                                    class="rounded mr-75" alt="profile image"
+                                                                    height="64" width="64">
+                                                            </a>
+                                                            <div class="media-body mt-25">
+                                                                <div
+                                                                    class="col-12 px-0 d-flex flex-sm-row flex-column justify-content-start">
+                                                                    <label for="select-files"
+                                                                        class="btn btn-sm btn-light-primary ml-50 mb-50 mb-sm-0">
+                                                                        <span>Fotograf Yükle</span>
+                                                                        <input id="select-files" type="file" hidden="">
+                                                                    </label>
+                                                                    <button
+                                                                        class="btn btn-sm btn-light-secondary ml-50">İptal</button>
+                                                                </div>
+                                                                <p class="text-muted ml-1 mt-50"><small>
+                                                                        Yüklenilecek resim JPG,GİF,PNG olmalı ve boyutu maksimum 2 MB olmalıdır.
+                                                                    </small></p>
+                                                            </div>
+                                                        </div>
+                                                        <hr>
+                                                        <form class="validate-form" novalidate="novalidate">
+                                                            <div class="row">
+                                                                <div class="col-12">
+                                                                    <div class="form-group">
+                                                                        <div class="controls">
+                                                                            <label>Kullanıcı Adı</label>
+                                                                            <input type="text" class="form-control"
+                                                                                placeholder="Kullanıcı Adı"
+                                                                                value="shacer" name="username">
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-12">
+                                                                    <div class="form-group">
+                                                                        <div class="controls">
+                                                                            <label>Ad Soyad</label>
+                                                                            <input type="text" class="form-control"
+                                                                                placeholder="Ad Soyad"
+                                                                                value="Sunay Hacer" name="name">
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-12">
+                                                                    <div class="form-group">
+                                                                        <div class="controls">
+                                                                            <label>E-mail</label>
+                                                                            <input type="email" class="form-control"
+                                                                                placeholder="Email"
+                                                                                value="shacer@welocal.com"
+                                                                                name="email">
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                
+                                                                
+                                                                <div
+                                                                    class="col-12 d-flex flex-sm-row flex-column justify-content-end">
+                                                                    <button type="submit"
+                                                                        class="btn btn-primary glow mr-sm-1 mb-1">Kaydet
+                                                                        </button>
+                                                                    <button type="reset"
+                                                                        class="btn btn-light mb-1">İptal</button>
+                                                                </div>
+                                                            </div>
+                                                        </form>
+                                                    </div>
+                                                    <div class="tab-pane fade" id="account-vertical-password"
+                                                        role="tabpanel" aria-labelledby="account-pill-password"
+                                                        aria-expanded="false">
+                                                        <form class="validate-form" novalidate="novalidate">
+                                                            <div class="row">
+                                                                <div class="col-12">
+                                                                    <div class="form-group">
+                                                                        <div class="controls">
+                                                                            <label>Eski Şifre</label>
+                                                                            <input type="password" class="form-control"
+                                                                                placeholder="Eski Şifre"
+                                                                                name="password">
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-12">
+                                                                    <div class="form-group">
+                                                                        <div class="controls">
+                                                                            <label>Yeni Şifre</label>
+                                                                            <input type="password" class="form-control"
+                                                                                placeholder="New Password"
+                                                                                id="account-new-password"
+                                                                                name="Yeni Şifre">
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-12">
+                                                                    <div class="form-group">
+                                                                        <div class="controls">
+                                                                            <label>Yeni Şifre Tekrarı</label>
+                                                                            <input type="password" class="form-control"
+                                                                                data-validation-match-match="password"
+                                                                                placeholder="Yeni Şifre Tekrarı"
+                                                                                name="confirm-new-password">
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div
+                                                                    class="col-12 d-flex flex-sm-row flex-column justify-content-end">
+                                                                    <button type="submit"
+                                                                        class="btn btn-primary glow mr-sm-1 mb-1">Kaydet
+                                                                        </button>
+                                                                    <button type="reset"
+                                                                        class="btn btn-light mb-1">İptal</button>
+                                                                </div>
+                                                            </div>
+                                                        </form>
+                                                    </div>
+                                                    <div class="tab-pane fade" id="account-vertical-info"
+                                                        role="tabpanel" aria-labelledby="account-pill-info"
+                                                        aria-expanded="false">
+                                                        <form class="validate-form" novalidate="novalidate">
+                                                            <div class="row">
+                                                                <div class="col-12">
+                                                                    <div class="form-group">
+                                                                        <label>Kısa Bilgi</label>
+                                                                        <textarea class="form-control"
+                                                                            id="accountTextarea" rows="3"
+                                                                            placeholder="Lütfen hakkınızda kısa bilgi giriniz"></textarea>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-12">
+                                                                    <div class="form-group">
+                                                                        <div class="controls">
+                                                                            <label>Doğum Tarihi</label>
+                                                                            
+                                                                                <fieldset class="form-group position-relative has-icon-left">
+                                                                                    <input type="datetime-local" class="form-control " placeholder="Tarih Seç">
+                                                                                    <div class="form-control-position">
+                                                                                        <i class='bx bx-calendar'></i>
+                                                                                    </div>
+                                                                                </fieldset>
+                                                                           
+                                                                           
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                
+                                                                
+                                                                <div class="col-12">
+                                                                    <div class="form-group">
+                                                                        <div class="controls">
+                                                                            <label>Telefon</label>
+                                                                            <input type="text" class="form-control"
+                                                                                placeholder="Phone number"
+                                                                                value="(+9XXXX) XXX XX XX" name="phone">
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                
+                                                                <div class="col-12">
+                                                                    <div class="form-group">
+                                                                        <label>Favoriler</label>
+                                                                        <textarea class="form-control"
+                                                                            id="accountTextarea" rows="3"
+                                                                            placeholder="Lütfen favorilerinizi giriniz"></textarea>
+                                                                        
+                                                                    </div>
+                                                                </div>
+                                                                
+                                                                <div
+                                                                    class="col-12 d-flex flex-sm-row flex-column justify-content-end">
+                                                                    <button type="submit"
+                                                                        class="btn btn-primary glow mr-sm-1 mb-1">Kaydet
+                                                                        </button>
+                                                                    <button type="reset"
+                                                                        class="btn btn-light mb-1">İptal</button>
+                                                                </div>
+                                                            </div>
+                                                        </form>
+                                                    </div>
+                                                    <div class="tab-pane fade " id="account-vertical-social"
+                                                        role="tabpanel" aria-labelledby="account-pill-social"
+                                                        aria-expanded="false">
+                                                        <form>
+                                                            <div class="row">
+                                                                <div class="col-12">
+                                                                    <div class="form-group">
+                                                                        <label>Twitter</label>
+                                                                        <input type="text" class="form-control"
+                                                                            placeholder="Linki giriniz"
+                                                                            value="https://www.twitter.com">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-12">
+                                                                    <div class="form-group">
+                                                                        <label>Facebook</label>
+                                                                        <input type="text" class="form-control"
+                                                                            placeholder="Linki giriniz">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-12">
+                                                                    <div class="form-group">
+                                                                        <label>Google+</label>
+                                                                        <input type="text" class="form-control"
+                                                                            placeholder="Linki giriniz">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-12">
+                                                                    <div class="form-group">
+                                                                        <label>LinkedIn</label>
+                                                                        <input type="text" class="form-control"
+                                                                            placeholder="Linki giriniz"
+                                                                            value="https://www.linkedin.com">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-12">
+                                                                    <div class="form-group">
+                                                                        <label>Instagram</label>
+                                                                        <input type="text" class="form-control"
+                                                                            placeholder="Linki giriniz">
+                                                                    </div>
+                                                                </div>
+                                                                
+                                                                <div
+                                                                    class="col-12 d-flex flex-sm-row flex-column justify-content-end">
+                                                                    <button type="submit"
+                                                                        class="btn btn-primary glow mr-sm-1 mb-1">Save
+                                                                        changes</button>
+                                                                    <button type="reset"
+                                                                        class="btn btn-light mb-1">Cancel</button>
+                                                                </div>
+                                                            </div>
+                                                        </form>
+                                                    </div>
+
+                                                    <div class="tab-pane fade " id="dosya"
+                                                        role="tabpanel" aria-labelledby="account-pill-social"
+                                                        aria-expanded="false">
+
+                                                        <div class="row">
+                                                            <div class="col-12">
+                                                                <div class="card">
+                                                                    
+                                                                    <div class="card-body">
+                                                                        
+                                                                        <form action="#" class="dropzone dropzone-area" id="dpz-multiple-files">
+                                                                            <div class="dz-message">Yüklenecek Dosyaları Seçiniz</div>
+                                                                        </form>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <h4>Yüklenen Dosyalar</h4>
+                                                        <table class="table table-hover mb-0">
+                                                            <thead>
+                                                                <tr>
+                                                                    <th>Dosya İsmi</th>
+                                                                    <th>Türü</th>
+                                                                    <th>İşlemler</th>
+                                                                    
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td class="text-bold-500">TC KİMLİK</td>
+                                                                    <td class="text-bold-500">JPG</td>
+                                                                    
+                                                                    <td><a href="javascript:void(0);">
+                                                                        <i class="fa-solid fa-eye"></i>
+                                                                        <i class="fa-solid fa-trash-can"></i>
+                                                                    </a></td>
+                                                                </tr>
+                                                               
+                                                                
+                                                               
+                                                                
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                    
+                                                    <div class="tab-pane fade" id="account-vertical-notifications"
+                                                        role="tabpanel" aria-labelledby="account-pill-notifications"
+                                                        aria-expanded="false">
+                                                        <div class="row">
+                                                            <h6 class="m-1">Bildirimler</h6>
+                                                            
+                                                            
+                                                        
+                                                           
+                                                            <div class="col-12 mb-1">
+                                                                <div
+                                                                    class="custom-control custom-switch custom-control-inline">
+                                                                    <input type="checkbox" class="custom-control-input"
+                                                                        checked="" id="accountSwitch4">
+                                                                    <label class="custom-control-label mr-1"
+                                                                        for="accountSwitch4"></label>
+                                                                    <span class="switch-label w-100">Bildirimleri Al</span>
+                                                                </div>
+                                                            </div>
+                                                            
+                                                          
+                                                            <div
+                                                                class="col-12 d-flex flex-sm-row flex-column justify-content-end">
+                                                                <button type="submit"
+                                                                    class="btn btn-primary glow mr-sm-1 mb-1">Kaydet
+                                                                    </button>
+                                                                <button type="reset"
+                                                                    class="btn btn-light mb-1">İptal</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <!-- account setting page ends -->
+
+                </div>
+                <!-- Dashboard Ecommerce ends -->
+            </div>
+        </div>
+    </div>
+    <!-- END: Content-->
+
+
+
+
+    <!-- BEGIN: Footer-->
+    <div data-include="footer"></div>
+    <!-- END: Footer-->
+
+
+
+    <!-- BEGIN: Vendor JS-->
+    <script src="../app-assets/vendors/js/vendors.min.js"></script>
+    <script src="../app-assets/fonts/LivIconsEvo/js/LivIconsEvo.tools.js"></script>
+    <script src="../app-assets/fonts/LivIconsEvo/js/LivIconsEvo.defaults.js"></script>
+    <script src="../app-assets/fonts/LivIconsEvo/js/LivIconsEvo.min.js"></script>
+    <!-- BEGIN Vendor JS-->
+
+    <!-- BEGIN: Page Vendor JS-->
+    <script src="../app-assets/vendors/js/charts/apexcharts.min.js"></script>
+    <script src="../app-assets/vendors/js/extensions/swiper.min.js"></script>
+    <!-- END: Page Vendor JS-->
+
+    <!-- BEGIN: Theme JS-->
+    <script src="../app-assets/js/scripts/configs/vertical-menu-dark.js"></script>
+    <script src="../app-assets/js/core/app-menu.js"></script>
+    <script src="../app-assets/js/core/app.js"></script>
+    <script src="../app-assets/js/scripts/components.js"></script>
+    <script src="../app-assets/js/scripts/footer.js"></script>
+    <!-- END: Theme JS-->
+
+    <!-- BEGIN: Page JS-->
+    <script src="../app-assets/js/scripts/pages/dashboard-ecommerce.js"></script>
+    <script src="../app-assets/map/js/map.js"></script>
+    <script src="../assets/js/scripts.js"></script>
+    <script>
+        svgturkiyeharitasi();
+    </script>
+    <script src="../app-assets/js/scripts/pages/page-account-settings.js"></script>
+    <!-- END: Page JS-->
+
+
+  <!-- BEGIN: Page JS-->
+  <script src="../app-assets/js/scripts/extensions/dropzone.js"></script>
+  <!-- END: Page JS-->
+
+
+  
+
+    <!-- BEGIN: Page Vendor JS-->
+    <script src="../app-assets/vendors/js/file-uploaders/dropzone.min.js"></script>
+    <script src="../app-assets/vendors/js/ui/prism.min.js"></script>
+    <!-- END: Page Vendor JS-->
+
+    
+
+
+
+
+
+
+
+    <style>
+        #dashboard-users .badge-circle.badge-circle-lg {
+            width: 30px;
+            height: 30px;
+            flex: 0 0 30px;
+        }
+
+        #dashboard-users .badge-circle.badge-circle-lg img {
+            height: 21px;
+            object-fit: cover;
+        }
+
+        .dashboard-users .card-body {
+            margin-bottom: 10px;
+        }
+
+        .title-p {
+            text-align: center;
+            margin-bottom: 5px !important;
+            font-size: 20px;
+        }
+
+        .takip-no {
+            text-align: center;
+            color: #36c6f4 !important;
+            font-weight: bold;
+        }
+
+        .dashboard-users .card-body .line-ellipsis {
+            margin-bottom: 7px;
+        }
+
+        .nav>li>a:focus,
+        .nav>li>a:hover {
+            background: transparent !important;
+        }
+
+        .design-process-section .text-align-center {
+            line-height: 25px;
+            margin-bottom: 12px;
+        }
+
+        .design-process-content {
+            border: 1px solid #e9e9e9;
+            position: relative;
+            padding: 16px 34% 30px 30px;
+        }
+
+        .design-process-content img {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 0;
+            max-height: 100%;
+        }
+
+        .design-process-content h3 {
+            margin-bottom: 16px;
+        }
+
+        .design-process-content p {
+            line-height: 26px;
+            margin-bottom: 12px;
+        }
+
+        .process-model {
+            overflow: hidden;
+            justify-content: center;
+            list-style: none;
+            padding: 0;
+            position: relative;
+            max-width: 800px;
+            margin: 20px auto 26px;
+            border: none;
+            z-index: 0;
+        }
+
+        body.dark-layout .process-model li::after {
+            background: #36c5f4 none repeat scroll 0 0;
+        }
+
+        .process-model li::after {
+            background: #dadada none repeat scroll 0 0;
+            bottom: 0;
+            content: "";
+            display: block;
+            height: 4px;
+            margin: 0 auto;
+            position: absolute;
+            top: 33px;
+            width: 100%;
+            right: 0;
+            z-index: -1;
+        }
+
+        .process-model li.visited::after {
+            background: #D6DA28;
+        }
+
+        .process-model li:last-child::after {
+            width: 0;
+        }
+
+        .process-model li {
+            display: inline-block;
+            width: 25%;
+            text-align: center;
+            float: none;
+        }
+
+        .nav-tabs.process-model>li.active>a,
+        .nav-tabs.process-model>li.active>a:hover,
+        .nav-tabs.process-model>li.active>a:focus,
+        .process-model li a:hover,
+        .process-model li a:focus {
+            border: none;
+            background: transparent;
+
+        }
+
+        .process-model li a {
+            padding: 0;
+            border: none;
+            color: #606060;
+        }
+
+        .process-model li.active,
+        .process-model li.visited {
+            color: #D6DA28;
+        }
+
+        .process-model li.active a,
+        .process-model li.active a:hover,
+        .process-model li.active a:focus,
+        .process-model li.visited a,
+        .process-model li.visited a:hover,
+        .process-model li.visited a:focus {
+            color: #D6DA28;
+        }
+
+        .process-model li.active p,
+        .process-model li.visited p {
+            font-weight: 600;
+            color: #1f3767;
+        }
+
+        body.dark-layout .process-model li.active p,
+        body.dark-layout .process-model li.visited p {
+            font-weight: 600;
+            color: #36c6f4;
+        }
+
+        body.dark-layout .process-model li span {
+            background: #272e48;
+        }
+
+        .process-model li span {
+            display: flex !important;
+            align-items: center;
+            justify-content: center;
+            padding: 0;
+        }
+
+        .process-model li span img {
+            height: 30px;
+            object-fit: contain;
+        }
+
+        body.dark-layout .process-model li span img {
+            filter: brightness(0) invert(1);
+        }
+
+        body.dark-layout .process-model li span svg {
+            filter: none;
+        }
+
+        .process-model li span svg {
+            filter: invert(0%) sepia(14%) saturate(12%) hue-rotate(236deg) brightness(107%) contrast(100%);
+        }
+
+        body.dark-layout .process-model li span {
+            border: 3px solid #36c5f4;
+            color: #36c6f4;
+        }
+
+        .process-model li span {
+            border: 3px solid #dadada;
+            color: #dadada;
+            display: block;
+            height: 68px;
+            width: 68px;
+            text-align: center;
+            background: #f2f4f4;
+            margin: 0 auto;
+            line-height: 65px;
+            font-size: 30px;
+            border-radius: 50%;
+        }
+
+        body.dark-layout .process-model li.active span,
+        .process-model li.visited span {
+            border-color: #36c5f4;
+            color: #36c5f4;
+        }
+
+        .process-model li.active span,
+        .process-model li.visited span {
+            border-color: #1f3767;
+            color: #1f3767;
+        }
+
+        .process-model li p {
+            font-size: 14px;
+            margin-top: 11px;
+        }
+
+        .process-model li p b {
+            display: block;
+            margin-top: 8px;
+        }
+
+        .process-model.contact-us-tab li.visited a,
+        .process-model.contact-us-tab li.visited p {
+            color: #606060 !important;
+            font-weight: normal
+        }
+
+        .process-model.contact-us-tab li::after {
+            display: none;
+        }
+
+        .process-model.contact-us-tab li.visited i {
+            border-color: #e5e5e5;
+        }
+
+
+
+        @media screen and (max-width: 560px) {
+            .more-icon-preocess.process-model li span {
+                font-size: 23px;
+                height: 50px;
+                line-height: 46px;
+                width: 50px;
+            }
+
+            .more-icon-preocess.process-model li::after {
+                top: 24px;
+            }
+        }
+
+        @media screen and (max-width: 380px) {
+            .process-model.more-icon-preocess li {
+                width: 16%;
+            }
+
+            .more-icon-preocess.process-model li span {
+                font-size: 16px;
+                height: 35px;
+                line-height: 32px;
+                width: 35px;
+            }
+
+            .more-icon-preocess.process-model li p {
+                font-size: 8px;
+            }
+
+            .more-icon-preocess.process-model li::after {
+                top: 18px;
+            }
+
+            .process-model.more-icon-preocess {
+                text-align: center;
+            }
+        }
+
+        .table-footer a {
+            color: #36c5f4;
+        }
+
+        .table-footer {
+            text-align: center;
+        }
+
+        .iconBox span {
+            padding: 8px;
+        }
+
+        .iconBox span i div {
+            display: flex;
+        }
+
+        .small {
+            font-size: 76%;
+        }
+
+        .table-responsive {
+            overflow-x: hidden;
+        }
+
+        .status {
+            font-size: 13px !important;
+        }
+
+        #table-marketing-campaigns td {
+            padding-bottom: 0;
+        }
+
+        .title-h3 {
+            text-align: center;
+            margin-bottom: 5px !important;
+            font-size: 14px !important;
+        }
+    </style>
+
+</body>
+<!-- END: Body-->
+
+</html>
