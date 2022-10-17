@@ -509,5 +509,6 @@ div#users-list-datatable_wrapper > .row {
 }
 
 .left_border {
-  border-left: 10px solid #39da8a;
+  border: 16px solid #fff;
+  padding: 12px;
 }

@@ -1,20 +1,19 @@
 <!DOCTYPE html>
-<html class="loading" lang="en" data-textdirection="ltr">
-<!-- BEGIN: Head-->
+<html class="loading" lang="tr" data-textdirection="ltr">
+
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
-    <title>We Lokal- Yönetim Paneli</title>
-    <link rel="apple-touch-icon" href="app-assets/images/ico/apple-icon-120.png">
+    <title>Raporlar - Yoldaki Siparişler Raporu</title>
     <link rel="shortcut icon" type="image/x-icon" href="app-assets/images/favicon.jpeg">
-    <link href="https://fonts.googleapis.com/css?family=Rubik:300,400,500,600%7CIBM+Plex+Sans:300,400,500,600,700"
-        rel="stylesheet">
+
     <!-- BEGIN: Vendor CSS-->
     <link rel="stylesheet" type="text/css" href="app-assets/vendors/css/vendors.min.css">
     <link rel="stylesheet" type="text/css" href="app-assets/vendors/css/charts/apexcharts.css">
     <link rel="stylesheet" type="text/css" href="app-assets/vendors/css/extensions/swiper.min.css">
     <!-- END: Vendor CSS-->
+
     <!-- BEGIN: Theme CSS-->
     <link rel="stylesheet" type="text/css" href="app-assets/css/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="app-assets/css/bootstrap-extended.css">
@@ -22,81 +21,36 @@
     <link rel="stylesheet" type="text/css" href="app-assets/css/components.css">
     <link rel="stylesheet" type="text/css" href="app-assets/css/themes/dark-layout.css">
     <link rel="stylesheet" type="text/css" href="app-assets/css/themes/semi-dark-layout.css">
-    <link rel="stylesheet" type="text/css" href="app-assets/map/css/style.css">
     <!-- END: Theme CSS-->
+
     <!-- BEGIN: Page CSS-->
     <link rel="stylesheet" type="text/css" href="app-assets/css/core/menu/menu-types/vertical-menu.css">
     <link rel="stylesheet" type="text/css" href="app-assets/css/pages/dashboard-ecommerce.css">
     <!-- END: Page CSS-->
+
     <!-- BEGIN: Custom CSS-->
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
     <!-- END: Custom CSS-->
-    <link rel="stylesheet" href="assets/map/demo.css">
+
+    <link rel="stylesheet" type="text/css" href="app-assets/vendors/css/forms/select/select2.min.css">
+    <link rel="stylesheet" type="text/css" href="app-assets/vendors/css/tables/datatable/dataTables.bootstrap4.min.css">
+    <link rel="stylesheet" type="text/css" href="app-assets/vendors/css/tables/datatable/responsive.bootstrap4.min.css">
+    <link rel="stylesheet" type="text/css" href="app-assets/vendors/css/tables/datatable/buttons.bootstrap4.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.4.1/css/buttons.dataTables.min.css">
     <link rel="stylesheet" href="assets/css/costum.css">
-    <style>
-        .sup {
-            color: red;
-        }
-        #profile_con {
-            display: flex;
-        }
-        .tiles {
-            background-color: #fff;
-            min-height: 240px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            width: 80%;
-            margin: 50px 0;
-            padding: 20px;
-        }
-        .tiles>h3 {
-            margin-top: 20px;
-        }
-        #viewtheming{
-            list-style: none;
-            padding: 0;
-        }
-        #viewtheming > li{
-            margin: 5px 0;
-        }
-        #viewtheming > li > label{
-            min-width: 170px;
-        }
-        #price_search{
-            margin: 20px 0;
-            list-style: none;
-            padding: 0;
-        }
-        #price_search li{
-            display: flex;
-            justify-content: space-between;
-            margin: 5px 0;
-            padding: 0 5px;
-            min-height: 30px;
-            align-items: center;
-        }
-        #price_search li:nth-child(odd){
-            background-color: #f1f1f1;
-        }
-        #price_search li span{
-            font-size: 14px;
-        }
-        sup{
-            color: red;
-        }
-        .co2-info{
-            font-size: 30px;
-            font-style: italic;
-            color: lightseagreen;
-        }
-        
-    </style>
+
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.12.1/css/dataTables.bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.3.0/css/responsive.bootstrap.min.css">
+
 </head>
 <!-- END: Head-->
+
 <!-- BEGIN: Body-->
-<body class="vertical-layout vertical-menu-modern dark-layout 2-columns  navbar-sticky footer-static" data-open="click"
-    data-menu="vertical-menu-modern" data-col="2-columns" data-layout="dark-layout">
-    <div id="loader" style="height: 100vh; position: fixed; inset: 0;">
+
+<body class="vertical-layout vertical-menu-modern dark-layout 2-columns  navbar-sticky footer-static  "
+    data-open="click" data-menu="vertical-menu-modern" data-col="2-columns" data-layout="dark-layout">
+
+    <div id="loader">
         <div class="boxes">
             <div class="box">
                 <div></div>
@@ -125,12 +79,14 @@
         </div>
     </div>
     <div data-include="header"></div>
+
     <!-- BEGIN: Main Menu-->
     <div class="main-menu menu-fixed menu-dark menu-accordion menu-shadow" data-scroll-to-active="true">
         <div class="navbar-header">
             <ul class="nav navbar-nav flex-row">
                 <li class="nav-item mr-auto">
                     <a class="navbar-brand" href="dashboard.html">
+
                         <h2 class="brand-text mb-0"><img style="margin-top: 9px" height="45"
                                 src="app-assets/images/logo-dark.png" alt=""></h2>
                     </a>
@@ -139,25 +95,65 @@
                             class="bx bx-x d-block d-xl-none font-medium-4 primary"></i><i
                             class="toggle-icon bx bx-disc font-medium-4 d-none d-xl-block primary"
                             data-ticon="bx-disc"></i></a></li>
+
             </ul>
         </div>
         <div class="shadow-bottom"></div>
+
         <style>
             .main-menu-content ul>li {
                 margin-top: 5px !important;
+            }
+
+            .label-con {
+                min-width: 500px;
+                min-height: 670px;
+                border: 1px solid #ccc;
+                margin: 30px auto;
+                border-radius: 5px;
+                padding: 5px;
+            }
+            .label-top{
+                display: flex;
+                align-items: center;
+                border-bottom: 1px solid #ddd;
+            }
+            .label-rows > div, .label-center-rows > div{
+                display: flex
+            }
+            .label-rows > div > span{
+                display: flex;
+                align-items: center;
+                width: 50%;
+                height: 30px;
+                padding-left: 5px;
+                margin: 1px 0;
+            }
+            .label-center-rows > div > span{
+                display: flex;
+                align-items: center;
+                width: 50%;
+                height: 30px;
+                padding-left: 5px;
+                margin: 1px 0;
+                border-bottom: 1px solid #f1f1f1;
+            }
+            .label-title{
+                margin: 5px;
+                padding: 8px 0;
+                border-top: 1px solid #ddd;
             }
         </style>
         <div class="main-menu-content">
             <ul class="navigation navigation-main" id="main-menu-navigation" data-menu="menu-navigation"
                 data-icon-style="lines">
-                <li class="active nav-item"><a href="dashboard.html"><i class="menu-livicon" data-icon="home"></i><span
+                <li class=" nav-item"><a href="dashboard.html"><i class="menu-livicon" data-icon="home"></i><span
                             class="menu-title text-truncate" data-i18n="Anasayfa">Anasayfa</span></a>
                 </li>
-              
                 <li class=" nav-item"><a href="book.html"><i class="menu-livicon" data-icon="map"></i><span
                             class="menu-title text-truncate" data-i18n="Book">Book</span></a>
                 </li>
-                <li class=" nav-item"><a href="job-board.html"><i class="menu-livicon" data-icon="list"></i><span
+                <li class="active nav-item"><a href="job-board.html"><i class="menu-livicon" data-icon="list"></i><span
                             class="menu-title text-truncate" data-i18n="Job Board">Job Board</span></a>
                 </li>
 
@@ -168,24 +164,19 @@
                             class="menu-item text-truncate" data-i18n="Şikayetler">Şikayetler</span></a>
                 </li>
 
-                <li class="nav-item"><a href="billing.html"><i class="menu-livicon" data-icon="calculator"></i><span
+                <li class=" nav-item"><a href="fatura.html"><i class="menu-livicon" data-icon="calculator"></i><span
                             class="menu-title text-truncate" data-i18n="Dağıtım Bilgileri">Fatura Bilgileri</span></a>
                 </li>
-                <li class="nav-item">
-                    <a href="favorites.html"
-                      ><i class="menu-livicon" data-icon="star"></i
-                      ><span class="menu-title text-truncate" data-i18n="Favoriler"
-                        >Favoriler</span
-                      ></a
-                    >
-                  </li>
+                <li class=" nav-item"><a href="favorites.html"><i class="menu-livicon" data-icon="star"></i><span
+                    class="menu-title text-truncate" data-i18n="Favoriler">Favoriler</span></a>
+        </li>
                 <li class=" nav-item"><a href="profile.html"><i class="menu-livicon" data-icon="user"></i><span
                             class="menu-title text-truncate" data-i18n="Profil">Profil</span></a>
                 </li>
                 <li class="nav-item">
                     <a href="team.html"
                       ><i class="menu-livicon" data-icon="users"></i
-                      ><span class="menu-title text-truncate" data-i18n="Team"
+                      ><span class="menu-title text-truncate" data-i18n="Profil"
                         >Team</span
                       ></a
                     >
@@ -194,16 +185,17 @@
                             class="menu-title text-truncate" data-i18n="Tanımlamalar">Tanımlamalar</span></a>
                 </li>
                 <li class=" nav-item"><a href="co2.html"><i class="menu-livicon" data-icon="adjust"></i><span
-                    class="menu-title text-truncate" data-i18n="co2">CO2</span></a>
+                            class="menu-title text-truncate" data-i18n="co2">CO2</span></a>
                 </li>
                 <li class=" nav-item"><a href="help.html"><i class="menu-livicon" data-icon="help"></i><span
                             class="menu-title text-truncate" data-i18n="Tanımlamalar">Help</span></a>
                 </li>
-                
+
             </ul>
         </div>
     </div>
     <!-- END: Main Menu-->
+
     <!-- BEGIN: Content-->
     <div class="app-content content">
         <div class="content-overlay"></div>
@@ -213,24 +205,109 @@
                     <div class="breadcrumbs-top">
                         <div class="breadcrumb-wrapper d-none d-sm-block">
                             <ol class="breadcrumb p-0 mb-0">
-                                <li class="breadcrumb-item"><a href="../dashboard.html"><i
-                                            class="bx bx-home-alt"></i></a>
+                                <li class="breadcrumb-item"><a href="dashboard.html"><i class="bx bx-home-alt"></i></a>
                                 </li>
-                                <li class="breadcrumb-item">Label page</li>
+                                <li class="breadcrumb-item">Label Informarion
+                                </li>
                             </ol>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="content-body">
-                <!-- users edit start -->
-                
-                   <h3>Label Page</h3>                                 
-                <!-- users edit ends -->
+                <!-- Zero configuration table -->
+                <section id="basic-datatable">
+                    <div class="row">
+                        <div class="col-12 text-align-center">
+                            <div class="card">
+                                <div class="col-12 col-lg-12 mt-2 text-center"><button class="btn btn-primary">Print Label</button></div>
+                                <div class="label-con">
+                                    <div class="label-top">
+                                        <div class="col-4 col-lg-5">Order NO#0948393</div>
+                                        <div class="col-4 col-lg-4"><img src="./img/Barcodes-icon.png" alt=""></div>
+                                        <div class="col-4 col-lg-3">00/00/00</div>
+                                    </div>
+                                    <div class="label-rows">
+                                        <div>
+                                            <span>Paymetn Type</span>
+                                            <span>Credit Card</span>
+                                        </div>
+                                        <div>
+                                            <span>Payment Amount</span>
+                                            <span>$300</span>
+                                        </div>
+                                    </div>
+                                    <h3 class="label-title">Receiver Infor</h4>
+                                        <div class="label-center-rows">
+                                            <div>
+                                                <span>Fullname</span>
+                                                <span>Jhon Doe</span>
+                                            </div>
+                                            <div>
+                                                <span>Phone</span>
+                                                <span>009055454545</span>
+                                            </div>
+                                            <div>
+                                                <span>Address</span>
+                                                <span>Some Address</span>
+                                            </div>
+                                            <div>
+                                                <span>E-Mail</span>
+                                                <span>Jhon@doe.com</span>
+                                            </div>
+                                            <div>
+                                                <span>City</span>
+                                                <span>London</span>
+                                            </div>
+                                            <div>
+                                                <span>Country</span>
+                                                <span>Englend</span>
+                                            </div>
+                                        </div>
+                                        <h3 class="label-title">Sender Info</h3>
+                                        <div class="label-center-rows">
+                                            <div>
+                                                <span>Company</span>
+                                                <span>Limonist Arge</span>
+                                            </div>
+                                            <div>
+                                                <span>Phone</span>
+                                                <span>006565656565 Doe</span>
+                                            </div>
+                                            <div>
+                                                <span>Fax</span>
+                                                <span>009898999</span>
+                                            </div>
+                                            <div>
+                                                <span>E-Mail</span>
+                                                <span>Jhon@Doe.com</span>
+                                            </div>
+                                        </div>
+                                        <div class="label-rows">
+                                            <div>
+                                                <span>Stock Code</span>
+                                                <span>33332</span>
+                                            </div>
+                                            <div>
+                                                <span>Product Name</span>
+                                                <span>Software</span>
+                                            </div>
+                                            <div>
+                                                <span>Product Count</span>
+                                                <span>2</span>
+                                            </div>
+                                        </div>
+                                </div>
+                            </div>
+                        </div>
+                </section>
+                <!--/ Zero configuration table -->
+
             </div>
         </div>
     </div>
     <!-- END: Content-->
+
     <!-- demo chat-->
     <div class="widget-chat-demo">
         <!-- widget chat demo footer button start -->
@@ -327,130 +404,36 @@
                 </div>
             </div>
         </div>
+
+
     </div>
+
     <div class="sidenav-overlay"></div>
     <div class="drag-target"></div>
-    <div class="modal fade" id="modal_id" tabindex="-1" role="dialog" aria-labelledby="modal_name_label"
-        aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h4 class="modal-title" id="modal_name_label">
-                        Modal Başlık
-                    </h4>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <i class="bx bx-x"></i>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <section id="basic-datatable">
-                        <div class="filters-list-filter px-1">
-                        </div>
-                        <div class="row">
-                            <div class="col-12">
-                                <div class="card">
-                                    <div class="card-body card-dashboard pt-0">
-                                        <div class="table-responsive">
-                                            <table id="example" class="table" data-searching="false">
-                                                <thead class="tableThead">
-                                                    <tr>
-                                                        <th>Kodu</th>
-                                                        <th>#</th>
-                                                        <th>#</th>
-                                                        <th>#</th>
-                                                        <th>Toplam Sipariş</th>
-                                                        <th>Toplam Ağırlık</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody class="tableText">
-                                                    <tr>
-                                                        <td>CRM30027</td>
-                                                        <td>#</td>
-                                                        <td>#</td>
-                                                        <td>#</td>
-                                                        <td>300</td>
-                                                        <td>350 kg.</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>CRM30027</td>
-                                                        <td>#</td>
-                                                        <td>#</td>
-                                                        <td>#</td>
-                                                        <td>300</td>
-                                                        <td>350 kg.</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>CRM30027</td>
-                                                        <td>#</td>
-                                                        <td>#</td>
-                                                        <td>#</td>
-                                                        <td>300</td>
-                                                        <td>350 kg.</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>CRM30027</td>
-                                                        <td>#</td>
-                                                        <td>#</td>
-                                                        <td>#</td>
-                                                        <td>300</td>
-                                                        <td>350 kg.</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>CRM30027</td>
-                                                        <td>#</td>
-                                                        <td>#</td>
-                                                        <td>#</td>
-                                                        <td>300</td>
-                                                        <td>350 kg.</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>CRM30027</td>
-                                                        <td>#</td>
-                                                        <td>#</td>
-                                                        <td>#</td>
-                                                        <td>300</td>
-                                                        <td>350 kg.</td>
-                                                    </tr>
-                                                </tbody>
-                                                <tfoot>
-                                                    <tr>
-                                                        <th>Kodu</th>
-                                                        <th>#</th>
-                                                        <th>#</th>
-                                                        <th>#</th>
-                                                        <th>Toplam Sipariş</th>
-                                                        <th>Toplam Ağırlık</th>
-                                                    </tr>
-                                                </tfoot>
-                                            </table>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </section>
-                </div>
-                <div class="modal-footer mt-2">
-                    <button type="button" class="btn btn-light-secondary mr-1 mb-1" data-dismiss="modal">
-                        Kapat
-                    </button>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- BEGIN: Footer-->
+
     <div data-include="footer"></div>
-    <!-- END: Footer-->
+
+
+
     <!-- BEGIN: Vendor JS-->
     <script src="app-assets/vendors/js/vendors.min.js"></script>
     <script src="app-assets/fonts/LivIconsEvo/js/LivIconsEvo.tools.js"></script>
     <script src="app-assets/fonts/LivIconsEvo/js/LivIconsEvo.defaults.js"></script>
     <script src="app-assets/fonts/LivIconsEvo/js/LivIconsEvo.min.js"></script>
     <!-- BEGIN Vendor JS-->
+
     <!-- BEGIN: Page Vendor JS-->
-    <script src="app-assets/vendors/js/charts/apexcharts.min.js"></script>
-    <script src="app-assets/vendors/js/extensions/swiper.min.js"></script>
+    <script src="app-assets/vendors/js/tables/datatable/jquery.dataTables.min.js"></script>
+    <script src="app-assets/vendors/js/tables/datatable/dataTables.bootstrap4.min.js"></script>
+    <script src="app-assets/vendors/js/tables/datatable/dataTables.buttons.min.js"></script>
+    <script src="app-assets/vendors/js/tables/datatable/buttons.html5.min.js"></script>
+    <script src="app-assets/vendors/js/tables/datatable/buttons.print.min.js"></script>
+    <script src="app-assets/vendors/js/tables/datatable/buttons.bootstrap4.min.js"></script>
+    <script src="app-assets/vendors/js/tables/datatable/pdfmake.min.js"></script>
+    <script src="app-assets/vendors/js/tables/datatable/vfs_fonts.js"></script>
+    <script src="app-assets/vendors/js/forms/select/select2.full.min.js"></script>
     <!-- END: Page Vendor JS-->
+
     <!-- BEGIN: Theme JS-->
     <script src="app-assets/js/scripts/configs/vertical-menu-dark.js"></script>
     <script src="app-assets/js/core/app-menu.js"></script>
@@ -458,31 +441,35 @@
     <script src="app-assets/js/scripts/components.js"></script>
     <script src="app-assets/js/scripts/footer.js"></script>
     <!-- END: Theme JS-->
+
     <!-- BEGIN: Page JS-->
-    <script src="app-assets/js/scripts/pages/dashboard-ecommerce.js"></script>
-    <script src="app-assets/map/js/map.js"></script>
+    <script src="app-assets/js/scripts/datatables/datatable.js"></script>
+    <script src="app-assets/js/scripts/forms/select/form-select2.js"></script>
     <script src="assets/js/scripts.js"></script>
-    <script>
-        svgturkiyeharitasi();
-    </script>
-    <script src="assets/map/ammap.js"></script>
-    <script src="assets/map/dark.js"></script>
-    <script>
-        AmCharts.makeChart("chartdiv", {
-            "type": "map",
-            "theme": "dark",
-            "dataProvider": {
-                "mapURL": "https://www.amcharts.com/lib/3/maps/svg/unitedKingdomHigh.svg",
-                "getAreasFromMap": true
-            },
-            "areasSettings": {
-                "autoZoom": true,
-                "selectedColor": "#CC0000"
-            }
-        });
-      
-    </script>
     <!-- END: Page JS-->
+
+    <script>
+        $(document).ready(function () {
+            $('#users-list-datatable').DataTable(
+                {
+                    "searching": false,
+                    "paging": false,
+                    "info": false
+                }
+            );
+        });
+
+
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.12.1/js/dataTables.bootstrap.min.js"></script>
+    <script src="https://cdn.datatables.net/responsive/2.3.0/js/dataTables.responsive.min.js"></script>
+    <script src="https://cdn.datatables.net/responsive/2.3.0/js/responsive.bootstrap.min.js"></script>
+
+
 </body>
 <!-- END: Body-->
+
 </html>
