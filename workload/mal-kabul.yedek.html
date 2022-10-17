@@ -110,12 +110,13 @@
             <li class=" nav-item"><a href="dashboard.html"><i class="menu-livicon" data-icon="home"></i><span
                     class="menu-title text-truncate" data-i18n="Anasayfa">Anasayfa</span></a>
             </li>
+
             <li class=" nav-item"><a href="rota.html"><i class="menu-livicon" data-icon="compass"></i><span
                     class="menu-title text-truncate" data-i18n="Rota Yönetimi">Rota Yönetimi</span></a>
             </li>
-            <li class="open nav-item"><a href="#"><i class="menu-livicon" data-icon="truck"></i><span
+            <li class=" nav-item"><a href="#"><i class="menu-livicon" data-icon="truck"></i><span
                     class="menu-title text-truncate" data-i18n="Depo Yönetimi">Depo Yönetimi</span></a>
-                <ul class="menu-content">
+                <ul class="open menu-content">
                     <li class="">
                         <a class="d-flex align-items-center" href="operasyon.html"
                           ><i class="bx bx-right-arrow-alt"></i
@@ -126,7 +127,7 @@
                           ></a
                         >
                       </li>
-                    <li class=""><a class="d-flex align-items-center" href="mal-kabul.html"><i
+                    <li class="active"><a class="d-flex align-items-center" href="mal-kabul.html"><i
                             class="bx bx-right-arrow-alt"></i><span class="menu-item text-truncate"
                                                                     data-i18n="Depo Ürün Kabul">Depo Ürün Kabul</span></a>
                     </li>
@@ -134,7 +135,7 @@
                             class="bx bx-right-arrow-alt"></i><span class="menu-item text-truncate"
                                                                     data-i18n="Depo Ürün Kabul">Ürünü Kuryeye Ata</span></a>
                     </li>
-                    <li class="active"><a class="d-flex align-items-center" href="depo-sevkiyat.html"><i
+                    <li><a class="d-flex align-items-center" href="depo-sevkiyat.html"><i
                             class="bx bx-right-arrow-alt"></i><span class="menu-item text-truncate"
                                                                     data-i18n="Depo Sevkiyat">Depo Sevkiyat</span></a>
                     </li>
@@ -224,7 +225,7 @@
 
             <li class="nav-item"><a href="#"><i class="menu-livicon" data-icon="notebook"></i><span
                     class="menu-title text-truncate" data-i18n="Ceza Promosyon İşlemleri">Ceza Promosyon İşlemleri</span></a>
-                <ul class="menu-content open">
+                <ul class="menu-content ">
                     <li><a class="d-flex align-items-center" href="../custom/tanimlama.html"><i
                             class="bx bx-right-arrow-alt"></i><span class="menu-item text-truncate"
                                                                     data-i18n="Tanımlama">Tanımlama</span></a>
@@ -290,7 +291,7 @@
                         <ol class="breadcrumb p-0 mb-0">
                             <li class="breadcrumb-item"><a href="dashboard.html"><i class="bx bx-home-alt"></i></a>
                             </li>
-                            <li class="breadcrumb-item">Depo Sevkiyat
+                            <li class="breadcrumb-item">Depo Ürün Kabul
                             </li>
                         </ol>
                     </div>
@@ -303,7 +304,7 @@
                 <div class="users-list-filter px-1">
                     <form>
                         <div class="row border rounded py-2 mb-2">
-                            <div class="col-12 col-sm-6 col-lg-3">
+                            <div class="col-12 col-sm-6 col-lg-4">
                                 <label for="users-list-verified">Gönderi Kodu</label>
                                 <fieldset class="form-group position-relative has-icon-left">
                                     <input type="text" class="form-control " placeholder="Gönderi Kodu">
@@ -312,23 +313,23 @@
                                     </div>
                                 </fieldset>
                             </div>
-                            <div class="col-12 col-sm-6 col-lg-3">
+                            <div class="col-12 col-sm-6 col-lg-2">
 
 
 
-                                <label for="filters-list-status4">Gönderi Tipi</label>
-                                <select data-placeholder="Gönderi Tipi" id="aracTipi" class="select2-icons form-control select2-hidden-accessible" data-select2-id="aracTipi" tabindex="-1" aria-hidden="true">
-                                    <option value="adana" selected="" data-select2-id="2">Koli</option>
-                                    <option value="istanbul">Torba</option>
-                                    <option value="nigde">Diğer</option>
+                                    <label for="filters-list-status4">Gönderi Tipi</label>
+                                    <select data-placeholder="Gönderi Tipi" id="aracTipi" class="select2-icons form-control select2-hidden-accessible" data-select2-id="aracTipi" tabindex="-1" aria-hidden="true">
+                                        <option value="adana" selected="" data-select2-id="2">Koli</option>
+                                        <option value="istanbul">Torba</option>
+                                        <option value="nigde">Diğer</option>
 
 
-                                </select>
+                                    </select>
 
 
 
                             </div>
-                            <div class="col-12 col-sm-6 col-lg-3">
+                            <div class="col-12 col-sm-6 col-lg-2">
                                 <label for="filters-list-status4">Sevkiyat Şehir</label>
                                 <select data-placeholder="İller" id="aracTipi" class="select2-icons form-control select2-hidden-accessible" data-select2-id="aracTipi" tabindex="-1" aria-hidden="true">
                                     <option value="adana" selected="" data-select2-id="2">Adana</option>
@@ -338,9 +339,17 @@
 
                                 </select>
                             </div>
-                            <div class="col-12 col-sm-6 col-lg-3 d-flex align-items-center">
+                            <div class="col-12 col-sm-6 col-lg-2 d-flex align-items-center">
                                 <button type="reset"
                                         class="btn btn-primary btn-block glow users-list-clear mb-0">Ara</button>
+
+
+                            </div>
+                            <div class="col-12 col-sm-6 col-lg-2 d-flex align-items-center">
+                                <button type="reset"
+                                        class="btn btn-info btn-block glow users-list-clear mb-0">Yazdır</button>
+
+
                             </div>
                         </div>
                     </form>
@@ -348,25 +357,6 @@
                 <div class="users-list-table">
                     <div class="card">
                         <div class="card-body">
-                            <label for="filters-list-status2">Sevk Edileceği Birim <span class="text-danger">*</span></label>
-                            <div class="row">
-
-                                <div class="col-lg-6">
-                                    <div class="form-group">
-
-                                        <select data-placeholder="Başlangıç Noktası" id="filters-list-status5" class="select2-icons form-control" tabindex="0" aria-hidden="false">
-                                            <option value="1" selected="">Sevk Yerini Seçiniz</option>
-                                            <option value="2">Adana Sevk</option>
-                                            <option value="3">Londra Sevk</option>
-
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="col-lg-6">
-                                    <a class="btn btn-primary  glow users-list-clear mb-0"  href=""><i class="fa-solid fa-user-plus"></i> Sevket</a>
-                                </div>
-                            </div>
-
 
                             <!-- datatable start -->
                             <div class="table-responsive">
@@ -379,13 +369,6 @@
                                                    role="grid" aria-describedby="users-list-datatable_info">
                                                 <thead>
                                                 <tr role="row">
-                                                    <th class="sorting_asc" tabindex="0"
-                                                        aria-controls="users-list-datatable" rowspan="1"
-                                                        colspan="1" aria-sort="ascending"
-                                                        aria-label="id: activate to sort column descending"
-                                                        >Seç
-
-                                                    </th>
                                                     <th class="sorting_asc" tabindex="0"
                                                         aria-controls="users-list-datatable" rowspan="1"
                                                         colspan="1" aria-sort="ascending"
@@ -410,7 +393,11 @@
 
 
 
-
+                                                    <th class="sorting" tabindex="0"
+                                                        aria-controls="users-list-datatable" rowspan="1"
+                                                        colspan="1"
+                                                        aria-label="role: activate to sort column ascending"
+                                                        style="width: 200px;">Durum</th>
 
                                                     <th class="sorting" tabindex="0"
                                                         aria-controls="users-list-datatable" rowspan="1"
@@ -418,23 +405,40 @@
                                                         aria-label="status: activate to sort column ascending"
                                                         style="width: 163.859px;">Teslim Alan</th>
 
-
+                                                    <th class="sorting_disabled" rowspan="1" colspan="1"
+                                                        aria-label="edit" style="width: 83.4531px;">İşlemler</th>
                                                 </tr>
                                                 </thead>
                                                 <tbody>
 
                                                 <tr role="row" class="odd">
-                                                   <td> <input type="checkbox" class="form-control" name="" id=""></td>
                                                     <td class="sorting_1">2999123192314</td>
                                                     <td>Koli</td>
                                                     <td>Adana We Lokal</td>
                                                     <td>Hasan Soner</td>
+                                                    <td>
+                                                        <div class="badge badge-light-seccondary d-inline-flex align-items-center">
 
+
+                                                            <span>Teslim Edildi </span>
+
+                                                        </div>
 
 
 
                                                     <td>Adana Şubesi
                                                     </td>
+
+                                                    <td>
+                                                        <div class="d-flex justify-content-center">
+                                                            <a href="siparis-bilgileri-incele.html" class="btn btn-sm btn-outline-info mr-1">İncele</a>
+
+                                                        </div>
+
+
+
+                                                    </td>
+
 
 
 
