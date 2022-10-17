@@ -507,3 +507,7 @@ div#users-list-datatable_wrapper > .row {
 .modal_height {
   min-height: 900px !important;
 }
+
+.left_border {
+  border-left: 10px solid #39da8a;
+}
