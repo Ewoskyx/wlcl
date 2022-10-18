@@ -174,3 +174,16 @@ WE WILL RELEASE FUTURE UPDATES SO IN ORDER TO NOT OVERWRITE YOUR STYLES IT'S BET
 .marginInherit{
     margin-bottom: inherit;
 }
+
+.nav-tabs .nav-link.active, .nav-tabs .nav-item.show .nav-link{
+    background-color: #e427bd;
+}
+.btn-primary{
+    background-color: #e427bd !important;
+}
+.bg-success{
+    background-color: #46ad48 !important;
+}
+.badge-success{
+    background-color: #46ad48 !important;
+}
