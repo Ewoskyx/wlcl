@@ -73,6 +73,20 @@
             position: absolute;
             left:10.05%;
         }
+
+        .content-body {
+            position:relative !important;
+        }
+
+        .kurye_modal {
+            position: absolute;
+            left:30%;
+            top:20%;
+            background-color: #fff;
+            box-shadow: 2px 2px 2px 2px rgba(0,0,0,0.3);
+            padding:24px 12px;
+            border-radius: 12px;
+        }
     </style>
 </head>
 <!-- END: Head-->
@@ -503,7 +517,9 @@
                 <a href="mal-kabul.html" class="btn btn-primary">Tamamlandı</a>
             </div>
             <!-- Order Return End-->
-
+            <div class="col-12 d-flex w-100 justify-content-end mt-3">
+                <button id="kurye_btn" class="btn btn-primary" disabled>Kurye Ata</button>
+            </div>
             <!-- Order TABLE Start-->
             <section id="warehouse_table" class="col-12">
                 <div class="col-12 mt-5 text-center" style="border-top:1px solid gray;">
@@ -555,6 +571,7 @@
                                 <table id="table-extended-transactions" class="table mb-0">
                                     <thead>
                                         <tr>
+                                            <th></th>
                                             <th>Sipariş No</th>
                                             <th>B2B Firması</th>
                                             <th>Teslim Tarihi/Saati</th>
@@ -563,11 +580,19 @@
                                             <th>Zone</th>
                                             <th>Depo Giriş Tarihi</th>
                                             <th>Sipariş Türü</th>
-                                            <th>Atanan Kurye</th>
+                                            
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <tr>
+                                            <td>
+                                                <fieldset>
+                                                    <div class="checkbox checkbox-primary checkbox-glow">
+                                                        <input type="checkbox" id="checkboxGlow1">
+                                                        <label for="checkboxGlow1"></label>
+                                                    </div>
+                                                </fieldset>
+                                            </td>
                                             <td>001</td>
                                             <td class="text-bold-600">Example Co.</td>
                                             <td>22/10/2022 14:30</td>
@@ -576,17 +601,16 @@
                                             <td>F</td>
                                             <td>23/10/2022 11:37</td>
                                             <td class="text-bold-600">Normal</td>
-                                            <td>
-                                                <fieldset class="form-group">
-                                                    <select class="form-control" id="basicSelect">
-                                                        <option>John Doe</option>
-                                                        <option>Richard Roe</option>
-                                                        <option>Jane Doe</option>
-                                                    </select>
-                                                </fieldset>
-                                            </td>
                                         </tr>
                                         <tr style="background-color: rgb(219, 211, 211);">
+                                            <td>
+                                                <fieldset>
+                                                    <div class="checkbox checkbox-primary checkbox-glow">
+                                                        <input type="checkbox" id="checkboxGlow2" >
+                                                        <label for="checkboxGlow2"></label>
+                                                    </div>
+                                                </fieldset>
+                                            </td>
                                             <td>002</td>
                                             <td class="text-bold-600">Demo Co.</td>
                                             <td>22/10/2022 14:30</td>
@@ -595,17 +619,16 @@
                                             <td>F</td>
                                             <td>23/10/2022 11:37</td>
                                             <td class="text-bold-600">Normal</td>
-                                            <td>
-                                                <fieldset class="form-group">
-                                                    <select class="form-control" id="basicSelect">
-                                                        <option>Alice Cooper</option>
-                                                        <option>Richard Roe</option>
-                                                        <option>Jane Doe</option>
-                                                    </select>
-                                                </fieldset>
-                                            </td>
                                         </tr>
                                         <tr>
+                                            <td>
+                                                <fieldset>
+                                                    <div class="checkbox checkbox-primary checkbox-glow">
+                                                        <input type="checkbox" id="checkboxGlow3" >
+                                                        <label for="checkboxGlow3"></label>
+                                                    </div>
+                                                </fieldset>
+                                            </td>
                                             <td>003</td>
                                             <td class="text-bold-600">Test Co.</td>
                                             <td>22/10/2022 14:30</td>
@@ -614,17 +637,17 @@
                                             <td>F</td>
                                             <td>23/10/2022 11:37</td>
                                             <td class="text-bold-600">Normal</td>
-                                            <td>
-                                                <fieldset class="form-group">
-                                                    <select class="form-control" id="basicSelect">
-                                                        <option>Jack Sparrow</option>
-                                                        <option>Richard Roe</option>
-                                                        <option>Jane Doe</option>
-                                                    </select>
-                                                </fieldset>
-                                            </td>
+                                            
                                         </tr>
                                         <tr style="background-color: rgb(241, 131, 131);">
+                                            <td>
+                                                <fieldset>
+                                                    <div class="checkbox checkbox-primary checkbox-glow">
+                                                        <input type="checkbox" id="checkboxGlow4" >
+                                                        <label for="checkboxGlow4"></label>
+                                                    </div>
+                                                </fieldset>
+                                            </td>
                                             <td>004</td>
                                             <td class="text-bold-600">Foo Co.</td>
                                             <td>22/10/2022 14:30</td>
@@ -633,17 +656,17 @@
                                             <td>F</td>
                                             <td>23/10/2022 11:37</td>
                                             <td class="text-bold-600">Normal</td>
-                                            <td>
-                                                <fieldset class="form-group">
-                                                    <select class="form-control" id="basicSelect">
-                                                        <option>Klark Kent</option>
-                                                        <option>Richard Roe</option>
-                                                        <option>Jane Doe</option>
-                                                    </select>
-                                                </fieldset>
-                                            </td>
+                                            
                                         </tr>
                                         <tr>
+                                            <td>
+                                                <fieldset>
+                                                    <div class="checkbox checkbox-primary checkbox-glow">
+                                                        <input type="checkbox" id="checkboxGlow5" >
+                                                        <label for="checkboxGlow5"></label>
+                                                    </div>
+                                                </fieldset>
+                                            </td>
                                             <td>005</td>
                                             <td class="text-bold-600">Baz Co.</td>
                                             <td>22/10/2022 14:30</td>
@@ -652,15 +675,7 @@
                                             <td>F</td>
                                             <td>23/10/2022 11:37</td>
                                             <td class="text-bold-600">Normal</td>
-                                            <td>
-                                                <fieldset class="form-group">
-                                                    <select class="form-control" id="basicSelect">
-                                                        <option>Larry Bird</option>
-                                                        <option>Richard Roe</option>
-                                                        <option>Jane Doe</option>
-                                                    </select>
-                                                </fieldset>
-                                            </td>
+                                           
                                         </tr>
                                        
                                     </tbody>
@@ -670,17 +685,36 @@
                         </div>
                     </section>
             </section>
-           
-
-
-
-
-
-
-
-
-
-
+            
+            <!--Kurye Modal-->
+            <div class="col-6 kurye_modal hide_content" id="kurye_modal">
+                <h5>Seçilen Siparişler</h5>
+                <ul>
+                    <li class="custom_list">Sip-1</li>
+                    <li class="custom_list">Sip-2</li>
+                    <li class="custom_list">Sip-3</li>
+                </ul>
+                <fieldset class="form-group">
+                    <select class="custom-select" id="customSelect">
+                        <option selected>Kapı Seç</option>
+                        <option value="Gate-1">Gate-1</option>
+                        <option value="Gate-2">Gate-2</option>
+                        <option value="Gate-3">Gate-3</option>
+                    </select>
+                </fieldset>
+                <fieldset class="form-group">
+                    <select class="custom-select" id="customSelect">
+                        <option selected>Kurye Seç</option>
+                        <option value="John Doe">John Doe</option>
+                        <option value="Jane Doe">Jane Doe</option>
+                        <option value="Foo Bar">Foo Bar</option>
+                    </select>
+                </fieldset>
+                <div class="d-flex justify-content-end w-100">
+                    <button class="btn btn-dark" style="margin-right:8px;" id="btn_modal_cancel">İptal</button>
+                    <button class="btn btn-primary" id="btn_modal_success">Oluştur</button>
+                </div>
+            </div>
             <!-- Content ends -->
         </div>
     </div>
@@ -1031,6 +1065,36 @@
                 }
             }
         });
+        // Kurye Modal
+        const checkBoxes = document.querySelectorAll('input[type="checkbox"]');
+        let kuryeBtn = document.getElementById('kurye_btn');
+        for (const checkBox of checkBoxes) {
+            checkBox.addEventListener('change', () => {
+                if(checkBox.checked) {
+              
+                kuryeBtn.removeAttribute('disabled');
+            } else {
+                kuryeBtn.setAttribute('disabled','');
+            }
+            }); 
+        }
+        const kuryeModal = document.getElementById('kurye_modal');
+        kuryeBtn.addEventListener('click', () => {
+            kuryeModal.classList.remove('hide_content');
+        });
+
+       const btnModalCancel = document.getElementById('btn_modal_cancel');
+       const btnModalSuccess = document.getElementById('btn_modal_success');
+
+       btnModalCancel.addEventListener('click', () => {
+        kuryeModal.classList.add('hide_content');
+       });
+       
+       btnModalSuccess.addEventListener('click', () => {
+        kuryeModal.classList.add('hide_content');
+       });
+
+
 </script>
 </body>
 <!-- END: Body-->
