@@ -178,3 +178,15 @@ li#users-list-datatable_previous {
     padding-right: 2px !important;
 }
 
+.nav-tabs .nav-link.active, .nav-tabs .nav-item.show .nav-link{
+    background-color: #e427bd;
+}
+.btn-primary{
+    background-color: #e427bd !important;
+}
+.bg-success{
+    background-color: #46ad48 !important;
+}
+.badge-success{
+    background-color: #46ad48 !important;
+}
