@@ -51,7 +51,14 @@
     <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.3.0/css/responsive.bootstrap.min.css">
 
     <!-- END: Theme CSS-->
-
+    <link rel="stylesheet" href="./assets/css/costum.css">
+    <link rel="stylesheet" href="./assets/fonts/stylesheet.css">
+    <link rel="stylesheet" href="./assets/fonts/subset-NeueHaasDisplay-Black.woff2">
+    <link rel="stylesheet" href="./assets/fonts/subset-NeueHaasDisplay-Bold.woff2">
+    <link rel="stylesheet" href="./assets/fonts/subset-NeueHaasDisplay-Light.woff2">
+    <link rel="stylesheet" href="./assets/fonts/subset-NeueHaasDisplay-Mediu.woff2">
+    <link rel="stylesheet" href="./assets/fonts/subset-NeueHaasDisplay-Roman.woff2">
+    <link rel="stylesheet" href="./assets/fonts/subset-NeueHaasDisplay-Thin.woff2">
 
 </head>
 <!-- END: Head-->
@@ -127,16 +134,6 @@
             <li class=" nav-item"><a href="#"><i class="menu-livicon" data-icon="truck"></i><span
                     class="menu-title text-truncate" data-i18n="Depo Yönetimi">Depo Yönetimi</span></a>
                 <ul class="menu-content">
-                    <li class="">
-                        <a class="d-flex align-items-center" href="operasyon.html"
-                          ><i class="bx bx-right-arrow-alt"></i
-                          ><span
-                            class="menu-item text-truncate"
-                            data-i18n="Depo Ürün Kabul"
-                            >Depo Operasyon</span
-                          ></a
-                        >
-                      </li>
                     <li class=""><a class="d-flex align-items-center" href="mal-kabul.html"><i
                             class="bx bx-right-arrow-alt"></i><span class="menu-item text-truncate"
                                                                     data-i18n="Depo Ürün Kabul">Depo Ürün Kabul</span></a>
@@ -365,10 +362,8 @@
                                     </fieldset>
                                 </li>
                                 <li class="ml-2 mt-2">
-                                    <button class="btn btn-dark">Proforma Oluştur</button>
-                                    <button class="btn btn-success">Yazdır</button>
+                                    <button class="btn btn-success mr-2">Yazdır</button>
                                     <button class="btn btn-primary">İndir</button>
-                                    <button class="btn btn-warning">E-Mail Gönder</button>
                                 </li>
 
                             </ul>
@@ -386,24 +381,27 @@
                                 <th>Durum</th>
                                 <th>Tarih</th>
                                 <th>Fiyat</th>
+                                <th>Print</th>
                             </tr>
                             </thead>
                             <tbody>
                             <tr>
-                                <td><i class="bx bxs-circle success font-small-1 mr-50"></i><span>12345543</span></td>
+                                <td><i class="bx bxs-circle success font-small-1 mr-50"></i><span>001</span></td>
                                 <td class="text-bold-600">Mike Brennan</td>
                                 <td>Soner Çalıca</td>
                                 <td><span class="badge badge-light-success">Gönderildi</span></td>
                                 <td>10.09.17</td>
                                 <td class="text-bold-600">27 £</td>
+                                <td class="text-bold-600"><a href="../custom/label.html">Label Detail</a></td>
                             </tr>
                             <tr>
-                                <td><i class="bx bxs-circle success font-small-1 mr-50"></i><span>12345543</span></td>
+                                <td><i class="bx bxs-circle success font-small-1 mr-50"></i><span>002</span></td>
                                 <td class="text-bold-600">Mike Brennan</td>
                                 <td>Soner Çalıca</td>
                                 <td><span class="badge badge-light-primary">Yolda</span></td>
                                 <td>10.09.17</td>
                                 <td class="text-bold-600">10 £</td>
+                                <td class="text-bold-600"><a href="../custom/label.html">Label Detail</a></td>
                             </tr>
 
                             </tbody>
