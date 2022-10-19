@@ -87,6 +87,11 @@
             padding:24px 12px;
             border-radius: 12px;
         }
+
+        .sub_modal {
+            border: 2px solid black;
+            background-color: rgba(0,0,0,0.5);
+        }
     </style>
 </head>
 <!-- END: Head-->
@@ -378,7 +383,7 @@
                                                 </span>
                                                 <div class="dropdown-menu dropdown-menu-right">
                                                     <a class="dropdown-item" href="javascript:void(0);"><i class="bx bxs-info-circle mr-1"></i> detay</a>
-                                                    <a onclick="toggleSetOrder()" class="dropdown-item" href="javascript:void(0);"><i class="bx bxs-package mr-1"></i> yönet</a>
+                                                    <a data-toggle="modal" data-target="#default"  class="dropdown-item" href="javascript:void(0);"><i class="bx bxs-package mr-1"></i> yönet</a>
                                                 </div>
                                             </div>
                                         </td>
@@ -395,7 +400,7 @@
                                                 </span>
                                                 <div class="dropdown-menu dropdown-menu-right">
                                                     <a class="dropdown-item" href="javascript:void(0);"><i class="bx bxs-info-circle mr-1"></i> detay</a>
-                                                    <a onclick="toggleSetOrder()" class="dropdown-item" href="javascript:void(0);"><i class="bx bxs-package mr-1"></i> yönet</a>
+                                                    <a data-toggle="modal" data-target="#default"  class="dropdown-item" href="javascript:void(0);"><i class="bx bxs-package mr-1"></i> yönet</a>
                                                 </div>
                                             </div>
                                         </td>
@@ -412,7 +417,7 @@
                                                 </span>
                                                 <div class="dropdown-menu dropdown-menu-right">
                                                     <a class="dropdown-item" href="javascript:void(0);"><i class="bx bxs-info-circle mr-1"></i> detay</a>
-                                                    <a onclick="toggleSetOrder()" class="dropdown-item" href="javascript:void(0);"><i class="bx bxs-package mr-1"></i> yönet</a>
+                                                    <a data-toggle="modal" data-target="#default"  class="dropdown-item" href="javascript:void(0);"><i class="bx bxs-package mr-1"></i> yönet</a>
                                                 </div>
                                             </div>
                                         </td>
@@ -429,197 +434,200 @@
                                                 </span>
                                                 <div class="dropdown-menu dropdown-menu-right">
                                                     <a class="dropdown-item" href="javascript:void(0);"><i class="bx bxs-info-circle mr-1"></i> detay</a>
-                                                    <a onclick="toggleSetOrder()" class="dropdown-item" href="javascript:void(0);"><i class="bx bxs-package mr-1"></i> yönet</a>
+                                                    <a data-toggle="modal" data-target="#default" class="dropdown-item" href="javascript:void(0);"><i class="bx bxs-package mr-1"></i> yönet</a>
                                                 </div>
                                             </div>
                                         </td>
                                     </tr>
-                                    
-                                   
-                                   
-                                   
-                                   
-                                   
-                                   
                                 </tbody>
                             </table>
                         </div>
                         <!-- datatable ends -->
                     </div>
                 </section>
-                <div class="col-6 card collapse-icon accordion-icon-rotate hide_content" id="set_order_panel">
-                    <div class="card-header">
-                        <h4 class="card-title">Sipariş Yönetimi</h4>
-                    </div>
-                    <div class="card-body">
-                        <div class="accordion" id="cardAccordion">
-                            <div class="card">
-                                <div class="card-header" id="headingOne" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne" role="button">
-                                    <span class="collapsed collapse-title">Direkt Teslim</span>
+                 <!--Basic Modal -->
+                 <div class="modal fade text-left" id="default" tabindex="-1" role="dialog" aria-labelledby="myModalLabel1" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-scrollable"> 
+                        <div class="modal-content">
+                            <div  class="col-12 card collapse-icon accordion-icon-rotate" id="set_order_panel">
+                                <div class="card-header">
+                                    <h4 class="card-title">Sipariş Yönetimi</h4>
                                 </div>
-                                <div id="collapseOne" class="collapse pt-1" aria-labelledby="headingOne" data-parent="#cardAccordion">
-                                    <div class="card-body">
-                                            <h6>İşlem Yapılacak Siparişler</h6>
-                                        <fieldset class="form-group">
-                                                    <ul>
-                                                        <li class="custom_list">sip-no-001</li>
-                                                    </ul>
-                                        </fieldset>
-                                        <h6>Kurye Ata</h6>
-                                        <fieldset class="form-group">
-                                            <select class="custom-select" id="customSelect1">
-                                                <option value="John Doe">John Doe</option>
-                                                <option value="Blade Runner">Blade Runner</option>
-                                                <option value="Thor Ragnarok">Thor Ragnarok</option>
-                                                <option value="Amadeus Mozart">Amadeus Mozart</option>
-                                                <option value="Sebastian Bach">Sebastian Bach</option>
-                                            </select>
-                                        </fieldset>
-                                        <button id="depo_tamamla_btn" type="button" class="btn btn-outline-primary block" data-toggle="modal" data-target="#exampleModalCenter2">
-                                            Tamamla
-                                        </button>
-                                        <!-- Vertically Centered modal Modal -->
-                                        <div class="modal fade" id="exampleModalCenter2" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-                                            <div class="modal-dialog modal-dialog-centered modal-dialog-centered modal-dialog-scrollable">
-                                                <div class="modal-content">
-                                                    <div class="modal-header">
-                                                        <h5 class="modal-title" id="exampleModalCenterTitle">İşlem Özeti</h5>
-                                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                            <i class="bx bx-x"></i>
-                                                        </button>
+                                <div class="card-body">
+                                    <div class="accordion" id="cardAccordion">
+                                        <div class="card">
+                                            <div class="card-header" id="headingOne" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne" role="button">
+                                                <span class="collapsed collapse-title">Direkt Teslim</span>
+                                            </div>
+                                            <div id="collapseOne" class="collapse pt-1" aria-labelledby="headingOne" data-parent="#cardAccordion">
+                                                <div class="card-body">
+                                                        <h6>İşlem Yapılacak Siparişler</h6>
+                                                    <fieldset class="form-group">
+                                                                <ul>
+                                                                    <li class="custom_list">sip-no-001</li>
+                                                                </ul>
+                                                    </fieldset>
+                                                    <h6>Kurye Ata</h6>
+                                                    <fieldset class="form-group">
+                                                        <select class="custom-select" id="customSelect1">
+                                                            <option value="John Doe">John Doe</option>
+                                                            <option value="Blade Runner">Blade Runner</option>
+                                                            <option value="Thor Ragnarok">Thor Ragnarok</option>
+                                                            <option value="Amadeus Mozart">Amadeus Mozart</option>
+                                                            <option value="Sebastian Bach">Sebastian Bach</option>
+                                                        </select>
+                                                    </fieldset>
+                                                    <button id="depo_tamamla_btn" type="button" class="btn btn-outline-primary block" data-toggle="modal" data-target="#exampleModalCenter2">
+                                                        Tamamla
+                                                    </button>
+                                                    <!-- Vertically Centered modal Modal -->
+                                                    <div class="modal fade sub_modal" id="exampleModalCenter2" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                                                        <div class="modal-dialog modal-dialog-centered modal-dialog-centered modal-dialog-scrollable">
+                                                            <div class="modal-content">
+                                                                <div class="modal-header">
+                                                                    <h5 class="modal-title" id="exampleModalCenterTitle">İşlem Özeti</h5>
+                                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                        <i class="bx bx-x"></i>
+                                                                    </button>
+                                                                </div>
+                                                                <div class="modal-body">
+                                                                   <h5>Seçilen Siparişler</h5>
+                                                                   <ul id="depo_siparisleri">
+                                                                        <li class="custom_list font-medium-2">sip-no-1</li>
+                                                                   </ul>
+                                                                   <hr>
+                                                                <h5>Atanan Kurye</h5>
+                                                                <p><b>John Doe</b></p>
+                                                                <hr>
+                                                                </div>    
+                                                                <div class="modal-footer">
+                                                                    <button type="button" class="btn btn-light-secondary" data-dismiss="modal">
+                                                                        <i class="bx bx-x d-block d-sm-none"></i>
+                                                                        <span class="d-none d-sm-block">İptal</span>
+                                                                    </button>
+                                                                    <button onclick="returnPage()" type="button" class="btn btn-primary ml-1" data-dismiss="modal">
+                                                                        <i class="bx bx-check d-block d-sm-none"></i>
+                                                                        <span class="d-none d-sm-block">Onayla</span>
+                                                                    </button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
                                                     </div>
-                                                    <div class="modal-body">
-                                                       <h5>Seçilen Siparişler</h5>
-                                                       <ul id="depo_siparisleri">
-                                                            <li class="custom_list font-medium-2">sip-no-1</li>
-                                                       </ul>
-                                                       <hr>
-                                                    <h5>Atanan Kurye</h5>
-                                                    <p><b>John Doe</b></p>
-                                                    <hr>
-                                                    </div>    
-                                                    <div class="modal-footer">
-                                                        <button type="button" class="btn btn-light-secondary" data-dismiss="modal">
-                                                            <i class="bx bx-x d-block d-sm-none"></i>
-                                                            <span class="d-none d-sm-block">İptal</span>
-                                                        </button>
-                                                        <button onclick="returnPage()" type="button" class="btn btn-primary ml-1" data-dismiss="modal">
-                                                            <i class="bx bx-check d-block d-sm-none"></i>
-                                                            <span class="d-none d-sm-block">Onayla</span>
-                                                        </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card collapse-header">
+                                            <div class="card-header" id="headingTwo" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo" role="button">
+                                                <span class="collapsed collapse-title">Depoya Teslim</span>
+                                            </div>
+                                            <div id="collapseTwo" class="collapse pt-1" aria-labelledby="headingTwo" data-parent="#cardAccordion">
+                                                <div class="card-body">
+                                                    <h6>İşlem Yapılacak Siparişler</h6>
+                                                    <fieldset class="form-group">   
+                                                                <ul label="Sipariş Seç">
+                                                                    <li class="custom_list">sip-no-001</li>
+                                                                    <li class="custom_list">sip-no-002</li>
+                                                                    <li class="custom_list">sip-no-003</li>
+                                                                    <li class="custom_list">sip-no-004</li>
+                                                                </ul>
+                                                    </fieldset>
+                                                    <h6>Kurye Ata</h6>
+                                                    <fieldset class="form-group">
+                                                        <select class="custom-select" id="customSelect1">
+                                                            <option value="John Doe">John Doe</option>
+                                                            <option value="Blade Runner">Blade Runner</option>
+                                                            <option value="Thor Ragnarok">Thor Ragnarok</option>
+                                                            <option value="Amadeus Mozart">Amadeus Mozart</option>
+                                                            <option value="Sebastian Bach">Sebastian Bach</option>
+                                                        </select>
+                                                    </fieldset>
+                                                    <h6>Depo Seç</h6>
+                                                    <fieldset class="form-group">
+                                                        <select class="custom-select" id="customSelect3">           
+                                                            <option value="Warehouse-1">Warehouse-1</option>
+                                                            <option value="Warehouse-2">Warehouse-2</option>
+                                                            <option value="Warehouse-3">Warehouse-3</option>
+                                                            <option value="Warehouse-4">Warehouse-4</option>
+                                                            <option value="Warehouse-5">Warehouse-5</option>
+                                                            <option value="Warehouse-6">Warehouse-6</option>
+                                                            <option value="Warehouse-7">Warehouse-7</option>
+                                                            <option value="Warehouse-8">Warehouse-8</option>
+                                                            <option value="Warehouse-9">Warehouse-9</option>
+                                                            <option value="Warehouse-10">Warehouse-10</option>
+                                                        </select>
+                                                    </fieldset>
+                                                    <h6>Kapı Seç</h6>
+                                                    <fieldset class="form-group">
+                                                        <select class="custom-select" id="customSelect3">           
+                                                            <option value="Gate-1">Gate-1</option>
+                                                            <option value="Gate-2">Gate-2</option>
+                                                            <option value="Gate-3">Gate-3</option>
+                                                            <option value="Gate-4">Gate-4</option>
+                                                            <option value="Gate-5">Gate-5</option>
+                                                            <option value="Gate-6">Gate-6</option>
+                                                            <option value="Gate-7">Gate-7</option>
+                                                            <option value="Gate-8">Gate-8</option>
+                                                            <option value="Gate-9">Gate-9</option>
+                                                            <option value="Gate-10">Gate-10</option>
+                                                        </select>
+                                                    </fieldset>
+                                                    <button id="depo_tamamla_btn" type="button" class="btn btn-outline-primary block" data-toggle="modal" data-target="#exampleModalCenter">
+                                                        Tamamla
+                                                    </button>
+                                                    <!-- Vertically Centered modal Modal -->
+                                                    <div class="modal fade sub_modal" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                                                        <div class="modal-dialog modal-dialog-centered modal-dialog-centered modal-dialog-scrollable">
+                                                            <div class="modal-content">
+                                                                <div class="modal-header">
+                                                                    <h5 class="modal-title" id="exampleModalCenterTitle">İşlem Özeti</h5>
+                                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                        <i class="bx bx-x"></i>
+                                                                    </button>
+                                                                </div>
+                                                                <div class="modal-body">
+                                                                   <h5>Seçilen Siparişler</h5>
+                                                                   <ul id="depo_siparisleri">
+                                                                        <li class="custom_list font-medium-2">sip-no-1</li>
+                                                                        <li class="custom_list font-medium-2">sip-no-2</li>
+                                                                        <li class="custom_list font-medium-2">sip-no-3</li>
+                                                                        <li class="custom_list font-medium-2">sip-no-4</li>
+                                                                   </ul>
+                                                                   <hr>
+                                                                <h5>Atanan Kurye</h5>
+                                                                <p><b>John Doe</b></p>
+                                                                <hr>
+                                                                <h5>Seçilen Depo</h5>
+                                                                <p><b>Warehouse-1</b></p>
+                                                                <hr>
+                                                                <h5>Seçilen Kapı</h5>
+                                                                <p><b>Gate-3</b></p>
+                                                                </div>
+                                                                
+                                                                <div class="modal-footer">
+                                                                    <button type="button" class="btn btn-light-secondary" data-dismiss="modal">
+                                                                        <i class="bx bx-x d-block d-sm-none"></i>
+                                                                        <span class="d-none d-sm-block">İptal</span>
+                                                                    </button>
+                                                                    <button onclick="returnPage()" type="button" class="btn btn-primary ml-1" data-dismiss="modal">
+                                                                        <i class="bx bx-check d-block d-sm-none"></i>
+                                                                        <span class="d-none d-sm-block">Onayla</span>
+                                                                    </button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="card collapse-header">
-                                <div class="card-header" id="headingTwo" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo" role="button">
-                                    <span class="collapsed collapse-title">Depoya Teslim</span>
-                                </div>
-                                <div id="collapseTwo" class="collapse pt-1" aria-labelledby="headingTwo" data-parent="#cardAccordion">
-                                    <div class="card-body">
-                                        <h6>İşlem Yapılacak Siparişler</h6>
-                                        <fieldset class="form-group">   
-                                                    <ul label="Sipariş Seç">
-                                                        <li class="custom_list">sip-no-001</li>
-                                                        <li class="custom_list">sip-no-002</li>
-                                                        <li class="custom_list">sip-no-003</li>
-                                                        <li class="custom_list">sip-no-004</li>
-                                                    </ul>
-                                        </fieldset>
-                                        <h6>Kurye Ata</h6>
-                                        <fieldset class="form-group">
-                                            <select class="custom-select" id="customSelect1">
-                                                <option value="John Doe">John Doe</option>
-                                                <option value="Blade Runner">Blade Runner</option>
-                                                <option value="Thor Ragnarok">Thor Ragnarok</option>
-                                                <option value="Amadeus Mozart">Amadeus Mozart</option>
-                                                <option value="Sebastian Bach">Sebastian Bach</option>
-                                            </select>
-                                        </fieldset>
-                                        <h6>Depo Seç</h6>
-                                        <fieldset class="form-group">
-                                            <select class="custom-select" id="customSelect3">           
-                                                <option value="Warehouse-1">Warehouse-1</option>
-                                                <option value="Warehouse-2">Warehouse-2</option>
-                                                <option value="Warehouse-3">Warehouse-3</option>
-                                                <option value="Warehouse-4">Warehouse-4</option>
-                                                <option value="Warehouse-5">Warehouse-5</option>
-                                                <option value="Warehouse-6">Warehouse-6</option>
-                                                <option value="Warehouse-7">Warehouse-7</option>
-                                                <option value="Warehouse-8">Warehouse-8</option>
-                                                <option value="Warehouse-9">Warehouse-9</option>
-                                                <option value="Warehouse-10">Warehouse-10</option>
-                                            </select>
-                                        </fieldset>
-                                        <h6>Kapı Seç</h6>
-                                        <fieldset class="form-group">
-                                            <select class="custom-select" id="customSelect3">           
-                                                <option value="Gate-1">Gate-1</option>
-                                                <option value="Gate-2">Gate-2</option>
-                                                <option value="Gate-3">Gate-3</option>
-                                                <option value="Gate-4">Gate-4</option>
-                                                <option value="Gate-5">Gate-5</option>
-                                                <option value="Gate-6">Gate-6</option>
-                                                <option value="Gate-7">Gate-7</option>
-                                                <option value="Gate-8">Gate-8</option>
-                                                <option value="Gate-9">Gate-9</option>
-                                                <option value="Gate-10">Gate-10</option>
-                                            </select>
-                                        </fieldset>
-                                        <button id="depo_tamamla_btn" type="button" class="btn btn-outline-primary block" data-toggle="modal" data-target="#exampleModalCenter">
-                                            Tamamla
-                                        </button>
-                                        <!-- Vertically Centered modal Modal -->
-                                        <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-                                            <div class="modal-dialog modal-dialog-centered modal-dialog-centered modal-dialog-scrollable">
-                                                <div class="modal-content">
-                                                    <div class="modal-header">
-                                                        <h5 class="modal-title" id="exampleModalCenterTitle">İşlem Özeti</h5>
-                                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                            <i class="bx bx-x"></i>
-                                                        </button>
-                                                    </div>
-                                                    <div class="modal-body">
-                                                       <h5>Seçilen Siparişler</h5>
-                                                       <ul id="depo_siparisleri">
-                                                            <li class="custom_list font-medium-2">sip-no-1</li>
-                                                            <li class="custom_list font-medium-2">sip-no-2</li>
-                                                            <li class="custom_list font-medium-2">sip-no-3</li>
-                                                            <li class="custom_list font-medium-2">sip-no-4</li>
-                                                       </ul>
-                                                       <hr>
-                                                    <h5>Atanan Kurye</h5>
-                                                    <p><b>John Doe</b></p>
-                                                    <hr>
-                                                    <h5>Seçilen Depo</h5>
-                                                    <p><b>Warehouse-1</b></p>
-                                                    <hr>
-                                                    <h5>Seçilen Kapı</h5>
-                                                    <p><b>Gate-3</b></p>
-                                                    </div>
-                                                    
-                                                    <div class="modal-footer">
-                                                        <button type="button" class="btn btn-light-secondary" data-dismiss="modal">
-                                                            <i class="bx bx-x d-block d-sm-none"></i>
-                                                            <span class="d-none d-sm-block">İptal</span>
-                                                        </button>
-                                                        <button onclick="returnPage()" type="button" class="btn btn-primary ml-1" data-dismiss="modal">
-                                                            <i class="bx bx-check d-block d-sm-none"></i>
-                                                            <span class="d-none d-sm-block">Onayla</span>
-                                                        </button>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                            </div>    
                         </div>
                     </div>
-                </div>
+                 </div>
+                   
+                      
+               
             </div>
            
             
