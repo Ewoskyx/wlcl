@@ -349,8 +349,105 @@
         </div>
         <div class="content-body">
             <!--Content -->
-            <div class="col-xl-4 col-md-6 col-sm-12">
-                <div class="card collapse-icon accordion-icon-rotate">
+            <div class="col-12">
+                <section id="table-chechbox">
+                    <div class="card">
+                        <!-- datatable start -->
+                        <div class="table-responsive">
+                            <table id="table-extended-chechbox" class="table table-transparent">
+                                <thead>
+                                    <tr>
+                                        <th></th>
+                                        <th class="pl-0">Sip No</th>
+                                        <th>B2b Firması</th>
+                                        <th>Teslim Tarihi</th>
+                                        <th>Teslim Adresi</th>
+                                        <th>Yönet</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td></td>
+                                        <td class="text-bold-600 pl-0">sip-no-001</td>
+                                        <td>Example Corp.</td>
+                                        <td>11/04/2022 14:15</td>
+                                        <td>Acme street no:123</td>
+                                        <td>
+                                            <div class="dropdown">
+                                                <span class="bx bx-dots-horizontal-rounded font-medium-3 dropdown-toggle nav-hide-arrow cursor-pointer" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" role="menu">
+                                                </span>
+                                                <div class="dropdown-menu dropdown-menu-right">
+                                                    <a class="dropdown-item" href="javascript:void(0);"><i class="bx bxs-info-circle mr-1"></i> detay</a>
+                                                    <a onclick="toggleSetOrder()" class="dropdown-item" href="javascript:void(0);"><i class="bx bxs-package mr-1"></i> yönet</a>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td></td>
+                                        <td class="text-bold-600 pl-0">sip-no-002</td>
+                                        <td>Aln Corp.</td>
+                                        <td>25/05/2022 16:40</td>
+                                        <td>Example building floor:01/04</td>
+                                        <td>
+                                            <div class="dropdown">
+                                                <span class="bx bx-dots-horizontal-rounded font-medium-3 dropdown-toggle nav-hide-arrow cursor-pointer" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" role="menu">
+                                                </span>
+                                                <div class="dropdown-menu dropdown-menu-right">
+                                                    <a class="dropdown-item" href="javascript:void(0);"><i class="bx bxs-info-circle mr-1"></i> detay</a>
+                                                    <a onclick="toggleSetOrder()" class="dropdown-item" href="javascript:void(0);"><i class="bx bxs-package mr-1"></i> yönet</a>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td></td>
+                                        <td class="text-bold-600 pl-0">sip-no-003</td>
+                                        <td>Kriptonite Corp.</td>
+                                        <td>10/12/2022 11:20</td>
+                                        <td>Demo avenue PWT:054</td>
+                                        <td>
+                                            <div class="dropdown">
+                                                <span class="bx bx-dots-horizontal-rounded font-medium-3 dropdown-toggle nav-hide-arrow cursor-pointer" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" role="menu">
+                                                </span>
+                                                <div class="dropdown-menu dropdown-menu-right">
+                                                    <a class="dropdown-item" href="javascript:void(0);"><i class="bx bxs-info-circle mr-1"></i> detay</a>
+                                                    <a onclick="toggleSetOrder()" class="dropdown-item" href="javascript:void(0);"><i class="bx bxs-package mr-1"></i> yönet</a>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td></td>
+                                        <td class="text-bold-600 pl-0">sip-no-004</td>
+                                        <td>Acme Corp.</td>
+                                        <td>06/06/2022 09:45</td>
+                                        <td>Example square no:3/5</td>
+                                        <td>
+                                            <div class="dropdown">
+                                                <span class="bx bx-dots-horizontal-rounded font-medium-3 dropdown-toggle nav-hide-arrow cursor-pointer" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" role="menu">
+                                                </span>
+                                                <div class="dropdown-menu dropdown-menu-right">
+                                                    <a class="dropdown-item" href="javascript:void(0);"><i class="bx bxs-info-circle mr-1"></i> detay</a>
+                                                    <a onclick="toggleSetOrder()" class="dropdown-item" href="javascript:void(0);"><i class="bx bxs-package mr-1"></i> yönet</a>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    
+                                   
+                                   
+                                   
+                                   
+                                   
+                                   
+                                </tbody>
+                            </table>
+                        </div>
+                        <!-- datatable ends -->
+                    </div>
+                </section>
+                <div class="col-6 card collapse-icon accordion-icon-rotate hide_content" id="set_order_panel">
                     <div class="card-header">
                         <h4 class="card-title">Sipariş Yönetimi</h4>
                     </div>
@@ -362,22 +459,11 @@
                                 </div>
                                 <div id="collapseOne" class="collapse pt-1" aria-labelledby="headingOne" data-parent="#cardAccordion">
                                     <div class="card-body">
-                                            <h6>Sipariş Seç</h6>
+                                            <h6>İşlem Yapılacak Siparişler</h6>
                                         <fieldset class="form-group">
-                                                <select class="select2 form-control" multiple="multiple">
-                                                    <optgroup label="Sipariş Seç">
-                                                        <option value="sip-no-001">sip-no-001</option>
-                                                        <option value="sip-no-002">sip-no-002</option>
-                                                        <option value="sip-no-003">sip-no-003</option>
-                                                        <option value="sip-no-004">sip-no-004</option>
-                                                        <option value="sip-no-003">sip-no-005</option>
-                                                        <option value="sip-no-004">sip-no-006</option>
-                                                        <option value="sip-no-003">sip-no-007</option>
-                                                        <option value="sip-no-004">sip-no-008</option>
-                                                        <option value="sip-no-003">sip-no-009</option>
-                                                        <option value="sip-no-004">sip-no-0010</option>
-                                                    </optgroup>
-                                                </select>
+                                                    <ul>
+                                                        <li class="custom_list">sip-no-001</li>
+                                                    </ul>
                                         </fieldset>
                                         <h6>Kurye Ata</h6>
                                         <fieldset class="form-group">
@@ -417,7 +503,7 @@
                                                             <i class="bx bx-x d-block d-sm-none"></i>
                                                             <span class="d-none d-sm-block">İptal</span>
                                                         </button>
-                                                        <button type="button" class="btn btn-primary ml-1" data-dismiss="modal">
+                                                        <button onclick="returnPage()" type="button" class="btn btn-primary ml-1" data-dismiss="modal">
                                                             <i class="bx bx-check d-block d-sm-none"></i>
                                                             <span class="d-none d-sm-block">Onayla</span>
                                                         </button>
@@ -434,22 +520,14 @@
                                 </div>
                                 <div id="collapseTwo" class="collapse pt-1" aria-labelledby="headingTwo" data-parent="#cardAccordion">
                                     <div class="card-body">
-                                        <h6>Sipariş Seç</h6>
-                                        <fieldset class="form-group">
-                                                <select class="select2 form-control" multiple="multiple" id="depo_siparis_sec">
-                                                    <optgroup label="Sipariş Seç">
-                                                        <option value="sip-no-001">sip-no-001</option>
-                                                        <option value="sip-no-002">sip-no-002</option>
-                                                        <option value="sip-no-003">sip-no-003</option>
-                                                        <option value="sip-no-004">sip-no-004</option>
-                                                        <option value="sip-no-003">sip-no-005</option>
-                                                        <option value="sip-no-004">sip-no-006</option>
-                                                        <option value="sip-no-003">sip-no-007</option>
-                                                        <option value="sip-no-004">sip-no-008</option>
-                                                        <option value="sip-no-003">sip-no-009</option>
-                                                        <option value="sip-no-004">sip-no-0010</option>
-                                                    </optgroup>
-                                                </select>
+                                        <h6>İşlem Yapılacak Siparişler</h6>
+                                        <fieldset class="form-group">   
+                                                    <ul label="Sipariş Seç">
+                                                        <li class="custom_list">sip-no-001</li>
+                                                        <li class="custom_list">sip-no-002</li>
+                                                        <li class="custom_list">sip-no-003</li>
+                                                        <li class="custom_list">sip-no-004</li>
+                                                    </ul>
                                         </fieldset>
                                         <h6>Kurye Ata</h6>
                                         <fieldset class="form-group">
@@ -528,7 +606,7 @@
                                                             <i class="bx bx-x d-block d-sm-none"></i>
                                                             <span class="d-none d-sm-block">İptal</span>
                                                         </button>
-                                                        <button type="button" class="btn btn-primary ml-1" data-dismiss="modal">
+                                                        <button onclick="returnPage()" type="button" class="btn btn-primary ml-1" data-dismiss="modal">
                                                             <i class="bx bx-check d-block d-sm-none"></i>
                                                             <span class="d-none d-sm-block">Onayla</span>
                                                         </button>
@@ -820,6 +898,17 @@
 <script src="https://cdn.datatables.net/1.12.1/js/dataTables.bootstrap.min.js"></script>
 <script src="https://cdn.datatables.net/responsive/2.3.0/js/dataTables.responsive.min.js"></script>
 <script src="https://cdn.datatables.net/responsive/2.3.0/js/responsive.bootstrap.min.js"></script>
+
+<script>    
+    function toggleSetOrder() {
+        const setOrderPanel = document.getElementById('set_order_panel');
+        setOrderPanel.classList.toggle('hide_content');
+    }
+
+    function returnPage() {
+        window.location= "http://127.0.0.1:5501/workload/siparis-yonetimi.html";
+    }
+</script>
 
 </body>
 <!-- END: Body-->
