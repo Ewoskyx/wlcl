@@ -15,6 +15,7 @@
     <!-- BEGIN: Vendor CSS-->
     <link rel="stylesheet" type="text/css" href="app-assets/vendors/css/vendors.min.css">
     <link rel="stylesheet" type="text/css" href="app-assets/vendors/css/extensions/swiper.min.css">
+    <link rel="stylesheet" type="text/css" href="app-assets/vendors/css/forms/select/select2.min.css">
     <link rel="stylesheet" type="text/css" href="app-assets/vendors/css/tables/datatable/dataTables.bootstrap4.min.css">
     <link rel="stylesheet" type="text/css" href="app-assets/vendors/css/charts/apexcharts.css">
     <link rel="stylesheet" type="text/css" href="app-assets/vendors/css/pickers/daterange/daterangepicker.css">
@@ -160,6 +161,9 @@
             <li class=" nav-item"><a href="rota.html"><i class="menu-livicon" data-icon="compass"></i><span
                     class="menu-title text-truncate" data-i18n="Rota Yönetimi">Rota Yönetimi</span></a>
             </li>
+            <li class="active nav-item"><a href="siparis-yonetimi.html"><i class="menu-livicon" data-icon="diagram"></i><span
+                    class="menu-title text-truncate" data-i18n="Sipariş Yönetimi">Sipariş Yönetimi</span></a>
+            </li>
             <li class=" nav-item"><a href="#"><i class="menu-livicon" data-icon="truck"></i><span
                     class="menu-title text-truncate" data-i18n="Depo Yönetimi">Depo Yönetimi</span></a>
                 <ul class="open menu-content">
@@ -173,7 +177,7 @@
                           ></a
                         >
                       </li>
-                    <li class="active"><a class="d-flex align-items-center" href="mal-kabul.html"><i
+                    <li class=""><a class="d-flex align-items-center" href="mal-kabul.html"><i
                             class="bx bx-right-arrow-alt"></i><span class="menu-item text-truncate"
                                                                     data-i18n="Depo Ürün Kabul">Depo Ürün Kabul</span></a>
                     </li>
@@ -337,7 +341,7 @@
                         <ol class="breadcrumb p-0 mb-0">
                             <li class="breadcrumb-item"><a href="dashboard.html"><i class="bx bx-home-alt"></i></a>
                             </li>
-                            <li class="breadcrumb-item">Depo Ürün Kabul
+                            <li class="breadcrumb-item">Sipariş Yönetimi
                             </li>
                         </ol>
                     </div>
@@ -346,204 +350,202 @@
         </div>
         <div class="content-body">
             <!--Content -->
-            <div class="col-12 d-flex w-100 justify-content-end mt-3">
-                <button id="kurye_btn" class="btn btn-primary" disabled>Kurye Ata</button>
-            </div>
-            <!-- Order TABLE Start-->
-            <section id="warehouse_table" class="col-12">
-                <div class="col-12 mt-5 text-center" style="border-top:1px solid gray;">
-                    <h6><b>Warehouse:</b>Warehouse 01</h6>
-                </div>
-                    <div class="col-12">
-                        <div class="row">
-                            <ul class="d-flex justify-content-center released w-100">
-                                <li class="custom_list_left">Relased</li>
-                                <li class="custom_list"><b>Orders:</b>1</li>
-                                <li class="custom_list"><b>Lines:</b>1</li>
-                                <li class="custom_list"><b>Items:</b>1</li>
-                                <li class="custom_list"><b>Weight:</b>30</li>
-                                <li class="custom_list"><b>Cube:</b>50</li>
-                                <li class="custom_list"><b>Labor:</b>0.00</li>
-                            </ul>
-                            <ul class="d-flex justify-content-center released w-100">
-                                <li class="custom_list_left" style="left:10%">Planned</li>
-                                <li class="custom_list"><b>Orders:</b>4</li>
-                                <li class="custom_list"><b>Lines:</b>13</li>
-                                <li class="custom_list"><b>Items:</b>11</li>
-                                <li class="custom_list"><b>Weight:</b>8275</li>
-                                <li class="custom_list"><b>Cube:</b>1770</li>
-                                <li class="custom_list"><b>Labor:</b>2.39</li>
-                            </ul>
-                            <ul class="d-flex justify-content-center released w-100">
-                                <li class="custom_list_left" style="left:8.7%">Unplanned</li>
-                                <li class="custom_list"><b>Orders:</b>6765</li>
-                                <li class="custom_list"><b>Lines:</b>9163</li>
-                                <li class="custom_list"><b>Items:</b>682</li>
-                                <li class="custom_list"><b>Weight:</b>1530243</li>
-                                <li class="custom_list"><b>Cube:</b>860585</li>
-                                <li class="custom_list"><b>Labor:</b>769.21</li>
-                            </ul>
-                            <ul class="d-flex justify-content-center released w-100">
-                                <li class="custom_list"><b>RED DENOTES WAVES WITH DEMAND REPLENISHMENT NEED</b></li>
-                            </ul>
-                        </div>
-                    </div> 
-                    <section id="table-transactions">
-                        <div class="card">
-                            <div class="card-header">
-                                <div class="heading-elements">
-                                    
+            <div class="col-xl-4 col-md-6 col-sm-12">
+                <div class="card collapse-icon accordion-icon-rotate">
+                    <div class="card-header">
+                        <h4 class="card-title">Sipariş Yönetimi</h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="accordion" id="cardAccordion">
+                            <div class="card">
+                                <div class="card-header" id="headingOne" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne" role="button">
+                                    <span class="collapsed collapse-title">Direkt Teslim</span>
+                                </div>
+                                <div id="collapseOne" class="collapse pt-1" aria-labelledby="headingOne" data-parent="#cardAccordion">
+                                    <div class="card-body">
+                                            <h6>Sipariş Seç</h6>
+                                        <fieldset class="form-group">
+                                                <select class="select2 form-control" multiple="multiple">
+                                                    <optgroup label="Sipariş Seç">
+                                                        <option value="sip-no-001">sip-no-001</option>
+                                                        <option value="sip-no-002">sip-no-002</option>
+                                                        <option value="sip-no-003">sip-no-003</option>
+                                                        <option value="sip-no-004">sip-no-004</option>
+                                                        <option value="sip-no-003">sip-no-005</option>
+                                                        <option value="sip-no-004">sip-no-006</option>
+                                                        <option value="sip-no-003">sip-no-007</option>
+                                                        <option value="sip-no-004">sip-no-008</option>
+                                                        <option value="sip-no-003">sip-no-009</option>
+                                                        <option value="sip-no-004">sip-no-0010</option>
+                                                    </optgroup>
+                                                </select>
+                                        </fieldset>
+                                        <h6>Kurye Ata</h6>
+                                        <fieldset class="form-group">
+                                            <select class="custom-select" id="customSelect1">
+                                                <option value="John Doe">John Doe</option>
+                                                <option value="Blade Runner">Blade Runner</option>
+                                                <option value="Thor Ragnarok">Thor Ragnarok</option>
+                                                <option value="Amadeus Mozart">Amadeus Mozart</option>
+                                                <option value="Sebastian Bach">Sebastian Bach</option>
+                                            </select>
+                                        </fieldset>
+                                        <button id="depo_tamamla_btn" type="button" class="btn btn-outline-primary block" data-toggle="modal" data-target="#exampleModalCenter2">
+                                            Tamamla
+                                        </button>
+                                        <!-- Vertically Centered modal Modal -->
+                                        <div class="modal fade" id="exampleModalCenter2" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                                            <div class="modal-dialog modal-dialog-centered modal-dialog-centered modal-dialog-scrollable">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h5 class="modal-title" id="exampleModalCenterTitle">İşlem Özeti</h5>
+                                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                            <i class="bx bx-x"></i>
+                                                        </button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                       <h5>Seçilen Siparişler</h5>
+                                                       <ul id="depo_siparisleri">
+                                                            <li class="custom_list font-medium-2">sip-no-1</li>
+                                                       </ul>
+                                                       <hr>
+                                                    <h5>Atanan Kurye</h5>
+                                                    <p><b>John Doe</b></p>
+                                                    <hr>
+                                                    </div>    
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-light-secondary" data-dismiss="modal">
+                                                            <i class="bx bx-x d-block d-sm-none"></i>
+                                                            <span class="d-none d-sm-block">İptal</span>
+                                                        </button>
+                                                        <button type="button" class="btn btn-primary ml-1" data-dismiss="modal">
+                                                            <i class="bx bx-check d-block d-sm-none"></i>
+                                                            <span class="d-none d-sm-block">Onayla</span>
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                            <!-- datatable start -->
-                            <div class="table-responsive">
-                                <table id="table-extended-transactions" class="table mb-0">
-                                    <thead>
-                                        <tr>
-                                            <th></th>
-                                            <th>Sipariş No</th>
-                                            <th>B2B Firması</th>
-                                            <th>Teslim Tarihi/Saati</th>
-                                            <th>Teslim Zip Kodu</th>
-                                            <th>Mahallesi</th>
-                                            <th>Zone</th>
-                                            <th>Depo Giriş Tarihi</th>
-                                            <th>Sipariş Türü</th>
-                                            
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td>
-                                                <fieldset>
-                                                    <div class="checkbox checkbox-primary checkbox-glow">
-                                                        <input type="checkbox" id="checkboxGlow1">
-                                                        <label for="checkboxGlow1"></label>
+                            <div class="card collapse-header">
+                                <div class="card-header" id="headingTwo" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo" role="button">
+                                    <span class="collapsed collapse-title">Depoya Teslim</span>
+                                </div>
+                                <div id="collapseTwo" class="collapse pt-1" aria-labelledby="headingTwo" data-parent="#cardAccordion">
+                                    <div class="card-body">
+                                        <h6>Sipariş Seç</h6>
+                                        <fieldset class="form-group">
+                                                <select class="select2 form-control" multiple="multiple" id="depo_siparis_sec">
+                                                    <optgroup label="Sipariş Seç">
+                                                        <option value="sip-no-001">sip-no-001</option>
+                                                        <option value="sip-no-002">sip-no-002</option>
+                                                        <option value="sip-no-003">sip-no-003</option>
+                                                        <option value="sip-no-004">sip-no-004</option>
+                                                        <option value="sip-no-003">sip-no-005</option>
+                                                        <option value="sip-no-004">sip-no-006</option>
+                                                        <option value="sip-no-003">sip-no-007</option>
+                                                        <option value="sip-no-004">sip-no-008</option>
+                                                        <option value="sip-no-003">sip-no-009</option>
+                                                        <option value="sip-no-004">sip-no-0010</option>
+                                                    </optgroup>
+                                                </select>
+                                        </fieldset>
+                                        <h6>Kurye Ata</h6>
+                                        <fieldset class="form-group">
+                                            <select class="custom-select" id="customSelect1">
+                                                <option value="John Doe">John Doe</option>
+                                                <option value="Blade Runner">Blade Runner</option>
+                                                <option value="Thor Ragnarok">Thor Ragnarok</option>
+                                                <option value="Amadeus Mozart">Amadeus Mozart</option>
+                                                <option value="Sebastian Bach">Sebastian Bach</option>
+                                            </select>
+                                        </fieldset>
+                                        <h6>Depo Seç</h6>
+                                        <fieldset class="form-group">
+                                            <select class="custom-select" id="customSelect3">           
+                                                <option value="Warehouse-1">Warehouse-1</option>
+                                                <option value="Warehouse-2">Warehouse-2</option>
+                                                <option value="Warehouse-3">Warehouse-3</option>
+                                                <option value="Warehouse-4">Warehouse-4</option>
+                                                <option value="Warehouse-5">Warehouse-5</option>
+                                                <option value="Warehouse-6">Warehouse-6</option>
+                                                <option value="Warehouse-7">Warehouse-7</option>
+                                                <option value="Warehouse-8">Warehouse-8</option>
+                                                <option value="Warehouse-9">Warehouse-9</option>
+                                                <option value="Warehouse-10">Warehouse-10</option>
+                                            </select>
+                                        </fieldset>
+                                        <h6>Kapı Seç</h6>
+                                        <fieldset class="form-group">
+                                            <select class="custom-select" id="customSelect3">           
+                                                <option value="Gate-1">Gate-1</option>
+                                                <option value="Gate-2">Gate-2</option>
+                                                <option value="Gate-3">Gate-3</option>
+                                                <option value="Gate-4">Gate-4</option>
+                                                <option value="Gate-5">Gate-5</option>
+                                                <option value="Gate-6">Gate-6</option>
+                                                <option value="Gate-7">Gate-7</option>
+                                                <option value="Gate-8">Gate-8</option>
+                                                <option value="Gate-9">Gate-9</option>
+                                                <option value="Gate-10">Gate-10</option>
+                                            </select>
+                                        </fieldset>
+                                        <button id="depo_tamamla_btn" type="button" class="btn btn-outline-primary block" data-toggle="modal" data-target="#exampleModalCenter">
+                                            Tamamla
+                                        </button>
+                                        <!-- Vertically Centered modal Modal -->
+                                        <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                                            <div class="modal-dialog modal-dialog-centered modal-dialog-centered modal-dialog-scrollable">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h5 class="modal-title" id="exampleModalCenterTitle">İşlem Özeti</h5>
+                                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                            <i class="bx bx-x"></i>
+                                                        </button>
                                                     </div>
-                                                </fieldset>
-                                            </td>
-                                            <td>001</td>
-                                            <td class="text-bold-600">Example Co.</td>
-                                            <td>22/10/2022 14:30</td>
-                                            <td>5FS</td>
-                                            <td>Demo District</td>
-                                            <td>F</td>
-                                            <td>23/10/2022 11:37</td>
-                                            <td class="text-bold-600">Normal</td>
-                                        </tr>
-                                        <tr style="background-color: rgb(219, 211, 211);">
-                                            <td>
-                                                <fieldset>
-                                                    <div class="checkbox checkbox-primary checkbox-glow">
-                                                        <input type="checkbox" id="checkboxGlow2" >
-                                                        <label for="checkboxGlow2"></label>
+                                                    <div class="modal-body">
+                                                       <h5>Seçilen Siparişler</h5>
+                                                       <ul id="depo_siparisleri">
+                                                            <li class="custom_list font-medium-2">sip-no-1</li>
+                                                            <li class="custom_list font-medium-2">sip-no-2</li>
+                                                            <li class="custom_list font-medium-2">sip-no-3</li>
+                                                            <li class="custom_list font-medium-2">sip-no-4</li>
+                                                       </ul>
+                                                       <hr>
+                                                    <h5>Atanan Kurye</h5>
+                                                    <p><b>John Doe</b></p>
+                                                    <hr>
+                                                    <h5>Seçilen Depo</h5>
+                                                    <p><b>Warehouse-1</b></p>
+                                                    <hr>
+                                                    <h5>Seçilen Kapı</h5>
+                                                    <p><b>Gate-3</b></p>
                                                     </div>
-                                                </fieldset>
-                                            </td>
-                                            <td>002</td>
-                                            <td class="text-bold-600">Demo Co.</td>
-                                            <td>22/10/2022 14:30</td>
-                                            <td>5FS</td>
-                                            <td>Demo District</td>
-                                            <td>F</td>
-                                            <td>23/10/2022 11:37</td>
-                                            <td class="text-bold-600">Normal</td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <fieldset>
-                                                    <div class="checkbox checkbox-primary checkbox-glow">
-                                                        <input type="checkbox" id="checkboxGlow3" >
-                                                        <label for="checkboxGlow3"></label>
+                                                    
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-light-secondary" data-dismiss="modal">
+                                                            <i class="bx bx-x d-block d-sm-none"></i>
+                                                            <span class="d-none d-sm-block">İptal</span>
+                                                        </button>
+                                                        <button type="button" class="btn btn-primary ml-1" data-dismiss="modal">
+                                                            <i class="bx bx-check d-block d-sm-none"></i>
+                                                            <span class="d-none d-sm-block">Onayla</span>
+                                                        </button>
                                                     </div>
-                                                </fieldset>
-                                            </td>
-                                            <td>003</td>
-                                            <td class="text-bold-600">Test Co.</td>
-                                            <td>22/10/2022 14:30</td>
-                                            <td>5FS</td>
-                                            <td>Demo District</td>
-                                            <td>F</td>
-                                            <td>23/10/2022 11:37</td>
-                                            <td class="text-bold-600">Normal</td>
-                                            
-                                        </tr>
-                                        <tr style="background-color: rgb(241, 131, 131);">
-                                            <td>
-                                                <fieldset>
-                                                    <div class="checkbox checkbox-primary checkbox-glow">
-                                                        <input type="checkbox" id="checkboxGlow4" >
-                                                        <label for="checkboxGlow4"></label>
-                                                    </div>
-                                                </fieldset>
-                                            </td>
-                                            <td>004</td>
-                                            <td class="text-bold-600">Foo Co.</td>
-                                            <td>22/10/2022 14:30</td>
-                                            <td>5FS</td>
-                                            <td>Demo District</td>
-                                            <td>F</td>
-                                            <td>23/10/2022 11:37</td>
-                                            <td class="text-bold-600">Normal</td>
-                                            
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <fieldset>
-                                                    <div class="checkbox checkbox-primary checkbox-glow">
-                                                        <input type="checkbox" id="checkboxGlow5" >
-                                                        <label for="checkboxGlow5"></label>
-                                                    </div>
-                                                </fieldset>
-                                            </td>
-                                            <td>005</td>
-                                            <td class="text-bold-600">Baz Co.</td>
-                                            <td>22/10/2022 14:30</td>
-                                            <td>5FS</td>
-                                            <td>Demo District</td>
-                                            <td>F</td>
-                                            <td>23/10/2022 11:37</td>
-                                            <td class="text-bold-600">Normal</td>
-                                           
-                                        </tr>
-                                       
-                                    </tbody>
-                                </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                            <!-- datatable ends -->
                         </div>
-                    </section>
-            </section>
-            
-            <!--Kurye Modal-->
-            <div class="col-6 kurye_modal hide_content" id="kurye_modal">
-                <h5>Seçilen Siparişler</h5>
-                <ul>
-                    <li class="custom_list">Sip-1</li>
-                    <li class="custom_list">Sip-2</li>
-                    <li class="custom_list">Sip-3</li>
-                </ul>
-                <fieldset class="form-group">
-                    <select class="custom-select" id="customSelect">
-                        <option selected>Kapı Seç</option>
-                        <option value="Gate-1">Gate-1</option>
-                        <option value="Gate-2">Gate-2</option>
-                        <option value="Gate-3">Gate-3</option>
-                    </select>
-                </fieldset>
-                <fieldset class="form-group">
-                    <select class="custom-select" id="customSelect">
-                        <option selected>Kurye Seç</option>
-                        <option value="John Doe">John Doe</option>
-                        <option value="Jane Doe">Jane Doe</option>
-                        <option value="Foo Bar">Foo Bar</option>
-                    </select>
-                </fieldset>
-                <div class="d-flex justify-content-end w-100">
-                    <button class="btn btn-dark" style="margin-right:8px;" id="btn_modal_cancel">İptal</button>
-                    <button class="btn btn-primary" id="btn_modal_success">Oluştur</button>
+                    </div>
                 </div>
             </div>
+           
+            
             <!-- Content ends -->
         </div>
     </div>
@@ -778,6 +780,7 @@
 <script src="app-assets/vendors/js/charts/apexcharts.min.js"></script>
 <script src="app-assets/vendors/js/extensions/moment.min.js"></script>
 <script src="app-assets/vendors/js/pickers/daterange/daterangepicker.js"></script>
+<script src="/app-assets/vendors/js/forms/select/select2.full.min.js"></script>
 <!-- END: Page Vendor JS-->
 
 <!-- BEGIN: Theme JS-->
@@ -796,6 +799,7 @@
 <script src="app-assets/js/scripts/pages/table-extended.js"></script>
 <script src="assets/map/ammap.js"></script>
 <script src="assets/map/dark.js"></script>
+<script src="/app-assets/js/scripts/forms/select/form-select2.js"></script>
 
 
 <!-- END: Page JS-->
@@ -819,112 +823,6 @@
 <script src="https://cdn.datatables.net/responsive/2.3.0/js/dataTables.responsive.min.js"></script>
 <script src="https://cdn.datatables.net/responsive/2.3.0/js/responsive.bootstrap.min.js"></script>
 
-
-
-<script>
-    const btn = document.getElementById('btn_ok');
-    const btn2= document.getElementById('btn_ok2');
-    const btn3= document.getElementById('btn_ok3');
-    const btn4= document.getElementById('btn_ok4');
-    const btn5= document.getElementById('btn_ok5');
-    const btn6= document.getElementById('btn_ok6');
-    const btn7= document.getElementById('btn_ok7');
-    const mainSection = document.getElementById('order');
-    // sections
-    const orderAcceptsection = document.getElementById('order_accept_section');
-    const orderPlaceSection = document.getElementById('order_place_section');
-    const orderCollectSection = document.getElementById('order_collect_section');
-    const orderReturnSection = document.getElementById('order_return_section');
-
-    const radioButtons = document.querySelectorAll('input[name="order"]');
-        btn.addEventListener("click", () => {
-            let selectedSize;
-            for (const radioButton of radioButtons) {
-                if (radioButton.checked && radioButton.id === "order_accept") {
-                    mainSection.classList.add('hide_content');
-                    orderAcceptsection.classList.add('show_content');
-
-                    const dropOrder = document.getElementById('drop_order');
-                    btn2.addEventListener('click', () => {
-                        orderAcceptsection.classList.remove('show_content');
-                        dropOrder.classList.remove('hide_content');
-                    })
-                }
-                else if (radioButton.checked && radioButton.id === "order_place") {
-                    mainSection.classList.add('hide_content');
-                    orderPlaceSection.classList.add('show_content');  
-
-                    const dropOrderPlace = document.getElementById("drop_order_place");
-                    btn3.addEventListener('click', () => {
-                        orderPlaceSection.classList.remove('show_content');
-                        dropOrderPlace.classList.remove('hide_content');
-                    })
-                }
-
-                else if (radioButton.checked && radioButton.id === "order_collect") {
-                    mainSection.classList.add('hide_content');
-                    orderCollectSection.classList.add('show_content');
-
-                    const dropCollectPlace = document.getElementById("drop_collect_place");
-                    btn4.addEventListener('click', () => {
-                        orderCollectSection.classList.remove('show_content');
-                        dropCollectPlace.classList.remove('hide_content');
-                        const dropCollectPlace2 = document.getElementById('drop_collect_place2');
-                        btn5.addEventListener('click', () => {
-                            dropCollectPlace.classList.add('hide_content');
-                            dropCollectPlace2.classList.remove('hide_content');
-                        })
-                    })
-                }
-
-                else if(radioButton.checked && radioButton.id === "order_return") {
-                    mainSection.classList.add('hide_content');
-                    orderReturnSection.classList.add('show_content');
-
-                    const dropReturnPlace = document.getElementById("drop_return_place");
-                    btn6.addEventListener('click', () => {
-                        orderReturnSection.classList.remove('show_content');
-                        dropReturnPlace.classList.remove('hide_content');
-                        const dropReturnPlace2 = document.getElementById('drop_return_place2');
-                        btn7.addEventListener('click', () => {
-                            dropReturnPlace.classList.add('hide_content');
-                            dropReturnPlace2.classList.remove('hide_content');
-                        })
-                    })
-                }
-            }
-        });
-        // Kurye Modal
-        const checkBoxes = document.querySelectorAll('input[type="checkbox"]');
-        let kuryeBtn = document.getElementById('kurye_btn');
-        for (const checkBox of checkBoxes) {
-            checkBox.addEventListener('change', () => {
-                if(checkBox.checked) {
-              
-                kuryeBtn.removeAttribute('disabled');
-            } else {
-                kuryeBtn.setAttribute('disabled','');
-            }
-            }); 
-        }
-        const kuryeModal = document.getElementById('kurye_modal');
-        kuryeBtn.addEventListener('click', () => {
-            kuryeModal.classList.remove('hide_content');
-        });
-
-       const btnModalCancel = document.getElementById('btn_modal_cancel');
-       const btnModalSuccess = document.getElementById('btn_modal_success');
-
-       btnModalCancel.addEventListener('click', () => {
-        kuryeModal.classList.add('hide_content');
-       });
-       
-       btnModalSuccess.addEventListener('click', () => {
-        kuryeModal.classList.add('hide_content');
-       });
-
-
-</script>
 </body>
 <!-- END: Body-->
 
