@@ -658,7 +658,7 @@
                       <div class=""></div>
                       <table class="table">
                         <thead>
-                          <tr>
+                          <tr id="tbl_head">
                             <th>Seçilen Sipariş</th>
                             <th class="text-left">Teslim Şekli</th>
                           </tr>
@@ -1115,10 +1115,10 @@
           kuryeParent.innerHTML += `<tr>
                 <td>${el}</td>
                     <td>
-                        <a class="mr-1" href="javascript:void(0);"
+                        <a class="mr-1 text-success" href="javascript:void(0);"
                             >Direkt Teslim<i class="bx bx-up-arrow-alt ml-1"></i>
                         </a>
-                        <a id="warehouse_btn" class="mr-1" href="javascript:void(0);"
+                        <a id="warehouse_btn" class="mr-1 text-warning" href="javascript:void(0);"
                             >Depoya Teslim<i class="bx bxs-store ml-1"></i>
                         </a>
                     </td>
@@ -1127,6 +1127,9 @@
         let warehouseBtn = document.querySelectorAll("#warehouse_btn");
         warehouseBtn.forEach((btn) => {
           btn.addEventListener("click", (e) => {
+           const tblHead = document.getElementById('tbl_head');
+            tblHead.innerHTML = "";
+            tblHead.innerHTML += `<th>Seçilen Sİpariş</th><th>Teslim Şekli</th><th>Depo Seç</th>`;
             e.target.parentElement.parentElement.innerHTML += `
             <fieldset class="form-group mt-1">
                             <select class="form-control" id="basicSelect">
