@@ -219,7 +219,7 @@
      .book_footer {
         position: fixed;
         display: flex;
-        justify-content: space-between;
+        justify-content: space-around;
         flex-wrap: wrap;
         align-items: center;
         padding: 32px;
@@ -227,8 +227,8 @@
         border-radius: 8px;
         border: 1px solid #dfe2e6;
         bottom: 0;
-        left:14.5%;
-        width: 36%;
+        left:16.2%;
+        width: 33.3%;
         height: auto;
         z-index: 5000 !important;
      }
@@ -608,8 +608,8 @@
                                     </div>
                                     <br>
                                     <div class="form-label-group col-12">
-                                        <input type="text" id="first-detail2-column" class="custom_input2" placeholder="Add details for the courier (floor number, door, other information, etc.)" name="fname-column">
-                                        <label for="first-detail2-column">Add details for the courier (floor number, door, other information, etc.)</label>
+                                        <input type="text" id="first-detail2-column" class="custom_input2" placeholder="Add details for the courier" name="fname-column">
+                                        <label for="first-detail2-column">Add details for the courier</label>
                                     </div>
                                     <br>
                                     <h4 class="mt-1 mb-3">Order details <i
@@ -882,9 +882,9 @@
                         Total(excl. VAT): <b>£22.20</b></h4>
                     <h4 class="font-medium-1">
                         <i class="livicon-evo" data-options="name:stopwatch.svg; style:original; size:20px;"></i>
-                        Estimated pickup</h4>
-                        <div class="col-4">
-                            <button id="request_btn" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter" disabled>Request</button>                  
+                        Estimated pickup: <b>14 min</b></h4>
+                        <div class="col-12 mt-2 p-0 d-flex justify-content-center">
+                            <button id="request_btn" class="btn btn-primary w-50" data-toggle="modal" data-target="#exampleModalCenter" disabled>Request</button>                  
                             <div  class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                                 <div class="modal-dialog modal-dialog-centered modal-dialog-centered modal-dialog-scrollable">
                                     <div class="modal-content">
@@ -1482,7 +1482,7 @@
                         </div>
                         <div class="col-12 mt-2">
                             <img src="app-assets/images/drop_off.svg" alt="" class="hide_content w-100 h-100" id="adress_svg2">
-                                <div id="name_field2" class="">
+                                <div id="name_field2" class="" style="display: flex; flex-wrap:wrap;">
                                     <div class="form-label-group col-6">
                                         <input type="text" id="first-name-column" class="custom_input2" placeholder="Name" name="fname-column">
                                         <label for="first-name-column">Name</label>
@@ -1507,10 +1507,9 @@
                                     </div>
                                     <br>
                                     <div class="form-label-group col-12">
-                                        <input type="text" id="first-detail2-column" class="custom_input2" placeholder="Add details for the courier (floor number, door, other information, etc.)" name="fname-column">
-                                        <label for="first-detail2-column">Add details for the courier (floor number, door, other information, etc.)</label>
+                                        <input type="text" id="first-detail3-column" class="custom_input2" placeholder="Add details for the courier" name="fname-column">
+                                        <label for="first-detail3-column">Add details for the courier</label>
                                     </div>
-                                    <br>
                                     <h4 class="mt-1 mb-3">Order details <i
                                         class="bx bx-help-circle bxs-sm cursor-pointer" title="Information about order details"></i>
                                 </h4>
@@ -1759,15 +1758,17 @@
     
       infowindow.setContent(infowindowContent);
     
-      const marker = new google.maps.Marker({
+      const marker1 = new google.maps.Marker({
         map,
         anchorPoint: new google.maps.Point(0, -29),
+        icon: './img/svg/pick.png',
+        animation: google.maps.Animation.BOUNCE,
       });
     
       // ac 1
       autocomplete.addListener("place_changed", () => {
         infowindow.close();
-        marker.setVisible(false);
+        marker1.setVisible(false);
     
         const place = autocomplete.getPlace();
         //ac1 dynamic inputs
@@ -1794,14 +1795,20 @@
           map.setZoom(17);
         }
     
-        marker.setPosition(place.geometry.location);
-        marker.setVisible(true);
+        marker1.setPosition(place.geometry.location);
+        marker1.setVisible(true);
       });
 
       // ac 2
+      const marker2 = new google.maps.Marker({
+        map,
+        anchorPoint: new google.maps.Point(0, -29),
+        icon: './img/svg/drop.png',
+        animation: google.maps.Animation.BOUNCE,
+      });
       autocomplete2.addListener("place_changed", () => {
         infowindow.close();
-        marker.setVisible(false);
+        marker2.setVisible(false);
     
         const place2 = autocomplete2.getPlace();
 
@@ -1828,8 +1835,8 @@
           map.setZoom(17);
         }
     
-        marker.setPosition(place2.geometry.location);
-        marker.setVisible(true);
+        marker2.setPosition(place2.geometry.location);
+        marker2.setVisible(true);
       });
       
      
