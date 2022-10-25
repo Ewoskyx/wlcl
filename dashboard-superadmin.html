@@ -14,10 +14,10 @@
 
     <!-- BEGIN: Vendor CSS-->
     <link rel="stylesheet" type="text/css" href="app-assets/vendors/css/vendors.min.css">
-    <link rel="stylesheet" type="text/css" href="app-assets/vendors/css/charts/apexcharts.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/apexcharts/3.36.0/apexcharts.min.css" integrity="sha512-xgTqxY/iusAJ12SiAI90HWF8FxIp8/uOsdqmRZQQc/CKbG1wWJnKipd/d191hoXhzI3Ts+WbJvbOWm64GYIvFg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" type="text/css" href="app-assets/vendors/css/extensions/swiper.min.css">
     <!-- END: Vendor CSS-->
-
+    
     <!-- BEGIN: Theme CSS-->
     <link rel="stylesheet" type="text/css" href="app-assets/css/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="app-assets/css/bootstrap-extended.css">
@@ -27,11 +27,12 @@
     <link rel="stylesheet" type="text/css" href="app-assets/css/themes/semi-dark-layout.css">
     <link rel="stylesheet" type="text/css" href="app-assets/map/css/style.css">
     <!-- END: Theme CSS-->
-
+    
     <!-- BEGIN: Page CSS-->
     <link rel="stylesheet" type="text/css" href="app-assets/css/core/menu/menu-types/vertical-menu.css">
     <link rel="stylesheet" type="text/css" href="app-assets/css/pages/dashboard-ecommerce.css">
     <!-- END: Page CSS-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/apexcharts/3.36.0/apexcharts.min.js" integrity="sha512-LIcs3gAjdtrDlIsGNi5rHKVfkF4XUdGgn32BZQHxFqMESke2353LmLdO79pR0teF5DISWi2MrADSDDrft/vRGQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
     <!-- BEGIN: Custom CSS-->
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
@@ -162,7 +163,8 @@
                     class="menu-title text-truncate" data-i18n="Sipariş Yönetimi">Sipariş Yönetimi</span></a>
             </li>
 
-            <li class="open nav-item"><a href="#"><i class="menu-livicon" data-icon="users"></i><span
+
+            <li class=" nav-item"><a href="#"><i class="menu-livicon" data-icon="users"></i><span
                     class="menu-title text-truncate" data-i18n="Kullanıcılar">Kullanıcılar</span></a>
                 <ul class="menu-content">
 
@@ -171,20 +173,24 @@
                             class="bx bx-right-arrow-alt"></i><span class="menu-item text-truncate"
                                                                     data-i18n="Kullanıcı Listesi">Kullanıcı Listesi</span></a></li>
 
-                    <li class="active"><a class="d-flex align-items-center" href="app-users-view.html"><i
+
+                    <li><a class="d-flex align-items-center" href="app-users-view.html"><i
                             class="bx bx-right-arrow-alt"></i><span class="menu-item text-truncate"
                                                                     data-i18n="Kullanıcı Görüntüle">Kullanıcı Görüntüle</span></a></li>
+
 
 
                     <li><a class="d-flex align-items-center" href="app-users-edit.html"><i
                             class="bx bx-right-arrow-alt"></i><span class="menu-item text-truncate"
                                                                     data-i18n="Kullanıcı Düzenle">Kullanıcı Düzenle</span></a></li>
-<li><a class="d-flex align-items-center" href="app-users-group.html"><i
-                            class="bx bx-right-arrow-alt"></i><span class="menu-item text-truncate"
-                                                                    data-i18n="Kullanıcı Düzenle">Kullanıcı Gruplama</span></a></li>
+
+
+
+
 
                 </ul>
             </li>
+
             <li class=" nav-item"><a href="#"><i class="menu-livicon" data-icon="bar-chart"></i><span
                     class="menu-title text-truncate" data-i18n="Proforma">Proforma</span></a>
                 <ul class="menu-content">
@@ -210,9 +216,7 @@
                                                                     data-i18n="Proforma Ekle">Proforma Ekle</span></a></li>
 
 
-                                                                    <li class=" nav-item"><a href="log-transaction.html"><i class="menu-livicon" data-icon="list"></i><span
-                                                                        class="menu-title text-truncate" data-i18n="transaction">Transaction Log</span></a>
-                                                                </li>
+
                 </ul>
             </li>
 
@@ -264,7 +268,10 @@
             <li class=" nav-item"><a href="help-page.html"><i class="menu-livicon" data-icon="help"></i><span
                     class="menu-title text-truncate" data-i18n="Yardım">Yardım</span></a>
             </li>
-            <li class="nav-item"><a href="dashboard-superadmin.html"><i class="menu-livicon" data-icon="list"></i><span
+            <li class=" nav-item"><a href="log-transaction.html"><i class="menu-livicon" data-icon="list"></i><span
+                    class="menu-title text-truncate" data-i18n="transaction">Transaction Log</span></a>
+            </li>
+            <li class="active nav-item"><a href="dashboard-superadmin.html"><i class="menu-livicon" data-icon="list"></i><span
                 class="menu-title text-truncate" data-i18n="superadmin">Dashboard Superadmin</span></a>
             </li>
         </ul>
@@ -272,271 +279,318 @@
 </div>
 <!-- END: Main Menu-->
 
-    <!-- BEGIN: Content-->
-    <div class="app-content content">
-        <div class="content-overlay"></div>
-        <div class="content-wrapper">
-            <div class="content-header row">
-            </div>
-            <div class="content-body">
-                <!-- users view start -->
-                <section class="users-view">
-                    <!-- users view media object start -->
-                    <div class="row">
-                        <div class="col-12 col-sm-7">
-                            <div class="media mb-2">
-                                <a class="mr-1" href="javascript:void(0);">
-                                    <img src="../app-assets/images/portrait/small/avatar-s-26.jpg" alt="users view avatar" class="users-avatar-shadow rounded-circle" height="64" width="64">
-                                </a>
-                                <div class="media-body pt-25">
-                                    <h4 class="media-heading"><span class="users-view-name">Dean Stanley </span><span class="text-muted font-medium-1"> @</span><span class="users-view-username text-muted font-medium-1 ">candy007</span></h4>
-                                    <span>ID:</span>
-                                    <span class="users-view-id">305</span>
+<!-- BEGIN: Content-->
+<div class="app-content content">
+    <div class="content-overlay"></div>
+    <div class="content-wrapper">
+        <div class="content-header row">
+        </div>
+        <div class="content-body">
+            <!-- Dashboard Ecommerce Starts -->
+            <section id="dashboard-ecommerce">
+                <div class="row">
+                    <div class="col-xl-12 col-12 dashboard-order-summary">
+                        <div class="card">
+                            <div class="row">
+                                <!-- In A Week -->
+                                <div class="col-md-6 col-12 order-summary border-right pr-md-0">
+                                    <div class="card mb-0">
+                                        <div class="card-header d-flex justify-content-between align-items-center">
+                                            <h4 class="card-title">Revenue Chart In A Week</h4>
+                                        </div>
+                                        <div class="card-body p-0">
+                                            <div id="in_a_week"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- By City -->
+                                <div class="col-md-6 col-12 pl-md-0 pr-1">
+                                    <div class="card mb-0">
+                                        <div class="card-header pb-50">
+                                            <h4 class="card-title">Revenue Chart By City</h4>
+                                        </div>
+                                        <div class="card-body pr-1">
+                                            <div id="by_city"></div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-12 col-sm-5 px-0 d-flex justify-content-end align-items-center px-1 mb-2">
-                            <a href="javascript:void(0);" class="btn btn-sm mr-25 border"><i class="bx bx-envelope font-small-3"></i></a>
-                            <a href="javascript:void(0);" class="btn btn-sm mr-25 border">Profile</a>
-                            <a href="../html/ltr/vertical-menu-template/app-users-edit.html" class="btn btn-sm btn-primary">Edit</a>
+                    </div>
+                  
+                    
+                </div>
+                <div class="row">
+                    <div class="col-xl-12 col-12 dashboard-order-summary">
+                        <div class="card">
+                            <div class="row">
+                                <!--By The Day Of Week -->
+                                <div class="col-md-6 col-12 order-summary border-right pr-md-0">
+                                    <div class="card mb-0">
+                                        <div class="card-header d-flex justify-content-between align-items-center">
+                                            <h4 class="card-title">By The Day Of The Week</h4>
+                                        </div>
+                                        <div class="card-body p-0">
+                                            <div id="by_the_day_of_the_week"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Top Purchased Products -->
+                                <div class="col-md-6 col-12 pl-md-0 pr-1">
+                                    <div class="card mb-0">
+                                        <div class="card-header pb-50">
+                                            <h4 class="card-title">Top Purchased Products</h4>
+                                        </div>
+                                        <div class="card-body">
+                                            <div id="top_purchesed_products"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <!-- users view media object ends -->
-                    <!-- users view card data start -->
-                    <div class="card">
-                        <div class="card-body">
+                  
+                    
+                </div>
+                <div class="row">
+                    <div class="col-xl-12 col-12 dashboard-order-summary">
+                        <div class="card">
                             <div class="row">
-                                <div class="col-12 col-md-4">
-                                    <table  class="table table-borderless ">
-                                        <tbody>
-                                            <tr>
-                                                <td>Registered:</td>
-                                                <td>01/01/2019</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Latest Activity:</td>
-                                                <td class="users-view-latest-activity">30/04/2019</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Verified:</td>
-                                                <td class="users-view-verified">Yes</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Role:</td>
-                                                <td class="users-view-role">Staff</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Status:</td>
-                                                <td><span class="badge badge-light-success users-view-status">Active</span></td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
+                                <!-- Customer purchasing frequency -->
+                                <div class="col-md-12 col-12 order-summary border-right pr-md-0">
+                                    <div class="card mb-0">
+                                        <div class="card-header d-flex justify-content-between align-items-center">
+                                            <h4 class="card-title">Customer purchasing frequency</h4>
+                                        </div>
+                                        <div class="card-body p-0">
+                                            <div id="customer_purchasing_frequency"></div>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="col-12 col-md-8">
+                               
+                            </div>
+                        </div>
+                    </div>
+                  
+                    
+                </div>
+            </section>
+            <!-- Dashboard Ecommerce ends -->
+        </div>
+    </div>
+</div>
+<!-- END: Content-->
+
+<!-- demo chat-->
+<div class="widget-chat-demo">
+    <!-- widget chat demo footer button start -->
+    <button class="btn btn-primary chat-demo-button glow"><i class="livicon-evo"
+                                                             data-options="name: comments.svg; style: lines; size: 24px; strokeColor: #fff; autoPlay: true; repeat: loop;"></i></button>
+    <!-- widget chat demo footer button ends -->
+    <div class="widget-chat widget-chat-demo d-none">
+        <div class="card mb-0">
+            <div class="card-header border-bottom p-0">
+                <div class="media m-75">
+                    <a href="JavaScript:void(0);">
+                        <div class="avatar mr-75">
+                            <img src="app-assets/images/portrait/small/avatar-s-2.jpg" alt="avtar images" width="32"
+                                 height="32">
+                            <span class="avatar-status-online"></span>
+                        </div>
+                    </a>
+                    <div class="media-body">
+                        <h6 class="media-heading mb-0 pt-25"><a href="javaScript:void(0);">Temsilci</a></h6>
+                        <span class="text-muted font-small-3">Aktif</span>
+                    </div>
+                </div>
+                <div class="heading-elements">
+                    <i class="bx bx-x widget-chat-close float-right my-auto cursor-pointer"></i>
+                </div>
+            </div>
+            <div class="card-body widget-chat-container widget-chat-scroll">
+                <div class="chat-content">
+                    <div class="badge badge-pill badge-light-secondary my-1">Bugün</div>
+                    <div class="chat chat-left">
+                        <div class="chat-body">
+                            <div class="chat-message">
+                                <p>Merhaba, destek hattımıza hoşgeldiniz. Size nasıl yardımcı olabilirim ?</p>
+                                <span class="chat-time">7:50</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="chat">
+                        <div class="chat-body">
+                            <div class="chat-message">
+                                <p>Merhaba, siparişimin durumunu öğrenmek istiyorum.</p>
+                                <span class="chat-time">7:45</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="chat chat-left">
+                        <div class="chat-body">
+                            <div class="chat-message">
+                                <p>Kargonuz bugün yola çıkacak.</p>
+                                <span class="chat-time">7:44</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="chat">
+                        <div class="chat-body">
+                            <div class="chat-message">
+                                <p>Ne zaman teslim olur ?</p>
+                                <span class="chat-time">7:42</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="chat chat-left">
+                        <div class="chat-body">
+                            <div class="chat-message">
+                                <p>Üç iş günü içerisinde teslim olacaktır.</p>
+                                <span class="chat-time">7:40</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="chat">
+                        <div class="chat-body">
+                            <div class="chat-message">
+                                <p>Teşekkürler.</p>
+                                <span class="chat-time">7:37</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="chat chat-left">
+                        <div class="chat-body">
+                            <div class="chat-message">
+                                <p>İyi günler.</p>
+                                <span class="chat-time">7:33</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card-footer border-top p-1">
+                <form class="d-flex" onsubmit="widgetChatMessageDemo();" action="javascript:void(0);">
+                    <input type="text" class="form-control chat-message-demo mr-75" placeholder="Type here...">
+                    <button type="submit" class="btn btn-primary glow px-1"><i
+                            class="bx bx-paper-plane"></i></button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="sidenav-overlay"></div>
+<div class="drag-target"></div>
+<div class="modal fade" id="modal_id" tabindex="-1" role="dialog" aria-labelledby="modal_name_label" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="modal_name_label">
+                    Modal Başlık
+                </h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <i class="bx bx-x"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <section id="basic-datatable">
+                    <div class="filters-list-filter px-1">
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="card">
+                                <div class="card-body card-dashboard pt-0">
                                     <div class="table-responsive">
-                                        <table class="table mb-0 responsive-table">
-                                            <thead>
-                                                <tr>
-                                                    <th>Module Permission</th>
-                                                    <th>Read</th>
-                                                    <th>Write</th>
-                                                    <th>Create</th>
-                                                    <th>Delete</th>
-                                                </tr>
+                                        <table id="example" class="table" data-searching="false">
+                                            <thead class="tableThead">
+                                            <tr>
+                                                <th>Kodu</th>
+                                                <th>#</th>
+                                                <th>#</th>
+                                                <th>#</th>
+                                                <th>Toplam Sipariş</th>
+                                                <th>Toplam Ağırlık</th>
+                                            </tr>
                                             </thead>
-                                            <tbody>
-                                                <tr>
-                                                    <td>Users</td>
-                                                    <td>Yes</td>
-                                                    <td>No</td>
-                                                    <td>No</td>
-                                                    <td>Yes</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Articles</td>
-                                                    <td>No</td>
-                                                    <td>Yes</td>
-                                                    <td>No</td>
-                                                    <td>Yes</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Staff</td>
-                                                    <td>Yes</td>
-                                                    <td>Yes</td>
-                                                    <td>No</td>
-                                                    <td>No</td>
-                                                </tr>
+                                            <tbody class="tableText">
+                                            <tr>
+                                                <td>CRM30027</td>
+                                                <td>#</td>
+                                                <td>#</td>
+                                                <td>#</td>
+                                                <td>300</td>
+                                                <td>350 kg.</td>
+                                            </tr>
+                                            <tr>
+                                                <td>CRM30027</td>
+                                                <td>#</td>
+                                                <td>#</td>
+                                                <td>#</td>
+                                                <td>300</td>
+                                                <td>350 kg.</td>
+                                            </tr>
+                                            <tr>
+                                                <td>CRM30027</td>
+                                                <td>#</td>
+                                                <td>#</td>
+                                                <td>#</td>
+                                                <td>300</td>
+                                                <td>350 kg.</td>
+                                            </tr>
+                                            <tr>
+                                                <td>CRM30027</td>
+                                                <td>#</td>
+                                                <td>#</td>
+                                                <td>#</td>
+                                                <td>300</td>
+                                                <td>350 kg.</td>
+                                            </tr>
+                                            <tr>
+                                                <td>CRM30027</td>
+                                                <td>#</td>
+                                                <td>#</td>
+                                                <td>#</td>
+                                                <td>300</td>
+                                                <td>350 kg.</td>
+                                            </tr>
+                                            <tr>
+                                                <td>CRM30027</td>
+                                                <td>#</td>
+                                                <td>#</td>
+                                                <td>#</td>
+                                                <td>300</td>
+                                                <td>350 kg.</td>
+                                            </tr>
                                             </tbody>
+                                            <tfoot>
+                                            <tr>
+                                                <th>Kodu</th>
+                                                <th>#</th>
+                                                <th>#</th>
+                                                <th>#</th>
+                                                <th>Toplam Sipariş</th>
+                                                <th>Toplam Ağırlık</th>
+                                            </tr>
+                                            </tfoot>
                                         </table>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <!-- users view card data ends -->
-                    <!-- users view card details start -->
-                    <div class="card">
-                        <div class="card-body">
-                            <div class="row bg-primary bg-lighten-5 rounded mb-2 mx-25 text-center text-lg-left">
-                                <div class="col-12 col-sm-4 p-2">
-                                    <h6 class="text-primary mb-0">Posts: <span class="font-large-1 align-middle">125</span></h6>
-                                </div>
-                                <div class="col-12 col-sm-4 p-2">
-                                    <h6 class="text-primary mb-0">Followers: <span class="font-large-1 align-middle">534</span></h6>
-                                </div>
-                                <div class="col-12 col-sm-4 p-2">
-                                    <h6 class="text-primary mb-0">Following: <span class="font-large-1 align-middle">256</span></h6>
-                                </div>
-                            </div>
-                            <div class="col-12">
-                                <table class="table table-borderless responsive-table">
-                                    <tbody>
-                                        <tr>
-                                            <td>Username:</td>
-                                            <td class="users-view-username">dean3004</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Name:</td>
-                                            <td class="users-view-name">Dean Stanley</td>
-                                        </tr>
-                                        <tr>
-                                            <td>E-mail:</td>
-                                            <td class="users-view-email">deanstanley@gmail.com</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Comapny:</td>
-                                            <td>XYZ Corp. Ltd.</td>
-                                        </tr>
-
-                                    </tbody>
-                                </table>
-                                <h5 class="mb-1"><i class="bx bx-link"></i> Social Links</h5>
-                                <table id="social" class="table table-borderless responsive-table">
-                                    <tbody>
-                                        <tr>
-                                            <td>Twitter:</td>
-                                            <td><a href="javascript:void(0);">https://www.twitter.com/</a></td>
-                                        </tr>
-                                        <tr>
-                                            <td>Facebook:</td>
-                                            <td><a href="javascript:void(0);">https://www.facebook.com/</a></td>
-                                        </tr>
-                                        <tr>
-                                            <td>Instagram:</td>
-                                            <td><a href="javascript:void(0);">https://www.instagram.com/</a></td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                                <h5 class="mb-1"><i class="bx bx-info-circle"></i> Personal Info</h5>
-                                <table class="table table-borderless mb-0">
-                                    <tbody>
-                                        <tr>
-                                            <td>Birthday:</td>
-                                            <td>03/04/1990</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Country:</td>
-                                            <td>USA</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Languages:</td>
-                                            <td>English</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Contact:</td>
-                                            <td>+(305) 254 24668</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- users view card details ends -->
-
                 </section>
-                <!-- users view ends -->
-
+            </div>
+            <div class="modal-footer mt-2">
+                <button type="button" class="btn btn-light-secondary mr-1 mb-1" data-dismiss="modal">
+                    Kapat
+                </button>
             </div>
         </div>
     </div>
-    <!-- END: Content-->
-
-    <!-- demo chat-->
-    <div class="widget-chat-demo">
-        <!-- widget chat demo footer button start -->
-        <button class="btn btn-primary chat-demo-button glow"><i class="livicon-evo" data-options="name: comments.svg; style: lines; size: 24px; strokeColor: #fff; autoPlay: true; repeat: loop;"></i></button>
-        <!-- widget chat demo footer button ends -->
-        <!-- widget chat demo start -->
-        <div class="widget-chat widget-chat-demo d-none">
-            <div class="card mb-0">
-                <div class="card-header border-bottom p-0">
-                    <div class="media m-75">
-                        <a href="JavaScript:void(0);">
-                            <div class="avatar mr-75">
-                                <img src="../app-assets/images/portrait/small/avatar-s-2.jpg" alt="avtar images" width="32" height="32">
-                                <span class="avatar-status-online"></span>
-                            </div>
-                        </a>
-                        <div class="media-body">
-                            <h6 class="media-heading mb-0 pt-25"><a href="javaScript:void(0);">Kiara Cruiser</a></h6>
-                            <span class="text-muted font-small-3">Active</span>
-                        </div>
-                    </div>
-                    <div class="heading-elements">
-                        <i class="bx bx-x widget-chat-close float-right my-auto cursor-pointer"></i>
-                    </div>
-                </div>
-                <div class="card-body widget-chat-container widget-chat-demo-scroll">
-                    <div class="chat-content">
-                        <div class="badge badge-pill badge-light-secondary my-1">today</div>
-                        <div class="chat">
-                            <div class="chat-body">
-                                <div class="chat-message">
-                                    <p>How can we help? 😄</p>
-                                    <span class="chat-time">7:45 AM</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="chat chat-left">
-                            <div class="chat-body">
-                                <div class="chat-message">
-                                    <p>Hey John, I am looking for the best admin template.</p>
-                                    <p>Could you please help me to find it out? 🤔</p>
-                                    <span class="chat-time">7:50 AM</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="chat">
-                            <div class="chat-body">
-                                <div class="chat-message">
-                                    <p>Stack admin is the responsive bootstrap 4 admin template.</p>
-                                    <span class="chat-time">8:01 AM</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="card-footer border-top p-1">
-                    <form class="d-flex" onsubmit="widgetChatMessageDemo();" action="javascript:void(0);">
-                        <input type="text" class="form-control chat-message-demo mr-75" placeholder="Type here...">
-                        <button type="submit" class="btn btn-primary glow px-1"><i class="bx bx-paper-plane"></i></button>
-                    </form>
-                </div>
-            </div>
-        </div>
-        <!-- widget chat demo ends -->
-
-    </div>
-    <div class="sidenav-overlay"></div>
-    <div class="drag-target"></div>
-
-    <!-- BEGIN: Footer-->
-    <footer class="footer footer-static footer-dark">
-        <p class="clearfix mb-0"><span class="float-left d-inline-block">2021 &copy; PIXINVENT</span><span class="float-right d-sm-inline-block d-none">Crafted with<i class="bx bxs-heart pink mx-50 font-small-3"></i>by<a class="text-uppercase" href="https://1.envato.market/pixinvent_portfolio" target="_blank">Pixinvent</a></span>
-            <button class="btn btn-primary btn-icon scroll-top" type="button"><i class="bx bx-up-arrow-alt"></i></button>
-        </p>
-    </footer>
-    <!-- END: Footer-->
+</div>
+<!-- BEGIN: Footer-->
+<div data-include="footer"></div>
+<!-- END: Footer-->
 
 
 <!-- BEGIN: Vendor JS-->

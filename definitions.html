@@ -41,6 +41,52 @@
 
     <link rel="stylesheet" href="https://cdn.datatables.net/1.12.1/css/dataTables.bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.3.0/css/responsive.bootstrap.min.css">
+    <style>
+        .label-con {
+            min-width: 500px;
+            min-height: 670px;
+            border: 1px solid #ccc;
+            margin: 30px auto;
+            border-radius: 5px;
+            padding: 5px;
+        }
+
+        .label-top {
+            display: flex;
+            align-items: center;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .label-rows>div,
+        .label-center-rows>div {
+            display: flex
+        }
+
+        .label-rows>div>span {
+            display: flex;
+            align-items: center;
+            width: 50%;
+            height: 30px;
+            padding-left: 5px;
+            margin: 1px 0;
+        }
+
+        .label-center-rows>div>span {
+            display: flex;
+            align-items: center;
+            width: 50%;
+            height: 30px;
+            padding-left: 5px;
+            margin: 1px 0;
+            border-bottom: 1px solid #f1f1f1;
+        }
+
+        .label-title {
+            margin: 5px;
+            padding: 8px 0;
+            border-top: 1px solid #ddd;
+        }
+    </style>
 </head>
 <!-- END: Head-->
 
@@ -48,7 +94,6 @@
 
 <body class="vertical-layout vertical-menu-modern dark-layout 2-columns  navbar-sticky footer-static  "
     data-open="click" data-menu="vertical-menu-modern" data-col="2-columns" data-layout="dark-layout">
-
     <div id="loader">
         <div class="boxes">
             <div class="box">
@@ -279,6 +324,12 @@
                 <li class=" nav-item"><a href="help-page.html"><i class="menu-livicon" data-icon="help"></i><span
                             class="menu-title text-truncate" data-i18n="Yardım">Yardım</span></a>
                 </li>
+                <li class=" nav-item"><a href="log-transaction.html"><i class="menu-livicon" data-icon="list"></i><span
+                    class="menu-title text-truncate" data-i18n="transaction">Transaction Log</span></a>
+            </li>
+            <li class="nav-item"><a href="dashboard-superadmin.html"><i class="menu-livicon" data-icon="list"></i><span
+                class="menu-title text-truncate" data-i18n="superadmin">Dashboard Superadmin</span></a>
+            </li>
             </ul>
         </div>
     </div>
@@ -310,22 +361,21 @@
                                 <li class="nav-item">
                                     <a class="nav-link d-flex align-items-center active" id="zone" data-toggle="tab"
                                         href="#zone-tab" aria-controls="account" role="tab" aria-selected="true">
-                                        <i class="bx bx-info-circle mr-25"></i><span class="d-none d-sm-block">Bölge
-                                            Tanımları</span>
+                                        <span class="d-none d-sm-block">Bölge
+                                        </span>
                                     </a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link d-flex align-items-center" id="weight" data-toggle="tab"
                                         href="#weight-tab" aria-controls="information" role="tab" aria-selected="false">
-                                        <i class="bx bx-info-circle mr-25"></i><span
-                                            class="d-none d-sm-block">Birimler</span>
+                                        <span class="d-none d-sm-block">Birimler</span>
                                     </a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link d-flex align-items-center" id="car_type" data-toggle="tab"
                                         href="#car_type-tab" aria-controls="information" role="tab"
                                         aria-selected="false">
-                                        <i class="bx bx-info-circle mr-25"></i><span class="d-none d-sm-block">Araç
+                                        <span class="d-none d-sm-block">Araç
                                             Tipleri</span>
                                     </a>
                                 </li>
@@ -334,8 +384,54 @@
                                     <a class="nav-link d-flex align-items-center" id="order_type" data-toggle="tab"
                                         href="#order_type-tab" aria-controls="information" role="tab"
                                         aria-selected="false">
-                                        <i class="bx bx-info-circle mr-25"></i><span class="d-none d-sm-block">Sipariş
+                                        <span class="d-none d-sm-block">Sipariş
                                             Tipleri</span>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link d-flex align-items-center" id="return_code" data-toggle="tab"
+                                        href="#return_code-tab" aria-controls="information" role="tab"
+                                        aria-selected="false">
+                                        <span class="d-none d-sm-block">
+                                            Return Codes</span>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link d-flex align-items-center" id="stock_return_code"
+                                        data-toggle="tab" href="#stock_return_code-tab" aria-controls="information"
+                                        role="tab" aria-selected="false">
+                                        <span class="d-none d-sm-block">
+                                            Stock Return Codes</span>
+                                    </a>
+                                <li class="nav-item">
+                                    <a class="nav-link d-flex align-items-center" id="non-delivery_return_code"
+                                        data-toggle="tab" href="#non-delivery_return_code-tab"
+                                        aria-controls="information" role="tab" aria-selected="false">
+                                        <span class="d-none d-sm-block">
+                                            Non-Delivery Return Codes</span>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link d-flex align-items-center" id="area_label_defination"
+                                        data-toggle="tab" href="#area_label_defination-tab" aria-controls="information"
+                                        role="tab" aria-selected="false">
+                                        <span class="d-none d-sm-block">
+                                            Area Label</span>
+                                    </a>
+                                <li class="nav-item">
+                                    <a class="nav-link d-flex align-items-center" id="stock_label_defination"
+                                        data-toggle="tab" href="#stock_label_defination-tab" aria-controls="information"
+                                        role="tab" aria-selected="false">
+                                        <span class="d-none d-sm-block">
+                                            Stock Label</span>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link d-flex align-items-center" id="sms-email-push_defination"
+                                        data-toggle="tab" href="#sms-email-push_defination-tab"
+                                        aria-controls="information" role="tab" aria-selected="false">
+                                        <span class="d-none d-sm-block">
+                                            Sms-Email-Push</span>
                                     </a>
                                 </li>
                             </ul>
@@ -347,7 +443,8 @@
                                             <div class="d-flex justify-content-between">
                                                 <h4 class="card-title">Bölgeler</h4>
                                                 <a class="btn btn-primary mb-2 glow users-list-clear mb-0"
-                                                    style="float: right" href="#"><i class="fa-solid fa-user-plus"></i>
+                                                    style="float: right" href="region-set.html"><i
+                                                        class="fa-solid fa-user-plus"></i>
                                                     Yeni Bölge Ekle</a>
                                             </div>
 
@@ -375,82 +472,62 @@
                                                                                 aria-controls="users-list-datatable"
                                                                                 rowspan="1" colspan="1"
                                                                                 aria-label="username: activate to sort column ascending"
-                                                                                style="width: 189.203px;">Bölge Adı</th>
+                                                                                style="width: 189.203px;">Region Name
+                                                                            </th>
                                                                             <th class="sorting" tabindex="0"
                                                                                 aria-controls="users-list-datatable"
                                                                                 rowspan="1" colspan="1"
                                                                                 aria-label="name: activate to sort column ascending"
-                                                                                style="width: 259.016px;">Lokasyon
-                                                                                Bilgisi</th>
+                                                                                style="width: 259.016px;">
+                                                                                Region Info</th>
+                                                                            <th class="sorting" tabindex="0"
+                                                                                aria-controls="users-list-datatable"
+                                                                                rowspan="1" colspan="1"
+                                                                                aria-label="username: activate to sort column ascending"
+                                                                                style="width: 189.203px;">Region Map
+                                                                            </th>
 
 
                                                                             <th class="sorting" tabindex="0"
                                                                                 aria-controls="users-list-datatable"
                                                                                 rowspan="1" colspan="1"
                                                                                 aria-label="status: activate to sort column ascending"
-                                                                                style="width: 163.859px;">Durum</th>
+                                                                                style="width: 163.859px;">State</th>
 
                                                                             <th class="sorting_disabled" rowspan="1"
                                                                                 colspan="1" aria-label="edit"
-                                                                                style="width: 83.4531px;">İşlemler</th>
+                                                                                style="width: 83.4531px;">Proccess</th>
                                                                         </tr>
                                                                     </thead>
                                                                     <tbody>
 
                                                                         <tr role="row" class="odd">
-                                                                            <td class="sorting_1">310</td>
-                                                                            <td>Zone A</td>
-                                                                            <td>Bölge Bilgisi</td>
+                                                                            <td class="sorting_1">1</td>
+                                                                            <td>Liverpool</td>
+                                                                            <td>Liverpool, the UK</td>
+                                                                            <td>
+                                                                                <a href="region-get.html"
+                                                                                    target="_blank">Show On Map</a>
+                                                                                <!-- <a href="http://maps.google.com/maps?z=12&t=m&q=loc:53.400002+-2.983333" target="_blank">Show On Map</a> -->
+                                                                            </td>
                                                                             <td><span
-                                                                                    class="badge badge-light-success">Aktif</span>
+                                                                                    class="badge badge-light-success">Active</span>
                                                                             </td>
                                                                             <td>
                                                                                 <div
                                                                                     class="d-flex justify-content-center">
                                                                                     <a href="#"
-                                                                                        class="btn btn-sm btn-outline-info mr-1">Düzenle</a>
-                                                                                        <a href="#"
-                                                                                        class="btn btn-sm btn-outline-danger mr-1">Sil</a>
-                                                                                </div>
-                                                                            </td>
-                                                                        </tr>
-
-                                                                        <tr role="row" class="odd">
-                                                                            <td class="sorting_1">310</td>
-                                                                            <td>Zone B</td>
-                                                                            <td>Bölge Bilgisi</td>
-                                                                            <td><span
-                                                                                    class="badge badge-light-success">Aktif</span>
-                                                                            </td>
-                                                                            <td>
-                                                                                <div
-                                                                                    class="d-flex justify-content-center">
+                                                                                        class="btn btn-sm btn-outline-info mr-1">Edit</a>
                                                                                     <a href="#"
-                                                                                        class="btn btn-sm btn-outline-info mr-1">Düzenle</a>
-                                                                                        <a href="#"
-                                                                                        class="btn btn-sm btn-outline-danger mr-1">Sil</a>
+                                                                                        class="btn btn-sm btn-outline-danger mr-1">Delete</a>
                                                                                 </div>
                                                                             </td>
                                                                         </tr>
 
 
-                                                                        <tr role="row" class="odd">
-                                                                            <td class="sorting_1">310</td>
-                                                                            <td>Zone C</td>
-                                                                            <td>Bölge Bilgisi</td>
-                                                                            <td><span
-                                                                                    class="badge badge-light-success">Aktif</span>
-                                                                            </td>
-                                                                            <td>
-                                                                                <div
-                                                                                    class="d-flex justify-content-center">
-                                                                                    <a href="#"
-                                                                                        class="btn btn-sm btn-outline-info mr-1">Düzenle</a>
-                                                                                        <a href="#"
-                                                                                        class="btn btn-sm btn-outline-danger mr-1">Sil</a>
-                                                                                </div>
-                                                                            </td>
-                                                                        </tr>
+
+
+
 
                                                                     </tbody>
                                                                 </table>
@@ -776,6 +853,7 @@
                                                     Yeni Birim Ekle</a>
                                             </div>
 
+
                                             <div class="card-body p-0">
                                                 <!-- datatable start -->
                                                 <div class="table-responsive">
@@ -876,6 +954,794 @@
                                         </div>
                                     </div>
                                 </div>
+                                <!-- return codes -->
+                                <div class="tab-pane fade show" id="return_code-tab" aria-labelledby="return_code-tab"
+                                    role="tabpanel">
+                                    <div class="users-list-table">
+                                        <div class="card">
+
+                                            <div class="row border rounded py-2 mb-2">
+                                                <div class="col-12 col-sm-6 col-lg-3">
+                                                    <label for="users-list-verified">Code</label>
+                                                    <fieldset class="form-group">
+                                                        <input type="text" class="form-control" name="" id=""
+                                                            placeholder="Code">
+                                                    </fieldset>
+                                                </div>
+                                                <div class="col-12 col-sm-6 col-lg-3">
+                                                    <label for="users-list-role">Type</label>
+                                                    <fieldset class="form-group">
+                                                        <input type="text" class="form-control" name="" id=""
+                                                            placeholder="Type">
+                                                    </fieldset>
+                                                </div>
+                                                <div class="col-12 col-sm-6 col-lg-3">
+                                                    <label for="users-list-role">Description</label>
+                                                    <fieldset class="form-group">
+                                                        <textarea class="form-control" name="" id="" cols="30"
+                                                            rows="1"></textarea>
+                                                    </fieldset>
+                                                </div>
+
+                                                <div class="col-12 col-sm-6 col-lg-3 d-flex align-items-center">
+                                                    <button type="reset"
+                                                        class="btn btn-primary btn-block glow users-list-clear mb-0">Add
+                                                        Return Code</button>
+                                                </div>
+                                            </div>
+
+                                            <div class="card-body p-0">
+                                                <!-- datatable start -->
+                                                <div class="table-responsive">
+                                                    <div id="users-list-datatable_wrapper"
+                                                        class="dataTables_wrapper dt-bootstrap4 no-footer">
+
+                                                        <div class="row">
+                                                            <div class="col-sm-12">
+                                                                <table id="users-list-datatable"
+                                                                    class="table table-striped table-bordered dt-responsive nowrap no-footer "
+                                                                    role="grid"
+                                                                    aria-describedby="users-list-datatable_info">
+                                                                    <thead>
+                                                                        <tr role="row">
+                                                                            <th class="sorting_asc" tabindex="0"
+                                                                                aria-controls="users-list-datatable"
+                                                                                rowspan="1" colspan="1"
+                                                                                aria-sort="ascending"
+                                                                                aria-label="id: activate to sort column descending"
+                                                                                style="width: 79.2031px;">ID</th>
+                                                                            <th class="sorting" tabindex="0"
+                                                                                aria-controls="users-list-datatable"
+                                                                                rowspan="1" colspan="1"
+                                                                                aria-label="username: activate to sort column ascending"
+                                                                                style="width: 189.203px;">Type
+                                                                            </th>
+                                                                            <th class="sorting" tabindex="0"
+                                                                                aria-controls="users-list-datatable"
+                                                                                rowspan="1" colspan="1"
+                                                                                aria-label="username: activate to sort column ascending"
+                                                                                style="width: 189.203px;">Name
+                                                                            </th>
+                                                                            <th class="sorting" tabindex="0"
+                                                                                aria-controls="users-list-datatable"
+                                                                                rowspan="1" colspan="1"
+                                                                                aria-label="username: activate to sort column ascending"
+                                                                                style="width: 189.203px;">Description
+                                                                            </th>
+
+
+                                                                            <th class="sorting_disabled" rowspan="1"
+                                                                                colspan="1" aria-label="edit"
+                                                                                style="width: 100px;">Delete</th>
+                                                                        </tr>
+                                                                    </thead>
+                                                                    <tbody>
+
+                                                                        <tr role="row" class="odd">
+                                                                            <td class="sorting_1">1</td>
+                                                                            <td>Type 1</td>
+                                                                            <td>Name 1</td>
+                                                                            <td>Description</td>
+
+
+                                                                            <td style="width:100px">
+                                                                                <div
+                                                                                    class="d-flex justify-content-center">
+
+                                                                                    <a href="#"
+                                                                                        class="btn btn-sm btn-outline-danger btn-block">Delete</a>
+
+                                                                                </div>
+                                                                            </td>
+                                                                        </tr>
+
+                                                                    </tbody>
+                                                                </table>
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                                <!-- datatable ends -->
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- stock return codes -->
+                                <div class="tab-pane fade show" id="stock_return_code-tab"
+                                    aria-labelledby="stock_return_code-tab" role="tabpanel">
+                                    <div class="users-list-table">
+                                        <div class="card">
+
+                                            <div class="row border rounded py-2 mb-2">
+                                                <div class="col-12 col-sm-6 col-lg-3">
+                                                    <label for="users-list-verified">Code</label>
+                                                    <fieldset class="form-group">
+                                                        <input type="text" class="form-control" name="" id=""
+                                                            placeholder="Code">
+                                                    </fieldset>
+                                                </div>
+                                                <div class="col-12 col-sm-6 col-lg-3">
+                                                    <label for="users-list-role">Type</label>
+                                                    <fieldset class="form-group">
+                                                        <input type="text" class="form-control" name="" id=""
+                                                            placeholder="Type">
+                                                    </fieldset>
+                                                </div>
+                                                <div class="col-12 col-sm-6 col-lg-3">
+                                                    <label for="users-list-role">Description</label>
+                                                    <fieldset class="form-group">
+                                                        <textarea class="form-control" name="" id="" cols="30"
+                                                            rows="1"></textarea>
+                                                    </fieldset>
+                                                </div>
+
+                                                <div class="col-12 col-sm-6 col-lg-3 d-flex align-items-center">
+                                                    <button type="reset"
+                                                        class="btn btn-primary btn-block glow users-list-clear mb-0">Add
+                                                        Stock Return Code</button>
+                                                </div>
+                                            </div>
+
+                                            <div class="card-body p-0">
+                                                <!-- datatable start -->
+                                                <div class="table-responsive">
+                                                    <div id="users-list-datatable_wrapper"
+                                                        class="dataTables_wrapper dt-bootstrap4 no-footer">
+
+                                                        <div class="row">
+                                                            <div class="col-sm-12">
+                                                                <table id="users-list-datatable"
+                                                                    class="table table-striped table-bordered dt-responsive nowrap no-footer "
+                                                                    role="grid"
+                                                                    aria-describedby="users-list-datatable_info">
+                                                                    <thead>
+                                                                        <tr role="row">
+                                                                            <th class="sorting_asc" tabindex="0"
+                                                                                aria-controls="users-list-datatable"
+                                                                                rowspan="1" colspan="1"
+                                                                                aria-sort="ascending"
+                                                                                aria-label="id: activate to sort column descending"
+                                                                                style="width: 79.2031px;">ID</th>
+                                                                            <th class="sorting" tabindex="0"
+                                                                                aria-controls="users-list-datatable"
+                                                                                rowspan="1" colspan="1"
+                                                                                aria-label="username: activate to sort column ascending"
+                                                                                style="width: 189.203px;">Type
+                                                                            </th>
+                                                                            <th class="sorting" tabindex="0"
+                                                                                aria-controls="users-list-datatable"
+                                                                                rowspan="1" colspan="1"
+                                                                                aria-label="username: activate to sort column ascending"
+                                                                                style="width: 189.203px;">Name
+                                                                            </th>
+                                                                            <th class="sorting" tabindex="0"
+                                                                                aria-controls="users-list-datatable"
+                                                                                rowspan="1" colspan="1"
+                                                                                aria-label="username: activate to sort column ascending"
+                                                                                style="width: 189.203px;">Description
+                                                                            </th>
+
+
+                                                                            <th class="sorting_disabled" rowspan="1"
+                                                                                colspan="1" aria-label="edit"
+                                                                                style="width: 100px;">Delete</th>
+                                                                        </tr>
+                                                                    </thead>
+                                                                    <tbody>
+
+                                                                        <tr role="row" class="odd">
+                                                                            <td class="sorting_1">1</td>
+                                                                            <td>Type 1</td>
+                                                                            <td>Name 1</td>
+                                                                            <td>Description</td>
+
+
+                                                                            <td style="width:100px">
+                                                                                <div
+                                                                                    class="d-flex justify-content-center">
+
+                                                                                    <a href="#"
+                                                                                        class="btn btn-sm btn-outline-danger btn-block">Delete</a>
+
+                                                                                </div>
+                                                                            </td>
+                                                                        </tr>
+
+                                                                    </tbody>
+                                                                </table>
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                                <!-- datatable ends -->
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- non-delivery return codes -->
+                                <div class="tab-pane fade show" id="non-delivery_return_code-tab"
+                                    aria-labelledby="non-delivery_return_code-tab" role="tabpanel">
+                                    <div class="users-list-table">
+                                        <div class="card">
+                                            <div class="row border rounded py-2 mb-2">
+                                                <div class="col-12 col-sm-6 col-lg-3">
+                                                    <label for="users-list-verified">Code</label>
+                                                    <fieldset class="form-group">
+                                                        <input type="text" class="form-control" name="" id=""
+                                                            placeholder="Code">
+                                                    </fieldset>
+                                                </div>
+                                                <div class="col-12 col-sm-6 col-lg-3">
+                                                    <label for="users-list-role">Type</label>
+                                                    <fieldset class="form-group">
+                                                        <input type="text" class="form-control" name="" id=""
+                                                            placeholder="Type">
+                                                    </fieldset>
+                                                </div>
+                                                <div class="col-12 col-sm-6 col-lg-3">
+                                                    <label for="users-list-role">Description</label>
+                                                    <fieldset class="form-group">
+                                                        <textarea class="form-control" name="" id="" cols="30"
+                                                            rows="1"></textarea>
+                                                    </fieldset>
+                                                </div>
+
+                                                <div class="col-12 col-sm-6 col-lg-3 d-flex align-items-center">
+                                                    <button type="reset"
+                                                        class="btn btn-primary btn-block glow users-list-clear mb-0">Add
+                                                        Non-Delivery Return Code</button>
+                                                </div>
+                                            </div>
+
+                                            <div class="card-body p-0">
+                                                <!-- datatable start -->
+                                                <div class="table-responsive">
+                                                    <div id="users-list-datatable_wrapper"
+                                                        class="dataTables_wrapper dt-bootstrap4 no-footer">
+
+                                                        <div class="row">
+                                                            <div class="col-sm-12">
+                                                                <table id="users-list-datatable"
+                                                                    class="table table-striped table-bordered dt-responsive nowrap no-footer "
+                                                                    role="grid"
+                                                                    aria-describedby="users-list-datatable_info">
+                                                                    <thead>
+                                                                        <tr role="row">
+                                                                            <th class="sorting_asc" tabindex="0"
+                                                                                aria-controls="users-list-datatable"
+                                                                                rowspan="1" colspan="1"
+                                                                                aria-sort="ascending"
+                                                                                aria-label="id: activate to sort column descending"
+                                                                                style="width: 79.2031px;">ID</th>
+                                                                            <th class="sorting" tabindex="0"
+                                                                                aria-controls="users-list-datatable"
+                                                                                rowspan="1" colspan="1"
+                                                                                aria-label="username: activate to sort column ascending"
+                                                                                style="width: 189.203px;">Type
+                                                                            </th>
+                                                                            <th class="sorting" tabindex="0"
+                                                                                aria-controls="users-list-datatable"
+                                                                                rowspan="1" colspan="1"
+                                                                                aria-label="username: activate to sort column ascending"
+                                                                                style="width: 189.203px;">Name
+                                                                            </th>
+                                                                            <th class="sorting" tabindex="0"
+                                                                                aria-controls="users-list-datatable"
+                                                                                rowspan="1" colspan="1"
+                                                                                aria-label="username: activate to sort column ascending"
+                                                                                style="width: 189.203px;">Description
+                                                                            </th>
+
+
+                                                                            <th class="sorting_disabled" rowspan="1"
+                                                                                colspan="1" aria-label="edit"
+                                                                                style="width: 100px;">Delete</th>
+                                                                        </tr>
+                                                                    </thead>
+                                                                    <tbody>
+
+                                                                        <tr role="row" class="odd">
+                                                                            <td class="sorting_1">1</td>
+                                                                            <td>Type 1</td>
+                                                                            <td>Name 1</td>
+                                                                            <td>Description</td>
+
+
+                                                                            <td style="width:100px">
+                                                                                <div
+                                                                                    class="d-flex justify-content-center">
+
+                                                                                    <a href="#"
+                                                                                        class="btn btn-sm btn-outline-danger btn-block">Delete</a>
+
+                                                                                </div>
+                                                                            </td>
+                                                                        </tr>
+
+                                                                    </tbody>
+                                                                </table>
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                                <!-- datatable ends -->
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- area label defination -->
+                                <div class="tab-pane fade show" id="area_label_defination-tab"
+                                    aria-labelledby="non-delivery_return_code-tab" role="tabpanel">
+                                    <div class="col-12 col-sm-12 col-lg-12 text-center">
+                                        <!-- Zero configuration table -->
+                                        <section id="basic-datatable">
+                                            <div class="row">
+                                                <div class="col-12">
+                                                    <h3>Area Label</h3>
+                                                    <div class="card">
+                                                        <div class="col-12 col-sm-12 col-lg-6 m-auto mt-2">
+                                                            <form action="">
+                                                                <div class="mb-1 row">
+                                                                    <label for="orderID"
+                                                                        class="col-sm-2 col-form-label text-left">Order
+                                                                        ID</label>
+                                                                    <div class="col-sm-10">
+                                                                        <input type="number" class="form-control"
+                                                                            id="orderid">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="mb-1 row">
+                                                                    <label for="date"
+                                                                        class="col-sm-2 col-form-label  text-left">Date</label>
+                                                                    <div class="col-sm-10">
+                                                                        <input type="datetime-local" class="form-control"
+                                                                            id="date">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="mb-1 row">
+                                                                    <label for="barcode"
+                                                                        class="col-sm-2 col-form-label  text-left">
+                                                                        Barcode
+                                                                    </label>
+                                                                    <div class="col-sm-1">
+                                                                        <img src="./img/barkod.png" width="64" alt="">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="mb-1 row">
+                                                                    <label for="pay_type"
+                                                                        class="col-sm-2 col-form-label  text-left">Payment
+                                                                        TYpe</label>
+                                                                    <div class="col-sm-10">
+                                                                        <input type="text" class="form-control"
+                                                                            id="pay_type">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="mb-1 row">
+                                                                    <label for="pay_amount"
+                                                                        class="col-sm-2 col-form-label  text-left">Payment
+                                                                        Amount</label>
+                                                                    <div class="col-sm-10">
+                                                                        <input type="text" class="form-control"
+                                                                            id="pay_amount">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="mb-1">
+                                                                    <h3>Receiver Info</h3>
+                                                                </div>
+                                                                <div class="mb-1 row">
+                                                                    <label for="fullname"
+                                                                        class="col-sm-2 col-form-label  text-left">Fullname</label>
+                                                                    <div class="col-sm-10">
+                                                                        <input type="text" class="form-control"
+                                                                            id="fullname">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="mb-1 row">
+                                                                    <label for="phone"
+                                                                        class="col-sm-2 col-form-label  text-left">Phone</label>
+                                                                    <div class="col-sm-10">
+                                                                        <input type="number" class="form-control"
+                                                                            id="phone">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="mb-1 row">
+                                                                    <label for="address"
+                                                                        class="col-sm-2 col-form-label  text-left">Address</label>
+                                                                    <div class="col-sm-10">
+                                                                        <input type="text" class="form-control"
+                                                                            id="address">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="mb-1 row">
+                                                                    <label for="email"
+                                                                        class="col-sm-2 col-form-label  text-left">Email</label>
+                                                                    <div class="col-sm-10">
+                                                                        <input type="text" class="form-control"
+                                                                            id="email">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="mb-1 row">
+                                                                    <label for="city"
+                                                                        class="col-sm-2 col-form-label  text-left">City</label>
+                                                                    <div class="col-sm-10">
+                                                                        <input type="text" class="form-control"
+                                                                            id="city">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="mb-1 row">
+                                                                    <label for="country"
+                                                                        class="col-sm-2 col-form-label  text-left">Country</label>
+                                                                    <div class="col-sm-10">
+                                                                        <input type="text" class="form-control"
+                                                                            id="country">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="mb-1">
+                                                                    <h3>Sender Info</h3>
+                                                                </div>
+                                                                <div class="mb-1 row">
+                                                                    <label for="company"
+                                                                        class="col-sm-2 col-form-label  text-left">Company</label>
+                                                                    <div class="col-sm-10">
+                                                                        <input type="text" class="form-control"
+                                                                            id="company">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="mb-1 row">
+                                                                    <label for="phone"
+                                                                        class="col-sm-2 col-form-label  text-left">Phone</label>
+                                                                    <div class="col-sm-10">
+                                                                        <input type="number" class="form-control"
+                                                                            id="phone">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="mb-1 row">
+                                                                    <label for="fax"
+                                                                        class="col-sm-2 col-form-label  text-left">Fax</label>
+                                                                    <div class="col-sm-10">
+                                                                        <input type="number" class="form-control"
+                                                                            id="fax">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="mb-1 row">
+                                                                    <label for="email"
+                                                                        class="col-sm-2 col-form-label  text-left">Email</label>
+                                                                    <div class="col-sm-10">
+                                                                        <input type="email" class="form-control"
+                                                                            id="email">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="mb-1 row">
+                                                                    <label for="stockcode"
+                                                                        class="col-sm-2 col-form-label  text-left">Stock
+                                                                        Code</label>
+                                                                    <div class="col-sm-10">
+                                                                        <input type="number" class="form-control"
+                                                                            id="stockcode">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="mb-1 row">
+                                                                    <label for="productname"
+                                                                        class="col-sm-2 col-form-label  text-left">Product
+                                                                        Name</label>
+                                                                    <div class="col-sm-10">
+                                                                        <input type="text" class="form-control"
+                                                                            id="productname">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="mb-1 row">
+                                                                    <label for="productcount"
+                                                                        class="col-sm-2 col-form-label  text-left">Stock
+                                                                        Code</label>
+                                                                    <div class="col-sm-10">
+                                                                        <input type="number" class="form-control"
+                                                                            id="productcount">
+                                                                    </div>
+                                                                </div>
+                                                                <input type="submit" name="" id=""
+                                                                    class="btn btn-primary btn-block" value="Save">
+                                                            </form>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                        </section>
+                                        <!--/ Zero configuration table -->
+
+                                    </div>
+                                </div>
+                                <!-- stock label defination -->
+                                <div class="tab-pane fade show" id="stock_label_defination-tab"
+                                    aria-labelledby="non-delivery_return_code-tab" role="tabpanel">
+                                    <div class="col-12 col-sm-12 col-lg-12 text-center">
+                                        <!-- Zero configuration table -->
+                                        <section id="basic-datatable">
+                                            <div class="row">
+                                                <div class="col-12">
+                                                    <h3>Stock Label</h3>
+                                                    <div class="card">
+                                                        <div class="col-12 col-sm-12 col-lg-6 m-auto mt-2">
+                                                            <form action="">
+                                                                <div class="mb-1 row">
+                                                                    <label for="orderID"
+                                                                        class="col-sm-2 col-form-label text-left">Order
+                                                                        ID</label>
+                                                                    <div class="col-sm-10">
+                                                                        <input type="number" class="form-control"
+                                                                            id="orderid">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="mb-1 row">
+                                                                    <label for="date"
+                                                                        class="col-sm-2 col-form-label  text-left">Date</label>
+                                                                    <div class="col-sm-10">
+                                                                        <input type="datetime-local" class="form-control"
+                                                                            id="date">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="mb-1 row">
+                                                                    <label for="barcode"
+                                                                        class="col-sm-2 col-form-label  text-left">
+                                                                        Barcode
+                                                                    </label>
+                                                                    <div class="col-sm-1">
+                                                                        <img src="./img/barkod.png" width="64" alt="">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="mb-1 row">
+                                                                    <label for="pay_type"
+                                                                        class="col-sm-2 col-form-label  text-left">Payment
+                                                                        TYpe</label>
+                                                                    <div class="col-sm-10">
+                                                                        <input type="text" class="form-control"
+                                                                            id="pay_type">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="mb-1 row">
+                                                                    <label for="pay_amount"
+                                                                        class="col-sm-2 col-form-label  text-left">Payment
+                                                                        Amount</label>
+                                                                    <div class="col-sm-10">
+                                                                        <input type="text" class="form-control"
+                                                                            id="pay_amount">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="mb-1">
+                                                                    <h3>Receiver Info</h3>
+                                                                </div>
+                                                                <div class="mb-1 row">
+                                                                    <label for="fullname"
+                                                                        class="col-sm-2 col-form-label  text-left">Fullname</label>
+                                                                    <div class="col-sm-10">
+                                                                        <input type="text" class="form-control"
+                                                                            id="fullname">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="mb-1 row">
+                                                                    <label for="phone"
+                                                                        class="col-sm-2 col-form-label  text-left">Phone</label>
+                                                                    <div class="col-sm-10">
+                                                                        <input type="number" class="form-control"
+                                                                            id="phone">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="mb-1 row">
+                                                                    <label for="address"
+                                                                        class="col-sm-2 col-form-label  text-left">Address</label>
+                                                                    <div class="col-sm-10">
+                                                                        <input type="text" class="form-control"
+                                                                            id="address">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="mb-1 row">
+                                                                    <label for="email"
+                                                                        class="col-sm-2 col-form-label  text-left">Email</label>
+                                                                    <div class="col-sm-10">
+                                                                        <input type="text" class="form-control"
+                                                                            id="email">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="mb-1 row">
+                                                                    <label for="city"
+                                                                        class="col-sm-2 col-form-label  text-left">City</label>
+                                                                    <div class="col-sm-10">
+                                                                        <input type="text" class="form-control"
+                                                                            id="city">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="mb-1 row">
+                                                                    <label for="country"
+                                                                        class="col-sm-2 col-form-label  text-left">Country</label>
+                                                                    <div class="col-sm-10">
+                                                                        <input type="text" class="form-control"
+                                                                            id="country">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="mb-1">
+                                                                    <h3>Sender Info</h3>
+                                                                </div>
+                                                                <div class="mb-1 row">
+                                                                    <label for="company"
+                                                                        class="col-sm-2 col-form-label  text-left">Company</label>
+                                                                    <div class="col-sm-10">
+                                                                        <input type="text" class="form-control"
+                                                                            id="company">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="mb-1 row">
+                                                                    <label for="phone"
+                                                                        class="col-sm-2 col-form-label  text-left">Phone</label>
+                                                                    <div class="col-sm-10">
+                                                                        <input type="number" class="form-control"
+                                                                            id="phone">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="mb-1 row">
+                                                                    <label for="fax"
+                                                                        class="col-sm-2 col-form-label  text-left">Fax</label>
+                                                                    <div class="col-sm-10">
+                                                                        <input type="number" class="form-control"
+                                                                            id="fax">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="mb-1 row">
+                                                                    <label for="email"
+                                                                        class="col-sm-2 col-form-label  text-left">Email</label>
+                                                                    <div class="col-sm-10">
+                                                                        <input type="email" class="form-control"
+                                                                            id="email">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="mb-1 row">
+                                                                    <label for="stockcode"
+                                                                        class="col-sm-2 col-form-label  text-left">Stock
+                                                                        Code</label>
+                                                                    <div class="col-sm-10">
+                                                                        <input type="number" class="form-control"
+                                                                            id="stockcode">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="mb-1 row">
+                                                                    <label for="productname"
+                                                                        class="col-sm-2 col-form-label  text-left">Product
+                                                                        Name</label>
+                                                                    <div class="col-sm-10">
+                                                                        <input type="text" class="form-control"
+                                                                            id="productname">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="mb-1 row">
+                                                                    <label for="productcount"
+                                                                        class="col-sm-2 col-form-label  text-left">Stock
+                                                                        Code</label>
+                                                                    <div class="col-sm-10">
+                                                                        <input type="number" class="form-control"
+                                                                            id="productcount">
+                                                                    </div>
+                                                                </div>
+                                                                <input type="submit" name="" id=""
+                                                                    class="btn btn-primary btn-block" value="Save">
+                                                            </form>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                        </section>
+                                        <!--/ Zero configuration table -->
+
+                                    </div>
+                                </div>
+                                <!-- sms-email-push defination -->
+                                <div class="tab-pane fade show" id="sms-email-push_defination-tab"
+                                    aria-labelledby="non-delivery_return_code-tab" role="tabpanel">
+                                    <div class="col-12 col-sm-12 col-lg-12 text-center">
+                                        <!-- Zero configuration table -->
+                                        <section id="basic-datatable">
+                                            <div class="row">
+                                                <div class="col-12">
+                                                    <h3>Sms-Email-Push</h3>
+                                                    <div class="card">
+                                                        <div class="col-12 col-sm-12 col-lg-6 m-auto mt-2">
+                                                            <form action="">
+
+                                                                <div class="mb-1 row">
+                                                                    <label for="id"
+                                                                        class="col-sm-2 col-form-label text-left">
+                                                                        ID</label>
+                                                                    <div class="col-sm-10">
+                                                                        <input type="number" class="form-control"
+                                                                            id="id">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="mb-1 row">
+                                                                    <label for="sender"
+                                                                        class="col-sm-2 col-form-label text-left">
+                                                                        Sender</label>
+                                                                    <div class="col-sm-10">
+                                                                        <input type="text" class="form-control"
+                                                                            id="sender">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="mb-1 row">
+                                                                    <label for="receiver"
+                                                                        class="col-sm-2 col-form-label text-left">
+                                                                        Receiver</label>
+                                                                    <div class="col-sm-10">
+                                                                        <input type="text" class="form-control"
+                                                                            id="receiver">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="mb-1 row">
+                                                                    <label for="title"
+                                                                        class="col-sm-2 col-form-label text-left">
+                                                                        Title</label>
+                                                                    <div class="col-sm-10">
+                                                                        <input type="text" class="form-control"
+                                                                            id="title">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="mb-1 row">
+                                                                    <label for="text"
+                                                                        class="col-sm-2 col-form-label text-left">
+                                                                        Text</label>
+                                                                    <div class="col-sm-10">
+                                                                        <input type="text" class="form-control"
+                                                                            id="text">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="mb-1 row">
+                                                                    <label for="date"
+                                                                        class="col-sm-2 col-form-label text-left">
+                                                                        Date</label>
+                                                                    <div class="col-sm-10">
+                                                                        <input type="datetime-local" class="form-control"
+                                                                            id="date">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="mb-1 row">
+                                                                    <label for="date"
+                                                                        class="col-sm-2 col-form-label text-left">
+                                                                        Status</label>
+                                                                    <div class="col-sm-10">
+                                                                        <select name="" id="status" class="form-control">
+                                                                            <option value="1">1</option>
+                                                                            <option value="0">0</option>
+                                                                        </select>
+                                                                    </div>
+                                                                </div>
+                                                                <input type="submit" name="" id=""
+                                                                    class="btn btn-primary btn-block" value="Save">
+                                                            </form>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                        </section>
+                                        <!--/ Zero configuration table -->
+
+                                    </div>
+                                </div>
+
                             </div>
                         </div>
                     </div>
