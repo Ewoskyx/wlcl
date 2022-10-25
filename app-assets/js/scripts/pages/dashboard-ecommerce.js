@@ -74,6 +74,413 @@ $(window).on("load", function () {
   multiradialChart.render();
 
 
+  // revenue chart In a week
+  var in_a_week = {
+    series: [{
+    name: 'Inflation',
+    data: [2.3, 3.1, 4.0, 10.1, 4.0, 3.6]
+  }],
+    chart: {
+    height: 350,
+    type: 'bar',
+  },
+  stroke: {
+    width: 2
+  },
+  
+  grid: {
+    row: {
+      colors: ['#fff', '#f2f2f2']
+    }
+  },
+  fill: {
+    type: 'gradient',
+    gradient: {
+      shade: 'light',
+      type: "horizontal",
+      shadeIntensity: 0.25,
+      gradientToColors: undefined,
+      inverseColors: true,
+      opacityFrom: 0.85,
+      opacityTo: 0.85,
+      stops: [50, 0, 100]
+    },
+  },
+  plotOptions: {
+    bar: {
+      borderRadius: 20,
+      dataLabels: {
+        position: 'top', // top, center, bottom
+      },
+    }
+  },
+  dataLabels: {
+    enabled: true,
+    formatter: function (val) {
+      return val + "$";
+    },
+    offsetY: -20,
+    style: {
+      fontSize: '12px',
+      colors: ["#304758"]
+    }
+  },
+  
+  xaxis: {
+    categories: ["Json", "Eva", "Simith", "Alen", "David","Martin"],
+    position: 'bottom',
+    axisBorder: {
+      show: false
+    },
+    axisTicks: {
+      show: false
+    },
+    crosshairs: {
+      fill: {
+        type: 'gradient',
+        gradient: {
+          colorFrom: '#D8E3F0',
+          colorTo: '#BED1E6',
+          stops: [0, 100],
+          opacityFrom: 0.4,
+          opacityTo: 0.5,
+        }
+      }
+    },
+    tooltip: {
+      enabled: true,
+    }
+  },
+  yaxis: {
+    axisBorder: {
+      show: false
+    },
+    axisTicks: {
+      show: false,
+    },
+    labels: {
+      show: false,
+      formatter: function (val) {
+        return val + "$";
+      }
+    }
+  
+  },
+  };
+  var chart_in_a_week = new ApexCharts(document.querySelector("#in_a_week"), in_a_week);
+  chart_in_a_week.render();
+  
+  // revenue char by city
+  var by_city = {
+    series: [{
+    name: 'Servings',
+    data: [44, 55, 41, 67, 22, 43]
+  }],
+    annotations: {
+    points: [{
+      x: 'Bananas',
+      seriesIndex: 0,
+      label: {
+        borderColor: '#775DD0',
+        offsetY: 0,
+        style: {
+          color: '#fff',
+          background: '#775DD0',
+        },
+        text: 'Bananas are good',
+      }
+    }]
+  },
+  chart: {
+    height: 350,
+    type: 'bar',
+  },
+  plotOptions: {
+    bar: {
+      borderRadius: 10,
+      columnWidth: '50%',
+    }
+  },
+  dataLabels: {
+    enabled: false
+  },
+  stroke: {
+    width: 2
+  },
+  
+  grid: {
+    row: {
+      colors: ['#fff', '#f2f2f2']
+    }
+  },
+  xaxis: {
+    labels: {
+      rotate: -45
+    },
+    categories: ['London', 'Liverpool', 'Oxford', 'Newcastle', 'Menchester', 'Lines'],
+    tickPlacement: 'on'
+  },
+  yaxis: {
+    title: {
+      text: 'Servings',
+    },
+  },
+  fill: {
+    type: 'gradient',
+    gradient: {
+      shade: 'light',
+      type: "horizontal",
+      shadeIntensity: 0.25,
+      gradientToColors: undefined,
+      inverseColors: true,
+      opacityFrom: 0.85,
+      opacityTo: 0.85,
+      stops: [50, 0, 100]
+    },
+  }
+  };
+  var chart_by_city = new ApexCharts(document.querySelector("#by_city"), by_city);
+  chart_by_city.render();
+
+  //revenue by the day of the week
+  var by_the_day_of_the_week = {
+    series: [{
+    name: 'Inflation',
+    data: [2.3, 3.1, 4.0, 10.1, 4.0, 3.6,5]
+  }],
+    chart: {
+    height: 350,
+    type: 'bar',
+  },
+  plotOptions: {
+    bar: {
+      borderRadius: 20,
+      dataLabels: {
+        position: 'top', // top, center, bottom
+      },
+    }
+  },
+  dataLabels: {
+    enabled: true,
+    formatter: function (val) {
+      return val + "$";
+    },
+    offsetY: -20,
+    style: {
+      fontSize: '12px',
+      colors: ["#304758"]
+    }
+  },
+  stroke: {
+    width: 2
+  },
+  
+  grid: {
+    row: {
+      colors: ['#fff', '#f2f2f2']
+    }
+  },
+  fill: {
+    type: 'gradient',
+    gradient: {
+      shade: 'light',
+      type: "horizontal",
+      shadeIntensity: 0.25,
+      gradientToColors: undefined,
+      inverseColors: true,
+      opacityFrom: 0.85,
+      opacityTo: 0.85,
+      stops: [50, 0, 100]
+    },
+  },
+  xaxis: {
+    categories: ["Mon", "Tue", "Wed", "Thurs", "Fri","Satur",'Sun'],
+    position: 'bottom',
+    axisBorder: {
+      show: false
+    },
+    axisTicks: {
+      show: false
+    },
+    crosshairs: {
+      fill: {
+        type: 'gradient',
+        gradient: {
+          colorFrom: '#D8E3F0',
+          colorTo: '#BED1E6',
+          stops: [0, 100],
+          opacityFrom: 0.4,
+          opacityTo: 0.5,
+        }
+      }
+    },
+    tooltip: {
+      enabled: true,
+    }
+  },
+  yaxis: {
+    axisBorder: {
+      show: false
+    },
+    axisTicks: {
+      show: false,
+    },
+    labels: {
+      show: false,
+      formatter: function (val) {
+        return val + "$";
+      }
+    }
+  
+  },
+  };
+  var chart_by_the_day_of_the_week = new ApexCharts(document.querySelector("#by_the_day_of_the_week"), by_the_day_of_the_week);
+  chart_by_the_day_of_the_week.render();
+
+  //top purchesed oriducts
+  var top_purchesed_products = {
+    series: [{
+    name: 'Inflation',
+    data: [2.3, 3.1, 4.0, 10.1, 4.0, 3.6]
+  }],
+    chart: {
+    height: 350,
+    type: 'bar',
+  },
+  plotOptions: {
+    bar: {
+      borderRadius: 20,
+      dataLabels: {
+        position: 'top', // top, center, bottom
+      },
+    }
+  },
+  dataLabels: {
+    enabled: true,
+    formatter: function (val) {
+      return val + "%";
+    },
+    offsetY: -20,
+    style: {
+      fontSize: '12px',
+      colors: ["#304758"]
+    }
+  },
+  stroke: {
+    width: 2
+  },
+  
+  grid: {
+    row: {
+      colors: ['#fff', '#f2f2f2']
+    }
+  },
+  fill: {
+    type: 'gradient',
+    gradient: {
+      shade: 'light',
+      type: "horizontal",
+      shadeIntensity: 0.25,
+      gradientToColors: undefined,
+      inverseColors: true,
+      opacityFrom: 0.85,
+      opacityTo: 0.85,
+      stops: [50, 0, 100]
+    },
+  },
+  xaxis: {
+    categories: ["Computer", "Cloths", "Game", "Fastfood", "Food","Fruits"],
+    position: 'bottom',
+    axisBorder: {
+      show: false
+    },
+    axisTicks: {
+      show: false
+    },
+    crosshairs: {
+      fill: {
+        type: 'gradient',
+        gradient: {
+          colorFrom: '#D8E3F0',
+          colorTo: '#BED1E6',
+          stops: [0, 100],
+          opacityFrom: 0.4,
+          opacityTo: 0.5,
+        }
+      }
+    },
+    tooltip: {
+      enabled: true,
+    }
+  },
+  yaxis: {
+    axisBorder: {
+      show: false
+    },
+    axisTicks: {
+      show: false,
+    },
+    labels: {
+      show: false,
+      formatter: function (val) {
+        return val + "%";
+      }
+    }
+  
+  },
+  };
+  var chart_top_purchesed_products = new ApexCharts(document.querySelector("#top_purchesed_products"), top_purchesed_products);
+  chart_top_purchesed_products.render();
+
+    //customer_purchasing_frequency
+  var customer_purchasing_frequency = {
+    series: [{
+      data:[2.3, 3.1, 4.0, 10.1, 4.0, 3.6, 3.5, 4.5, 1.3, 3.3, 2.3, 3.4]
+  }],
+    chart: {
+    type: 'bar',
+    height: 500
+  },
+  plotOptions: {
+    bar: {
+      borderRadius: 4,
+      horizontal: true,
+
+    }
+  },
+  dataLabels: {
+    enabled: false
+  },
+  stroke: {
+    width: 2
+  },
+  
+  grid: {
+    row: {
+      colors: ['#fff', '#f2f2f2']
+    }
+  },
+  fill: {
+    type: 'gradient',
+    gradient: {
+      shade: 'light',
+      type: "horizontal",
+      shadeIntensity: 0.25,
+      gradientToColors: undefined,
+      inverseColors: true,
+      opacityFrom: 0.85,
+      opacityTo: 0.85,
+      stops: [50, 0, 100]
+    },
+  },
+  xaxis: {
+    categories: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September','October','November','December'],
+  }
+  };
+
+  var chart_customer_purchasing_frequency = new ApexCharts(document.querySelector("#customer_purchasing_frequency"), customer_purchasing_frequency);
+  chart_customer_purchasing_frequency.render();
+
   // Revenue Growth Chart
   // ---------------------
   var revenueChartOptions = {
@@ -201,8 +608,16 @@ $(window).on("load", function () {
     document.querySelector("#order-summary-chart"),
     orderSummaryChartOptions
   );
-
   orderSummaryChart.render();
+
+  // var orderSummaryCharCustomers = new ApexCharts(
+  //   document.querySelector("#order-summary-chart-customers"),
+  //   orderSummaryCharCustomersOptions
+  // );
+
+  orderSummaryCharCustomers.render();
+
+  
 
   // Marketing Campaigns Chart - Success
   // -----------------------------------
