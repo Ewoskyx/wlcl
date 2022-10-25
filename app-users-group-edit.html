@@ -40,6 +40,8 @@
     <link rel="stylesheet" href="assets/map/demo.css">
 
     <link rel="stylesheet" href="assets/css/costum.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.12.1/css/dataTables.bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.3.0/css/responsive.bootstrap.min.css">
 
 </head>
 <!-- END: Head-->
@@ -144,7 +146,7 @@
             <li class="nav-item"><a href="#"><i class="menu-livicon" data-icon="truck"></i><span
                     class="menu-title text-truncate" data-i18n="Gönderi Yönetimi">Gönderi Yönetimi</span></a>
                 <ul class="menu-content">
-                    <li><a class="d-flex align-items-center" href="shipment-all.html"><i
+                    <li ><a class="d-flex align-items-center" href="shipment-all.html"><i
                             class="bx bx-right-arrow-alt"></i><span class="menu-item text-truncate"
                                                                     data-i18n="Tüm Gönderiler">Tüm Gönderiler</span></a>
                     </li>
@@ -171,7 +173,7 @@
                             class="bx bx-right-arrow-alt"></i><span class="menu-item text-truncate"
                                                                     data-i18n="Kullanıcı Listesi">Kullanıcı Listesi</span></a></li>
 
-                    <li class="active"><a class="d-flex align-items-center" href="app-users-view.html"><i
+                    <li><a class="d-flex align-items-center" href="app-users-view.html"><i
                             class="bx bx-right-arrow-alt"></i><span class="menu-item text-truncate"
                                                                     data-i18n="Kullanıcı Görüntüle">Kullanıcı Görüntüle</span></a></li>
 
@@ -179,12 +181,14 @@
                     <li><a class="d-flex align-items-center" href="app-users-edit.html"><i
                             class="bx bx-right-arrow-alt"></i><span class="menu-item text-truncate"
                                                                     data-i18n="Kullanıcı Düzenle">Kullanıcı Düzenle</span></a></li>
-<li><a class="d-flex align-items-center" href="app-users-group.html"><i
+                    <li class="active"><a class="d-flex align-items-center" href="app-users-group.html"><i
                             class="bx bx-right-arrow-alt"></i><span class="menu-item text-truncate"
                                                                     data-i18n="Kullanıcı Düzenle">Kullanıcı Gruplama</span></a></li>
 
+
                 </ul>
             </li>
+
             <li class=" nav-item"><a href="#"><i class="menu-livicon" data-icon="bar-chart"></i><span
                     class="menu-title text-truncate" data-i18n="Proforma">Proforma</span></a>
                 <ul class="menu-content">
@@ -210,9 +214,7 @@
                                                                     data-i18n="Proforma Ekle">Proforma Ekle</span></a></li>
 
 
-                                                                    <li class=" nav-item"><a href="log-transaction.html"><i class="menu-livicon" data-icon="list"></i><span
-                                                                        class="menu-title text-truncate" data-i18n="transaction">Transaction Log</span></a>
-                                                                </li>
+
                 </ul>
             </li>
 
@@ -248,7 +250,7 @@
                                     Raporu</span></a></li>
                 </ul>
             </li>
-            <li class="nav-item"><a href="fatura.html"><i class="menu-livicon"
+            <li class="nav-item"><a href="invoice-information.html"><i class="menu-livicon"
                                                                        data-icon="calculator"></i><span class="menu-title text-truncate"
                                                                                                         data-i18n="Dağıtım Bilgileri">Fatura Bilgileri</span></a>
             </li>
@@ -264,14 +266,16 @@
             <li class=" nav-item"><a href="help-page.html"><i class="menu-livicon" data-icon="help"></i><span
                     class="menu-title text-truncate" data-i18n="Yardım">Yardım</span></a>
             </li>
-            <li class="nav-item"><a href="dashboard-superadmin.html"><i class="menu-livicon" data-icon="list"></i><span
-                class="menu-title text-truncate" data-i18n="superadmin">Dashboard Superadmin</span></a>
-            </li>
+            <li class=" nav-item"><a href="log-transaction.html"><i class="menu-livicon" data-icon="list"></i><span
+                class="menu-title text-truncate" data-i18n="transaction">Transaction Log</span></a>
+        </li>
+        <li class="nav-item"><a href="dashboard-superadmin.html"><i class="menu-livicon" data-icon="list"></i><span
+            class="menu-title text-truncate" data-i18n="superadmin">Dashboard Superadmin</span></a>
+        </li>
         </ul>
     </div>
 </div>
 <!-- END: Main Menu-->
-
     <!-- BEGIN: Content-->
     <div class="app-content content">
         <div class="content-overlay"></div>
@@ -279,183 +283,39 @@
             <div class="content-header row">
             </div>
             <div class="content-body">
-                <!-- users view start -->
-                <section class="users-view">
-                    <!-- users view media object start -->
-                    <div class="row">
-                        <div class="col-12 col-sm-7">
-                            <div class="media mb-2">
-                                <a class="mr-1" href="javascript:void(0);">
-                                    <img src="../app-assets/images/portrait/small/avatar-s-26.jpg" alt="users view avatar" class="users-avatar-shadow rounded-circle" height="64" width="64">
-                                </a>
-                                <div class="media-body pt-25">
-                                    <h4 class="media-heading"><span class="users-view-name">Dean Stanley </span><span class="text-muted font-medium-1"> @</span><span class="users-view-username text-muted font-medium-1 ">candy007</span></h4>
-                                    <span>ID:</span>
-                                    <span class="users-view-id">305</span>
-                                </div>
+              <div class="card">
+                <div class="card-body">
+                  <div class="users-list-filter px-1">
+                    <form>
+                        <div class="row border rounded py-2 mb-2">
+                            <div class="col-6 col-sm-6 col-lg-3">
+                                <label for="users-list-role">Type</label>
+                                <fieldset class="form-group">
+                                    <select class="form-control" id="users-group-type">
+                                        <option value="type1">Type 1</option>
+                                        <option value="type2">Type 2</option>
+                                        <option value="type3">Type 3</option>
+                                    </select>
+                                </fieldset>
+                            </div>
+                            <div class="col-6 col-sm-6 col-lg-3">
+                                <label for="users-list-role">Role</label>
+                                <fieldset class="form-group">
+                                    <select class="form-control" id="users-group-type">
+                                        <option value="role1">Role 1</option>
+                                        <option value="role1">Role 2</option>
+                                        <option value="role2">Role 3</option>
+                                    </select>
+                                </fieldset>
+                            </div>
+                            <div class="col-12 col-sm-6 col-lg-3 d-flex align-items-center">
+                                <button type="reset" class="btn btn-warning btn-block glow users-list-clear mb-0">Update Group</button>
                             </div>
                         </div>
-                        <div class="col-12 col-sm-5 px-0 d-flex justify-content-end align-items-center px-1 mb-2">
-                            <a href="javascript:void(0);" class="btn btn-sm mr-25 border"><i class="bx bx-envelope font-small-3"></i></a>
-                            <a href="javascript:void(0);" class="btn btn-sm mr-25 border">Profile</a>
-                            <a href="../html/ltr/vertical-menu-template/app-users-edit.html" class="btn btn-sm btn-primary">Edit</a>
-                        </div>
-                    </div>
-                    <!-- users view media object ends -->
-                    <!-- users view card data start -->
-                    <div class="card">
-                        <div class="card-body">
-                            <div class="row">
-                                <div class="col-12 col-md-4">
-                                    <table  class="table table-borderless ">
-                                        <tbody>
-                                            <tr>
-                                                <td>Registered:</td>
-                                                <td>01/01/2019</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Latest Activity:</td>
-                                                <td class="users-view-latest-activity">30/04/2019</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Verified:</td>
-                                                <td class="users-view-verified">Yes</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Role:</td>
-                                                <td class="users-view-role">Staff</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Status:</td>
-                                                <td><span class="badge badge-light-success users-view-status">Active</span></td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                                <div class="col-12 col-md-8">
-                                    <div class="table-responsive">
-                                        <table class="table mb-0 responsive-table">
-                                            <thead>
-                                                <tr>
-                                                    <th>Module Permission</th>
-                                                    <th>Read</th>
-                                                    <th>Write</th>
-                                                    <th>Create</th>
-                                                    <th>Delete</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <tr>
-                                                    <td>Users</td>
-                                                    <td>Yes</td>
-                                                    <td>No</td>
-                                                    <td>No</td>
-                                                    <td>Yes</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Articles</td>
-                                                    <td>No</td>
-                                                    <td>Yes</td>
-                                                    <td>No</td>
-                                                    <td>Yes</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Staff</td>
-                                                    <td>Yes</td>
-                                                    <td>Yes</td>
-                                                    <td>No</td>
-                                                    <td>No</td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- users view card data ends -->
-                    <!-- users view card details start -->
-                    <div class="card">
-                        <div class="card-body">
-                            <div class="row bg-primary bg-lighten-5 rounded mb-2 mx-25 text-center text-lg-left">
-                                <div class="col-12 col-sm-4 p-2">
-                                    <h6 class="text-primary mb-0">Posts: <span class="font-large-1 align-middle">125</span></h6>
-                                </div>
-                                <div class="col-12 col-sm-4 p-2">
-                                    <h6 class="text-primary mb-0">Followers: <span class="font-large-1 align-middle">534</span></h6>
-                                </div>
-                                <div class="col-12 col-sm-4 p-2">
-                                    <h6 class="text-primary mb-0">Following: <span class="font-large-1 align-middle">256</span></h6>
-                                </div>
-                            </div>
-                            <div class="col-12">
-                                <table class="table table-borderless responsive-table">
-                                    <tbody>
-                                        <tr>
-                                            <td>Username:</td>
-                                            <td class="users-view-username">dean3004</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Name:</td>
-                                            <td class="users-view-name">Dean Stanley</td>
-                                        </tr>
-                                        <tr>
-                                            <td>E-mail:</td>
-                                            <td class="users-view-email">deanstanley@gmail.com</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Comapny:</td>
-                                            <td>XYZ Corp. Ltd.</td>
-                                        </tr>
-
-                                    </tbody>
-                                </table>
-                                <h5 class="mb-1"><i class="bx bx-link"></i> Social Links</h5>
-                                <table id="social" class="table table-borderless responsive-table">
-                                    <tbody>
-                                        <tr>
-                                            <td>Twitter:</td>
-                                            <td><a href="javascript:void(0);">https://www.twitter.com/</a></td>
-                                        </tr>
-                                        <tr>
-                                            <td>Facebook:</td>
-                                            <td><a href="javascript:void(0);">https://www.facebook.com/</a></td>
-                                        </tr>
-                                        <tr>
-                                            <td>Instagram:</td>
-                                            <td><a href="javascript:void(0);">https://www.instagram.com/</a></td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                                <h5 class="mb-1"><i class="bx bx-info-circle"></i> Personal Info</h5>
-                                <table class="table table-borderless mb-0">
-                                    <tbody>
-                                        <tr>
-                                            <td>Birthday:</td>
-                                            <td>03/04/1990</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Country:</td>
-                                            <td>USA</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Languages:</td>
-                                            <td>English</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Contact:</td>
-                                            <td>+(305) 254 24668</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- users view card details ends -->
-
-                </section>
-                <!-- users view ends -->
-
+                    </form>
+                </div>
+                </div>
+              </div>
             </div>
         </div>
     </div>
@@ -583,6 +443,28 @@
         }
     });</script>
 <!-- END: Page JS-->
+
+
+
+<script>
+    $(document).ready(function() {
+        $('#users-list-datatable').DataTable(
+            {
+                "searching": false,
+                "paging": false,
+                "info": false
+            }
+        );
+    } );
+
+
+</script>
+
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.12.1/js/dataTables.bootstrap.min.js"></script>
+<script src="https://cdn.datatables.net/responsive/2.3.0/js/dataTables.responsive.min.js"></script>
+<script src="https://cdn.datatables.net/responsive/2.3.0/js/responsive.bootstrap.min.js"></script>
 
 
 </body>
